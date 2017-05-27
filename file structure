@@ -1,0 +1,11 @@
+-app
+
+-includes
+    - config
+    - db
+    - utils
+
+- web
+    - css
+    - js
+    - images
