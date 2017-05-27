@@ -9,11 +9,11 @@ class DB_Conenction {
     public function connect()
     {
         echo "inside db connect"; 
-    	if (APP_ENV == "local") {
+//     	if (APP_ENV == "local") {
             $this->connection = mysql_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        } elseif (APP_ENV == "heroku") { echo 'heroku connect';
-        	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
-        }
+//         } elseif (APP_ENV == "heroku") { echo 'heroku connect';
+//         	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
+//         }
         
         return $this->connection;
    }
