@@ -3,7 +3,7 @@
 
 
 <?php
-echo '<h1 style="color:RED">LAMPPPPPPPP</h1>'
+echo '<h1 style="color:RED">LAMPPPPPPPPP</h1>'
 
 echo "in   app  index";
 require __DIR__. '../../includes/utils/Shopify.php';
