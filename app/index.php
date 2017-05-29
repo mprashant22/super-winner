@@ -17,9 +17,9 @@ $Stores = new Stores();
 $shop = $_GET['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 
-//echo "<pre>";
+echo "<pre>";
 echo 'shop_info>>'.$shop_info[0];
-//echo "</pre>";
+echo "</pre>";
 
 //echo "access token is: " . $shop_info[0]['access_token'];
 $products = $Shopify->get_products($shop, $shop_info[0]['access_token']);
