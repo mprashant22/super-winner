@@ -9,6 +9,7 @@ $shop = $_REQUEST['shop'];
 echo "Shop=======".$shop;
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
 
+echo ">>>>>>>>>>>>>code????????? ".$code;
 if ($shop && !$code) {
     // validate the shopify url
     if (!$Shopify->validateMyShopifyName($shop)) {
@@ -17,7 +18,7 @@ if ($shop && !$code) {
     
     $redirect_url = $Shopify->getAuthUrl($shop);
     //echo 'redirect url : '.$redirect_url;
-    //header("Location: $redirect_url");
+    header("Location: $redirect_url");
     
 }
 echo "code????????? ".$code;
