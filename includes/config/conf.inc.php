@@ -18,4 +18,4 @@ define("APP_ENV", "heroku");
 define("SHOPIFY_API_KEY", "f78660754f798a46abbecf982687199d");
 define("SHOPIFY_API_SECRET", "0749071abc7349a74cfae606a2f90ee5");
 define("CALLBACK_URL", "http://192.241.146.48/shopifyDemoLamp/install/");
-define("APP_URL", "http://product-demo-app.herokuapp.com/");
+define("APP_URL", "http://product-demo-app.herokuapp.com/app");
