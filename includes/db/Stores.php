@@ -15,7 +15,6 @@ class Stores extends DB_Conenction {
 
     public function addData($data)
     {
-    	echo 'addDATAAAAAAAAAAA';
     	print_r($data);
         return $this->add($this->table_name, $data);
     }
