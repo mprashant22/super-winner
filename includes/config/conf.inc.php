@@ -8,7 +8,7 @@ define("APP_ENV", "heroku");
     //define("DB_USER", "root");
     //define("DB_PASS", "");
 //} else if (APP_ENV == "heroku") {echo 'heroku vala';
-    define("DB_HOST", "192.241.146.48");
+    define("DB_HOST", "localhost");
     define("DB_PORT", "3306");
     define("DB_NAME", "shopifyApp");
     define("DB_USER", "root");
