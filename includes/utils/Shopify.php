@@ -26,8 +26,8 @@ class Shopify {
 
         // the curl url
         $curl_url = "https://$ShopifyURL/admin/oauth/access_token";
-echo $curl_url;
-        print_r($this->curlRequest($curl_url, null, $data));
+
+       return   $this->curlRequest($curl_url, null, $data);
     }
 
     public function validateMyShopifyName($shop) {
@@ -103,6 +103,7 @@ echo $curl_url;
     private function curlRequest($url, $access_token = NULL, $data = NULL)
     {
         // set curl options
+        echo $url;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         
