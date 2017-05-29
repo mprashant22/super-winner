@@ -8,10 +8,10 @@ define("APP_ENV", "heroku");
     //define("DB_USER", "root");
     //define("DB_PASS", "");
 //} else if (APP_ENV == "heroku") {echo 'heroku vala';
-    define("DB_HOST", "lamp-512mb-nyc1-01-ShopifyDemoApp");
+    define("DB_HOST", "192.241.146.48");
     define("DB_PORT", "3306");
     define("DB_NAME", "shopifyApp");
-    define("DB_USER", "root@localhost");
+    define("DB_USER", "root");
     define("DB_PASS", "e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463");
 //}
 
