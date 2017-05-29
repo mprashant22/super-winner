@@ -18,7 +18,7 @@ $shop = $_GET['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 
 echo "<pre>";
-echo 'shop_info>>'.$shop_info[0];
+echo 'shop_info>>'.$shop_info;
 echo "</pre>";
 
 //echo "access token is: " . $shop_info[0]['access_token'];
