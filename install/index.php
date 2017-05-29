@@ -40,7 +40,7 @@ if ($code) {echo 'ohkay1';
 //     echo "</pre>";
     
     $access_token = $exchange_token_response->access_token;
-    
+    echo 'acess tokken >>'.$access_token;
     if (empty($access_token)) {
         echo "Invalid access token";
     }
