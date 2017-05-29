@@ -6,10 +6,10 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
-echo "Shop=======".$shop;
+//echo "Shop=======".$shop;
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
 
-echo ">>>>>>>>>>>>>code????????? ".$code;
+//echo ">>>>>>>>>>>>>code????????? ".$code;
 if ($shop && !$code) {
     // validate the shopify url
     if (!$Shopify->validateMyShopifyName($shop)) {
@@ -21,9 +21,9 @@ if ($shop && !$code) {
     header("Location: $redirect_url");
     
 }
-echo "code????????? ".$code;
+//echo "code????????? ".$code;
 if ($code) {
-	echo "???? inside if code????????? ".$code;
+	//echo "???? inside if code????????? ".$code;
     // we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
     $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
@@ -41,6 +41,7 @@ if ($code) {
 //     echo "</pre>";
     
     $access_token = $exchange_token_response->access_token;
+    print_r($access_token);
     
     if (empty($access_token)) {
         echo "Invalid access token";
