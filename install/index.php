@@ -8,6 +8,7 @@ $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 echo "Shop=======".$shop;
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
+echo "code;;;;;;;;;;".$code;
 
 if ($shop && !$code) {
     // validate the shopify url
