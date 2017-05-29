@@ -23,6 +23,7 @@ if ($shop && !$code) {
 }
 //echo "code????????? ".$code;
 if ($code) {
+	echo "shop and code".$shop.'~~'.$code;
 	//echo "???? inside if code????????? ".$code;
     // we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
