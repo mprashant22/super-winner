@@ -45,6 +45,7 @@ if ($code) {echo 'ohkay1';
         echo "Invalid access token";
     }
     
+    echo 'shoppppppppp='.$shop;
     // we check if it's a fresh installation
     $shop_info = $Stores->is_shop_exists($shop);
     echo 'shopInfo>>'.$shop_info;
