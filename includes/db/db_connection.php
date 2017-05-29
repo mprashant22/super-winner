@@ -72,7 +72,6 @@ class DB_Conenction {
        
             
             return $result;
-        }
     }
     
     public function select($table_name, $columns = "*", $criteria = null)
