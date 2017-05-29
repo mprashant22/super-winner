@@ -8,13 +8,16 @@ class DB_Conenction {
     
     public function connect()
     {
-        echo "inside db connect"; 
+        echo "digital ocean"; 
 //     	if (APP_ENV == "local") {
-            $this->connection = mysql_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 //         } elseif (APP_ENV == "heroku") { echo 'heroku connect';
 //         	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
 //         }
-        
+            if($this->connection)
+            	echo "DB Connected";
+            else 
+            	echo "DB NOT Connected";
         return $this->connection;
    }
     
