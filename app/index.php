@@ -4,12 +4,12 @@
 
 <?php
 
-$connection = mysqli_connect('lamp-512mb-nyc1-01-ShopifyDemoApp','root','e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463', 'shopifyApp');
+$connection = mysqli_connect('localhost','root','e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463', 'shopifyApp');
 if($connection){
-	echo "not connected";
+	echo "connected";
 }
 else {
-	echo "connected";
+	echo "not connected";
 	
 }
 // echo '<h1 style="color:#FF00FF;">LAMPPPPPPPPP</h1>';
