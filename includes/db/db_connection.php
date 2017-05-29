@@ -79,7 +79,7 @@ class DB_Conenction {
     	echo "inside db select".$table_name; 
     	$query = "SELECT $columns FROM $table_name";
         
-        if (!empty($criteria)) {
+        if (empty($criteria)) {
             $query .= " WHERE $criteria";
         }
         
