@@ -13,7 +13,7 @@ class DB_Conenction {
         echo "user >>".DB_USER;
         echo "pass >>".DB_PASS;
 //     	if (APP_ENV == "local") {
-            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        $this->connection = mysqli_connect('lamp-512mb-nyc1-01-ShopifyDemoApp','root@localhost','e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463', 'shopifyApp');
 //         } elseif (APP_ENV == "heroku") { echo 'heroku connect';
 //         	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
 //         }
