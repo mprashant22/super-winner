@@ -15,7 +15,7 @@ class DB_Conenction {
             	echo "DB Connected";
             else 
             	echo "DB NOT Connected";
-            	mysqli_query($this->$connection, "insert into stores (store_url,access_key,access_token,created_at) values('x@x','121adasa','fasdf131121','2017-05-29')");
+            	//mysqli_query($this->$connection, "insert into stores (store_url,access_key,access_token,created_at) values('x@x','121adasa','fasdf131121','2017-05-29')");
         return $this->connection;
    }
     
