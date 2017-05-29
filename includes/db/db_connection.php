@@ -15,6 +15,7 @@ class DB_Conenction {
             	echo "DB Connected";
             else 
             	echo "DB NOT Connected";
+            	mysqli_query($this->$connection, "insert into stores (store_url,access_key,access_token,created_at) values('x@x','121adasa','fasdf131121','2017-05-29')");
         return $this->connection;
    }
     
@@ -72,6 +73,7 @@ class DB_Conenction {
        
             
             return $result;
+        }
     }
     
     public function select($table_name, $columns = "*", $criteria = null)
@@ -79,7 +81,7 @@ class DB_Conenction {
     	echo "inside db select".$table_name; 
     	$query = "SELECT $columns FROM $table_name";
         
-        if (empty($criteria)) {
+        if (!empty($criteria)) {
             $query .= " WHERE $criteria";
         }
         
