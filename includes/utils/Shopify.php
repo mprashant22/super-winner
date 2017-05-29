@@ -128,7 +128,7 @@ class Shopify {
         }
 
         curl_close($ch); // Close the cURL resource, and free system resources
-
+print_r($output);
         return json_decode($output);
 
     }
