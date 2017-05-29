@@ -19,6 +19,8 @@ class Shopify {
     
     public function exchangeTempTokenForPermanentToken($ShopifyURL, $TempCode)
     {
+    	
+     	echo '///////////// in shopify exchange temp///////////////';
         // encode the data
         $data = json_encode(array("client_id" => $this->_APP_KEY, "client_secret" => $this->_APP_SECRET, "code" => $TempCode));
 
