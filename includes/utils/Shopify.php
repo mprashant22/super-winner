@@ -13,7 +13,7 @@ class Shopify {
     protected function initializeKeys()
     {
         $this->_APP_KEY = SHOPIFY_API_KEY;
-//        echo 'api key============'.$this->_APP_KEY;
+        echo 'api key============'.$this->_APP_KEY;
         $this->_APP_SECRET = SHOPIFY_API_SECRET;
     }
     
