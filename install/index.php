@@ -3,7 +3,7 @@
 include '../includes/db/Stores.php';
 include '../includes/utils/Shopify.php';
 
-$Shopify = new Shopify;
+$Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 
@@ -21,10 +21,11 @@ if ($shop && !$code) {
 }
 
 if ($code) {
-	 // we want to exchange the temp token passed by the shopify server during the installation process
+	
+	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
-	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken("mathurs-store.myshopify.com", $code);
-	 print_r($exchange_token_response);
+	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
+ 
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
         // access token is not valid, redirect user to error page

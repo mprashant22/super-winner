@@ -23,7 +23,7 @@ class Shopify {
     	
     	//the curl url
     	$curl_uri = "https://$shopifyUrl/admin/oauth/access_token";
-    	
+    	echo $curl_uri;
     	// set curl option
     	
     	$ch = curl_init();
