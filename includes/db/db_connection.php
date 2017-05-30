@@ -18,7 +18,7 @@ $this->connection = mysqli_connect('localhost', 'root', 'e3828e583f915c60dcaea9e
             	echo 'CONNNNNECTED';            	
             }
             else {
-            	echo 'NOPE NOT CONNECTED';
+            	echo 'NOPE NOT CONNECTED'. mysqli_connect_error();
             }
             
         return $this->connection;
