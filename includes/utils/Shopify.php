@@ -21,10 +21,10 @@ class Shopify {
     	
     	// encode the data
     	$data = json_encode(array("client_id"=>$this->_APP_KEY , "client_secret"=>$this->_APP_SECRET , "code"=>$TempCode));
-    	
+    	echo 'insisde xchange'.$data;
     	//the curl url
     	$curl_uri = "https://$shopifyUrl/admin/oauth/access_token";
-    	
+    	echo 'curlURI'.$curl_uri;
     	// set curl option
     	
     	$ch = curl_init();
