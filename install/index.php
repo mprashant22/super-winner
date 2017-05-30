@@ -71,7 +71,7 @@ if ($code) {
         ), "store_url = '$shop'");
     }
     
-  //  header("Location: " . APP_URL . "?shop=$shop");
+    header("Location: " . APP_URL . "?shop=$shop");
 }
 ?>
 
