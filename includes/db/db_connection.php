@@ -9,12 +9,18 @@ class DB_Conenction {
     public function connect()
     {
         echo "inside db connect"; 
-    	if (APP_ENV == "local") {
-            $this->connection = mysql_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-        } elseif (APP_ENV == "heroku") { echo 'heroku connect';
-        	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
-        }
+    	
+            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
+       
+            if($this->$connection)
+            {
+            	echo 'CONNNNNECTED';            	
+            }
+            else {
+            	echo 'NOPE NOT CONNECTED';
+            }
+            
         return $this->connection;
    }
     
@@ -37,20 +43,16 @@ class DB_Conenction {
         $query .= "(" . implode(", ", $columns) . ")";
         $query .= "VALUES(" . implode(", ", $values) . ")";
         
-        if (APP_ENV == "local") {
+        
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_insert_id($connection);
-        } elseif (APP_ENV == "heroku") {echo "heroku vala";
-        	$connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname="  . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
         	if($connection)
         		echo "conn established";
         	else
         		echo 'not established';
-            $result = pg_query($connection, $query) or die(pg_errormessage($connection) . " $query");
-            
-            return pg_last_oid($result);
+        
         }
     }
     
