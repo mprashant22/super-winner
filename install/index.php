@@ -21,10 +21,9 @@ if ($shop && !$code) {
 }
 
 if ($code) {
-	echo $code;
-    // we want to exchange the temp token passed by the shopify server during the installation process
+	 // we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
-	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
+	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken("mathurs-store.myshopify.com", $code);
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
