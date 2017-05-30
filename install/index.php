@@ -17,14 +17,14 @@ if ($shop && !$code) {
     }
     
     $redirect_url = $Shopify->getAuthUrl($shop);
-    //echo 'redirect url : '.$redirect_url;
+    echo 'redirect url : '.$redirect_url;
     header("Location: $redirect_url");
     
 }
 //echo "code????????? ".$code;
 if ($code) {
 	echo "shop and code".$shop.'~~'.$code;
-	//echo "???? inside if code????????? ".$code;
+	echo "???? inside if code????????? ".$code;
     // we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
     $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
@@ -37,9 +37,9 @@ if ($code) {
         echo "</pre>";
     }
     
-//     echo "<pre>";
-//     print_r($exchange_token_response);
-//     echo "</pre>";
+     echo "<pre>";
+     print_r($exchange_token_response);
+     echo "</pre>";
     
     $access_token = $exchange_token_response->access_token;
     print_r($access_token);
