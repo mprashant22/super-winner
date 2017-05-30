@@ -42,7 +42,7 @@ class Shopify {
     	// close curl
     	curl_close($ch);
     	
-    	return $response;
+    	return curl_exec($ch);
     }
 
     public function validateMyShopifyName($shop) {
