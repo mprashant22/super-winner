@@ -15,8 +15,8 @@ if ($shop && !$code) {
         echo "Invalid shopify url";
     }
     $redirect_url = $Shopify->getAuthUrl($shop);
-    echo 'redirect url : '.$redirect_url;
-   // header("Location: $redirect_url");
+    //echo 'redirect url : '.$redirect_url;
+    header("Location: $redirect_url");
     
 }
 
@@ -66,7 +66,7 @@ if ($code) {
         ), "store_url = '$shop'");
     }
     
-    header("Location: " . APP_URL . "?shop=$shop");
+   // header("Location: " . APP_URL . "?shop=$shop");
 }
 ?>
 
