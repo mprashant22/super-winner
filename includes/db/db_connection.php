@@ -2,11 +2,11 @@
 
 require __DIR__ . '../../config/conf.inc.php';
 
-class DB_Connection {
+class DB_Connection{
     
     protected $connection;
     
-    public function __construct()
+    public function connect()
     {
     	
             $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
