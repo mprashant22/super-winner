@@ -20,7 +20,7 @@ class Shopify {
     	echo 'abcde';
     	// encode the data
     	$data = json_encode(array("client_id"=>$this->_APP_KEY , "client_secret"=>$this->_APP_SECRET , "code"=>$TempCode));
-    	echo 'efgh'.$data;
+    	echo 'efgh'.$data.'<>'.$shopifyUrl;
     	//the curl url
     	$curl_uri = "https://$shopifyUrl/admin/oauth/access_token";
     	echo $curl_uri;
