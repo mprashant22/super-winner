@@ -2,18 +2,17 @@
 //echo " in shopify";
 class Shopify {
     
-    protected $_APP_KEY;
-    protected $_APP_SECRET;
+    public $_APP_KEY;
+    public $_APP_SECRET;
 
     public function __construct()
     {
         $this->initializeKeys();
     }
 
-    protected function initializeKeys()
+    public function initializeKeys()
     {
         $this->_APP_KEY = SHOPIFY_API_KEY;
-//        echo 'api key============'.$this->_APP_KEY;
         $this->_APP_SECRET = SHOPIFY_API_SECRET;
     }
     
@@ -67,7 +66,7 @@ class Shopify {
     
     public function getAuthUrl($shop)
     {
-    	echo 'inside getAuth';
+    	//echo 'inside getAuth';
         $scopes = ["read_products", "read_orders"];
         return 'https://' . $shop . '/admin/oauth/authorize?'
                 . 'scope=' . implode("%2C", $scopes)
