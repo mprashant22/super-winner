@@ -13,7 +13,7 @@ class DB_Conenction {
            // $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $this->connection = mysqli_connect('localhost', 'root', 'e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463', 'shopifyApp');
        
-            if($connection)
+if($this->connection)
             {
             	echo 'CONNNNNECTED';            	
             }
