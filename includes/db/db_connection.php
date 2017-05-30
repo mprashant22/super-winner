@@ -13,7 +13,7 @@ class DB_Conenction {
             $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
         
        
-            if($this->$connection)
+            if($connection)
             {
             	echo 'CONNNNNECTED';            	
             }
@@ -71,17 +71,12 @@ class DB_Conenction {
             $query .= " WHERE $criteria";
         }
         
-        if (APP_ENV == "local") {
+        
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_insert_id($connection);
-        } elseif (APP_ENV == "heroku") {
-        	$connection = pg_connect("host=" . DB_HOST. " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
-            $result = pg_query($connection, $query);
-            
-            return $result;
-        }
+        
     }
     
     public function select($table_name, $columns = "*", $criteria = null)
