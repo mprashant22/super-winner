@@ -6,8 +6,8 @@
 echo '<h1 style="color:#FF00FF;">LAMPPPPPPPPP</h1>';
 
 echo "in   app  index";
-require __DIR__. '../../includes/utils/Shopify.php';
-require __DIR__. '../../includes/db/Stores.php';
+require __DIR__.'../includes/utils/Shopify.php';
+require __DIR__.'../includes/db/Stores.php';
 echo "DIRECTORY>>".__DIR__;
 
 $Shopify = new Shopify();
