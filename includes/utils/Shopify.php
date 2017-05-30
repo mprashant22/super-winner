@@ -1,5 +1,5 @@
 <?php
-echo " in shopify";
+//echo " in shopify";
 class Shopify {
     
     protected $_APP_KEY;
@@ -58,47 +58,8 @@ class Shopify {
                 . '&client_id=' . SHOPIFY_API_KEY
                 . '&redirect_uri=' . CALLBACK_URL;
     }   
-    
-    /*
-     * Products API related methods
-     */
-    public function get_products($shop, $access_token)
-    {
-    	echo 'inside get_prod > shop'.$shop."\n".'access token))'.$access_token;
-        // the curl url
-        $curl_url = "https://$shop/admin/products.json";
-
-        return $this->curlRequest($curl_url, $access_token);
-    }
-    
-    public function add_product($shop, $access_token, $data)
-    {
-        $curl_url = "https://$shop/admin/products.json";
-        
-        return $this->curlRequest($curl_url, $access_token, $data);
-    }
-    
-    public function update_product($shop, $access_token, $product_id)
-    {
-        $curl_url = "https://$shop/admin/products/$product_id.json";
-    }
-    
-    
-    public function get_order_info_by_id($shop, $access_token, $order_id)
-    {
-        $curl_url = "https://$shop/admin/orders/$order_id.json?fields=id,name,total_price";
-
-        return $this->curlRequest($curl_url, $access_token);
-    }
-    
-    public function get_orders($shop, $access_token)
-    {
-        $curl_url = "https://$shop/admin/orders.json";
-        
-        return $this->curlRequest($curl_url, $access_token);
-    }
-    
-    private function curlRequest($url, $access_token = NULL, $data = NULL)
+ 
+   public function curlRequest($url, $access_token = NULL, $data = NULL)
     {
         // set curl options
         $ch = curl_init();

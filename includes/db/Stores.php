@@ -1,16 +1,15 @@
 <?php
 
-echo 'in stores';
+//echo 'in stores';
 require 'db_connection.php';
 
-class Stores extends DB_Conenction {
+class Stores extends DB_Connection{
     
     private $table_name = "stores";
     
     public function __construct()
     {
-    	echo 'stores connect';
-        $this->connect();
+    parent :: $this->__construct();
     }
 
     public function addData($data)

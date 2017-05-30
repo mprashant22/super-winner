@@ -2,18 +2,15 @@
 
 require __DIR__ . '../../config/conf.inc.php';
 
-class DB_Conenction {
+class DB_Connection {
     
     protected $connection;
     
-    public function connect()
+    public function __construct()
     {
-        echo "inside db connect"; 
     	
             $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-//$this->connection = mysqli_connect('localhost', 'root', 'e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463', 'shopifyApp');
-       
-if($this->connection)
+            if($this->connection)
             {
             	echo 'CONNNNNECTED';            	
             }
@@ -54,30 +51,6 @@ if($this->connection)
         		echo 'not established';
         
     }
-    
-    public function update($table, $data, $criteria)
-    {
-        $query = "UPDATE $table SET ";
-        
-        $columns = [];
-        foreach($data as $column => $value) {
-            $columns[] = "$column = $value";
-        }
-        
-        $query .= implode(", ", $columns) . ")";
-        
-        if (!empty($criteria)) {
-            $query .= " WHERE $criteria";
-        }
-        
-        
-            $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-            mysqli_query($connection, $query) or die(mysqli_error($connection));
-            
-            return mysqli_insert_id($connection);
-        
-    }
-    
     public function select($table_name, $columns = "*", $criteria = null)
     {
     	echo "inside db select".$table_name; 
