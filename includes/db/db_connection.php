@@ -1,21 +1,20 @@
 <?php
 
-require __DIR__ .'../../config/conf.inc.php';
-echo "dir>>".__DIR__;
+require __DIR__ . '../../config/conf.inc.php';
 
-class DB_Connection {
+class DB_Conenction {
     
     protected $connection;
     
     public function connect()
     {
-        echo "digital ocean"; 
-
-            $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-            if($this->connection)
-            	echo "DB Connected";
-            else 
-            	echo "DB NOT Connected";
+        echo "inside db connect"; 
+    	if (APP_ENV == "local") {
+            $this->connection = mysql_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        } elseif (APP_ENV == "heroku") { echo 'heroku connect';
+        	$this->connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
+        }
+        
         return $this->connection;
    }
     
@@ -38,16 +37,21 @@ class DB_Connection {
         $query .= "(" . implode(", ", $columns) . ")";
         $query .= "VALUES(" . implode(", ", $values) . ")";
         
-
+        if (APP_ENV == "local") {
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_insert_id($connection);
+        } elseif (APP_ENV == "heroku") {echo "heroku vala";
+        	$connection = pg_connect("host=" . DB_HOST . " port=". DB_PORT. " dbname="  . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
         	if($connection)
         		echo "conn established";
         	else
         		echo 'not established';
-
+            $result = pg_query($connection, $query) or die(pg_errormessage($connection) . " $query");
+            
+            return pg_last_oid($result);
+        }
     }
     
     public function update($table, $data, $criteria)
@@ -65,15 +69,17 @@ class DB_Connection {
             $query .= " WHERE $criteria";
         }
         
-        
+        if (APP_ENV == "local") {
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_insert_id($connection);
-       
+        } elseif (APP_ENV == "heroku") {
+        	$connection = pg_connect("host=" . DB_HOST. " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
+            $result = pg_query($connection, $query);
             
             return $result;
-        
+        }
     }
     
     public function select($table_name, $columns = "*", $criteria = null)
@@ -85,12 +91,18 @@ class DB_Connection {
             $query .= " WHERE $criteria";
         }
         
-    
+        if (APP_ENV == "local") {
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_fetch_all($result);
+        } elseif (APP_ENV == "heroku") {
+        	$connection = pg_connect("host=" . DB_HOST. " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
+            $result = pg_query($connection, $query);
+            
+            return pg_fetch_all($result);
+        }
     }
-   
     
 }
+

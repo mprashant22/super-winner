@@ -3,7 +3,7 @@
 echo 'in stores';
 require 'db_connection.php';
 
-class Stores extends DB_Connection {
+class Stores extends DB_Conenction {
     
     private $table_name = "stores";
     
