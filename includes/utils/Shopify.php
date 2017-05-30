@@ -17,38 +17,31 @@ class Shopify {
         $this->_APP_SECRET = SHOPIFY_API_SECRET;
     }
     
-    public function exchangeTempTokenForPermanentToken($ShopifyURL, $TempCode)
-    {
+    function exchangeTempTokenForPermanentToken($shopifyUrl , $TempCode){
     	
-     	//echo '///////////// in shopify exchange temp///////////////';
-        // encode the data
-        $data = json_encode(array("client_id" => $this->_APP_KEY, "client_secret" => $this->_APP_SECRET, "code" => $TempCode));
-
-        // the curl url
-        $curl_url = "https://$ShopifyURL/admin/oauth/access_token";
-
-       return   $this->curlRequest($curl_url, null, $data);
-    }
-
-    public function validateMyShopifyName($shop) {
-        $subject = $shop;
-        $pattern = '/^(.*)?(\.myshopify\.com)$/';
-        preg_match($pattern, $subject, $matches);
-
-        return $matches[2] == '.myshopify.com';
-    }    
-
-    public function validateRequestOriginIsShopify($code, $shop, $timestamp, $signature) {
-        $get_params_string = 'code=' . $code . 'shop=' . $shop . 'timestamp=' . $timestamp . '';
-        $calculated_signature = md5(SHOPIFY_APP_PASSWORD . $calculated_signature);
-
-        if ($calculated_signature == $signature) {
-            return true;
-        } else if ($_GET["origin"] == 'shopify') {
-            return true;
-        } else {
-            return false;
-        }
+    	// encode the data
+    	$data = json_encode(array("client_id"=>$this->_APP_KEY , "client_secret"=>$this->_APP_SECRET , "code"=>$TempCode));
+    	
+    	//the curl url
+    	$curl_uri = "https://$shopifyUrl/admin/oauth/access_token";
+    	
+    	// set curl option
+    	
+    	$ch = curl_init();
+    	curl_setopt($ch,CURLOPT_URL , $curl_uri);
+    	curl_setopt($ch,CURLOPT_HEADER , false);
+    	curl_setopt($ch,CURLOPT_HTTPHEADER , array("Content-Type:application/json"));
+    	curl_setopt($ch,CURLOPT_POSTFIELDS , $data);
+    	curl_setopt($ch,CURLOPT_RETURNTRANSFER , 1);
+    	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER , false);
+    	
+    	// execute curl
+    	$response = json_decode(curl_exec($ch));
+    	
+    	// close curl
+    	curl_close($ch);
+    	
+    	return $response;
     }
     
     public function getAuthUrl($shop)
@@ -117,9 +110,9 @@ class Shopify {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-        if ($data) {
+        //if ($data) {
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        }
+        //}
 
         $output = curl_exec($ch); // Download the given URL, and return output
 
