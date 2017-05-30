@@ -53,7 +53,6 @@ class DB_Conenction {
         	else
         		echo 'not established';
         
-        }
     }
     
     public function update($table, $data, $criteria)
