@@ -9,8 +9,8 @@ $shop = $_REQUEST['shop'];
 echo "Shop=======".$shop;
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
 
-//echo ">>>>>>>>>>>>>code????????? ".$code;
-if ($shop && !$code) {
+echo ">>>>>>>>>>>>>code????????? ".$code;
+if ($shop && !$code) {echo 'lololol';
     // validate the shopify url
     if (!$Shopify->validateMyShopifyName($shop)) {
         echo "Invalid shopify url";
