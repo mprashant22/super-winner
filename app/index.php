@@ -8,6 +8,7 @@ echo '<h1 style="color:#FF00FF;">LAMPPPPPPPPP</h1>';
 echo "in   app  index";
 require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
+echo "DIRECTORY>>".__DIR__;
 
 $Shopify = new Shopify();
 //echo '$ shopify'.$Shopify;
@@ -17,11 +18,11 @@ $Stores = new Stores();
 $shop = $_GET['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
 
-echo "<pre>";
+//echo "<pre>";
 echo 'shop_info>>'.$shop_info;
-echo "</pre>";
+//echo "</pre>";
 
-//echo "access token is: " . $shop_info[0]['access_token'];
+echo "access token is: " . $shop_info[0]['access_token'];
 $products = $Shopify->get_products($shop, $shop_info[0]['access_token']);
 echo 'products>>'.$products;
 

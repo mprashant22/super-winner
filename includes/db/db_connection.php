@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '../../config/conf.inc.php';
+echo "dir>>".__DIR__;
 
 class DB_Conenction {
     
