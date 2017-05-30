@@ -41,7 +41,7 @@ class Shopify {
     	print_r($response);
     	// close curl
     	curl_close($ch);
-    	echo 'curl_exec>>'.curl_exec($ch);
+    	print_r(curl_exec($ch));
     	return curl_exec($ch);
     }
 
