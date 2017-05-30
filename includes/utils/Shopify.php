@@ -27,6 +27,7 @@ class Shopify {
     	// set curl option
     	
     	$ch = curl_init();
+    	echo 'ch==='.$ch;
     	curl_setopt($ch,CURLOPT_URL , $curl_uri);
     	curl_setopt($ch,CURLOPT_HEADER , false);
     	curl_setopt($ch,CURLOPT_HTTPHEADER , array("Content-Type:application/json"));
