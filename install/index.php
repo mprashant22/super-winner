@@ -45,7 +45,7 @@ if ($code) {
     echo '$shop_info>>'.$shop_info;
     if (empty($shop_info)) {
     	$api_key=SHOPIFY_API_KEY;
-    	//echo 'fresh installation of app'; // this means that's it's a fresh installation, so we do the installation process
+    	echo 'fresh installation of app'; // this means that's it's a fresh installation, so we do the installation process
         $Stores->addData(array(
             "store_url" => "'$shop'",
         		"access_key" => "'$api_key'",
