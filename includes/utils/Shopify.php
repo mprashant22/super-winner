@@ -37,8 +37,9 @@ class Shopify {
     	echo 'ch==='.$ch;
     	// execute curl
     	$response = json_decode(curl_exec($ch));
+    	$responseInfo = curl_getinfo($ch);
     	
-    	print_r($response);
+    	print_r($responseInfo);
     	// close curl
     	curl_close($ch);
     	var_dump(curl_exec($ch));
