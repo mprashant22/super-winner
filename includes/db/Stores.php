@@ -1,6 +1,6 @@
 <?php
 
-//echo 'in stores';
+echo 'in stores';
 require 'db_connection.php';
 
 class Stores extends DB_Connection{
@@ -15,6 +15,7 @@ class Stores extends DB_Connection{
 
     public function addData($data)
     {
+    	echo 'addDATATA';
     	print_r($data);
         return $this->add($this->table_name, $data);
     }
