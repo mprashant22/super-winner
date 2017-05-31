@@ -35,7 +35,7 @@ if ($code) {
     }
     
     $access_token = $exchange_token_response->access_token;
-    //echo 'AToken>>'.$access_token;
+    echo 'AToken>>'.$access_token;
     if (empty($access_token)) {
         echo "Invalid access token";
     }
