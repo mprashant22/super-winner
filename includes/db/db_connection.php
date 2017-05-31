@@ -12,7 +12,7 @@ class DB_Connection{
             $this->connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             if($this->connection)
             {
-            	echo 'CONNNNNECTED';            	
+            	echo 'CONNNNNECTED';
             }
             else {
             	echo 'NOPE NOT CONNECTED'. mysqli_connect_error();
@@ -60,17 +60,12 @@ class DB_Connection{
             $query .= " WHERE $criteria";
         }
         
-        if (APP_ENV == "local") {
+      
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
             
             return mysqli_fetch_all($result);
-        } elseif (APP_ENV == "heroku") {
-        	$connection = pg_connect("host=" . DB_HOST. " port=". DB_PORT. " dbname=" . DB_NAME . " user=" . DB_USER . " password=" . DB_PASS);
-            $result = pg_query($connection, $query);
-            
-            return pg_fetch_all($result);
-        }
+        
     }
     
 }
