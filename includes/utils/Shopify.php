@@ -37,10 +37,10 @@ class Shopify {
     	echo 'ch==='.$ch;
     	// execute curl
     	$response = json_decode(curl_exec($ch));
-    	$responseInfo = curl_getinfo($ch);
+//     	$responseInfo = curl_getinfo($ch);
     	
-    	
-//     	print_r($response);
+echo "india>>";    	
+     	print_r($response);
 //     	print_r($responseInfo);
     	// close curl
     	curl_close($ch);
