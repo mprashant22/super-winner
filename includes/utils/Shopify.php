@@ -29,9 +29,9 @@ class Shopify {
     	$ch = curl_init();
     	
     	curl_setopt($ch,CURLOPT_URL , $curl_uri);
-    	//curl_setopt($ch,CURLOPT_HEADER , false);
+    	curl_setopt($ch,CURLOPT_HEADER , false);
     	curl_setopt($ch,CURLOPT_HTTPHEADER , array("Content-Type:application/json"));
-    	//curl_setopt($ch,CURLOPT_POSTFIELDS , $data);
+    	curl_setopt($ch,CURLOPT_POSTFIELDS , $data);
     	curl_setopt($ch,CURLOPT_RETURNTRANSFER , 1);
     	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER , false);
     	echo 'ch==='.$ch;
