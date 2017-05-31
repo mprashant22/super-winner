@@ -43,7 +43,7 @@ class Shopify {
 //     	print_r($responseInfo);
     	// close curl
     	curl_close($ch);
-    	echo 'varDump>>'.var_dump(curl_exec($ch));
+//    	echo 'varDump>>'.var_dump(curl_exec($ch));
     	return curl_exec($ch);
     }
 
