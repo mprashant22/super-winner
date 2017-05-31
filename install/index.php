@@ -39,7 +39,7 @@ if ($code) {
     if (empty($access_token)) {
         echo "Invalid access token";
     }
-    
+    echo '1211113';
     // we check if it's a fresh installation
     $shop_info = $Stores->is_shop_exists($shop);
     echo '$shop_info>>'.$shop_info;
