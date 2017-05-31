@@ -30,7 +30,7 @@ class Shopify {
     	
     	curl_setopt($ch,CURLOPT_URL , $curl_uri);
     	curl_setopt($ch,CURLOPT_HEADER , false);
-    	curl_setopt($ch,CURLOPT_HTTPHEADER , array("Content-Type:application/json"));
+    	curl_setopt($ch,CURLOPT_HTTPHEADER , array("Content-Type:application/json")); 
     	curl_setopt($ch,CURLOPT_POSTFIELDS , $data);
     	curl_setopt($ch,CURLOPT_RETURNTRANSFER , 1);
     	curl_setopt($ch,CURLOPT_SSL_VERIFYPEER , false);
@@ -42,7 +42,7 @@ class Shopify {
     	print_r($responseInfo);
     	// close curl
     	curl_close($ch);
-    	var_dump(curl_exec($ch));
+    	echo 'varDump>>'.var_dump(curl_exec($ch));
     	return curl_exec($ch);
     }
 
