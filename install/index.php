@@ -42,7 +42,7 @@ if ($code) {
     
     // we check if it's a fresh installation
     $shop_info = $Stores->is_shop_exists($shop);
-    //echo '$shop_info>>'.$shop_info;
+    echo '$shop_info>>'.$shop_info;
     if (empty($shop_info)) {
     	$api_key=SHOPIFY_API_KEY;
     	//echo 'fresh installation of app'; // this means that's it's a fresh installation, so we do the installation process
