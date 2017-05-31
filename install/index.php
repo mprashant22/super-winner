@@ -25,7 +25,7 @@ if ($code) {
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
-print_r($exchange_token_response); 
+echo 'xx>>'.$exchange_token_response;
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
         // access token is not valid, redirect user to error page
