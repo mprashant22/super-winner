@@ -39,6 +39,7 @@ class Shopify {
     	$response = json_decode(curl_exec($ch));
     	$responseInfo = curl_getinfo($ch);
     	
+    	print_r('respOONSE'.$response);
     	print_r($responseInfo);
     	// close curl
     	curl_close($ch);
