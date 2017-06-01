@@ -1,7 +1,7 @@
 <link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
 
-<table>
+<table border=1>
   <tr>
     <th>Handle</th>
     <th>Title</th>
