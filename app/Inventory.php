@@ -33,6 +33,7 @@
   <option value="mercedes">Mercedes</option>
   <option value="audi">Audi</option>
 </select></td>
+	<td>Variant~SKU</td>
     <td>Units</td>
     <td>Price</td>
    </tr>
