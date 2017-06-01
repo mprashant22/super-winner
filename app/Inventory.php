@@ -21,9 +21,18 @@
   <option value="mercedes">Mercedes</option>
   <option value="audi">Audi</option>
 </select></td>
-    <td>Variant2</td>
-    <td>Variant3</td>
-    <td>Variant~SKU</td>
+    <td><select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select></td>
+    <td><select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select></td>
     <td>Units</td>
     <td>Price</td>
    </tr>
