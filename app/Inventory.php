@@ -59,8 +59,9 @@ class Inventory extends DB_Connection{
 	{
 		echo 'x';
 		if(isset($_POST['SUBMIT']))
-		{
+		{ echo 'y';
 			$fname = $_FILES['sel_file']['name'];
+			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			if(strtolower($chk_ext[1]) == "csv")
 			{
