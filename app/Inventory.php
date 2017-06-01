@@ -46,13 +46,16 @@
 echo 'in inventory';
 require '../includes/db/db_connection.php';
 
+$Inv = new Inventory();
+$Inv->exportExc2MySQL();
+
 class Inventory extends DB_Connection{
 	
 	private $table_name = "products";
 	
 	public function __construct()
 	{
-		//echo 'stores connect';
+		echo 'inventory connect';
 		$this->connect();
 	}
 

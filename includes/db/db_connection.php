@@ -1,5 +1,5 @@
 <?php
-
+echo 'in DBC';
 require __DIR__ . '../../config/conf.inc.php';
 
 class DB_Connection{
