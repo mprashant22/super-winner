@@ -12,6 +12,16 @@
     <th>Units</th>
     <th>Price</th>
    </tr>
+   <tr>
+    <td>Handle</td>
+    <td>Title</td>
+    <td>Variant1</td>
+    <td>Variant2</td>
+    <td>Variant3</td>
+    <td>Variant~SKU</td>
+    <td>Units</td>
+    <td>Price</td>
+   </tr>
     
    
 </table>
