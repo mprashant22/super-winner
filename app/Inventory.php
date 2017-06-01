@@ -43,7 +43,7 @@
 
 <?php
 
-echo 'in stores';
+echo 'in inventory';
 require '../includes/db/db_connection.php';
 
 class Inventory extends DB_Connection{
