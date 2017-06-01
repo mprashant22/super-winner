@@ -58,7 +58,7 @@ class Inventory extends DB_Connection{
 	public function exportExc2MySQL()
 	{
 		echo 'x';
-		if(isset($_POST['SUBMIT']))
+		if(isset($_POST['submit']))
 		{ echo 'y';
 			$fname = $_FILES['sel_file']['name'];
 			echo "file>>".$fname;
