@@ -64,12 +64,15 @@ class Inventory extends DB_Connection{
 			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			print_r($chk_ext);
+			$myfile = fopen("C:/xampp/htdocs/index.php", "r") or die("Unable to open file!");
+			echo fread($myfile,filesize("webdictionary.txt"));
 			if(strtolower($chk_ext[1]) == "php")
 			{		
 				$filename = $_FILES["file"]["name"];
 				echo 'file name>>'.$filename;
 				$handle = fopen("C:/xampp/htdocs/index.php", "r");
 				echo 'handle >>'.$handle;
+				
 				
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
