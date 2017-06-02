@@ -59,6 +59,7 @@ class Inventory extends DB_Connection{
 	{
 		echo 'x';
 		echo shell_exec("cd ..");
+		echo shell_exec("pwd");
 		echo shell_exec("cat temp.txt");
 		if(isset($_POST['submit']))
 		{ echo 'y';
