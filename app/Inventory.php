@@ -68,7 +68,7 @@ class Inventory extends DB_Connection{
 			{		
 				$filename = $_FILES["file"]["name"];
 				echo 'file name>>'.$filename;
-				$handle = fopen($filename, "r");
+				$handle = fopen("/root/products_export.csv", "r");
 				echo 'handle >>'.$handle;
 				
 				
