@@ -60,7 +60,7 @@ class Inventory extends DB_Connection{
 		echo 'x';
 		if(isset($_POST['submit']))
 		{ echo 'y';
-			$fname = $_FILES['sel_file']['products_export.csv'];
+			echo $fname = $_FILES['sel_file']['name'];
 			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			if(strtolower($chk_ext[1]) == "csv")
