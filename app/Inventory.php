@@ -99,7 +99,7 @@ $Inv = new Inventory();
 $Inv->exportExc2MySQL();
 ?>
 
-<form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post'>
+<form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
 Import File : <input type="file" name="sel_file">
 <input type="submit" name="submit" value="submit">
