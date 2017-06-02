@@ -60,13 +60,13 @@ class Inventory extends DB_Connection{
 		echo 'x';
 		if(isset($_POST['submit']))
 		{ echo 'y';
-			$fname = $_FILES["sel_file"]["name"];
+			$fname = $_FILES["file"]["name"];
 			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			print_r($chk_ext);
 			if(strtolower($chk_ext[0]) == "csv")
 			{		
-				$filename = $_FILES["sel_file"]["name"];
+				$filename = $_FILES["file"]["name"];
 				$handle = fopen($filename, "r");
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
@@ -100,7 +100,7 @@ $Inv->exportExc2MySQL();
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="file" name="sel_file">
+Import File : <input type="file" name="file">
 <input type="submit" name="submit" value="submit">
 
 </form>
