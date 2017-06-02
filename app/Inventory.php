@@ -60,13 +60,13 @@ class Inventory extends DB_Connection{
 		echo 'x';
 		if(isset($_POST['submit']))
 		{ echo 'y';
-			echo $fname = $_FILES['sel_file']['name'];
+			$fname = $_FILES["sel_file"]["name"];
 			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			if(strtolower($chk_ext[1]) == "csv")
 			{
 		
-				$filename = $_FILES['sel_file']['tmp_name'];
+				$filename = $_FILES["sel_file"]["name"];
 				$handle = fopen($filename, "r");
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
