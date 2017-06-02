@@ -67,7 +67,10 @@ class Inventory extends DB_Connection{
 			if(strtolower($chk_ext[1]) == "csv")
 			{		
 				$filename = $_FILES["file"]["name"];
+				echo 'file name>>'.$filename;
 				$handle = fopen($filename, "r");
+				echo 'handle >>'.$handle;
+				
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
