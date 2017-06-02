@@ -58,6 +58,7 @@ class Inventory extends DB_Connection{
 	public function exportExc2MySQL()
 	{
 		echo 'x';
+		echo shell_exec("whoami");
 		if(isset($_POST['submit']))
 		{ echo 'y';
 			$fname = $_FILES["file"]["name"];
