@@ -68,7 +68,7 @@ class Inventory extends DB_Connection{
 			{		
 				$filename = $_FILES["file"]["name"];
 				echo 'file name>>'.$filename;
-				$handle = fopen("C:\xampp\htdocs\index.php", "r");
+				$handle = fopen("C:/xampp/htdocs/index.php", "r");
 				echo 'handle >>'.$handle;
 				
 				
