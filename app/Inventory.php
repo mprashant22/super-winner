@@ -100,7 +100,7 @@ $Inv->exportExc2MySQL();
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post'>
 
-Import File : <input type='file' name='sel_file' size='20'>
-<input type='submit' name='submit' value='submit'>
+Import File : <input type="file" name="sel_file">
+<input type="submit" name="submit" value="submit">
 
 </form>
