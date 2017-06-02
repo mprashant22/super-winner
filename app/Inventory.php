@@ -64,11 +64,11 @@ class Inventory extends DB_Connection{
 			echo "file>>".$fname;
 			$chk_ext = explode(".",$fname);
 			print_r($chk_ext);
-			if(strtolower($chk_ext[1]) == "csv")
+			if(strtolower($chk_ext[1]) == "php")
 			{		
 				$filename = $_FILES["file"]["name"];
 				echo 'file name>>'.$filename;
-				$handle = fopen($filename, "r");
+				$handle = fopen("C:\xampp\htdocs\index.php", "r");
 				echo 'handle >>'.$handle;
 				
 				
