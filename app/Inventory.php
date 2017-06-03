@@ -74,12 +74,13 @@ class Inventory extends DB_Connection{
 			{		
 				$filename = $_FILES["file"]["name"];
 				echo 'file name>>'.$filename;
-				$handle = fopen('/var/www/html/shopifyDemoLamp/products_export3.csv', "r");
+				$handle = fopen('products_export3.csv', "r");
 				echo 'handle >>'.$handle;
 				
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
+					echo 'in while';
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor,Type,Tags,Published,Option1_Name,Option1_Value,
 							Option2_Name,Option2_Value,Option3_Name,Option3_Value,Variant_SKU,Variant_Grams,Variant_Inventory_Tracker,
 							Variant_Inventory_Qty,Variant_Inventory_Policy,Variant_Fulfillment_Service,Variant_Price,
