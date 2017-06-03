@@ -71,6 +71,7 @@ class Inventory extends DB_Connection{
 			chmod($filename, 0777);
 			$chk_ext = explode(".",$fname);
 			print_r($chk_ext);
+			echo 'ffff';
 			if(strtolower($chk_ext[1]) == "csv")
 			{		
 				$filename = $_FILES["file"]["name"];
