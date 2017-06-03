@@ -80,8 +80,8 @@ class Inventory extends DB_Connection{
 				echo 'handle >>'.$handle;
 				$row = 1;
 				
-				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
-				{
+				while (!feof($filename))
+				{$data = fgetcsv($handle, 1000, ",");
 					echo 'in while';
 					$num = count($data);
 				echo $num;
