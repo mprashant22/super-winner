@@ -48,11 +48,11 @@ require '../includes/db/db_connection.php';
 class Inventory extends DB_Connection{
 	
 	private $table_name = "products";
-	
+	protected $connection=null;
 	public function __construct()
 	{
 		echo 'inventory connect';
-		$this->connect();
+		$connection = $this->connect();
 	}
 
 	public function exportExc2MySQL()
