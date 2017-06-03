@@ -79,7 +79,7 @@ class Inventory extends DB_Connection{
 				$handle = fopen($filename, "r");
 				echo 'handle >>'.$handle;
 				$row = 1;
-				$data = fgetcsv($handle, 1000, ",")
+				$data = fgetcsv($handle);
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
 					echo 'in while';
