@@ -100,7 +100,7 @@ class Inventory extends DB_Connection{
 							Google_Shopping_AdWords_Labels,Google_Shopping_Condition,Google_Shopping_Custom_Product,
 							Google_Shopping_Custom_Label0,Google_Shopping_Custom_Label1,Google_Shopping_Custom_Label2,
 							Google_Shopping_Custom_Label3,Google_Shopping_Custom_Label4,Variant_Image,Variant_Weight_Unit,
-							Variant_Tax_Code) values". implode(", ", $data);
+							Variant_Tax_Code) values(". implode(", ", $data).")";
 					mysqli_query($sql) or die(mysqli_error($connection));
 				}
 				
