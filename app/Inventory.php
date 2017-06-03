@@ -78,7 +78,7 @@ class Inventory extends DB_Connection{
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");
 				echo 'handle >>'.$handle;
-				
+				$row = 1;
 				
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
@@ -86,6 +86,10 @@ class Inventory extends DB_Connection{
 					$num = count($data);
 				echo $num;
 					print_r($data);
+					$row++;
+					for ($c=0; $c < $num; $c++) {
+						echo $data[$c] . "<br />\n";
+					}
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor,Type,Tags,Published,Option1_Name,Option1_Value,
 							Option2_Name,Option2_Value,Option3_Name,Option3_Value,Variant_SKU,Variant_Grams,Variant_Inventory_Tracker,
 							Variant_Inventory_Qty,Variant_Inventory_Policy,Variant_Fulfillment_Service,Variant_Price,
