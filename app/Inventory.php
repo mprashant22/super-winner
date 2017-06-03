@@ -113,7 +113,7 @@ $Inv->exportExc2MySQL();
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="hidden" name="file">
+Import File : <input type="hidden" name="file" value="/var/www/html/shopifyDemoLamp/products_export3.csv">
 <input type="submit" name="submit" value="submit">
 
 </form>
