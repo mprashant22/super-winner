@@ -106,6 +106,7 @@ class Inventory extends DB_Connection{
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
+				echo "DATA">>implode(", ", $data);
 				fclose($handle);
 				echo "Successfully Imported";
 			//}
