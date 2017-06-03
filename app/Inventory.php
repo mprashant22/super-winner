@@ -53,7 +53,7 @@ class Inventory extends DB_Connection{
 	{
 		echo 'inventory connect';
 		$connection= $this->connect();
-		echo "connect>>".$connection; 
+		//echo "connect>>".$connection; 
 	}
 
 	public function exportExc2MySQL()
