@@ -84,7 +84,7 @@ class Inventory extends DB_Connection{
 				$data = fgetcsv($handle);
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
-					echo 'in while';
+					echo 'in while';echo "DATA">>implode(", ", $data);
 					$num = count($data);
 				echo $num;
 					print_r($data);
@@ -103,10 +103,11 @@ class Inventory extends DB_Connection{
 							Google_Shopping_Custom_Label0,Google_Shopping_Custom_Label1,Google_Shopping_Custom_Label2,
 							Google_Shopping_Custom_Label3,Google_Shopping_Custom_Label4,Variant_Image,Variant_Weight_Unit,
 							Variant_Tax_Code) values(". implode(", ", $data).")";
+					echo 'sql q>>'.$sql;
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
-				echo "DATA">>implode(", ", $data);
+				
 				fclose($handle);
 				echo "Successfully Imported";
 			//}
