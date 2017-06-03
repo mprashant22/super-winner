@@ -83,6 +83,7 @@ class Inventory extends DB_Connection{
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
 					echo 'in while';
+					print_r($data);
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor,Type,Tags,Published,Option1_Name,Option1_Value,
 							Option2_Name,Option2_Value,Option3_Name,Option3_Value,Variant_SKU,Variant_Grams,Variant_Inventory_Tracker,
 							Variant_Inventory_Qty,Variant_Inventory_Policy,Variant_Fulfillment_Service,Variant_Price,
