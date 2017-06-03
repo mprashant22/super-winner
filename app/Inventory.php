@@ -58,6 +58,7 @@ class Inventory extends DB_Connection{
 	public function exportExc2MySQL()
 	{
 		echo 'x';
+		echo "CONN>>".$connection;
 		echo shell_exec("cd ..");
 		echo shell_exec("pwd");
 		echo '<pre>'.`whoami 2>&1`.'</pre>';
