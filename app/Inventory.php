@@ -61,7 +61,7 @@ class Inventory extends DB_Connection{
 		echo shell_exec("cd ..");
 		echo shell_exec("pwd");
 		echo shell_exec("chmod 777 temp.txt");
-		echo shell_exec("cat temp.txt");
+		echo shell_exec("cat temp.txt 2>&1");
 		if(isset($_POST['submit']))
 		{ 
 			echo 'y';
