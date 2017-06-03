@@ -70,7 +70,7 @@ class Inventory extends DB_Connection{
 			//echo "file>>".$fname;
 			//chmod($filename, 0777);
 			//$chk_ext = explode(".",$fname);
-			print_r($chk_ext);
+			print_r($chk_ext);  
 		//	if(strtolower($chk_ext[1]) == "csv")
 		//	{		
 		$filename = "/var/www/html/shopifyDemoLamp/products_export3.csv";
