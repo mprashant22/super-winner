@@ -65,18 +65,17 @@ class Inventory extends DB_Connection{
 		echo '<pre>'.`cat temp.txt 2>&1`.'</pre>';
 		if(isset($_POST['submit']))
 		{ 
-			echo 'y';
-			$fname = $_FILES["file"]["name"];
-			echo "file>>".$fname;
-			chmod($filename, 0777);
-			$chk_ext = explode(".",$fname);echo 'explode??'; 
+			//echo 'y';
+			//$fname = $_FILES["file"]["name"];
+			//echo "file>>".$fname;
+			//chmod($filename, 0777);
+			//$chk_ext = explode(".",$fname);
 			print_r($chk_ext);
-			echo 'ffff';
-			if(strtolower($chk_ext[1]) == "csv")
-			{		
-				$filename = $_FILES["file"]["name"];
-				echo 'file name>>'.$filename;
-				chmod($filename, 0777);
+		//	if(strtolower($chk_ext[1]) == "csv")
+		//	{		
+		$filename = "/var/www/html/shopifyDemoLamp/products_export3.csv";
+				//echo 'file name>>'.$filename;
+				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");
 				echo 'handle >>'.$handle;
 				
@@ -99,11 +98,11 @@ class Inventory extends DB_Connection{
 		
 				fclose($handle);
 				echo "Successfully Imported";
-			}
-			else
-			{
-				echo "Invalid File";
-			}
+			//}
+			//else
+			//{
+				//echo "Invalid File";
+			//}
 		}
 	}
 }	
@@ -113,7 +112,7 @@ $Inv->exportExc2MySQL();
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="hidden" name="file" value="/var/www/html/shopifyDemoLamp/products_export3.csv">
+Import File : <input type="hidden" name="file" value="/root/products_export.csv">
 <input type="submit" name="submit" value="submit">
 
 </form>
