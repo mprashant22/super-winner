@@ -69,7 +69,7 @@ class Inventory extends DB_Connection{
 			$fname = $_FILES["file"]["name"];
 			echo "file>>".$fname;
 			chmod($filename, 0777);
-			$chk_ext = explode(".",$fname);echo 'explode??'.$chk_ext; 
+			$chk_ext = explode(".",$fname);echo 'explode??'; 
 			print_r($chk_ext);
 			echo 'ffff';
 			if(strtolower($chk_ext[1]) == "csv")
@@ -113,7 +113,7 @@ $Inv->exportExc2MySQL();
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="hidden" name="file" value="/root/products_export.csv">
+Import File : <input type="hidden" name="file">
 <input type="submit" name="submit" value="submit">
 
 </form>
