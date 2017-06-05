@@ -81,6 +81,10 @@ function exportExc2MySQL()
 				$data = fgetcsv($handle);
 				$data_val[] = $data;
 				print_r($data_val);
+				
+				$data = fgetcsv($handle);
+				$data_val1[] = $data;
+				print_r($data_val1);
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 // 				{
 // 					//$num = count($data);
