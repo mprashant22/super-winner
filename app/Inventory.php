@@ -78,7 +78,7 @@ function exportExc2MySQL()
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");	
-				$data = fgetcsv($handle);
+				//$data = fgetcsv($handle);
 				while(! feof($handle))
 				{
 					print_r(fgetcsv($handle));
@@ -100,7 +100,7 @@ function exportExc2MySQL()
 				//	$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
 				//	echo 'sql q>>'.$sql;
 					//mysqli_query($connection,$sql) or die(mysqli_error($connection));
-				}
+				//}
 				
 				
 				fclose($handle);
