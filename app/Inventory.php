@@ -78,30 +78,24 @@ function exportExc2MySQL()
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");				
-				$data = fgetcsv($handle, 1000, ",");
-				$data_val[] = $data;
-				print_r($data_val);
-				
-				$data = fgetcsv($handle, 1000, ",");
-				$data_val1[] = $data;
-				print_r($data_val1);
-// 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
-// 				{
-// 					//$num = count($data);
-// 		$data_val[] = $data;
-// 		print_r($data_val);
-// 		foreach($data_val[0] as $val){
-// 			echo $val;
-// 		}
-// // 					foreach ($data as $value){
-// // 						$values[] = "'$value'";
-// // 					}
-// 					//$query .= "(".implode(", ", $values).")";
-// 					//echo "<pre>".$query."</pre>";
-// 				//	$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
-// 				//	echo 'sql q>>'.$sql;
-// 					//mysqli_query($connection,$sql) or die(mysqli_error($connection));
-// 				}
+				$data = fgetcsv($handle);
+				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
+				{
+					//$num = count($data);
+		$data_val[] = $data;
+		print_r($data_val);
+		foreach($data_val[0] as $val){
+			echo $val;
+		}
+// 					foreach ($data as $value){
+// 						$values[] = "'$value'";
+// 					}
+					//$query .= "(".implode(", ", $values).")";
+					//echo "<pre>".$query."</pre>";
+				//	$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
+				//	echo 'sql q>>'.$sql;
+					//mysqli_query($connection,$sql) or die(mysqli_error($connection));
+				}
 				
 				
 				fclose($handle);
