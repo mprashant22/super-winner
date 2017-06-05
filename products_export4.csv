@@ -1,8 +1,8 @@
 Handle,Title,Body (HTML),Vendor
 boy,Boy,,newtest
-boy-1,Boy  10.00% Off Auto renew,"This product is for Recharge Subscriptions use  only, do not publish or delete this product. Customers will not see this message.",newtest
+boy-1,Boy  Off Auto renew,"This product is for Recharge Subscriptions use  only, do not publish or delete this product. Customers will not see this message.",newtest
 girl,Girl,,newtest
-girl-1,Girl  10.00% Off Auto renew,"This product is for Recharge Subscriptions use  only, do not publish or delete this product. Customers will not see this message.",newtest
+girl-1,Girl Off Auto renew,"This product is for Recharge Subscriptions use  only, do not publish or delete this product. Customers will not see this message.",newtest
 test-prod,test prod,,newtest
 test-prod-4,test prod  Auto renew,"This product is for Recharge Subscriptions use  only, do not publish or delete this product. Customers will not see this message.",newtest
 test-prod-1,test prod 1,,newtest
