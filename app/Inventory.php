@@ -83,7 +83,7 @@ function exportExc2MySQL()
 				{
 					//$num = count($data);
 		$data_val[] = $data;
-		//print_r($data_val);
+		print_r($data_val);
 		foreach($data_val[0] as $val){
 			echo $val;
 		}
