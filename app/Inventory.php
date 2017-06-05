@@ -99,9 +99,9 @@ function exportExc2MySQL()
 					}
 					$query .= "VALUES(".implode(", ", $values).")";
 					echo $query;
-// 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $values).")";
-// 					echo 'sql q>>'.$sql;
-// 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
+					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor)".$query;
+					echo 'sql q>>'.$sql;
+					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
 				
