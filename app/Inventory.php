@@ -97,7 +97,7 @@ function exportExc2MySQL()
 					foreach ($data as $value){
 						$values[] = "'$value'";
 					}
-					$query .= "(".implode(", ", $values).")";
+					$query .= "(".implode(", ", $values)."),";
 					echo $query;
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
 					echo 'sql q>>'.$sql;
