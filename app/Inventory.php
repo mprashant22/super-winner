@@ -93,7 +93,7 @@ function exportExc2MySQL()
 					}
 					echo $row;
 					echo 'implode >>'.implode(", ", $data);
-					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $data).")";
+					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", "$data").")";
 					echo 'sql q>>'.$sql;
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
