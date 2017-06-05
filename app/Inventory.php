@@ -78,7 +78,7 @@ function exportExc2MySQL()
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");	
-				//$data = fgetcsv($handle);
+				$data = fgetcsv($handle);
 				while(! feof($handle))
 				{
 					//print_r(fgetcsv($handle));
