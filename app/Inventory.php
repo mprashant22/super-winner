@@ -103,6 +103,7 @@ function exportExc2MySQL()
 					echo '<pre style="color:#FF0000">'.$db."</pre>";
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
 					echo $sql;
+					$db="";
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
