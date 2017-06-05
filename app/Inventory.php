@@ -85,7 +85,7 @@ function exportExc2MySQL()
 		$data_val[] = $data;
 		print_r($data_val);
 		foreach($data_val[0] as $val){
-			echo $val;
+			echo "<pre>".$val."</pre>";
 		}
 // 					foreach ($data as $value){
 // 						$values[] = "'$value'";
