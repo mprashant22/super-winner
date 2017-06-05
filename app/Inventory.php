@@ -75,7 +75,7 @@ class Inventory extends DB_Connection{
 			print_r($chk_ext);  
 		//	if(strtolower($chk_ext[1]) == "csv")
 		//	{		
-		$filename = "/var/www/html/shopifyDemoLamp/products_export3.csv";
+		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");
@@ -93,16 +93,7 @@ class Inventory extends DB_Connection{
 						echo $data[$c] . "<br />\n";
 					}
 					echo $row;
-					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor,Type,Tags,Published,Option1_Name,Option1_Value,
-							Option2_Name,Option2_Value,Option3_Name,Option3_Value,Variant_SKU,Variant_Grams,Variant_Inventory_Tracker,
-							Variant_Inventory_Qty,Variant_Inventory_Policy,Variant_Fulfillment_Service,Variant_Price,
-							Variant_Compare_At_Price,Variant_Requires_Shipping,Variant_Taxable,Variant_Barcode,Image_Src,
-							Image_Position,Image_Alt_Text,Gift_Card,SEO_Title,SEO_Description,Google_Shopping_Google_Product_Category,
-							Google_Shopping_Gender,Google_Shopping_Age_Group,Google_Shopping_MPN,Google_Shopping_AdWords_Grouping,
-							Google_Shopping_AdWords_Labels,Google_Shopping_Condition,Google_Shopping_Custom_Product,
-							Google_Shopping_Custom_Label0,Google_Shopping_Custom_Label1,Google_Shopping_Custom_Label2,
-							Google_Shopping_Custom_Label3,Google_Shopping_Custom_Label4,Variant_Image,Variant_Weight_Unit,
-							Variant_Tax_Code) values(". implode(", ", $data).")";
+					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $data).")";
 					echo 'sql q>>'.$sql;
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
