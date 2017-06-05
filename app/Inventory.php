@@ -99,6 +99,7 @@ function exportExc2MySQL()
 					{
 						echo $data[$i]."/";
 						$db.="'".$data[$i]."'";
+					}
 					
 				}
 				
