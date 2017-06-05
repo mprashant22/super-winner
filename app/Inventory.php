@@ -80,7 +80,7 @@ function exportExc2MySQL()
 				$handle = fopen($filename, "r");				
 				$data = fgetcsv($handle);
 				$data_val[] = $data;
-				print_r($sata_val);
+				print_r($data_val);
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 // 				{
 // 					//$num = count($data);
