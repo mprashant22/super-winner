@@ -92,8 +92,7 @@ function exportExc2MySQL()
 					$values=$data;
 // $query .= "(".implode(", ", $data).")";
 // echo $query;
-// $sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
-// echo $sql;
+
 
 					for ($i=0;$i<count($data);$i++)
 					{
@@ -102,6 +101,8 @@ function exportExc2MySQL()
 					}
 				
 					echo '<pre style="color:#FF0000">'.$db."</pre>";
+					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".$db.")";
+					echo $sql;
 				}
 				
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
