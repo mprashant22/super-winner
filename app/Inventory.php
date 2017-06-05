@@ -55,15 +55,14 @@ class Inventory extends DB_Connection{
 		$connection= $this->connect();
 		//echo "connect>>".$connection; 
 	}
-
-	public function exportExc2MySQL()
+function exportExc2MySQL()
 	{
 		echo 'x';
 		$connection= $this->connect();
 		echo shell_exec("cd ..");
 		echo shell_exec("pwd");
 		echo '<pre>'.`whoami 2>&1`.'</pre>';
-		echo '<pre>'.`cat /var/www/html/shopifyDemoLamp/products_export3.csv 2>&1`.'</pre>';
+	//	echo '<pre>'.`cat /var/www/html/shopifyDemoLamp/products_export3.csv 2>&1`.'</pre>';
 		echo '<pre>'.`cat temp.txt 2>&1`.'</pre>';
 		if(isset($_POST['submit']))
 		{ 
@@ -93,6 +92,7 @@ class Inventory extends DB_Connection{
 						echo $data[$c] . "<br />\n";
 					}
 					echo $row;
+					echo 'implode >>'.implode(", ", $data);
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $data).")";
 					echo 'sql q>>'.$sql;
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
