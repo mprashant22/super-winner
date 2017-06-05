@@ -84,8 +84,8 @@ function exportExc2MySQL()
 					//$num = count($data);
 		$data_val[] = $data;
 		//print_r($data_val);
-		foreach($data_val as $val){
-			echo $val;
+		foreach($data_val as $key=>$val){
+			echo $key."is".$val;
 		}
 // 					foreach ($data as $value){
 // 						$values[] = "'$value'";
