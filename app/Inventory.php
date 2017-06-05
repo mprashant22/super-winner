@@ -81,16 +81,17 @@ function exportExc2MySQL()
 				$data = fgetcsv($handle);
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
-					$num = count($data);
-			        echo "num>".$num;
-					foreach ($data as $value){
-						$values[] = "'$value'";
-					}
-					$query .= "(".implode(", ", $values).")";
-					echo "<pre>".$query."</pre>";
-					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
-					echo 'sql q>>'.$sql;
-					mysqli_query($connection,$sql) or die(mysqli_error($connection));
+					//$num = count($data);
+		$data_val[] = $data;
+		print_r($data_val);
+// 					foreach ($data as $value){
+// 						$values[] = "'$value'";
+// 					}
+					//$query .= "(".implode(", ", $values).")";
+					//echo "<pre>".$query."</pre>";
+				//	$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
+				//	echo 'sql q>>'.$sql;
+					//mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
 				
