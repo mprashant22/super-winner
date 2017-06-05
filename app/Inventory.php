@@ -83,11 +83,12 @@ function exportExc2MySQL()
 				{
 					//print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
-					foreach ($data as $value){
-						$values[] = "'$value'";
+					echo "<pre>prashant</pre>";
+// 					foreach ($data as $value){
+// 						$values[] = "'$value'";
 						//echo "<pre".$value."</pre>";
 					}
-					print_r($values);
+					print_r($data);
 				}
 				
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
