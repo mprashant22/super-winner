@@ -98,7 +98,7 @@ function exportExc2MySQL()
 					for ($i=0;$i<count($data);$i++)
 					{
 						echo $data[$i]."/";
-						$db.="'".$data[$i]."'";
+						$db.="'".$data[$i]."',";
 					}
 				
 					echo '<pre style="color:#FF0000">'.$db."</pre>";
