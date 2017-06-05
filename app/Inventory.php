@@ -95,11 +95,12 @@ function exportExc2MySQL()
 					echo $row;
 					//echo 'implode >>'.implode(", ", '$data');
 					foreach ($data as $value){
-						values[] = $value;
+						$values[] = $value;
 					}
-					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $values).")";
-					echo 'sql q>>'.$sql;
-					mysqli_query($connection,$sql) or die(mysqli_error($connection));
+					print_r($values);
+// 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(". implode(", ", $values).")";
+// 					echo 'sql q>>'.$sql;
+// 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 				}
 				
 				
