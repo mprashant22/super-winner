@@ -100,7 +100,8 @@ function exportExc2MySQL()
 						echo $data[$i]."/";
 						$db.="'".$data[$i]."'";
 					}
-					
+				
+					echo '<pre style="color:#FF0000">'.$db."</pre>";
 				}
 				
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
