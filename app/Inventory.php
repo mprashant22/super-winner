@@ -77,18 +77,17 @@ function exportExc2MySQL()
 		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
-				$handle = fopen($filename, "r");
-				$row = 1;
+				$handle = fopen($filename, "r");				
 				$data = fgetcsv($handle);
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
 					$num = count($data);
-			        //echo 'implode >>'.implode(", ", '$data');
+			        echo "num>".$num;
 					foreach ($data as $value){
 						$values[] = "'$value'";
 					}
 					$query .= "(".implode(", ", $values).")";
-					echo $query;
+					echo "<pre>".$query."</pre>";
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
 					echo 'sql q>>'.$sql;
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
