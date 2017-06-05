@@ -90,8 +90,10 @@ function exportExc2MySQL()
 					//}
 					$values=[];
 					$values=$data;
-					for ($i=0;$i<count($data);$i++)
-					echo "<pre>".$data[$i]."</pre>";
+$query .= "(".implode(", ", $data).")";
+$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
+// 					for ($i=0;$i<count($data);$i++)
+// 					echo "<pre>".$data[$i]."</pre>";
 				}
 				
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
