@@ -78,26 +78,16 @@ function exportExc2MySQL()
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");
-				$values = [];
-				echo 'handle >>'.$handle;
 				$row = 1;
 				$data = fgetcsv($handle);
 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
 				{
-					echo 'in while';echo "DATA">>implode(", ", $data);
 					$num = count($data);
-				echo $num;
-					print_r($data);
-					$row++;
-					for ($c=0; $c < $num; $c++) {
-						echo $data[$c] . "<br />\n";
-					}
-					echo $row;
-					//echo 'implode >>'.implode(", ", '$data');
+			        //echo 'implode >>'.implode(", ", '$data');
 					foreach ($data as $value){
 						$values[] = "'$value'";
 					}
-					$query .= "(".implode(", ", $values)."),";
+					$query .= "(".implode(", ", $values).")";
 					echo $query;
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values".$query;
 					echo 'sql q>>'.$sql;
