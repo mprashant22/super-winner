@@ -96,7 +96,7 @@ function exportExc2MySQL()
 // echo $sql;
 
 					for ($i=0;$i<count($data);$i++)
-					echo $data[$i];
+					echo $data[$i]."/";
 					
 				}
 				
