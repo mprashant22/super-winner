@@ -95,7 +95,7 @@ function exportExc2MySQL()
 					echo $row;
 					//echo 'implode >>'.implode(", ", '$data');
 					foreach ($data as $value){
-						$values[] = '$value';
+						$values[] = ".'$value'.";
 					}
 					$query .= "VALUES(".implode(", ", $values).")";
 					echo $query;
