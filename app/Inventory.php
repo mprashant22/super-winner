@@ -97,6 +97,7 @@ function exportExc2MySQL()
 					for ($i=0;$i<count($data);$i++)
 					{
 						echo $data[$i]."/";
+						mysqli_escape_string($connection, $data[$i]);
 						$db.="'".$data[$i]."',";
 					}
 				
@@ -105,6 +106,7 @@ function exportExc2MySQL()
 					echo $sql;
 					$db="";
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
+					
 				}
 				
 // 				while (($data = fgetcsv($handle, 1000, ",")) !== FALSE)
