@@ -83,6 +83,10 @@ function exportExc2MySQL()
 				$data = fgetcsv($handle);
 				while(! feof($handle))
 				{
+					if(feof($handle))
+					{
+						break;
+					}
 					//print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
 					echo "<pre>prashant</pre>";
