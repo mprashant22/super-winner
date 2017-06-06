@@ -97,8 +97,8 @@ function exportExc2MySQL()
 					for ($i=0;$i<count($data);$i++)
 					{
 						echo $data[$i]."/";
-						mysqli_escape_string($connection, $data[$i]);
-						$db.="'".$data[$i]."',";
+						$data1=mysqli_escape_string($connection, $data[$i]);
+						$db.="'".$data1."',";
 					}
 				
 					echo '<pre style="color:#FF0000">'.$db."</pre>";
