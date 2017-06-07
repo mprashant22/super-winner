@@ -144,8 +144,8 @@ function exportExc2MySQL()
 		}
 	}
 }	
-$Inv = new Inventory();
-$Inv->exportExc2MySQL();
+// $Inv = new Inventory();
+// $Inv->exportExc2MySQL();
 ?>
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
