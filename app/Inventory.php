@@ -44,7 +44,8 @@
 <?php
 
 echo 'in inventory';
-require '../includes/db/db_connection.php';
+//require '../includes/db/db_connection.php';
+require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class Inventory extends DB_Connection{
 	
 	private $table_name = "products";
