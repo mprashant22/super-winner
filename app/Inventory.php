@@ -77,7 +77,7 @@ function exportExc2MySQL()
 			print_r($chk_ext);  
 		//	if(strtolower($chk_ext[1]) == "csv")
 		//	{		
-		$filename = "/var/www/html/shopifyDemoLamp/products_export5.csv";
+		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
 				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");	
