@@ -1,5 +1,5 @@
 <?php
-//echo "in confffffffff";
+echo "in confffffffff";
 define("APP_ENV", "heroku");
 
 //if (APP_ENV == "local") {
