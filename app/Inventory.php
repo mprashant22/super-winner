@@ -67,8 +67,8 @@ function exportExc2MySQL()
 		//echo '<pre>'.`whoami 2>&1`.'</pre>';
 	//	echo '<pre>'.`cat /var/www/html/shopifyDemoLamp/products_export3.csv 2>&1`.'</pre>';
  		//echo '<pre>'.`cat temp.txt 2>&1`.'</pre>';
-		if(isset($_POST['submit']))
-		{ 
+// 		if(isset($_POST['submit']))
+// 		{ 
 			//echo 'y';
 			//$fname = $_FILES["file"]["name"];
 			//echo "file>>".$fname;
@@ -144,7 +144,7 @@ function exportExc2MySQL()
 			//}
 		}
 	}
-}	
+//}	
 // $Inv = new Inventory();
 // $Inv->exportExc2MySQL();
 ?>
