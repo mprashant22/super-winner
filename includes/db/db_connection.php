@@ -1,7 +1,8 @@
 <?php
 echo 'in DBC';
-require __DIR__ . '../../config/conf.inc.php';
+// require __DIR__ . '../../config/conf.inc.php';
 
+require __DIR__ . '/var/www/html/shopifyDemoLamp/includes/config/conf.inc.php';
 class DB_Connection{
     
     protected $connection;
