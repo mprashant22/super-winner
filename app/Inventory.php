@@ -52,18 +52,18 @@ class Inventory extends DB_Connection{
 	protected $connection=null;
 	public function __construct()
 	{
-		echo 'inventory connect';
+		//echo 'inventory connect';
 		$connection= $this->connect();
 		//echo "connect>>".$connection; 
 	}
 function exportExc2MySQL()
 	{
-		echo 'x';
+		//echo 'x';
 		$connection= $this->connect();
-		echo shell_exec("cd ..");
-		echo shell_exec("pwd");
+		//echo shell_exec("cd ..");
+		//echo shell_exec("pwd");
 		$cmd="cat /var/www/html/shopifyDemoLamp/temp.txt 2>&1";
-		echo shell_exec($cmd);
+		//echo shell_exec($cmd);
 		//echo '<pre>'.`whoami 2>&1`.'</pre>';
 	//	echo '<pre>'.`cat /var/www/html/shopifyDemoLamp/products_export3.csv 2>&1`.'</pre>';
  		//echo '<pre>'.`cat temp.txt 2>&1`.'</pre>';
@@ -90,7 +90,7 @@ function exportExc2MySQL()
 					}
 					//print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
-					echo "<pre>prashant</pre>";
+					//echo "<pre>prashant</pre>";
 // 					foreach ($data as $value){
 // 						$values[] = "'$value'";
 						//echo "<pre".$value."</pre>";
@@ -110,7 +110,7 @@ function exportExc2MySQL()
 				
 					echo '<pre style="color:#FF0000">'.$db."</pre>";
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-					echo $sql;
+					//echo $sql;
 					$db="";
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 					
