@@ -42,9 +42,9 @@
 <!-- </table> -->
 
 <form action="#" method="post">
-<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(checkbox)"><label>C/C++</label><br/>
-<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(checkbox)"><label>Java</label><br/>
-<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(checkbox)"><label>PHP</label><br/>
+<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
+<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
+<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
 <input type="submit" name="submit" value="Submit"/>
 </form>
 
