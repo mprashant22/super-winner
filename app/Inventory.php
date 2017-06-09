@@ -42,11 +42,32 @@
 <!-- </table> -->
 
 <form action="#" method="post">
-<input type="checkbox" name="check_list[]" value="C/C++"><label>C/C++</label><br/>
-<input type="checkbox" name="check_list[]" value="Java"><label>Java</label><br/>
-<input type="checkbox" name="check_list[]" value="PHP"><label>PHP</label><br/>
+<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(checkbox)"><label>C/C++</label><br/>
+<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(checkbox)"><label>Java</label><br/>
+<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(checkbox)"><label>PHP</label><br/>
 <input type="submit" name="submit" value="Submit"/>
 </form>
+
+<script type="text/javascript">
+function checkB(cb)
+{
+		alert("hellow");
+	    if($("input[type=checkbox]:checked"")
+    {
+     	<?php 
+     	echo "prashant";
+     	?>
+    }
+}
+</script>
+ function check(cb)
+  {
+      if($("input[type=checkbox]:checked"")
+      {
+        //my functionality and operations
+      }
+  }
+
 <?php
 if(isset($_POST['submit'])){//to run PHP script on submit
 if(!empty($_POST['check_list'])){
