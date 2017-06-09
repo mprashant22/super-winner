@@ -60,13 +60,7 @@ function checkB(cb)
     }
 }
 </script>
- function check(cb)
-  {
-      if($("input[type=checkbox]:checked"")
-      {
-        //my functionality and operations
-      }
-  }
+ 
 
 <?php
 if(isset($_POST['submit'])){//to run PHP script on submit
