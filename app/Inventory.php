@@ -54,16 +54,6 @@ function checkB(cb)
 		alert("hellow");
 	    if($("input[type=checkbox]:checked"")
     {
-     	<?php 
-     	echo "prashant";
-     	?>
-    }
-}
-</script>
- 
-
-<?php
-if(isset($_POST['submit'])){//to run PHP script on submit
 if(!empty($_POST['check_list'])){
 // Loop to store and display values of individual checked checkbox.
 foreach($_POST['check_list'] as $selected){
@@ -71,7 +61,19 @@ echo $selected."</br>";
 }
 }
 }
-?>
+</script>
+ 
+
+// <?php
+// if(isset($_POST['submit'])){//to run PHP script on submit
+// if(!empty($_POST['check_list'])){
+// // Loop to store and display values of individual checked checkbox.
+// foreach($_POST['check_list'] as $selected){
+// echo $selected."</br>";
+// }
+// }
+// }
+// ?>
 
 
 <?php
