@@ -1,57 +1,79 @@
-<!-- <form action="#" method="post" id="tbl"> -->
-<!-- <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>-->
-<!-- <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>-->
-<!-- <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>-->
-<!-- <button id="btn">submit</button> -->
-<!-- </form> -->
+<link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
 
-<form id="tbl">
-<input type="text" name="name">
-<button id="btn">submit</button>
+<!-- <table border=1> -->
+<!--   <tr> -->
+<!--     <th>Handle</th> -->
+<!--     <th>Title</th> -->
+<!--     <th>Variant1</th> -->
+<!--     <th>Variant2</th> -->
+<!--     <th>Variant3</th> -->
+<!--     <th>Variant~SKU</th> -->
+<!--     <th>Units</th> -->
+<!--     <th>Price</th> -->
+<!--    </tr> -->
+<!--    <tr> -->
+<!--     <td>Handle</td> -->
+<!--     <td>Title</td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!-- 	<td>Variant~SKU</td> -->
+<!--     <td>Units</td> -->
+<!--     <td>Price</td> -->
+<!--    </tr> -->
+    
+   
+<!-- </table> -->
+
+<form action="#" method="post">
+<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
+<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
+<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
+<input type="submit" name="submit" value="Submit"/>
 </form>
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
-<script  type="text/javascript">
-$(document).ready(function(){
-
-$("#btn").click(function(){
-
- var myform = document.getElementById("tbl");
-  var fd = new FormData(myform );
-  $.ajax({
-     url: "Inventory.php",
-      data: fd,
-      cache: false,
-      processData: false,
-      contentType: false,
-      type: 'POST',
-      success: function (dataofconfirm) {
-         $("#demo").text("jkdhilahg");
-         alert(dataofconfirm);
-      }
-  });
-});
-
-});
-
+<script type="text/javascript">
+function checkB(cb)
+{
+		alert("hellow");
+	    if($("input[type=checkbox]:checked"")
+    {
+			if(!empty($_POST['check_list'])){
+				<?php echo "prashant"?>
+// Loop to store and display values of individual checked checkbox.
+			foreach($_POST['check_list'] as $selected){
+			echo $selected."</br>";
+}
+}
+}
 </script>
-
-<div id="demo">
-  ranjeet
-</div>
+ 
 
  <?php
-// if(isset($_POST['submit'])){//to run PHP script on submit
-// if(!empty($_POST['check_list'])){
-// // Loop to store and display values of individual checked checkbox.
-// foreach($_POST['check_list'] as $selected){
-// echo $selected."</br>";
-// }
-// }
-// }
+if(isset($_POST['submit'])){//to run PHP script on submit
+if(!empty($_POST['check_list'])){
+// Loop to store and display values of individual checked checkbox.
+foreach($_POST['check_list'] as $selected){
+echo $selected."</br>";
+}
+}
+}
 ?>
 
 
@@ -165,7 +187,7 @@ function exportExc2MySQL()
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-<!-- Import File : <input type="hidden" name="file" value="/root/products_export.csv"> -->
-<!-- <input type="submit" name="submit" value="submit"> -->
+Import File : <input type="hidden" name="file" value="/root/products_export.csv">
+<input type="submit" name="submit" value="submit">
 
 </form>
