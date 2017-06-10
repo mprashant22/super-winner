@@ -43,8 +43,8 @@
 
 <form action="#" method="post">
 <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB()"><label>C/C++</label><br/>
-<!-- <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this.value)"><label>Java</label><br/>-->
-<!-- <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this.value)"><label>PHP</label><br/>-->
+<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this.value)"><label>Java</label><br/>
+<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this.value)"><label>PHP</label><br/>
 <input type="submit" name="submit" value="Submit"/>
 </form>
 
@@ -52,27 +52,27 @@
 <script type="text/javascript">
 function checkB()
 {
-	 var x = document.getElementById('myDIV');
-	    if ($("input[type=checkbox]:checked"") {
-	        x.style.display = 'block';
-	    } else {
-	        x.style.display = 'none';
-	    }
+// 	 var x = document.getElementById('myDIV');
+// 	    if ($("input[type=checkbox]:checked"") {
+// 	        x.style.display = 'block';
+// 	    } else {
+// 	        x.style.display = 'none';
+// 	    }
 	
 		//alert("hellow");
-//  	    if($("input[type=checkbox]:checked"")
-//      	{
-//  			if(!empty($_POST['check_list']))
-//  			{
+ 	    if($("input[type=checkbox]:checked"")
+     	{
+ 			if(!empty($_POST['check_list']))
+ 			{
 			
-//   Loop to store and display values of individual checked checkbox.
-//  				foreach($_POST['check_list'] as $selected)
-//  				{
-//  					echo $selected."</br>";
-//  				}
-//  			}
+ // Loop to store and display values of individual checked checkbox.
+ 				foreach($_POST['check_list'] as $selected)
+ 				{
+ 					echo $selected."</br>";
+ 				}
+ 			}
 			
-//      	}
+     	}
 
  }
 </script>
