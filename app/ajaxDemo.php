@@ -14,6 +14,7 @@
 
 <script>
 function showHint(str) {
+	alert("hellow");
   var xhttp;
   if (str.length == 0) { 
     document.getElementById("txtHint").innerHTML = "";
