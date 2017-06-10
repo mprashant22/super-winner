@@ -57,7 +57,7 @@ function checkB(cb)
 {
 	alert("hellow");
 	var txt = document.getElementById(cb.id.replace('chk', 'txt'));
-    if(el.checked) {
+    if(cb.checked) {
       txt.value = 'checked';
     }else{
       txt.value = 'unchecked';
