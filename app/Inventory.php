@@ -37,14 +37,14 @@ $("#btn").click(function(){
 </div>
 
  <?php
-if(isset($_POST['submit'])){//to run PHP script on submit
-if(!empty($_POST['check_list'])){
-// Loop to store and display values of individual checked checkbox.
-foreach($_POST['check_list'] as $selected){
-echo $selected."</br>";
-}
-}
-}
+// if(isset($_POST['submit'])){//to run PHP script on submit
+// if(!empty($_POST['check_list'])){
+// // Loop to store and display values of individual checked checkbox.
+// foreach($_POST['check_list'] as $selected){
+// echo $selected."</br>";
+// }
+// }
+// }
 ?>
 
 
@@ -158,7 +158,7 @@ function exportExc2MySQL()
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="hidden" name="file" value="/root/products_export.csv">
-<input type="submit" name="submit" value="submit">
+<!-- Import File : <input type="hidden" name="file" value="/root/products_export.csv"> -->
+<!-- <input type="submit" name="submit" value="submit"> -->
 
 </form>
