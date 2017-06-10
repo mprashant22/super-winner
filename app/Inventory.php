@@ -42,47 +42,30 @@
 <!-- </table> -->
 
 <form action="#" method="post">
-<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this.value)"><label>C/C++</label><br/>
-<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this.value)"><label>Java</label><br/>
-<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this.value)"><label>PHP</label><br/>
+<input type="checkbox" id="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
+<input type="checkbox" id="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
+<input type="checkbox" id="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
 <!-- <input type="submit" name="submit" value="Submit"/> -->
 </form>
+
+
+
 
 
 <script type="text/javascript">
 function checkB(cb)
 {
-// 	 var x = document.getElementById('myDIV');
-// 	    if ($("input[type=checkbox]:checked"") {
-// 	        x.style.display = 'block';
-// 	    } else {
-// 	        x.style.display = 'none';
-// 	    }
-	
-		alert("hellow");
-		
-//  	    if($("input[type=checkbox]:checked")
-//      	{
-//  			if(!empty($_POST['check_list']))
-//  			{
-			
-//  // Loop to store and display values of individual checked checkbox.
-//  				foreach($_POST['check_list'] as $selected)
-//  				{
- 					<?php echo "MATHUR".$selected."</br>";?>
-//  				}
-//  			}
-			
-//      	}
-
- }
+	alert("hellow");
+	var txt = document.getElementById(cb.id.replace('chk', 'txt'));
+    if(el.checked) {
+      txt.value = 'checked';
+    }else{
+      txt.value = 'unchecked';
+    }
+}
 </script>
 
-<div id="myDIV" style="background-color: lightblue;">
-This is my DIV element.
-</div>
-
- <?php
+<?php
 //if(isset($_POST['submit'])){//to run PHP script on submit
 if(!empty($_POST['check_list'])){
 // Loop to store and display values of individual checked checkbox.
