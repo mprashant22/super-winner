@@ -41,29 +41,63 @@
    
 <!-- </table> -->
 
-<form action="#" method="post">
+<form action="#" method="post" id="tbl">
 <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
 <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
 <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
-<input type="submit" name="submit" value="Submit"/>
+<button id="btn"></button>
 </form>
 
-<script type="text/javascript">
-function checkB(cb)
-{
-		alert("hellow");
-	    if($("input[type=checkbox]:checked"")
-    {
-			if(!empty($_POST['check_list'])){
+<!-- <script type="text/javascript"> -->
+//  function checkB(cb)
+//  {
+//  		alert("hellow");
+//  	    if($("input[type=checkbox]:checked"")
+//      {
+//  			if(!empty($_POST['check_list'])){
 				<?php echo "prashant"?>
 // Loop to store and display values of individual checked checkbox.
-			foreach($_POST['check_list'] as $selected){
-			echo $selected."</br>";
-}
-}
-}
-</script>
+//  			foreach($_POST['check_list'] as $selected){
+//  			echo $selected."</br>";
+//  }
+//  }
+//  }
+<!-- </script> -->
+
+
+
+
+
+
+
+
  
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("ok");
+$("#btn").click(function(){
+var myform = document.getElementById("tbl");
+ var fd = new FormData(myform );
+ $.ajax({
+    url: "Inventory.php",
+     data: fd,
+     cache: false,
+     processData: false,
+     contentType: false,
+     type: 'POST',
+     success: function (dataofconfirm) {
+        $("#demo").text("jkdhilahg");
+     }
+ });
+});
+
+});
+
+</script>
+
+<div id="demo">
+  ranjeet
+</div>
 
  <?php
 if(isset($_POST['submit'])){//to run PHP script on submit
