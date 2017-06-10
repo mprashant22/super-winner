@@ -71,24 +71,28 @@
 
 
 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
+<script  type="text/javascript">
 $(document).ready(function(){
-	alert("ok");
+
 $("#btn").click(function(){
-var myform = document.getElementById("tbl");
- var fd = new FormData(myform );
- $.ajax({
-    url: "Inventory.php",
-     data: fd,
-     cache: false,
-     processData: false,
-     contentType: false,
-     type: 'POST',
-     success: function (dataofconfirm) {
-        $("#demo").text("jkdhilahg");
-     }
- });
+
+	alert("ok");
+
+// var myform = document.getElementById("tbl");
+//  var fd = new FormData(myform );
+//  $.ajax({
+//     url: "Inventory.php",
+//      data: fd,
+//      cache: false,
+//      processData: false,
+//      contentType: false,
+//      type: 'POST',
+//      success: function (dataofconfirm) {
+//         $("#demo").text("jkdhilahg");
+//      }
+//  });
 });
 
 });
