@@ -6,7 +6,8 @@
 <h3>Start typing a name in the input field below:</h3>
 
 <form action=""> 
-some text <input type="text" id="txt1" onkeyup="showHint(this.value)">
+<input type="checkbox" name="check_list[]" value="C/C++" onchange="showHint(this.value)"><label>C/C++</label><br/>
+<!-- some text <input type="text" id="txt1" onkeyup="showHint(this.value)">-->
 </form>
 
 <p>Suggestions: <span id="txtHint"></span></p> 
