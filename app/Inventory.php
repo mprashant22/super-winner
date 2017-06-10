@@ -48,7 +48,37 @@
 <input type="submit" name="submit" value="Submit"/>
 </form>
 
+<input type="checkbox" id="checker">
+    
+    <div id="dependent-box">
+        Show me when checked!
+    </div>
+
+
+
+
+
+
 <script type="text/javascript">
+
+$(document).ready(function () {
+	alert("okayyyyy");
+    var checkbox = $('#checker'); 
+    var dependent = $('#dependent-box');
+    if (checkbox.attr('checked') !== undefined){
+       dependent.show();
+    } else {
+        dependent.hide();
+    }
+    
+    checkbox.change(function(e){
+       dependent.toggle(); 
+    });
+}); 
+
+
+
+
 function checkB(cb)
 {
 		alert("hellow");
