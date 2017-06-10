@@ -59,21 +59,21 @@ function checkB(cb)
 // 	        x.style.display = 'none';
 // 	    }
 	
-		//alert("hellow");
+		alert("hellow");
 		
- 	    if($("input[type=checkbox]:checked")
-     	{
- 			if(!empty($_POST['check_list']))
- 			{
+//  	    if($("input[type=checkbox]:checked")
+//      	{
+//  			if(!empty($_POST['check_list']))
+//  			{
 			
- // Loop to store and display values of individual checked checkbox.
- 				foreach($_POST['check_list'] as $selected)
- 				{
+//  // Loop to store and display values of individual checked checkbox.
+//  				foreach($_POST['check_list'] as $selected)
+//  				{
  					<?php echo "MATHUR".$selected."</br>";?>
- 				}
- 			}
+//  				}
+//  			}
 			
-     	}
+//      	}
 
  }
 </script>
