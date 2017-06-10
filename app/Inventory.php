@@ -56,11 +56,11 @@
 function checkB(cb)
 {
 	alert("hellow");
-	var txt = document.getElementById(cb.id.replace('chk', 'txt'));
-    if(cb.checked) {
-      txt.value = 'checked';
+	var txt = document.getElementById('check_list');
+    if(cb.checked) {        
+      cb.value = 'checked';
     }else{
-      txt.value = 'unchecked';
+      cb.value = 'unchecked';
     }
 }
 </script>
