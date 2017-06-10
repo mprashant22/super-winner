@@ -54,12 +54,18 @@ function checkB(cb)
 		alert("hellow");
 	    if($("input[type=checkbox]:checked"")
     	{
-			//if(!empty($_POST['check_list'])){
+			if(!empty($_POST['check_list']))
+			{
 			
 // Loop to store and display values of individual checked checkbox.
-			foreach($_POST['check_list'] as $selected){
-			echo $selected."</br>";
-		}
+				foreach($_POST['check_list'] as $selected)
+				{
+					echo $selected."</br>";
+				}
+			}
+			
+    	}
+
 }
 </script>
  
