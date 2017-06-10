@@ -17,7 +17,7 @@ $("#btn").click(function(){
  var myform = document.getElementById("tbl");
   var fd = new FormData(myform );
   $.ajax({
-     url: "Inventory.php",
+     url: "Inventory_Stores.php",
       data: fd,
       cache: false,
       processData: false,
