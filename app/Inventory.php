@@ -68,7 +68,7 @@ function checkB(cb)
  // Loop to store and display values of individual checked checkbox.
  				foreach($_POST['check_list'] as $selected)
  				{
- 					echo $selected."</br>";
+ 					<?php echo $selected."</br>";?>
  				}
  			}
 			
