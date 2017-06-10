@@ -45,7 +45,7 @@
 <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
 <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
 <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
-<button id="btn"></button>
+<button id="btn" value="Submit"></button>
 </form>
 
 <!-- <script type="text/javascript"> -->
