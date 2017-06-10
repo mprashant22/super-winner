@@ -37,5 +37,8 @@ $("#btn").click(function(){
 <div id="demo">
   ranjeet
 </div>
+<?php 
+echo $_POST["name"];
+?>
 
 
