@@ -60,7 +60,8 @@ function checkB(cb)
 // 	    }
 	
 		//alert("hellow");
- 	    if($("input[type=checkbox]:checked"")
+		
+ 	    if($("input[type=checkbox]:checked")
      	{
  			if(!empty($_POST['check_list']))
  			{
