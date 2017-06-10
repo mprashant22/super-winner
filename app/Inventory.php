@@ -1,9 +1,16 @@
-<form action="#" method="post" id="tbl">
-<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
-<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
-<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
+<!-- <form action="#" method="post" id="tbl"> -->
+<!-- <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>-->
+<!-- <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>-->
+<!-- <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>-->
+<!-- <button id="btn">submit</button> -->
+<!-- </form> -->
+
+<form id="tbl">
+<input type="text" name="name">
 <button id="btn">submit</button>
 </form>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
