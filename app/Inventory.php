@@ -48,57 +48,38 @@
 <input type="submit" name="submit" value="Submit"/>
 </form>
 
-<input type="checkbox" id="checker">
-    
-    <div id="dependent-box">
-        Show me when checked!
-    </div>
 
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
-
-$(document).ready(function () {
-	alert("okayyyyy");
-    var checkbox = $('#checker'); 
-    var dependent = $('#dependent-box');
-    if (checkbox.attr('checked') !== undefined){
-       dependent.show();
-    } else {
-        dependent.hide();
-    }
-    
-    checkbox.change(function(e){
-       dependent.toggle(); 
-    });
-}); 
-
-
-
-
-// function checkB(cb)
-// {
-// 		alert("hellow");
-// 	    if($("input[type=checkbox]:checked"")
-//     	{
-// 			if(!empty($_POST['check_list']))
-// 			{
+<script type="text/javascript">
+function checkB(cb)
+{
+	 var x = document.getElementById('myDIV');
+	    if (x.style.display === 'none') {
+	        x.style.display = 'block';
+	    } else {
+	        x.style.display = 'none';
+	    }
+	
+		alert("hellow");
+ 	    if($("input[type=checkbox]:checked"")
+     	{
+ 			if(!empty($_POST['check_list']))
+ 			{
 			
-// // Loop to store and display values of individual checked checkbox.
-// 				foreach($_POST['check_list'] as $selected)
-// 				{
-// 					echo $selected."</br>";
-// 				}
-// 			}
+  Loop to store and display values of individual checked checkbox.
+ 				foreach($_POST['check_list'] as $selected)
+ 				{
+ 					echo $selected."</br>";
+ 				}
+ 			}
 			
-//     	}
+     	}
 
-// }
+ }
 </script>
- 
+
+<div id="myDIV">
+This is my DIV element.
+</div>
 
  <?php
 //if(isset($_POST['submit'])){//to run PHP script on submit
