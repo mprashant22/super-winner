@@ -53,7 +53,7 @@
 function checkB()
 {
 	 var x = document.getElementById('myDIV');
-	    if (x.style.display === 'none') {
+	    if ($("input[type=checkbox]:checked"") {
 	        x.style.display = 'block';
 	    } else {
 	        x.style.display = 'none';
