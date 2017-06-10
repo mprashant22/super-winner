@@ -37,7 +37,7 @@ $("#btn").click(function(){
 <?php 
 if(!empty($_POST['name']))
 {
-	echo 'empty';	
+	echo 'not empty';	
 }
 else {
 	echo 'empty';
