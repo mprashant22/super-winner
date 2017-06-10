@@ -78,21 +78,22 @@ $(document).ready(function(){
 
 $("#btn").click(function(){
 
-	alert("ok");
+	
 
-// var myform = document.getElementById("tbl");
-//  var fd = new FormData(myform );
-//  $.ajax({
-//     url: "Inventory.php",
-//      data: fd,
-//      cache: false,
-//      processData: false,
-//      contentType: false,
-//      type: 'POST',
-//      success: function (dataofconfirm) {
-//         $("#demo").text("jkdhilahg");
-//      }
-//  });
+ var myform = document.getElementById("tbl");
+  var fd = new FormData(myform );
+  $.ajax({
+     url: "Inventory.php",
+      data: fd,
+      cache: false,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      success: function (dataofconfirm) {
+         $("#demo").text("jkdhilahg");
+         alert(dataofconfirm);
+      }
+  });
 });
 
 });
