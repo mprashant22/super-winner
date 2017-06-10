@@ -1,84 +1,16 @@
-<link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
-
-<!-- <table border=1> -->
-<!--   <tr> -->
-<!--     <th>Handle</th> -->
-<!--     <th>Title</th> -->
-<!--     <th>Variant1</th> -->
-<!--     <th>Variant2</th> -->
-<!--     <th>Variant3</th> -->
-<!--     <th>Variant~SKU</th> -->
-<!--     <th>Units</th> -->
-<!--     <th>Price</th> -->
-<!--    </tr> -->
-<!--    <tr> -->
-<!--     <td>Handle</td> -->
-<!--     <td>Title</td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!-- 	<td>Variant~SKU</td> -->
-<!--     <td>Units</td> -->
-<!--     <td>Price</td> -->
-<!--    </tr> -->
-    
-   
-<!-- </table> -->
-
 <form action="#" method="post" id="tbl">
 <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
 <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
 <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
-<button id="btn" name= "Submit" value="Submit">uyhu</button>
+<button id="btn">submit</button>
 </form>
 
-<!-- <script type="text/javascript"> -->
-<!--   function checkB(cb) -->
-<!--   { -->
-<!--   		alert("hellow"); -->
-<!--   	    if($("input[type=checkbox]:checked"") -->
-<!--       { -->
-<!--   			if(!empty($_POST['check_list'])){ -->
-			
-<!--  Loop to store and display values of individual checked checkbox. -->
-<!--   			foreach($_POST['check_list'] as $selected){ -->
-<!--   			echo $selected."</br>"; -->
-<!--   } -->
-<!--   } -->
-<!--   } -->
-<!-- </script> -->
-
-
-
-
-
-
-
-
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
  
 <script  type="text/javascript">
 $(document).ready(function(){
 
 $("#btn").click(function(){
-
-	
 
  var myform = document.getElementById("tbl");
   var fd = new FormData(myform );
