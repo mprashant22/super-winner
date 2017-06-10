@@ -52,14 +52,14 @@
 function checkB(cb)
 {
 		alert("hellow");
-	    if($("input[type=checkbox]:checked"")
-    	{
+	   // if($("input[type=checkbox]:checked"")
+    	//{
 			//if(!empty($_POST['check_list'])){
-				<?php echo "prashant"?>
+			
 // Loop to store and display values of individual checked checkbox.
 			//foreach($_POST['check_list'] as $selected){
 			//echo $selected."</br>";
-		}
+		//}
 }
 </script>
  
