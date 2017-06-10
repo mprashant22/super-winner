@@ -45,7 +45,7 @@
 <input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this)"><label>C/C++</label><br/>
 <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this)"><label>Java</label><br/>
 <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this)"><label>PHP</label><br/>
-<button id="btn" name= "Submit" value="Submit"></button>
+<button id="btn" name= "Submit" value="Submit">uyhu</button>
 </form>
 
 <!-- <script type="text/javascript"> -->
@@ -72,7 +72,7 @@
 
 
  
-<script type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
 $(document).ready(function(){
 	alert("ok");
 $("#btn").click(function(){
