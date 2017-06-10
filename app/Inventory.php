@@ -42,15 +42,15 @@
 <!-- </table> -->
 
 <form action="#" method="post">
-<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB(this.value)"><label>C/C++</label><br/>
-<input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this.value)"><label>Java</label><br/>
-<input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this.value)"><label>PHP</label><br/>
+<input type="checkbox" name="check_list[]" value="C/C++" onclick="checkB()"><label>C/C++</label><br/>
+<!-- <input type="checkbox" name="check_list[]" value="Java" onclick="checkB(this.value)"><label>Java</label><br/>-->
+<!-- <input type="checkbox" name="check_list[]" value="PHP" onclick="checkB(this.value)"><label>PHP</label><br/>-->
 <input type="submit" name="submit" value="Submit"/>
 </form>
 
 
 <script type="text/javascript">
-function checkB(cb)
+function checkB()
 {
 	 var x = document.getElementById('myDIV');
 	    if (x.style.display === 'none') {
@@ -77,7 +77,7 @@ function checkB(cb)
  }
 </script>
 
-<div id="myDIV">
+<div id="myDIV" style="background-color: lightblue;">
 This is my DIV element.
 </div>
 
