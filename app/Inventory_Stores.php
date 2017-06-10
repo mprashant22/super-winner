@@ -1,15 +1,10 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <form id="tbl">
 <input type="text" name="name">
 <button id="btn">submit</button>
 </form>
 
 
-
-
- 
-<script  type="text/javascript">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript">
 $(document).ready(function(){
 
 $("#btn").click(function(){
@@ -24,8 +19,9 @@ $("#btn").click(function(){
       contentType: false,
       type: 'POST',
       success: function (dataofconfirm) {
-         $("#demo").text("jkdhilahg");
-         alert(dataofconfirm);
+    	  alert(dataofconfirm);
+          $("#demo").text("jkdhilahg");
+         
       }
   });
 });
@@ -37,8 +33,14 @@ $("#btn").click(function(){
 <div id="demo">
   ranjeet
 </div>
+
 <?php 
-echo $_POST["name"];
+if(!empty($_POST['name']))
+{
+	echo 'empty';	
+}
+else {
+	echo 'empty';
+}
+
 ?>
-
-
