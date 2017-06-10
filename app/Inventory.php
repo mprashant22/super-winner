@@ -55,12 +55,12 @@
 <script type="text/javascript">
 function checkB(cb)
 {
-	alert("hellow");
+	//alert("hellow");
 	var txt = document.getElementById('check_list');
     if(cb.checked) {        
-      cb.value = 'checked';
+      <?php echo cb.value ?>;
     }else{
-      cb.value = 'unchecked';
+    	<?php echo 'not'.cb.value ?>;
     }
 }
 </script>
