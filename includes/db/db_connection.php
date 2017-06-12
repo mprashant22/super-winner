@@ -24,7 +24,7 @@ class DB_Connection{
     
     public function add($table, $data)
     {
-    	echo "inside db add"; 
+    	//echo "inside db add"; 
     	$query = "INSERT INTO $table ";
         
         $columns = [];
@@ -33,8 +33,8 @@ class DB_Connection{
             $columns[] = $column;
             $values[] = $value;
             
-            echo 'col:'.$column;
-            echo 'val:'.$value;
+            //echo 'col:'.$column;
+            //echo 'val:'.$value;
             
         }
         
@@ -54,7 +54,7 @@ class DB_Connection{
     }
     public function select($table_name, $columns = "*", $criteria = null)
     {
-    	echo "inside db select".$table_name; 
+    	//echo "inside db select".$table_name; 
     	$query = "SELECT $columns FROM $table_name";
         
         if (!empty($criteria)) {
