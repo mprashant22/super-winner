@@ -14,8 +14,8 @@ $conn = mysqli_connect($host, $username, $password,$dbname);
 <body>
 
 <form id="myform">
-<input type="checkbox" name="ckecklist[]" value="store1">
-<input type="checkbox" name="ckecklist[]" value="store2">
+<input type="checkbox" name="checklist[]" value="store">
+<input type="checkbox" name="checklist[]" value="store">
 </form>
 
 <script>

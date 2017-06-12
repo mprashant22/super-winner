@@ -6,7 +6,7 @@ $dbname = "shopifyApp";
 
 // Create connection
 
-$checkarr = @$_POST["ckecklist"];
+$checkarr = @$_POST["checklist"];
 $store1 = $checkarr[0];
 $store2 = $checkarr[1];
 
@@ -16,7 +16,7 @@ $sql = "SELECT * FROM $store2";
 $result = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
-  <?php echo $row["id"]; ?>
+  <?php echo $row["store_url"]; ?>
 <?php
 }
 ?>
