@@ -122,6 +122,7 @@ public function exportExc2MySQL()
 	}
 
 	$Inv = new Export_Sync();
+	echo 'uper';
  	$Inv->exportExc2MySQL();
 ?>
 
