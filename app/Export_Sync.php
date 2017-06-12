@@ -42,30 +42,6 @@
 </table>
 
 
-<script type="text/javascript">
-function checkB(cb)
-{
-	//alert("hellow");
-	var txt = document.getElementById('check_list');
-    if(cb.checked) {        
-      <?php echo cb.value ?>;
-    }else{
-    	<?php echo 'not'.cb.value ?>;
-    }
-}
-</script>
-
-<?php
-//if(isset($_POST['submit'])){//to run PHP script on submit
-if(!empty($_POST['check_list'])){
-// Loop to store and display values of individual checked checkbox.
-foreach($_POST['check_list'] as $selected){
-echo "PRASHANT".$selected."</br>";
-}
-}
-//}
-?>
-
 
 <?php
 
