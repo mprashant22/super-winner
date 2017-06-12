@@ -1,51 +1,51 @@
 <link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
 
-<!-- <table border=1> -->
-<!--   <tr> -->
-<!--     <th>Handle</th> -->
-<!--     <th>Title</th> -->
-<!--     <th>Variant1</th> -->
-<!--     <th>Variant2</th> -->
-<!--     <th>Variant3</th> -->
-<!--     <th>Variant~SKU</th> -->
-<!--     <th>Units</th> -->
-<!--     <th>Price</th> -->
-<!--    </tr> -->
-<!--    <tr> -->
-<!--     <td>Handle</td> -->
-<!--     <td>Title</td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!--     <td><select> -->
-<!--   <option value="volvo">Volvo</option> -->
-<!--   <option value="saab">Saab</option> -->
-<!--   <option value="mercedes">Mercedes</option> -->
-<!--   <option value="audi">Audi</option> -->
-<!-- </select></td> -->
-<!-- 	<td>Variant~SKU</td> -->
-<!--     <td>Units</td> -->
-<!--     <td>Price</td> -->
-<!--    </tr> -->
+<table border=1>
+  <tr>
+    <th>Handle</th>
+    <th>Title</th>
+    <th>Variant1</th>
+    <th>Variant2</th>
+    <th>Variant3</th>
+    <th>Variant~SKU</th>
+    <th>Units</th>
+    <th>Price</th>
+   </tr>
+   <tr>
+    <td>Handle</td>
+    <td>Title</td>
+    <td><select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select></td>
+    <td><select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select></td>
+    <td><select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select></td>
+	<td>Variant~SKU</td>
+    <td>Units</td>
+    <td>Price</td>
+   </tr>
     
    
-<!-- </table> -->
+</table>
 
 
 
 <?php
 
-echo 'in inventory';
+//echo 'in inventory';
 //require '../includes/db/db_connection.php';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class Export_Sync extends DB_Connection{
@@ -60,10 +60,10 @@ class Export_Sync extends DB_Connection{
 	}
 public function exportExc2MySQL()
 	{
-		echo 'csv2mysql';
+		//echo 'csv2mysql';
 		$connection= $this->connect();
-		$cmd="cat /var/www/html/shopifyDemoLamp/temp.txt 2>&1";
-		echo shell_exec($cmd);
+		//$cmd="cat /var/www/html/shopifyDemoLamp/temp.txt 2>&1";
+		//echo shell_exec($cmd);
 		
 	
 // 		if(isset($_POST['submit']))
@@ -77,7 +77,7 @@ public function exportExc2MySQL()
 		//	if(strtolower($chk_ext[1]) == "csv")
 		//	{		
 		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
-				echo 'file name>>'.$filename;
+				//echo 'file name>>'.$filename;
 				//chmod($filename, 0777);
 				$handle = fopen($filename, "r");	
 				$data = fgetcsv($handle);
@@ -89,7 +89,7 @@ public function exportExc2MySQL()
 					}
 					print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
-					echo "<pre>prashant</pre>";
+					//echo "<pre>prashant</pre>";
 
 					$values=[];
 					$values=$data;
@@ -97,12 +97,12 @@ public function exportExc2MySQL()
 
 					for ($i=0;$i<count($data);$i++)
 					{
-						echo $data[$i]."/";
+						//echo $data[$i]."/";
 						$data1=mysqli_escape_string($connection, $data[$i]);
 						$db.="'".$data1."',";
 					}
 				
-					echo '<pre style="color:#FF0000">'.$db."</pre>";
+					//echo '<pre style="color:#FF0000">'.$db."</pre>";
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
 					//echo $sql;
 					$db="";
@@ -122,7 +122,6 @@ public function exportExc2MySQL()
 	}
 
 	$Inv = new Export_Sync();
-	echo 'uper';
  	$Inv->exportExc2MySQL();
 ?>
 
