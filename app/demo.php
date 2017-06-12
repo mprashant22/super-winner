@@ -12,7 +12,7 @@ $store2 = $checkarr[1];
 
 $conn = mysqli_connect($host, $username, $password,$dbname);
 
-$sql = "SELECT * FROM $store2";
+$sql = "SELECT store_url FROM $store2";
 $result = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
@@ -22,7 +22,7 @@ while($row = mysqli_fetch_assoc($result)) {
 ?>
 
 <?php
-$sql = "SELECT * FROM $store1";
+$sql = "SELECT id FROM $store1";
 $result = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_assoc($result)) {
 ?>
