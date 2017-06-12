@@ -22,8 +22,8 @@ else
 <body>
 
 <form id="myform">
-<input type="checkbox" name="checklist[]" value="store">
-<input type="checkbox" name="checklist[]" value="store">
+<input type="checkbox" name="checklist[]" value="stores">
+<input type="checkbox" name="checklist[]" value="stores">
 </form>
 
 <script>
