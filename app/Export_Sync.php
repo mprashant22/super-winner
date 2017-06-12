@@ -54,9 +54,9 @@ class Export_Sync extends DB_Connection{
 	protected $connection=null;
 	public function __construct()
 	{
-		//echo 'inventory connect';
+echo 'inventory connect';
 		$connection= $this->connect();
-		//echo "connect>>".$connection; 
+echo "connect>>".$connection; 
 	}
 function exportExc2MySQL()
 	{
@@ -121,8 +121,8 @@ function exportExc2MySQL()
 		}
 	}
 
- $Inv = new Inventory();
- $Inv->exportExc2MySQL();
+	$Inv = new Export_Sync();
+ 	$Inv->exportExc2MySQL();
 ?>
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
