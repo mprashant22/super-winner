@@ -1,8 +1,9 @@
 <?php 
-$servername = "localhost";
+$host = "localhost";
 $username = "root";
-$password = "";
-$conn = mysqli_connect($servername, $username, $password); 
+$password = "e3828e583f915c60dcaea9ed125420284a8c8fa3bb8ec463";
+$dbname = "shopifyApp";
+$conn = mysqli_connect($host, $username, $password,$dbname); 
 ?>
 <!DOCTYPE html>
 <html>
