@@ -58,7 +58,7 @@ echo 'inventory connect';
 		$connection= $this->connect();
 echo "connect>>".$connection; 
 	}
-function exportExc2MySQL()
+public function exportExc2MySQL()
 	{
 		echo 'csv2mysql';
 		$connection= $this->connect();
