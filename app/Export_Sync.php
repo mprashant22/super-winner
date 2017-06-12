@@ -87,7 +87,7 @@ public function exportExc2MySQL()
 					{
 						break;
 					}
-					print_r(fgetcsv($handle));
+					//print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
 					//echo "<pre>prashant</pre>";
 
