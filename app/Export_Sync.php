@@ -66,8 +66,8 @@ public function exportExc2MySQL()
 		//echo shell_exec($cmd);
 		
 	
-// 		if(isset($_POST['submit']))
-// 		{ 
+ 		if(isset($_POST['EXPORT']))
+ 		{ 
 			//echo 'y';
 			//$fname = $_FILES["file"]["name"];
 			//echo "file>>".$fname;
@@ -113,7 +113,7 @@ public function exportExc2MySQL()
 				
 				fclose($handle);
 				echo "Successfully Imported";
-			//}
+			}
 			//else
 			//{
 				//echo "Invalid File";
@@ -128,6 +128,6 @@ public function exportExc2MySQL()
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
 Import File : <input type="hidden" name="file" value="/root/products_export.csv">
-<input type="submit" name="submit" value="submit">
+<input type="submit" name="submit" value="EXPORT">
 
 </form>
