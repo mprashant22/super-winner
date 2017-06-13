@@ -54,7 +54,7 @@ class Export_Sync extends DB_Connection{
 	public $connection = '';
     public function exportExc2MySQL()
 	{
-		echo $this->connection = 'hi export file';
+	$this->connection = $this->connect();
 		
 		echo 'csv2mysql';
 		//$connection= $this->connect();
