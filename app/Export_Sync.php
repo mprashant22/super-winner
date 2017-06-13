@@ -113,7 +113,7 @@ class Export_Sync extends DB_Connection{
 		
 		if(isset($_POST['SYNC']))
 		{ 
-			$sql = "create table ".`$table[0]`."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
+			$sql = "create table ".$table[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 			echo "sql>>".$sql;
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 		}
