@@ -127,7 +127,7 @@ class Export_Sync extends DB_Connection{
  	$Inv->sync();
 ?>
 
-<form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
+<form action='' method='post' enctype="multipart/form-data">
 
 
 <input type="submit" name="EXPORT" value="EXPORT">
