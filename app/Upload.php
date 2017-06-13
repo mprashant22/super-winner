@@ -1,6 +1,6 @@
 <?php
 echo "in upload";
-$target_dir = "/var/www/html/shopifyDemoLamp/"."uploads";
+$target_dir = "/var/www/html/shopifyDemoLamp/"."uploads/";
 __DIR__=== $target_dir;
 echo "<pre>".$target_dir."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
