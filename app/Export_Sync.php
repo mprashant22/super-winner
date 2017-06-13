@@ -62,23 +62,12 @@ public function exportExc2MySQL()
 	{
 		//echo 'csv2mysql';
 		$connection= $this->connect();
-		//$cmd="cat /var/www/html/shopifyDemoLamp/temp.txt 2>&1";
-		//echo shell_exec($cmd);
 		
 	
  		if(isset($_POST['EXPORT']))
  		{ 
-			//echo 'y';
-			//$fname = $_FILES["file"]["name"];
-			//echo "file>>".$fname;
-			//chmod($filename, 0777);
-			//$chk_ext = explode(".",$fname);
-			//print_r($chk_ext);  
-		//	if(strtolower($chk_ext[1]) == "csv")
-		//	{		
 		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
-				//echo 'file name>>'.$filename;
-				//chmod($filename, 0777);
+
 				$handle = fopen($filename, "r");	
 				$data = fgetcsv($handle);
 				while(! feof($handle))
@@ -89,7 +78,6 @@ public function exportExc2MySQL()
 					}
 					//print_r(fgetcsv($handle));
 					$data = fgetcsv($handle);
-					//echo "<pre>prashant</pre>";
 
 					$values=[];
 					$values=$data;
@@ -97,14 +85,11 @@ public function exportExc2MySQL()
 
 					for ($i=0;$i<count($data);$i++)
 					{
-						//echo $data[$i]."/";
 						$data1=mysqli_escape_string($connection, $data[$i]);
 						$db.="'".$data1."',";
 					}
 				
-					//echo '<pre style="color:#FF0000">'.$db."</pre>";
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-					//echo $sql;
 					$db="";
 					mysqli_query($connection,$sql) or die(mysqli_error($connection));
 					
@@ -118,7 +103,33 @@ public function exportExc2MySQL()
 			//{
 				//echo "Invalid File";
 			//}
+			
+			sync();
 		}
+		
+	public function sync()
+	{
+		$store='store-demo.myshopify.com';
+		$table=explode(".", $store);
+		echo $table[0];
+		
+	}
+	
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 	$Inv = new Export_Sync();
@@ -129,6 +140,13 @@ public function exportExc2MySQL()
 
 
 <input type="submit" name="EXPORT" value="EXPORT">
-<input type="button" name="SYNC" value="SYNC" >
+<input type="button" name="SYNC" value="SYNC" onclick="sync()">
 
 </form>
+
+<script>
+function sync()
+{
+		
+}
+</script>
