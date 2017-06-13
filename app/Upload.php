@@ -1,17 +1,18 @@
 <?php
 echo "in upload";
-$target_dir = __DIR__."/../uploads";
+$target_dir = "/var/www/html/shopifyDemoLamp/"."uploads";
+__DIR__=== $target_dir;
 echo "<pre>".$target_dir."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 echo "<pre>".$target_file."</pre>";
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file);
-echo $csvFileType['extension'];
+echo "extension".$csvFileType['extension'];
 echo "<pre>".$csvFileType."</pre>";
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 	
-	if ($csvFileType['extension'])
+	if($csvFileType['extension'])
 	{
 		echo "File is an csv.";
 		$uploadOk = 1;
