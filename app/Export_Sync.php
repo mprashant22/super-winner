@@ -129,6 +129,6 @@ public function exportExc2MySQL()
 
 
 <input type="submit" name="EXPORT" value="EXPORT">
-<input type="submit" name="SYNC" value="SYNC">
+<input type="button" name="SYNC" value="SYNC" >
 
 </form>
