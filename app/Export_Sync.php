@@ -51,7 +51,7 @@ require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class Export_Sync extends DB_Connection{
 	
 	private $table_name = "products";
-	protected $connection=null;
+	protected $connection = null;
 	public function __construct()
 	{
 //echo 'inventory connect';
@@ -61,7 +61,7 @@ class Export_Sync extends DB_Connection{
 public function exportExc2MySQL()
 	{
 		//echo 'csv2mysql';
-		$connection= $this->connect();
+		//$connection= $this->connect();
 		
 	
  		if(isset($_POST['EXPORT']))
@@ -91,7 +91,7 @@ public function exportExc2MySQL()
 				
 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
 					$db="";
-					mysqli_query($connection,$sql) or die(mysqli_error($connection));
+					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
 				}
 
@@ -113,6 +113,8 @@ public function exportExc2MySQL()
 		$table=explode(".", $store);
 		echo $table[0];
 		
+		$sql = "create table".$table[0]."(Handle text, Title text, Variant 1 text,Variant 2 text, Variant 3 text, Variant SKU integer, Variant Inventory integer, Variant Price integer)";
+		mysqli_query($connection,$sql) or die(mysqli_error($connection));		
 	}
 	
 		
