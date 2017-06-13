@@ -51,15 +51,10 @@ require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class Export_Sync extends DB_Connection{
 	
 	private $table_name = "products";
-	protected $connection = null;
-	public function __construct()
+	public $connection = '';
+    public function exportExc2MySQL()
 	{
-//echo 'inventory connect';
-		$this->connection = parent:: $this->connect();
-//echo "connect>>".$connection; 
-	}
-public function exportExc2MySQL()
-	{
+		$this->connection =  parent:: $this->connect();
 		echo 'csv2mysql';
 		//$connection= $this->connect();
 		
