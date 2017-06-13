@@ -104,7 +104,7 @@ public function exportExc2MySQL()
 				//echo "Invalid File";
 			//}
 			
-			sync();
+			//sync();
 		}
 		
 	public function sync()
@@ -134,6 +134,7 @@ public function exportExc2MySQL()
 
 	$Inv = new Export_Sync();
  	$Inv->exportExc2MySQL();
+ 	$Inv->sync();
 ?>
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
