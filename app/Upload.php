@@ -8,7 +8,7 @@ echo "<pre>".$target_file."</pre>";
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file);
 echo "extension".$csvFileType['extension'];
-echo "<pre>".$csvFileType."</pre>";
+print_r($csvFileType);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 	
