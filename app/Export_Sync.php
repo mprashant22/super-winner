@@ -127,7 +127,8 @@ public function exportExc2MySQL()
 
 <form action='<?php echo $_SERVER["PHP_SELF"];?>' method='post' enctype="multipart/form-data">
 
-Import File : <input type="hidden" name="file" value="/root/products_export.csv">
+
 <input type="submit" name="EXPORT" value="EXPORT">
+<input type="submit" name="SYNC" value="SYNC">
 
 </form>
