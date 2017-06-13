@@ -49,12 +49,14 @@
 //require '../includes/db/db_connection.php';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class Export_Sync extends DB_Connection{
-	
+	function __construct(){
+		$this->connection = $this->connect();
+	}
 	private $table_name = "products";
 	public $connection = '';
     public function exportExc2MySQL()
 	{
-	$this->connection = $this->connect();
+	
 		
 		echo 'csv2mysql';
 		//$connection= $this->connect();
