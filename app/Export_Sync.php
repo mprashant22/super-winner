@@ -113,7 +113,7 @@ public function exportExc2MySQL()
 		$table=explode(".", $store);
 		echo $table[0];
 		
-		$sql = "create table".$table[0]."(Handle text, Title text, Variant 1 text,Variant 2 text, Variant 3 text, Variant SKU integer, Variant Inventory integer, Variant Price integer)";
+		$sql = "create table ".$table[0]."(Handle text, Title text, Variant 1 text,Variant 2 text, Variant 3 text, Variant SKU integer, Variant Inventory integer, Variant Price integer)";
 		mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));		
 	}
 	
