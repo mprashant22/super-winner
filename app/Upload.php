@@ -1,11 +1,12 @@
 <?php
-$target_dir = __DIR__."../uploads/";
-echo $target_dir;
+echo "in upload";
+$target_dir = __DIR__."/../uploads";
+echo "<pre>".$target_dir."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-echo $target_file;
+echo "<pre>".$target_file."</pre>";
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-echo $csvFileType;
+echo "<pre>".$csvFileType."</pre>";
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 	
