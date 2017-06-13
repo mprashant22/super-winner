@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
-</form>
-
-</body>
-</html>
-
 <?php
 $target_dir = __DIR__."../uploads/";
+echo $target_dir;
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+echo $target_file;
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+echo $csvFileType;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 	
