@@ -7,6 +7,7 @@ class DB_Connection{
     
     protected $connection;
     
+    
     public function connect()
     {
     	echo 'inside connect';
