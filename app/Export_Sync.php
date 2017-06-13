@@ -107,13 +107,13 @@ class Export_Sync extends DB_Connection{
 		
 	public function sync()
 	{
-		$store='store-demo.myshopify.com';
+		$store='storedemo.myshopify.com';
 		$table=explode(".", $store);
 		echo $table[0];
 		
 		if(isset($_POST['SYNC']))
 		{ 
-			$sql = "create table ".`$table[0]`."(Handle text, Title text, `Variant 1` text,`Variant 2` text, `Variant 3` text, `Variant SKU` integer, `Variant Inventory` integer, `Variant Price` integer)";
+			$sql = "create table ".`$table[0]`."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 		}
 	}
