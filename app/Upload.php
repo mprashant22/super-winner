@@ -5,12 +5,13 @@ echo "<pre>".$target_dir."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 echo "<pre>".$target_file."</pre>";
 $uploadOk = 1;
-$csvFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$csvFileType = pathinfo($target_file);
+echo $csvFileType['extension'];
 echo "<pre>".$csvFileType."</pre>";
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
 	
-	if (($_FILES["file"]["type"] == "text/csv"))
+	if ($csvFileType['extension'])
 	{
 		echo "File is an csv.";
 		$uploadOk = 1;
@@ -46,3 +47,10 @@ if($csvFileType != "csv") {
 			}
 		}
 		?>
+		
+		
+<form action="" method="post" enctype="multipart/form-data">
+    Select csv to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload CSV" name="submit">
+</form>		
