@@ -1,6 +1,7 @@
 <?php
 echo "in upload";
 $target_dir = "uploads/";
+
 //__DIR__=== $target_dir;
 // if(shell_exec("mkdir -p uploads 2>&1" ))
 // {
