@@ -12,12 +12,12 @@ $target_dir = "/var/www/html/shopifyDemoLamp/uploads/";
 // echo "<pre>".__DIR__."</pre>";
 
 
-echo $_FILES["fileToUpload"]["name"];
+echo "file>>".$_FILES["fileToUpload"]["name"];
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-echo "<pre>".$target_file."</pre>";
+echo "trget file>><pre>".$target_file."</pre>";
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file);
-echo "extension".$csvFileType['extension'];
+echo "extension>>".$csvFileType['extension'];
 print_r($csvFileType);
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
