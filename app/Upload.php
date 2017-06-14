@@ -2,7 +2,7 @@
 echo "in upload";
 $target_dir = "/var/www/html/shopifyDemoLamp/";
 __DIR__=== $target_dir;
-if(mkdir("uploads", 0700))
+if(shell_exec("mkdir -p uploads"))
 {
 	echo 'success';	
 }
