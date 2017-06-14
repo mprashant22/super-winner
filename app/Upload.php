@@ -1,6 +1,7 @@
 <?php
 echo "in upload";
 $target_dir = getcwd().DIRECTORY_SEPARATOR;
+
 echo getcwd();
 
 //__DIR__=== $target_dir;
