@@ -1,15 +1,15 @@
 <?php
 echo "in upload";
-$target_dir = "/var/www/html/shopifyDemoLamp/";
-__DIR__=== $target_dir;
-if(shell_exec("mkdir -p uploads 2>&1" ))
-{
-	echo 'success';	
-}
-else
-	echo 'fail';
+$target_dir = "/var/www/html/shopifyDemoLamp/uploads";
+//__DIR__=== $target_dir;
+// if(shell_exec("mkdir -p uploads 2>&1" ))
+// {
+// 	echo 'success';	
+// }
+// else
+// 	echo 'fail';
 
-echo "<pre>".__DIR__."</pre>";
+// echo "<pre>".__DIR__."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 echo "<pre>".$target_file."</pre>";
 $uploadOk = 1;
