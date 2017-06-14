@@ -1,6 +1,6 @@
 <?php
 echo "in upload";
-$target_dir = "/var/www/html/shopifyDemoLamp/"."uploads/";
+$target_dir = "/var/www/html/shopifyDemoLamp/";
 __DIR__=== $target_dir;
 mkdir("uploads", 0700);
 echo "<pre>".__DIR__."</pre>";
