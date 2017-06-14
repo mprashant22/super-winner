@@ -2,7 +2,7 @@
 echo "in upload";
 $target_dir = "/var/www/html/shopifyDemoLamp/"."uploads/";
 __DIR__=== $target_dir;
-mkdir("/var/www/html/shopifyDemoLamp/uploads/", 0700);
+mkdir("uploads", 0700);
 echo "<pre>".$target_dir."</pre>";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 echo "<pre>".$target_file."</pre>";
