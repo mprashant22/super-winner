@@ -1,8 +1,9 @@
 <?php
 echo "in upload";
-$target_dir = getcwd().DIRECTORY_SEPARATOR;
+$target_dir = dirname(getcwd());
+//chdir('../uploads')
 
-echo getcwd();
+echo 'Trdr>'.$target_dir;
 
 //__DIR__=== $target_dir;
 // if(shell_exec("mkdir -p uploads 2>&1" ))
