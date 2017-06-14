@@ -12,7 +12,7 @@ $target_dir = "/var/www/html/shopifyDemoLamp/uploads/";
 // echo "<pre>".__DIR__."</pre>";
 
 
-echo "file>>".$_FILES["fileToUpload"]["name"];
+echo "file>>".basename($_FILES["fileToUpload"]["name"]);
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 echo "trget file>><pre>".$target_file."</pre>";
 $uploadOk = 1;
