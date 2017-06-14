@@ -1,6 +1,6 @@
 <?php
 echo "in upload";
-$target_dir = getcwd().DIRECTORY_SEPARATOR;
+$target_dir = "/var/www/html/shopifyDemoLamp/uploads/";
 
 
 //__DIR__=== $target_dir;
