@@ -1,79 +1,70 @@
 <?php
-// echo "in upload";
-// $target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
+echo "in upload";
+$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
 
 
-// //chdir('../uploads');
+//chdir('../uploads');
 
-// echo 'Trdr>'.$target_dir;
+echo 'Trdr>'.$target_dir;
 
-// //__DIR__=== $target_dir;
-// // if(shell_exec("mkdir -p uploads 2>&1" ))
-// // {
-// // 	echo 'success';	
-// // }
-// // else
-// // 	echo 'fail';
+//__DIR__=== $target_dir;
+// if(shell_exec("mkdir -p uploads 2>&1" ))
+// {
+// 	echo 'success';	
+// }
+// else
+// 	echo 'fail';
 
-// // echo "<pre>".__DIR__."</pre>";
+// echo "<pre>".__DIR__."</pre>";
 
 
-// echo "??File>>".basename($_FILES["fileToUpload"]["name"]);
-// $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-// echo "trget file>><pre>".$target_file."</pre>";
-// $uploadOk = 1;
-// $csvFileType = pathinfo($target_file);
-// echo "extension>>".$csvFileType['extension'];
-// print_r($csvFileType);
-// // Check if image file is a actual image or fake image
-// if(isset($_POST["submit"])) {
+echo "??File>>".basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+echo "trget file>><pre>".$target_file."</pre>";
+$uploadOk = 1;
+$csvFileType = pathinfo($target_file);
+echo "extension>>".$csvFileType['extension'];
+print_r($csvFileType);
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
 	
-// 	if($csvFileType['extension'])
-// 	{
-// 		echo "File is an csv.";
-// 		$uploadOk = 1;
-// 	} else {
-// 		echo "File is not an csv.";
-// 		$uploadOk = 0;
-// 	}
-// }
-// // Check if file already exists
-// if (file_exists($target_file)) {
-// 	echo "Sorry, file already exists.";
-// 	$uploadOk = 0;
-// }
-// // Check file size
-// if ($_FILES["fileToUpload"]["size"] > 500000) {
-// 	echo "Sorry, your file is too large.";
-// 	$uploadOk = 0;
-// }
-
-
-
-
-
-
-// // Check if $uploadOk is set to 0 by an error
-// if ($uploadOk == 0) {
-// 	echo "Sorry, your file was not uploaded.";
-// 	// if everything is ok, try to upload file
-// } else {
-// 	if (move_uploaded_file($_FILES["fileToUpload"]["name"], $target_file)) {
-// 		echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-// 	} else {
-// 		echo "Sorry, there was an error uploading your file.";
-// 	}
-// }
-
-
-if(isset($_POST['submit'])){
-	
-	if(isset($_FILES['fileToUpload']['name']))
+	if($csvFileType['extension'])
 	{
-		echo $_FILES['fileToUpload']['name'];
-		move_uploaded_file($_FILES['fileToUpload']['tmp_name'],"/var/www/html/shopifyDemoLamp/uploads/".$_FILES['fileToUpload']['name']);
+		echo "File is an csv.";
+		$uploadOk = 1;
+	} else {
+		echo "File is not an csv.";
+		$uploadOk = 0;
 	}
 }
+// Check if file already exists
+if (file_exists($target_file)) {
+	echo "Sorry, file already exists.";
+	$uploadOk = 0;
+}
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+	echo "Sorry, your file is too large.";
+	$uploadOk = 0;
+}
+
+
+
+
+
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+	echo "Sorry, your file was not uploaded.";
+	// if everything is ok, try to upload file
+} else {
+	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+		echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+	} else {
+		echo "Sorry, there was an error uploading your file.";
+	}
+}
+
 
 
 ?>
