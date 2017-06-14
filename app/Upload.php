@@ -17,7 +17,7 @@ print_r($csvFileType);
 
 if(isset($_POST["submit"])) {
 	
-	if($csvFileType['extension'])
+	if($csvFileType['extension']=='csv')
 	{
 		echo "File is an csv.";
 		$uploadOk = 1;
