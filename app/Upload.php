@@ -1,6 +1,7 @@
 <?php
 echo "in upload";
-$target_dir = "uploads/";
+$target_dir = "/var/www/html/shopifyDemoLamp/uploads/";
+
 
 //__DIR__=== $target_dir;
 // if(shell_exec("mkdir -p uploads 2>&1" ))
