@@ -18,8 +18,8 @@ echo 'Trdr>'.$target_dir;
 // echo "<pre>".__DIR__."</pre>";
 
 
-echo "??File>>".basename($_FILES["fileToUpload"]["name"]);
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//echo "??File>>".basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["tmp_name"]);
 echo "trget file>><pre>".$target_file."</pre>";
 $uploadOk = 1;
 $csvFileType = pathinfo($target_file);
