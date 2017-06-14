@@ -70,6 +70,7 @@ if(isset($_POST['submit'])){
 	
 	if(isset($_FILES['fileToUpload']['name']))
 	{
+		echo $_FILES['fileToUpload']['name'];
 		move_uploaded_file($_FILES['fileToUpload']['tmp_name'],"/var/www/html/shopifyDemoLamp/uploads/".$_FILES['fileToUpload']['name']);
 	}
 }
