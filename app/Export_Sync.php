@@ -64,7 +64,7 @@ class Export_Sync extends DB_Connection{
 	
  		if(isset($_POST['EXPORT']))
  		{ 
-		$filename = "/var/www/html/shopifyDemoLamp/products_export4.csv";
+		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
 				$handle = fopen($filename, "r");	
 				$data = fgetcsv($handle);
