@@ -64,40 +64,65 @@ class Export_Sync extends DB_Connection{
 	
  		if(isset($_POST['EXPORT']))
  		{ 
- 			$upload1.upload();
-		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
+ 			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
+ 			
+ 			echo 'Trdr>'.$target_dir;
+ 			
+ 			
+ 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+ 			echo "trget file>><pre>".$target_file."</pre>";
+ 			$uploadOk = 1;
+ 			$csvFileType = pathinfo($target_file);
+ 			echo "extension>>".$csvFileType['extension'];
+ 			print_r($csvFileType);
+ 			
+ 			//if(isset($_POST["submit"])) {
+ 				
+ 				if($csvFileType['extension']=='csv')
+ 				{
+ 					echo "File is an csv.";
+ 					$uploadOk = 1;
+ 				} else {
+ 					echo "File is not an csv.";
+ 					$uploadOk = 0;
+ 				}
+ 			//}
+ 			
+ 			
+//  				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
+// 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
-				$handle = fopen($filename, "r");
-				$data = fgetcsv($handle);
-				while(! feof($handle))
-				{
-					if(feof($handle))
-					{
-						break;
-					}
-					//print_r(fgetcsv($handle));
-					$data = fgetcsv($handle);
+// 				$handle = fopen($filename, "r");
+// 				$data = fgetcsv($handle);
+// 				while(! feof($handle))
+// 				{
+// 					if(feof($handle))
+// 					{
+// 						break;
+// 					}
+// 					//print_r(fgetcsv($handle));
+// 					$data = fgetcsv($handle);
 
-					$values=[];
-					$values=$data;
+// 					$values=[];
+// 					$values=$data;
 
 
-					for ($i=0;$i<count($data);$i++)
-					{
-						$data1=mysqli_escape_string($connection, $data[$i]);
-						$db.="'".$data1."',";
-					}
+// 					for ($i=0;$i<count($data);$i++)
+// 					{
+// 						$data1=mysqli_escape_string($connection, $data[$i]);
+// 						$db.="'".$data1."',";
+// 					}
 				
-					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-					$db="";
-					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+// 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+// 					$db="";
+// 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
-				}
+// 				}
 
 				
-				fclose($handle);
-				echo "Successfully Imported";
-			}
+// 				fclose($handle);
+// 				echo "Successfully Imported";
+ 			}
 			//else
 			//{
 				//echo "Invalid File";
@@ -123,7 +148,7 @@ class Export_Sync extends DB_Connection{
 	}
 
 	$Inv = new Export_Sync();
-	$upload1 = new UploadCSV();
+//	$upload1 = new UploadCSV();
 	
  	$Inv->exportExc2MySQL();
  	$Inv->sync();
