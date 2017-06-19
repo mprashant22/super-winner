@@ -71,7 +71,7 @@ class Export_Sync extends DB_Connection{
   			echo "extension>>".$csvFileType['extension'];
 //  			print_r($csvFileType);
  			
-//  				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
+  				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
 // 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
 // 				$handle = fopen($filename, "r");
