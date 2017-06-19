@@ -1,45 +1,43 @@
-<link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
+<!-- <link href="../templates/bootstrap.css" rel="stylesheet" type="text/css"> -->
+<!-- <link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css"> -->
 
-<table border=1>
-  <tr>
-    <th>Handle</th>
-    <th>Title</th>
-    <th>Variant1</th>
-    <th>Variant2</th>
-    <th>Variant3</th>
-    <th>Variant~SKU</th>
-    <th>Units</th>
-    <th>Price</th>
-   </tr>
-   <tr>
-    <td>Handle</td>
-    <td>Title</td>
-    <td><select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select></td>
-    <td><select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select></td>
-    <td><select>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select></td>
-	<td>Variant~SKU</td>
-    <td>Units</td>
-    <td>Price</td>
-   </tr>
-    
-   
-</table>
+<!-- <table border=1> -->
+<!--   <tr> -->
+<!--     <th>Handle</th> -->
+<!--     <th>Title</th> -->
+<!--     <th>Variant1</th> -->
+<!--     <th>Variant2</th> -->
+<!--     <th>Variant3</th> -->
+<!--     <th>Variant~SKU</th> -->
+<!--     <th>Units</th> -->
+<!--     <th>Price</th> -->
+<!--    </tr> -->
+<!--    <tr> -->
+<!--     <td>Handle</td> -->
+<!--     <td>Title</td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!--     <td><select> -->
+<!--   <option value="volvo">Volvo</option> -->
+<!--   <option value="saab">Saab</option> -->
+<!--   <option value="mercedes">Mercedes</option> -->
+<!--   <option value="audi">Audi</option> -->
+<!-- </select></td> -->
+<!-- 	<td>Variant~SKU</td> -->
+<!--     <td>Units</td> -->
+<!--     <td>Price</td> -->
+<!--    </tr>    -->
+<!-- </table> -->
 
 
 
@@ -69,7 +67,7 @@ class Export_Sync extends DB_Connection{
  			$upload1.upload();
 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
-				$handle = fopen($filename, "r");	
+				$handle = fopen($filename, "r");
 				$data = fgetcsv($handle);
 				while(! feof($handle))
 				{
@@ -120,11 +118,7 @@ class Export_Sync extends DB_Connection{
 			echo "sql>>".$sql;
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 		}
-	}
-	
-		
-	
-		
+	}		
 		
 	}
 
