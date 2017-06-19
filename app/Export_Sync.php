@@ -76,17 +76,7 @@ class Export_Sync extends DB_Connection{
  			echo "extension>>".$csvFileType['extension'];
  			print_r($csvFileType);
  			
- 			//if(isset($_POST["submit"])) {
- 				
- 				if($csvFileType['extension']=='csv')
- 				{
- 					echo "File is an csv.";
- 					$uploadOk = 1;
- 				} else {
- 					echo "File is not an csv.";
- 					$uploadOk = 0;
- 				}
- 			//}
+ 		
  			
  			
 //  				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
