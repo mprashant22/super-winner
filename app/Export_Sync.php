@@ -52,7 +52,7 @@ class Export_Sync extends DB_Connection{
 	}
 	private $table_name = "products";
 	public $connection = '';
-    public function exportExc2MySQL()
+	public function sync()
 	{
 	
 		echo 'csv2mysql';
@@ -107,17 +107,7 @@ class Export_Sync extends DB_Connection{
 				
 // 				fclose($handle);
 // 				echo "Successfully Imported";
- 			}
-			//else
-			//{
-				//echo "Invalid File";
-			//}
-			
-			//sync();
-		}
 		
-	public function sync()
-	{
 		$store='storedemo.myshopify.com';
 		$table=explode(".", $store);
 		echo $table[0];
@@ -131,6 +121,7 @@ class Export_Sync extends DB_Connection{
 	}		
 		
 	}
+}
 
 	$Inv = new Export_Sync();
 //	$upload1 = new UploadCSV();
