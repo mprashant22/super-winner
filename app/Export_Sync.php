@@ -158,7 +158,7 @@ class Export_Sync extends DB_Connection{
 
 Select csv to upload:
 <!--     <input type="file" name="EXPORT" id="fileToUpload"> -->
-<input type="file" id="browse" name="fileupload" style="display: none" onChange="Handlechange();"/>
+<input type="file" id="browse" name="fileupload" style="display: none" onChange="Handlechange();" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
 <input type="text" id="filename" readonly="true"/>
     <input type="button" value="EXPORT" id="fileToUpload" onclick="HandleBrowseClick();"/>
 <!-- <input type="submit" name="EXPORT" value="EXPORT"> -->
