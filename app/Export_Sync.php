@@ -43,8 +43,6 @@
 
 <?php
 
-//echo 'in inventory';
-//require '../includes/db/db_connection.php';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 //require '/var/www/html/shopifyDemoLamp/app/Upload.php';
 class Export_Sync extends DB_Connection{
@@ -57,11 +55,8 @@ class Export_Sync extends DB_Connection{
     public function exportExc2MySQL()
 	{
 	
-		
 		echo 'csv2mysql';
-		//$connection= $this->connect();
-		
-	
+
  		if(isset($_POST['EXPORT']))
  		{ 
  			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
@@ -70,11 +65,11 @@ class Export_Sync extends DB_Connection{
  			
  			
  			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
- 			echo "trget file>><pre>".$target_file."</pre>";
+//  			echo "trget file>><pre>".$target_file."</pre>";
  			$uploadOk = 1;
  			$csvFileType = pathinfo($target_file);
- 			echo "extension>>".$csvFileType['extension'];
- 			print_r($csvFileType);
+//  			echo "extension>>".$csvFileType['extension'];
+//  			print_r($csvFileType);
  			
  		
  			
