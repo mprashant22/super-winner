@@ -46,7 +46,7 @@
 //echo 'in inventory';
 //require '../includes/db/db_connection.php';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
-require '/var/www/html/shopifyDemoLamp/app/Upload.php';
+//require '/var/www/html/shopifyDemoLamp/app/Upload.php';
 class Export_Sync extends DB_Connection{
 	 
 	function __construct(){
