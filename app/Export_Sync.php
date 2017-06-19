@@ -57,18 +57,18 @@ class Export_Sync extends DB_Connection{
 	
 		echo 'csv2mysql';
 
- 		if(isset($_POST['EXPORT']))
- 		{ 
+ 		 if(isset($_POST['SYNC']))
+		{
  			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
  			
  			echo 'Trdr>'.$target_dir;
  			
  			
  			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//  			echo "trget file>><pre>".$target_file."</pre>";
+  			echo "trget file>><pre>".$target_file."</pre>";
  			$uploadOk = 1;
  			$csvFileType = pathinfo($target_file);
-//  			echo "extension>>".$csvFileType['extension'];
+  			echo "extension>>".$csvFileType['extension'];
 //  			print_r($csvFileType);
  			
  		
@@ -112,8 +112,7 @@ class Export_Sync extends DB_Connection{
 		$table=explode(".", $store);
 		echo $table[0];
 		
-		if(isset($_POST['SYNC']))
-		{ 
+		 
 			$sql = "create table ".$table[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 			echo "sql>>".$sql;
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
@@ -123,10 +122,7 @@ class Export_Sync extends DB_Connection{
 	}
 }
 
-	$Inv = new Export_Sync();
-//	$upload1 = new UploadCSV();
-	
- 	$Inv->exportExc2MySQL();
+	$Inv = new Export_Sync();	
  	$Inv->sync();
 ?>
 
