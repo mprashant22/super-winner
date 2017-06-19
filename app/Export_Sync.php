@@ -156,8 +156,9 @@ class Export_Sync extends DB_Connection{
 
 <form action='' method='post' enctype="multipart/form-data">
 
-
-<input type="submit" name="EXPORT" value="EXPORT">
+Select csv to upload:
+    <input type="file" name="EXPORT" id="fileToUpload">
+<!-- <input type="submit" name="EXPORT" value="EXPORT"> -->
 <input type="submit" name="SYNC" value="SYNC">
 
 </form>
