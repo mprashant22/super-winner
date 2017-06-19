@@ -48,7 +48,9 @@
 //echo 'in inventory';
 //require '../includes/db/db_connection.php';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+require '/var/www/html/shopifyDemoLamp/app/Upload.php';
 class Export_Sync extends DB_Connection{
+	 
 	function __construct(){
 		$this->connection = $this->connect();
 	}
@@ -64,6 +66,7 @@ class Export_Sync extends DB_Connection{
 	
  		if(isset($_POST['EXPORT']))
  		{ 
+ 			$upload1.upload();
 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
 				$handle = fopen($filename, "r");	
@@ -126,6 +129,7 @@ class Export_Sync extends DB_Connection{
 	}
 
 	$Inv = new Export_Sync();
+	$upload1 = new UploadCSV();
 	
  	$Inv->exportExc2MySQL();
  	$Inv->sync();
