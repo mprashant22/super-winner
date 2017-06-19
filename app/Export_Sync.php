@@ -117,8 +117,6 @@ class Export_Sync extends DB_Connection{
 			echo "sql>>".$sql;
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 		}
-	}		
-		
 	}
 }
 
