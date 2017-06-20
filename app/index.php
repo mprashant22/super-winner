@@ -13,6 +13,10 @@ if(isset($_POST['SYNC']))
 	echo 'xx'; 
 	$Inv = new Export_Sync();
 	  	$Inv->sync();
+	  	
+	  	
+	  	echo  '>>shop>>{{'.$_REQUEST['shop']."}}";
+	  	
 	
 }
 
