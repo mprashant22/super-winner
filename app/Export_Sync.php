@@ -46,7 +46,7 @@ echo 'in xpo';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 
-class Export_Sync{
+class Export_Sync extends  DB_Connection{
 	 
 	function __construct(){
 		$this->connection = $this->connect();
