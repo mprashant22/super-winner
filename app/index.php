@@ -8,6 +8,12 @@ require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
 require __DIR__. '../../app/Export_Sync.php';
 echo 'neche';
+if(isset($_POST['SYNC']))
+{
+	 	$Inv = new Export_Sync();
+	  	$Inv->sync();
+	
+}
 
 ?>
 

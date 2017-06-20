@@ -43,10 +43,10 @@
 
 <?php
 echo 'in xpo';
-require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+//require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 
-class Export_Sync extends DB_Connection{
+class Export_Sync{
 	 
 	function __construct(){
 		$this->connection = $this->connect();
@@ -58,8 +58,7 @@ class Export_Sync extends DB_Connection{
 	
 		echo 'csv2mysql';
 
- 		 if(isset($_POST['SYNC']))
-		{
+ 		
  			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
  			
  			echo 'Trdr>'.$target_dir;
@@ -119,10 +118,8 @@ class Export_Sync extends DB_Connection{
 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 		}
 	}
-}
 
-// 	$Inv = new Export_Sync();	
-//  	$Inv->sync();
+
 ?>
 
 <!-- <form action='' method='post' enctype="multipart/form-data"> -->
