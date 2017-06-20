@@ -122,8 +122,8 @@ class Export_Sync extends DB_Connection{
 	}
 }
 
-	$Inv = new Export_Sync();	
- 	$Inv->sync();
+// 	$Inv = new Export_Sync();	
+//  	$Inv->sync();
 ?>
 
 <!-- <form action='' method='post' enctype="multipart/form-data"> -->
