@@ -5,7 +5,7 @@ echo 'in DBC';
 require '/var/www/html/shopifyDemoLamp/includes/config/conf.inc.php';
 class DB_Connection{
     
-    protected $connection;
+   // protected $connection;
     
     
 //     public function connect()
