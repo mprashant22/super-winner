@@ -43,7 +43,7 @@
 
 <?php
 echo 'in xpo';
-//require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 
 class Export_Sync{
