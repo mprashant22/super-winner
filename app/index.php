@@ -8,9 +8,9 @@ require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
 require __DIR__. '../../app/Export_Sync.php';
 
-$Shopify = new Shopify();
+//$Shopify = new Shopify();
 //echo '$ shopify'.$Shopify;
-$Stores = new Stores();
+//$Stores = new Stores();
 //echo '$ stores'.$Stores;
 
 //$shop = $_GET['shop'];
