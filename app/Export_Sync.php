@@ -43,10 +43,10 @@
 
 <?php
 echo 'in xpo';
-require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+//require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 
-class Export_Sync extends  DB_Connection{
+class Export_Sync{
 	 
 	function __construct(){
 		$this->connection = $this->connect();
