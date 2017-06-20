@@ -29,3 +29,27 @@ print_r($products->products);
 echo "</pre>";
 
 ?>
+
+
+
+<form action='' method='post' enctype="multipart/form-data">
+Select csv to upload:
+<input type="file" id="browse" name="fileToUpload" style="display: none" onChange="Handlechange();" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+<input type="text" id="filename" readonly="true"/>
+<input type="button" value="EXPORT" id="fileToUpload" onclick="HandleBrowseClick();"/>
+<input type="submit" name="SYNC" value="SYNC">
+</form>
+
+<script>
+function HandleBrowseClick()
+{
+    var fileinput = document.getElementById("browse");
+    fileinput.click();
+}
+function Handlechange()
+{
+    var fileinput = document.getElementById("browse");
+    var textinput = document.getElementById("filename");
+    textinput.value = fileinput.value;
+}
+</script>
