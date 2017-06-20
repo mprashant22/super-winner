@@ -16,7 +16,7 @@ if(isset($_POST['SYNC']))
 	  	
 	  	
 	  	
-	  	echo  '>>shop>>{{'.$_REQUEST['shop']."}}";
+	  	echo  '{'.$_REQUEST['shop']."]]";
 	  	
 	
 }
