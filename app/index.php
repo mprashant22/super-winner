@@ -9,9 +9,9 @@ require __DIR__. '../../includes/db/Stores.php';
 require __DIR__. '../../app/Export_Sync.php';
 
 $Shopify = new Shopify();
-echo '$ shopify'.$Shopify;
+//echo '$ shopify'.$Shopify;
 $Stores = new Stores();
-echo '$ stores'.$Stores;
+//echo '$ stores'.$Stores;
 
 $shop = $_GET['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
