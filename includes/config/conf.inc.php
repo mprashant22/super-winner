@@ -19,3 +19,6 @@ define("SHOPIFY_API_KEY", "731148aba4b8f20f0d72c25e0a884f8b");
 define("SHOPIFY_API_SECRET", "d2e065e22c0a2436c47ef27d7996a99f");
 define("CALLBACK_URL", "http://192.241.146.48/shopifyDemoLamp/install/");
 define("APP_URL", "http://192.241.146.48/shopifyDemoLamp/app");
+
+
+?>
