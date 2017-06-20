@@ -43,8 +43,9 @@
 
 <?php
 echo 'in xpo';
-//require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
-
+require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+//require '/var/www/html/shopifyDemoLamp/includes/db/Stores.php';
+//require '/var/www/html/shopifyDemoLamp/app/Upload.php';
 
 class Export_Sync extends DB_Connection{
 	 
@@ -58,66 +59,66 @@ class Export_Sync extends DB_Connection{
 	
 		echo 'csv2mysql';
 
-//  		 if(isset($_POST['SYNC']))
-// 		{
-//  			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
+ 		 if(isset($_POST['SYNC']))
+		{
+ 			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
  			
-//  			echo 'Trdr>'.$target_dir;
+ 			echo 'Trdr>'.$target_dir;
  			
  			
-//  			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-//   			echo "trget file>><pre>".$target_file."</pre>";
-//  			$uploadOk = 1;
-//  			$csvFileType = pathinfo($target_file);
-//   			echo "extension>>".$csvFileType['extension'];
-// //  			print_r($csvFileType);
+ 			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  			echo "trget file>><pre>".$target_file."</pre>";
+ 			$uploadOk = 1;
+ 			$csvFileType = pathinfo($target_file);
+  			echo "extension>>".$csvFileType['extension'];
+//  			print_r($csvFileType);
  			
-//   				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
+  				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
   				
-//   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
-//   				echo  '>>shop>>{{'.$_REQUEST['shop']."}}";
+  				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
+  				echo  '>>shop>>{{'.$_REQUEST['shop']."}}";
   				
-// // 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
+// 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
-// // 				$handle = fopen($filename, "r");
-// // 				$data = fgetcsv($handle);
-// // 				while(! feof($handle))
-// // 				{
-// // 					if(feof($handle))
-// // 					{
-// // 						break;
-// // 					}
-// // 					//print_r(fgetcsv($handle));
-// // 					$data = fgetcsv($handle);
+// 				$handle = fopen($filename, "r");
+// 				$data = fgetcsv($handle);
+// 				while(! feof($handle))
+// 				{
+// 					if(feof($handle))
+// 					{
+// 						break;
+// 					}
+// 					//print_r(fgetcsv($handle));
+// 					$data = fgetcsv($handle);
 
-// // 					$values=[];
-// // 					$values=$data;
+// 					$values=[];
+// 					$values=$data;
 
 
-// // 					for ($i=0;$i<count($data);$i++)
-// // 					{
-// // 						$data1=mysqli_escape_string($connection, $data[$i]);
-// // 						$db.="'".$data1."',";
-// // 					}
+// 					for ($i=0;$i<count($data);$i++)
+// 					{
+// 						$data1=mysqli_escape_string($connection, $data[$i]);
+// 						$db.="'".$data1."',";
+// 					}
 				
-// // 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-// // 					$db="";
-// // 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+// 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+// 					$db="";
+// 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
-// // 				}
+// 				}
 				
-// // 				fclose($handle);
-// // 				echo "Successfully Imported";
+// 				fclose($handle);
+// 				echo "Successfully Imported";
 		
-// 		$store='storedemo.myshopify.com';
-// 		$table=explode(".", $store);
-// 		echo $table[0];
+		$store='storedemo.myshopify.com';
+		$table=explode(".", $store);
+		echo $table[0];
 		
 		 
-// 			$sql = "create table ".$table[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-// 			echo "sql>>".$sql;
-// 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
-// 		}
+			$sql = "create table ".$table[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
+			echo "sql>>".$sql;
+			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+		}
 	}
 }
 
