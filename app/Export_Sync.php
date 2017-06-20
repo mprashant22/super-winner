@@ -42,7 +42,7 @@
 
 
 <?php
-
+echo 'in xpo';
 require '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 //require '/var/www/html/shopifyDemoLamp/includes/db/Stores.php';
 //require '/var/www/html/shopifyDemoLamp/app/Upload.php';
