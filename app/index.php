@@ -15,6 +15,7 @@ if(isset($_POST['SYNC']))
 	  	$Inv->sync();
 	  	
 	  	
+	  	
 	  	echo  '>>shop>>{{'.$_REQUEST['shop']."}}";
 	  	
 	
