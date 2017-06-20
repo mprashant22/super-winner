@@ -10,7 +10,8 @@ require __DIR__. '../../app/Export_Sync.php';
 echo 'neche';
 if(isset($_POST['SYNC']))
 {
-	 	$Inv = new Export_Sync();
+	echo 'xx'; 
+	$Inv = new Export_Sync();
 	  	$Inv->sync();
 	
 }
