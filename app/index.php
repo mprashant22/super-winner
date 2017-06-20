@@ -6,7 +6,7 @@
 echo "in   app  index";
 require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
-require __DIR__. '../../app/Export_Sync.php';
+//require __DIR__. '../../app/Export_Sync.php';
 echo 'neche';
 
 ?>
