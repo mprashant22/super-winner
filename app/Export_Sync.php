@@ -76,24 +76,25 @@ class Export_Sync extends DB_Connection{
   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
   				
   				
-  				$filename = '/var/www/html/shopifyDemoLamp/uploads/'.$_FILES["fileToUpload"]["name"];
+  			//	$filename = '/var/www/html/shopifyDemoLamp/uploads/'.$_FILES["fileToUpload"]["name"];
+  				$filename = '/var/www/html/shopifyDemoLamp/uploads/Book1.csv';
 
-  				echo "?filxx>>>>".$filename;
+  				//echo "?filxx>>>>".$filename;
   				
  				$handle = fopen($filename, "r");
- 				echo "handlxxxx".$handle;
+ 				//echo "handlxxxx".$handle;
  				
  				$data = fgetcsv($handle);
- 				echo "<pre>".$data."</pre>";
+ 				//echo "<pre>".$data."</pre>";
  				while(! feof($handle))
  				{
  					//echo '1x';
  					if(feof($handle))
  					{
- 						echo '2x';
+ 					//	echo '2x';
  						break;
  					}
- 					echo "<pre>".fgetcsv($handle)."</pre>";
+ 					//echo "<pre>".fgetcsv($handle)."</pre>";
  					
  					
  					
@@ -102,14 +103,14 @@ class Export_Sync extends DB_Connection{
  					$values=[];
  					$values=$data;
  					//echo '4x';
- 					echo "<pre>".($data)."</pre>";
+ 					//echo "<pre>".($data)."</pre>";
 
  					for ($i=0;$i<count($data);$i++)
  					{
  						//echo '5x';
  						$data1=mysqli_escape_string($connection, $data[$i]);
  						//echo '6x';
- 						print_r($data1);
+ 						//print_r($data1);
  						$db.="'".$data1."',";
  						//echo '7x'.$db;
  					}
