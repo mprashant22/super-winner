@@ -15,8 +15,8 @@ if(isset($_POST['SYNC']))
 	  	$Inv->sync();
 	  	
 	  	
-	  	echo 'pxpx';
-	  	echo  '{'.$_REQUEST['shop']."]]";
+	  	header("location:install/index.php");
+	  	//echo  '{'.$_REQUEST['shop']."]]";
 	  	
 	
 }
