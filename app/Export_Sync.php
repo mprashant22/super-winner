@@ -90,13 +90,13 @@ class Export_Sync extends DB_Connection{
  						echo '2x';
  						break;
  					}
- 					print_r(fgetcsv($handle));
+ 					echo "<pre>".fgetcsv($handle)."</pre>";
  					$data = fgetcsv($handle);
  					echo '3x';
  					$values=[];
  					$values=$data;
  					echo '4x';
-print_r($data);
+ 					echo "<pre>".($data)."</pre>";
 
  					for ($i=0;$i<count($data);$i++)
  					{
