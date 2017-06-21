@@ -84,26 +84,35 @@ class Export_Sync extends DB_Connection{
  				$data = fgetcsv($handle);
  				while(! feof($handle))
  				{
+ 					echo '1x';
  					if(feof($handle))
  					{
+ 						echo '2x';
  						break;
  					}
  					print_r(fgetcsv($handle));
  					$data = fgetcsv($handle);
-
+ 					echo '3x';
  					$values=[];
  					$values=$data;
-
+ 					echo '4x';
+print_r($data);
 
  					for ($i=0;$i<count($data);$i++)
  					{
+ 						echo '5x';
  						$data1=mysqli_escape_string($connection, $data[$i]);
+ 						echo '6x';
+ 						print_r($data1);
  						$db.="'".$data1."',";
+ 						echo '7x'.$db;
  					}
 				
  					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					echo '8x';
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+ 					echo '9x';
 					
  				}
 				
