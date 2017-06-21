@@ -14,8 +14,9 @@ if(isset($_POST['SYNC']))
 	$Inv = new Export_Sync();
 	  	$Inv->sync();
 	  	
+	  	echo 'pxp';
 	  	
-	  	header("location:install/index.php");
+	  	//header("location:install/index.php");
 	  	//echo  '{'.$_REQUEST['shop']."]]";
 	  	
 	
