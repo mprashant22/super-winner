@@ -76,50 +76,32 @@ class Export_Sync extends DB_Connection{
   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
   				
   				
-  			//	$filename = '/var/www/html/shopifyDemoLamp/uploads/'.$_FILES["fileToUpload"]["name"];
-  				$filename = "/var/www/html/shopifyDemoLamp/uploads/Book1.csv";
+ 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 
-  				//echo "?filxx>>>>".$filename;
-  				
  				$handle = fopen($filename, "r");
- 				//echo "handlxxxx".$handle;
- 				
  				$data = fgetcsv($handle);
- 				//echo "<pre>".$data."</pre>";
  				while(! feof($handle))
  				{
- 					//echo '1x';
  					if(feof($handle))
  					{
- 					//	echo '2x';
  						break;
  					}
- 					//echo "<pre>".fgetcsv($handle)."</pre>";
- 					
- 					
- 					
+ 					//print_r(fgetcsv($handle));
  					$data = fgetcsv($handle);
- 					//echo '3x';
+
  					$values=[];
  					$values=$data;
- 					//echo '4x';
- 					//echo "<pre>".($data)."</pre>";
+
 
  					for ($i=0;$i<count($data);$i++)
  					{
- 						//echo '5x';
  						$data1=mysqli_escape_string($connection, $data[$i]);
- 						//echo '6x';
- 						//print_r($data1);
  						$db.="'".$data1."',";
- 						//echo '7x'.$db;
  					}
 				
  					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
- 					echo $sql;
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
- 					//echo '9x';
 					
  				}
 				
