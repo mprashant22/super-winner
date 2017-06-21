@@ -40,6 +40,7 @@ if ($code) {
         echo "Invalid access token";
     }
     echo '1211113';
+    echo "dukaan".$shop."//";
     // we check if it's a fresh installation
     $shop_info = $Stores->is_shop_exists($shop);
     print_r($shop_info);
