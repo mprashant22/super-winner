@@ -76,37 +76,37 @@ class Export_Sync extends DB_Connection{
   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
   				
   				
-// 		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
+  				$filename = $_FILES["fileToUpload"]["name"];
 
-// 				$handle = fopen($filename, "r");
-// 				$data = fgetcsv($handle);
-// 				while(! feof($handle))
-// 				{
-// 					if(feof($handle))
-// 					{
-// 						break;
-// 					}
-// 					//print_r(fgetcsv($handle));
-// 					$data = fgetcsv($handle);
+ 				$handle = fopen($filename, "r");
+ 				$data = fgetcsv($handle);
+ 				while(! feof($handle))
+ 				{
+ 					if(feof($handle))
+ 					{
+ 						break;
+ 					}
+ 					//print_r(fgetcsv($handle));
+ 					$data = fgetcsv($handle);
 
-// 					$values=[];
-// 					$values=$data;
+ 					$values=[];
+ 					$values=$data;
 
 
-// 					for ($i=0;$i<count($data);$i++)
-// 					{
-// 						$data1=mysqli_escape_string($connection, $data[$i]);
-// 						$db.="'".$data1."',";
-// 					}
+ 					for ($i=0;$i<count($data);$i++)
+ 					{
+ 						$data1=mysqli_escape_string($connection, $data[$i]);
+ 						$db.="'".$data1."',";
+ 					}
 				
-// 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-// 					$db="";
-// 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+ 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					$db="";
+ 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
-// 				}
+ 				}
 				
-// 				fclose($handle);
-// 				echo "Successfully Imported";
+ 				fclose($handle);
+ 				echo "Successfully Imported";
 		
 		$store='storedemo.myshopify.com';
 		$table=explode(".", $store);
