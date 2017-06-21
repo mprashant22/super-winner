@@ -17,7 +17,7 @@ if(isset($_POST['SYNC']))
 	  	echo 'pxp';
 	  	
 	  	//header("location:install/index.php");
-	  	echo  '{'.$_REQUEST['shop']."]]";
+	  	echo  '{'.$_GET['shop']."]]";
 	  	
 	
 }
