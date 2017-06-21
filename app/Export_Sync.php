@@ -87,7 +87,7 @@ class Export_Sync extends DB_Connection{
  				echo "<pre>".$data."</pre>";
  				while(! feof($handle))
  				{
- 					echo '1x';
+ 					//echo '1x';
  					if(feof($handle))
  					{
  						echo '2x';
@@ -98,27 +98,27 @@ class Export_Sync extends DB_Connection{
  					
  					
  					$data = fgetcsv($handle);
- 					echo '3x';
+ 					//echo '3x';
  					$values=[];
  					$values=$data;
- 					echo '4x';
+ 					//echo '4x';
  					echo "<pre>".($data)."</pre>";
 
  					for ($i=0;$i<count($data);$i++)
  					{
- 						echo '5x';
+ 						//echo '5x';
  						$data1=mysqli_escape_string($connection, $data[$i]);
- 						echo '6x';
+ 						//echo '6x';
  						print_r($data1);
  						$db.="'".$data1."',";
- 						echo '7x'.$db;
+ 						//echo '7x'.$db;
  					}
 				
  					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
- 					echo '8x';
+ 					echo $sql;
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
- 					echo '9x';
+ 					//echo '9x';
 					
  				}
 				
