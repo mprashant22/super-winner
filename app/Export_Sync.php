@@ -81,7 +81,10 @@ class Export_Sync extends DB_Connection{
   				echo "?filxx>>>>".$filename;
   				
  				$handle = fopen($filename, "r");
+ 				echo "handlxxxx".$handle;
+ 				
  				$data = fgetcsv($handle);
+ 				echo "<pre>".$data."</pre>";
  				while(! feof($handle))
  				{
  					echo '1x';
