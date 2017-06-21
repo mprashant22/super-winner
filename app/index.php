@@ -7,6 +7,11 @@ echo "in   app  index";
 require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
 require __DIR__. '../../app/Export_Sync.php';
+
+
+$Shopify = new Shopify();
+$Stores = new Stores();
+$shop = $_REQUEST['shop'];
 echo 'neche';
 if(isset($_POST['SYNC']))
 {
@@ -14,10 +19,10 @@ if(isset($_POST['SYNC']))
 	$Inv = new Export_Sync();
 	  	$Inv->sync();
 	  	
-	  	echo 'pxp';
+	  	echo 'pxp'.  $shop;
 	  	
 	  	//header("location:install/index.php");
-	  	echo  '{'.$_GET['shop']."]]";
+	  	
 	  	
 	
 }
