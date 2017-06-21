@@ -77,7 +77,7 @@ class Export_Sync extends DB_Connection{
   				
   				
   				$filename = $_FILES["fileToUpload"]["name"];
-
+echo 'ff>>'.$filename;
  				$handle = fopen($filename, "r");
  				$data = fgetcsv($handle);
  				while(! feof($handle))
@@ -86,7 +86,7 @@ class Export_Sync extends DB_Connection{
  					{
  						break;
  					}
- 					//print_r(fgetcsv($handle));
+ 					print_r(fgetcsv($handle));
  					$data = fgetcsv($handle);
 
  					$values=[];
