@@ -79,6 +79,7 @@ class Export_Sync extends DB_Connection{
   				$filename = '/var/www/html/shopifyDemoLamp/uploads'.$_FILES["fileToUpload"]["name"];
 
   				
+  				
  				$handle = fopen($filename, "r");
  				$data = fgetcsv($handle);
  				while(! feof($handle))
