@@ -87,6 +87,7 @@ echo "((((((())))))))))".$filename;
  				{
  					if(feof($handle))
  					{
+ 						echo 'break';
  						break;
  					}
  					
