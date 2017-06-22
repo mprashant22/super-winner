@@ -12,6 +12,7 @@ require __DIR__. '../../app/Export_Sync.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
+echo "shop".$shop;
 echo 'neche';
 if(isset($_POST['SYNC']))
 {

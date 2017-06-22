@@ -115,7 +115,7 @@ echo "((((((())))))))))".$filename;
 				
  				fclose($handle);
  				echo "Successfully Imported";
-		
+ 				echo "@@@@@@@@@@shop".$shop;
 		$store='storedemo.myshopify.com';
 		$table=explode(".", $store);
 		echo $table[0];
