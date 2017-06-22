@@ -17,6 +17,7 @@ while(! feof($handle))
 	//print_r(fgetcsv($handle));
 	echo 'mm';
 	$data_csv = fgetcsv($handle);
+	print_r($data_csv);
 	echo 'nn';
 	
 	$values_csv=[];
