@@ -39,7 +39,7 @@ while(! feof($handle))
 	for ($i=0;$i<count($data_csv);$i++)
 	{
 		echo "loop mei";
-		$data1=mysqli_escape_string($connection, $data[$i]);
+		$data1=mysqli_escape_string($connection, $data_csv[$i]);
 		$db.="'".$data1."',";
 	}
 	
