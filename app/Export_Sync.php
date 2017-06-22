@@ -90,15 +90,17 @@ echo "((((((())))))))))".$filename;
  						break;
  					}
  					//print_r(fgetcsv($handle));
+ 					echo 'mm';
  					$data_csv = fgetcsv($handle);
+ 					echo 'nn';
 
  					$values_csv=[];
  					$values_csv=$data_csv;
 
 
- 					for ($i=0;$i<count($data);$i++)
+ 					for ($i=0;$i<count($data_csv);$i++)
  					{
- 						$data1=mysqli_escape_string($connection, $data[$i]);
+ 						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
  						$db.="'".$data1."',";
  					}
 				
