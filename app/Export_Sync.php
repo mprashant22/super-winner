@@ -44,7 +44,7 @@
 <?php
 echo 'in xpo';
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
-
+echo "@@@@@@@@@@shop".$shop;
 
 class Export_Sync extends DB_Connection{
 	 
@@ -115,7 +115,7 @@ echo "((((((())))))))))".$filename;
 				
  				fclose($handle);
  				echo "Successfully Imported";
- 				echo "@@@@@@@@@@shop".$shop;
+ 				
 		$store='storedemo.myshopify.com';
 		$table=explode(".", $store);
 		echo $table[0];
