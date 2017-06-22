@@ -92,8 +92,8 @@ echo "((((((())))))))))".$filename;
  					//print_r(fgetcsv($handle));
  					$data_csv = fgetcsv($handle);
 
- 					$values=[];
- 					$values=$data_csv;
+ 					$values_csv=[];
+ 					$values_csv=$data_csv;
 
 
  					for ($i=0;$i<count($data);$i++)
