@@ -36,7 +36,7 @@ while(! feof($handle))
 	$values_csv=$data_csv;
 	echo "<pre>".print_r($values_csv)."</pre>";
 	
-	for ($i=0;$i<count($data);$i++)
+	for ($i=0;$i<count($data_csv);$i++)
 	{
 		echo "loop mei";
 		$data1=mysqli_escape_string($connection, $data[$i]);
