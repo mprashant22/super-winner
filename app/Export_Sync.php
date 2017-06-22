@@ -83,8 +83,10 @@ echo "((((((())))))))))".$filename;
  				
  				$data_csv = fgetcsv($handle);
  				print_r($data_csv);
+ 				$t=0;
  				while(! feof($handle))
  				{
+ 					echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
  					if(feof($handle))
  					{
  						echo 'break';
