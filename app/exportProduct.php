@@ -39,8 +39,10 @@ while(! feof($handle))
 	for ($i=0;$i<count($data_csv);$i++)
 	{
 		echo "loop mei";
-		$data1=mysqli_escape_string($connection, $data_csv[$i]);
+		$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
+		print_r($data1);
 		$db.="'".$data1."',";
+		print_r($db);
 	}
 	
 	$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
