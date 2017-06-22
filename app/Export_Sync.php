@@ -79,10 +79,10 @@ class Export_Sync extends DB_Connection{
  		$filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
 echo "((((((())))))))))".$filename;
  				$handle = fopen($filename, "r");
- 				echo $handle;
+ 				print_r($handle);
  				
  				$data_csv = fgetcsv($handle);
- 				echo $data_csv;
+ 				print_r($data_csv);
  				while(! feof($handle))
  				{
  					if(feof($handle))
