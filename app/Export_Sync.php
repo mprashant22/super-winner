@@ -89,10 +89,10 @@ echo "((((((())))))))))".$filename;
  					{
  						break;
  					}
- 					//print_r(fgetcsv($handle));
- 					echo 'mm';
+ 					
+ 					
  					$data_csv = fgetcsv($handle);
- 					echo 'nn';
+ 					
 
  					$values_csv=[];
  					$values_csv=$data_csv;
