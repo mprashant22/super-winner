@@ -76,7 +76,7 @@ class Export_Sync extends DB_Connection{
 //   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
   				
   				
- 		$filename = "/var/www/html/shopifyDemoLamp/".basename($_FILES["fileToUpload"]["name"]);
+ 		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
 echo "((((((())))))))))".$filename;
  				$handle = fopen($filename, "r");
  				print_r($handle);
