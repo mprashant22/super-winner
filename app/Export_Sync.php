@@ -44,6 +44,8 @@
 <?php
 echo 'in xpo';
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+
+$shop = $_REQUEST['shop'];
 echo "@@@@@@@@@@shop".$shop;
 
 class Export_Sync extends DB_Connection{
