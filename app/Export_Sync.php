@@ -81,8 +81,8 @@ class Export_Sync extends DB_Connection{
  				$handle = fopen($filename, "r");
  				echo $handle;
  				
- 				$data = fgetcsv($handle);
- 				echo $data;
+ 				$data_csv = fgetcsv($handle);
+ 				echo $data_csv;
  				while(! feof($handle))
  				{
  					if(feof($handle))
@@ -90,10 +90,10 @@ class Export_Sync extends DB_Connection{
  						break;
  					}
  					//print_r(fgetcsv($handle));
- 					$data = fgetcsv($handle);
+ 					$data_csv = fgetcsv($handle);
 
  					$values=[];
- 					$values=$data;
+ 					$values=$data_csv;
 
 
  					for ($i=0;$i<count($data);$i++)
