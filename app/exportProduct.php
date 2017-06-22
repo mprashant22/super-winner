@@ -54,6 +54,8 @@ while(! feof($handle))
 	}
 }
 
+$obj=new exportProduct();
+$obj->syncc();
 
 ?>
 
