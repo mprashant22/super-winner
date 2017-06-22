@@ -1,4 +1,16 @@
 <?php
+require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+
+
+class exportProduct extends DB_Connection{
+	
+	function __construct(){
+		$this->connection = $this->connect();
+	}
+	private $table_name = "products";
+	public $connection = '';
+	public function syncc()
+	{
 if(isset($_POST['SYNC']))
 {
 $filename = "/var/www/html/shopifyDemoLamp/uploads/products_export4.csv";
@@ -36,8 +48,13 @@ while(! feof($handle))
 	
 }
 
-fclose($handle);
+	fclose($handle);
+	}
+
+	}
 }
+
+
 ?>
 
 <form action='' method='post' enctype="multipart/form-data">
