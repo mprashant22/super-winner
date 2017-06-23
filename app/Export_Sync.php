@@ -123,6 +123,7 @@ echo "((((((())))))))))".$filename;
 		echo $table[0];
 		
 		$shp=explode('.', $shop);
+		echo "^^^^^^^^".$shp[0];
 		$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 			echo "sql>>".$sql;
 			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
