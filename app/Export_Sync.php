@@ -62,13 +62,15 @@ class Export_Sync extends DB_Connection{
 		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
 		 		echo "sql>>".$sql;
-		 		if(!mysqli_query($this->connection,"desc ".$shp[0]))
+		 		if(!mysqli_query($this->connection,"desc `".$shp[0]."`"))
 		 		{
+		 			echo "IFF";
 		 			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
 		 		}
 		 		else
 		 		{
-		 			mysqli_query($this->connection,"truncate ".$shp[0]);
+		 			echo "ELSE";
+		 			mysqli_query($this->connection,"truncate `".$shp[0]."`");
 		 		}
 		 		
 		 		
