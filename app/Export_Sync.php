@@ -55,7 +55,7 @@ class Export_Sync extends DB_Connection{
 	}
 	private $table_name = "products";
 	public $connection = '';
-	public $shop = $_REQUEST['shop'];
+	//public $shop = $_REQUEST['shop'];
 	public function sync()
 	{
 	
