@@ -60,12 +60,12 @@ class Export_Sync extends DB_Connection{
 	{
 	
 
-		 		echo "in class shop >>".$this->shop;
-		 		$shp=explode('.', $this->shop);
-		 		echo "^^^^^^^^".$shp[0];
-		 		$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-		 		echo "sql>>".$sql;
-		 		mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
+		 	//	echo "in class shop >>".$this->shop;
+		 		//$shp=explode('.', $this->shop);
+		 	//	echo "^^^^^^^^".$shp[0];
+		 	//	$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
+		 //		echo "sql>>".$sql;
+		 	//	mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
 
  		
   			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
