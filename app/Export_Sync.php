@@ -74,6 +74,7 @@ class Export_Sync extends DB_Connection{
 		 		}
 		 		
 		 		
+		 		
 
  		
   			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
