@@ -62,7 +62,16 @@ class Export_Sync extends DB_Connection{
 		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
 		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
 		 		echo "sql>>".$sql;
-		 		mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
+		 		if(!mysqli_query("desc ".$shp[0]))
+		 		{
+		 			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
+		 		}
+		 		else
+		 		{
+		 			mysqli_query("truncate ".$shp[0]);
+		 		}
+		 		
+		 		
 
  		
   			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
