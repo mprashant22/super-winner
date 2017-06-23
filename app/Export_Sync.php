@@ -45,7 +45,7 @@
 echo 'in xpo';
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
-
+$shop = $_REQUEST['shop'];
 echo "@@@@@@@@@@shop".$shop;
 
 class Export_Sync extends DB_Connection{
@@ -55,39 +55,53 @@ class Export_Sync extends DB_Connection{
 	}
 	private $table_name = "products";
 	public $connection = '';
-	public $shop = $_REQUEST['shop'];
 	public function sync()
 	{
-// 		echo "in class shop >>".$this->shop;
-// 		$shp=explode('.', $this->shop);
-// 		echo "^^^^^^^^".$shp[0];
-// 		$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-// 		echo "sql>>".$sql;
-// 		mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
-
+	
+// 		echo 'csv2mysql';
 
  		
   			$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
+ 			
+//  			echo 'Trdr>'.$target_dir;
+ 			
+ 			
   			$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//   			echo "trget file>><pre>".$target_file."</pre>";
+
   			$csvFileType = pathinfo($target_file);
-			move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
-	 		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
-			$handle = fopen($filename, "r");
-			$data_csv = fgetcsv($handle);
-			$t=0;
-			while(! feof($handle))
-			{
+//   			echo "extension>>".$csvFileType['extension'];
+//   			print_r($csvFileType);
+ 			
+   				move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
+  				
+//   				echo '$_FILES>>'.$_FILES["fileToUpload"]["name"];
+  				
+  				
+ 		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
+echo "((((((())))))))))".$filename;
+ 				$handle = fopen($filename, "r");
+ 				print_r($handle);
+ 				
+ 				$data_csv = fgetcsv($handle);
+ 				print_r($data_csv);
+ 				$t=0;
+ 				while(! feof($handle))
+ 				{
  					echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
  					if(feof($handle))
  					{
  						echo 'break';
  						break;
  					}
- 						
+ 					
+ 					
  					$data_csv = fgetcsv($handle);
  					
+
  					$values_csv=[];
  					$values_csv=$data_csv;
+
 
  					for ($i=0;$i<count($data_csv);$i++)
  					{
@@ -95,17 +109,23 @@ class Export_Sync extends DB_Connection{
  						$db.="'".$data1."',";
  					}
 				
- 					$sql = "INSERT into ".$shp[0]."(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
-			}
+ 				}
 				
- 			fclose($handle);
- 			echo "Successfully Imported";
+ 				fclose($handle);
+ 				echo "Successfully Imported";
  				
+		$store='storedemo.myshopify.com';
+		$table=explode(".", $store);
+		echo $table[0];
 		
-	
+		$shp=explode('.', $shop);
+		$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
+			echo "sql>>".$sql;
+			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
 		}
 	}
 
