@@ -18,6 +18,7 @@ if(isset($_POST['SYNC']))
 {
 	echo 'xx'; 
 	$Inv = new Export_Sync();
+	echo '??????????????'.$shop;
 	$Inv->sync($shop);
 	  	
 	  	echo 'pxp'.  $shop;
