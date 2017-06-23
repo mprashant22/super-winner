@@ -93,7 +93,7 @@ class Export_Sync extends DB_Connection{
  						$db.="'".$data1."',";
  					}
 				
- 					$sql = "INSERT into products(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					$sql = "INSERT into ".$shp[0]."(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
