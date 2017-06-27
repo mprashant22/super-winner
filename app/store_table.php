@@ -24,31 +24,24 @@ class StoreTable extends DB_Connection{
 		while ($query_data = mysqli_fetch_array($res)) {
 			?>
 			<select name="REL" onClick="">
-			<option value="<?php echo $query_data["handle"]; ?>"<?php if ($query_data["HANDLE"]==$_POST['REL']) {?> selected="selected"<? } ?>><?php echo $query_data["RELIGION"]; ?></option>
-			<? } ?>
-<!-- 			for($i=0;$i<count($query_data);$i++) -->
-<!-- 			echo "<pre>".$query_data[$i]."</pre><br>"; -->
-<!-- 			$options[$query_data["handle"]] = $query_data["HANDLE"]; -->
-		}
-		
+			<option value="<?php echo $query_data["handle"]; ?>"<?php if ($query_data["HANDLE"]==$_POST['REL']) {?> selected="selected"<? } ?>><?php echo $query_data["HANDLE"]; ?></option>
+  <?php } 
+			
+			
+//  			for($i=0;$i<count($query_data);$i++) 
+//  			echo "<pre>".$query_data[$i]."</pre><br>"; 
+//  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
 	}
+		
+
 }
+	
+	 
 	
 	$obj=new StoreTable();
 	$obj->storeDisplay();
 
 ?>
-
-
-<select name="REL" ">
-<?php foreach ($options as $key => $value) : ?>
-    <?php $selected = ($key == $_POST['REL']) ? 'selected="selected"' : ''; ?>
-    <option value="<?php echo $key ?>" <?php echo $selected ?>>
-    <?php echo $value ?>
-    </option>
-<?php endforeach; ?>
-</select>
-
 
 
 <div>
@@ -89,4 +82,4 @@ class StoreTable extends DB_Connection{
      <td>Price</td>
 </tr>
 </table> 
-
+</div>
