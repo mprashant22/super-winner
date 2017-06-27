@@ -13,6 +13,7 @@ class StoreTable extends DB_Connection{
 	public $connection = '';
 	public function storeDisplay()
 	{
+		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
 		$sql = "select * from "."`".$shp[0]."`";
 		echo "sql>>".$sql;
