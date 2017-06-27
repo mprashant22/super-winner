@@ -17,7 +17,8 @@ class StoreTable extends DB_Connection{
 		$shp=explode('.', $shop);
 		$sql = "select * from "."`".$shp[0]."`";
 		echo "sql>>".$sql;
-		print_r(mysqli_query($this->connection,$sql));// or die(mysqli_error($this->connection));		
+		$res=mysqli_query($this->connection,$sql);
+		echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 	}
 }
 	
