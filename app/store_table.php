@@ -21,7 +21,7 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();
-		while ($query_data = mysql_fetch_array($res)) {
+		while ($query_data = mysqli_fetch_array($res)) {
 			echo "<>".$query_data;
 			//$options[$query_data["RID"]] = $query_data["RELIGION"];
 		}
