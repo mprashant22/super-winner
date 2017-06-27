@@ -19,6 +19,13 @@ class StoreTable extends DB_Connection{
 		echo "sql>>".$sql."<br>";
 		$res=mysqli_query($this->connection,$sql);
 		echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
+		
+		$options = array();
+		while ($query_data = mysql_fetch_array($res)) {
+			echo "<>".$query_data;
+			//$options[$query_data["RID"]] = $query_data["RELIGION"];
+		}
+		
 	}
 }
 	
@@ -26,6 +33,19 @@ class StoreTable extends DB_Connection{
 	$obj->storeDisplay();
 
 ?>
+
+
+<select name="REL" onClick="submitCboSemester();">
+<?php foreach ($options as $key => $value) : ?>
+    <?php $selected = ($key == $_POST['REL']) ? 'selected="selected"' : ''; ?>
+    <option value="<?php echo $key ?>" <?php echo $selected ?>>
+    <?php echo $value ?>
+    </option>
+<?php endforeach; ?>
+</select>
+
+
+
 <div>
  <table border=1> 
    <tr>
