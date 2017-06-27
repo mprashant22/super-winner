@@ -22,9 +22,13 @@ class StoreTable extends DB_Connection{
 		
 		$options = array();
 		while ($query_data = mysqli_fetch_array($res)) {
-			for($i=0;$i<count($query_data);$i++)
-			echo "<pre>".$query_data[$i]."</pre><br>";
-			$options[$query_data["handle"]] = $query_data["HANDLE"];
+			?>
+			<select name="REL" onClick="">
+			<option value="<?php echo $query_data["handle"]; ?>"<?php if ($query_data["HANDLE"]==$_POST['REL']) {?> selected="selected"<? } ?>><?php echo $query_data["RELIGION"]; ?></option>
+			<? } ?>
+<!-- 			for($i=0;$i<count($query_data);$i++) -->
+<!-- 			echo "<pre>".$query_data[$i]."</pre><br>"; -->
+<!-- 			$options[$query_data["handle"]] = $query_data["HANDLE"]; -->
 		}
 		
 	}
@@ -36,7 +40,7 @@ class StoreTable extends DB_Connection{
 ?>
 
 
-<select name="REL" onClick="submitCboSemester();">
+<select name="REL" ">
 <?php foreach ($options as $key => $value) : ?>
     <?php $selected = ($key == $_POST['REL']) ? 'selected="selected"' : ''; ?>
     <option value="<?php echo $key ?>" <?php echo $selected ?>>
