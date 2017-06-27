@@ -18,7 +18,7 @@ class StoreTable extends DB_Connection{
 		$sql = "select * from "."`".$shp[0]."`";
 		echo "sql>>".$sql."<br>";
 		$res=mysqli_query($this->connection,$sql);
-		echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
+		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();
 		while ($query_data = mysql_fetch_array($res)) {
