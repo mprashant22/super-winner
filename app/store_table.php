@@ -2,17 +2,7 @@
 
 echo "store table";
 
-
 ?>
-<div data-ng-controller="ClientCtrl">
-    <ul class="inline">
-        <li>
-            <div class="alert alert-info">
-                 <h4>Total Filtered Client: {{filtered.length}}</h4>
-
-            </div>
-        </li>
-        <li>
             <div class="btn-group" data-ng-class="{open: open}">
                 <button class="btn">Filter by Company</button>
                 <button class="btn dropdown-toggle" data-ng-click="open=!open"><span class="caret"></span>
@@ -45,3 +35,4 @@ echo "store table";
                 <th style="width:30%">Company</th>
             </tr>
         </thead>
+    </table>
