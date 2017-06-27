@@ -32,8 +32,6 @@ class StoreTable extends DB_Connection{
 //  			echo "<pre>".$query_data[$i]."</pre><br>"; 
 //  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
 	}
-		
-
 }
 	
 	 
