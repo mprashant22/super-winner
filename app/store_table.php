@@ -11,49 +11,17 @@ class StoreTable extends DB_Connection{
 	
 	private $table_name = "products";
 	public $connection = '';
-	public function sync($shop)
+	public function storeDisplay()
 	{
-		
-		
-		echo "in class shop >>".$shop;
 		$shp=explode('.', $shop);
-		echo "^^^^^^^^".$shp[0];
-		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-		$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
+		$sql = "select * from "."`".$shp[0]."`";
 		echo "sql>>".$sql;
-		if(!mysqli_query($this->connection,"desc `".$shp[0]."`"))
-		{
-			echo "IFF";
-			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
-		}
-		else
-		{
-			echo "ELSE";
-			mysqli_query($this->connection,"truncate `".$shp[0]."`");
-		}
-		
-	
-// 			$data_csv = fgetcsv($handle);
-			
-			
-// 			$values_csv=[];
-// 			$values_csv=$data_csv;
-			
-			
-// 			for ($i=0;$i<count($data_csv);$i++)
-// 			{
-// 				$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
-// 				$db.="'".$data1."',";
-// 			}
-			
-// 			$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-// 			$db="";
-// 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
-			
-		}
-		
-
+		print_r(mysqli_query($this->connection,$sql));// or die(mysqli_error($this->connection));		
 	}
+}
+	
+	$obj=new StoreTable();
+	$obj->storeDisplay();
 
 ?>
 <div>
