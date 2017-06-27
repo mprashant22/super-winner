@@ -20,14 +20,16 @@ class StoreTable extends DB_Connection{
 		$res=mysqli_query($this->connection,$sql);
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
-		$options = array();
+		$options = array();?><select name="REL" onClick=""><?php 
 		while ($query_data = mysqli_fetch_array($res)) {
 			echo "pmathur".$query_data['HANDLE'];
 			?>
-			<select name="REL" onClick="">
+			
 			<option value="<?php echo $query_data["handle"]; ?>"><?php echo $query_data["HANDLE"]; ?></option>
-			</select>
-  <?php }			
+			
+  <?php }	?>
+  </select>
+  <?php 
 //  			for($i=0;$i<count($query_data);$i++) 
 //  			echo "<pre>".$query_data[$i]."</pre><br>"; 
 //  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
