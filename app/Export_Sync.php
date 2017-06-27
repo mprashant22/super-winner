@@ -131,15 +131,7 @@ class Export_Sync extends DB_Connection{
 				
  				fclose($handle);
  				echo "Successfully Imported";
- 				
-// 		$store='storedemo.myshopify.com';
-// 		$table=explode(".", $store);
-// 		echo $table[0];
-		
-// 		$shp=explode('.', $shop);
-// 		$sql = "create table ".$shp[0]."(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-// 			echo "sql>>".$sql;
-// 			mysqli_query($this->connection,$sql);// or die(mysqli_error($this->connection));
+
 		}
 	}
 
