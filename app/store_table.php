@@ -1,6 +1,14 @@
 <?php
 
 echo "store table";
+require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+
+class StoreTable extends DB_Connection{
+	 
+	function __construct(){
+		$this->connection = $this->connect();
+	}
+}
 
 ?>
 <div>
