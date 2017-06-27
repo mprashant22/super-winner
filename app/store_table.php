@@ -103,36 +103,6 @@ class StoreTable extends DB_Connection{
 }
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-}
-
 ?>
 <div>
  <table border=1> 
