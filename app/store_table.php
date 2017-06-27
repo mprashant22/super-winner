@@ -22,7 +22,7 @@ class StoreTable extends DB_Connection{
 		
 		$options = array();
 		while ($query_data = mysqli_fetch_array($res)) {
-			echo "<>".$query_data;
+			echo "<pre>".$query_data."</pre>";
 			$options[$query_data["handle"]] = $query_data["HANDLE"];
 		}
 		
