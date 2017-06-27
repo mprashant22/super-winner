@@ -22,20 +22,16 @@ class StoreTable extends DB_Connection{
 		
 		$options = array();
 		while ($query_data = mysqli_fetch_array($res)) {
+			echo "pmathur";
 			?>
 			<select name="REL" onClick="">
-			<option value="<?php echo $query_data["handle"]; ?>"<?php if ($query_data["HANDLE"]==$_POST['REL']) {?> selected="selected"<? } ?>><?php echo $query_data["HANDLE"]; ?></option>
-  <?php } 
-			
-			
+			<option value="<?php echo $query_data["handle"]; ?>"><?php echo $query_data["HANDLE"]; ?></option>
+  <?php }			
 //  			for($i=0;$i<count($query_data);$i++) 
 //  			echo "<pre>".$query_data[$i]."</pre><br>"; 
 //  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
 	}
-}
-	
-	 
-	
+}	
 	$obj=new StoreTable();
 	$obj->storeDisplay();
 
