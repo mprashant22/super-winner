@@ -4,35 +4,41 @@ echo "store table";
 
 ?>
 <div>
-    
-    
+ <table border=1> 
+   <tr>
+     <th>Handle</th>
+     <th>Title</th>
+     <th>Variant1</th>
+     <th>Variant2</th>
+     <th>Variant3</th>
+     <th>Variant~SKU</th>
+     <th>Units</th>
+     <th>Price</th>
+    </tr>
+    <tr>
+     <td>Handle</td>
+     <td>Title</td>
+     <td><select>
+   <option value="volvo">Volvo</option>
+   <option value="saab">Saab</option>
+   <option value="mercedes">Mercedes</option>
+   <option value="audi">Audi</option>
+ </select></td>
+    <td><select>
+   <option value="volvo">Volvo</option>
+   <option value="saab">Saab</option>
+   <option value="mercedes">Mercedes</option>
+   <option value="audi">Audi</option>
+ </select></td>
+     <td><select>
+   <option value="volvo">Volvo</option> 
+   <option value="saab">Saab</option> 
+   <option value="mercedes">Mercedes</option>
+   <option value="audi">Audi</option>
+ </select></td> 
+ 	<td>Variant~SKU</td>
+     <td>Units</td>
+     <td>Price</td>
+</tr>
+</table> 
 
-    
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
-                    <li><a data-ng-click="checkAll()"><i class="icon-ok-sign"></i>  Check All</a>
-
-                    </li>
-                    <li><a data-ng-click="selectedCompany=[];"><i class="icon-remove-sign"></i>  Uncheck All</a>
-
-                    </li>
-                    <li class="divider"></li>
-                    <li data-ng-repeat="company in companyList"> <a data-ng-click="setSelectedClient()">{{company.name}}<span data-ng-class="isChecked(company.id)"></span></a>
-
-                    </li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-    <hr/>
-     <h3>Clients Table:</h3>
-
-    <table class="table table-hover table-striped">
-        <thead>
-            <tr>
-                <th style="width:10%">#</th>
-                <th style="width:20%">Name</th>
-                <th style="width:40%">Designation</th>
-                <th style="width:30%">Company</th>
-            </tr>
-        </thead>
-    </table>
