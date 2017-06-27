@@ -3,11 +3,11 @@
 echo "store table";
 
 ?>
-            <div class="btn-group" data-ng-class="{open: open}">
-                <button class="btn">Filter by Company</button>
-                <button class="btn dropdown-toggle" data-ng-click="open=!open"><span class="caret"></span>
+<div>
+    
+    
 
-                </button>
+    
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
                     <li><a data-ng-click="checkAll()"><i class="icon-ok-sign"></i>  Check All</a>
 
