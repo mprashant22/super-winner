@@ -59,8 +59,8 @@ class Export_Sync extends DB_Connection{
 		 		echo "in class shop >>".$shop;
 		 		$shp=explode('.', $shop);
 		 		echo "^^^^^^^^".$shp[0];
-		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
-		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
+		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer)";
+		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
 		 		echo "sql>>".$sql;
 		 		if(!mysqli_query($this->connection,"desc `".$shp[0]."`"))
 		 		{
@@ -123,7 +123,8 @@ class Export_Sync extends DB_Connection{
  						$db.="'".$data1."',";
  					}
 				
- 					$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 					$sql = "INSERT into `".$shp[0]."`(Handle text, Title text, Variant1 text,Variant2 text, Variant3 text, VariantSKU integer, VariantInventory integer, VariantPrice integer) values(".rtrim($db,",").")";
  					$db="";
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
