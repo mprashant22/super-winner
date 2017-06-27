@@ -22,10 +22,10 @@ class StoreTable extends DB_Connection{
 		
 		$options = array();?><select name="REL" onClick=""><?php 
 		while ($query_data = mysqli_fetch_array($res)) {
-			echo "pmathur".$query_data['HANDLE'];
+			echo "pmathur".$query_data['Vendor'];
 			?>
 			
-			<option value="<?php echo $query_data["handle"]; ?>"><?php echo $query_data["HANDLE"]; ?></option>
+			<option value="<?php echo $query_data["Vendor"]; ?>"><?php echo $query_data["Vendor"]; ?></option>
 			
   <?php }	?>
   </select>
