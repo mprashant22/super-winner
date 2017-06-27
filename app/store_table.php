@@ -32,69 +32,28 @@ class StoreTable extends DB_Connection{
 			mysqli_query($this->connection,"truncate `".$shp[0]."`");
 		}
 		
-		
-		
-		
-		
-		$target_dir = dirname(getcwd()).DIRECTORY_SEPARATOR.'uploads'.DIRECTORY_SEPARATOR;
-		
-		
-		
-		
-		$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-		
-		
-		$csvFileType = pathinfo($target_file);
-		
-		move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], '/var/www/html/shopifyDemoLamp/uploads/'.basename($_FILES["fileToUpload"]["name"]));
-		
-		
-		
-		
-		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
-		
-		$handle = fopen($filename, "r");
-		print_r($handle);
-		
-		$data_csv = fgetcsv($handle);
-		print_r($data_csv);
-		$t=0;
-		while(! feof($handle))
-		{
-			echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
-			if(feof($handle))
-			{
-				echo 'break';
-				break;
-			}
+	
+// 			$data_csv = fgetcsv($handle);
 			
 			
-			$data_csv = fgetcsv($handle);
+// 			$values_csv=[];
+// 			$values_csv=$data_csv;
 			
 			
-			$values_csv=[];
-			$values_csv=$data_csv;
+// 			for ($i=0;$i<count($data_csv);$i++)
+// 			{
+// 				$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
+// 				$db.="'".$data1."',";
+// 			}
 			
-			
-			for ($i=0;$i<count($data_csv);$i++)
-			{
-				$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
-				$db.="'".$data1."',";
-			}
-			
-			$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
-			$db="";
-			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+// 			$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+// 			$db="";
+// 			mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 			
 		}
 		
-		fclose($handle);
-		echo "Successfully Imported";
-		
 
 	}
-}
-
 
 ?>
 <div>
