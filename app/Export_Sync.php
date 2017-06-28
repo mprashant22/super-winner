@@ -126,6 +126,8 @@ echo print_r($data_csv);
  						echo '[data1>>'.$data1;
  						$db.="'".$data1."',";
  					}
+ 					echo "<db>".$db;
+ 					
 				
  					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
  					$sql = "INSERT into `".$shp[0]."`(Handle text, Title text, `Option1 Name` text,`Option1 Value` text, `Option2 Name` text, `Option2 Value` text, `Option3 Name` text, `Option3 Value` text, `Variant SKU` integer, `Variant Inventory Qty` integer, `Variant Price` integer) values(".rtrim($db,",").")";
