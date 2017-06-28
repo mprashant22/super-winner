@@ -17,11 +17,11 @@ class StoreTable extends DB_Connection{
 		$shp=explode('.', $shop);
 		$sql2 = "select `Option2 Value` from "."`".$shp[0]."` group by `Option2 Value`";
 		echo "sql>>".$sql2."<br>"; 	
-		$res=mysqli_query($this->connection,$sql2);
+		$res2=mysqli_query($this->connection,$sql2);
 		
 		$sql3 = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
 		echo "sql>>".$sql3."<br>";
-		$res=mysqli_query($this->connection,$sql3);
+		$res3=mysqli_query($this->connection,$sql3);
 		
 		
 		
@@ -56,9 +56,9 @@ class StoreTable extends DB_Connection{
     	<select name="variant2" onClick="">
      		<option>-- Option2 --</option>
      		<?php 
-				while ($query_data2 = mysqli_fetch_array($res)) {
+				while ($query_data2 = mysqli_fetch_array($res2)) {
 			?>			
-			<option value="<?php echo $query_data2["Option3 Value"]; ?>"><?php echo $query_data2["Option3 Value"]; ?></option>			
+			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>			
   			<?php
 				}
 			?>
