@@ -40,8 +40,8 @@ class StoreTable extends DB_Connection{
      <th>Handle</th>
      <th>Title</th>
      <th style="color: #FF0000">Variant1</th>
-     <th style="color: #00FF00">Variant2</th>
-     <th style="color: #00FFDD">Variant3</th>
+     <th style="color: #008c33">Variant2</th>
+     <th style="color: #4298f4">Variant3</th>
      <th>Variant~SKU</th>
      <th>Units</th>
      <th>Price</th>
