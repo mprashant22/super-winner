@@ -59,7 +59,7 @@ class Export_Sync extends DB_Connection{
 		 		echo "in class shop >>".$shop;
 		 		$shp=explode('.', $shop);
 		 		echo "^^^^^^^^".$shp[0];
-		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, `Option1 Name` text,`Option1 Value` text, `Option2 Name` text, `Option2 Value` text, `Option3 Name` text, `Option3 Value` text, `Variant SKU` integer, `Variant Inventory Qty` integer, Variant Price integer)";
+		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, `Option1 Name` text,`Option1 Value` text, `Option2 Name` text, `Option2 Value` text, `Option3 Name` text, `Option3 Value` text, `Variant SKU` integer, `Variant Inventory Qty` integer, `Variant Price` integer)";
 		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
 		 		echo "sql>>".$sql;
 		 		if(!mysqli_query($this->connection,"desc `".$shp[0]."`"))
