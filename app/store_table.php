@@ -49,9 +49,9 @@ class StoreTable extends DB_Connection{
     	<select name="variant2" onClick="">
      		<option>-- Option2 --</option>
      		<?php 
-				while ($query_data = mysqli_fetch_array($res)) {
+				while ($query_data2 = mysqli_fetch_array($res)) {
 			?>			
-			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>			
+			<option value="<?php echo $query_data2["Option3 Value"]; ?>"><?php echo $query_data2["Option3 Value"]; ?></option>			
   			<?php
 				}
 			?>
@@ -61,9 +61,9 @@ class StoreTable extends DB_Connection{
      	<select name="variant3" onClick="">     	
      		<option>-- Option3 --</option>
      		<?php 
-				while ($query_data = mysqli_fetch_array($res)) {
+				while ($query_data3 = mysqli_fetch_array($res)) {
 			?>			
-			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>			
+			<option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>			
   			<?php
 				}
 			?>
