@@ -21,32 +21,7 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();?>
-		<select name="REL" onClick=""><option>-- Option3 --</option><?php 
-		while ($query_data = mysqli_fetch_array($res)) {
 			
-		//echo "pmathur".$query_data["Option3 Value"];
-		
-			
-			
-			?>
-			
-			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>
-			
-  <?php }	?>
-  </select>
-  <?php 
-  
-//  			for($i=0;$i<count($query_data);$i++) 
-//  			echo "<pre>".$query_data[$i]."</pre><br>"; 
-//  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
-	}
-}	
-	$obj=new StoreTable();
-	$obj->storeDisplay();
-
-?>
-
-
 <div>
  <table border=1> 
    <tr>
@@ -60,7 +35,7 @@ class StoreTable extends DB_Connection{
      <th>Price</th>
     </tr>
     <tr>
-     <td>Handle</td>
+   <td>Handle</td>
      <td>Title</td>
      <td><select>
    <option value="volvo">Volvo</option>
@@ -74,15 +49,39 @@ class StoreTable extends DB_Connection{
    <option value="mercedes">Mercedes</option>
    <option value="audi">Audi</option>
  </select></td>
-     <td><select>
-   <option value="volvo">Volvo</option> 
-   <option value="saab">Saab</option> 
-   <option value="mercedes">Mercedes</option>
-   <option value="audi">Audi</option>
- </select></td> 
+     <td>  	
+		
+				
+		
+		<select name="REL" onClick=""><option>-- Option3 --</option><?php 
+		while ($query_data = mysqli_fetch_array($res)) {
+			
+		//echo "pmathur".$query_data["Option3 Value"];
+		
+			
+			
+			?>
+			
+			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>
+			
+  <?php }	?>
+  </select>
+  </td> 
  	<td>Variant~SKU</td>
      <td>Units</td>
      <td>Price</td>
 </tr>
 </table> 
 </div>
+  
+   <?php 
+  
+//  			for($i=0;$i<count($query_data);$i++) 
+//  			echo "<pre>".$query_data[$i]."</pre><br>"; 
+//  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
+	}
+}	
+	$obj=new StoreTable();
+	$obj->storeDisplay();
+
+?>
