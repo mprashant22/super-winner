@@ -15,7 +15,7 @@ class StoreTable extends DB_Connection{
 	{
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
-		$sql = "select `Option Value3` from "."`".$shp[0]."` group by `Option Value3`";
+		$sql = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
 		echo "sql>>".$sql."<br>";
 		$res=mysqli_query($this->connection,$sql);
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
@@ -27,7 +27,7 @@ class StoreTable extends DB_Connection{
 			
 			?>
 			
-			<option value="<?php echo $query_data["`Option Value3`"]; ?>"><?php echo $query_data["`Option Value3`"]; ?></option>
+			<option value="<?php echo $query_data["`Option3 Value`"]; ?>"><?php echo $query_data["`Option3 Value`"]; ?></option>
 			
   <?php }	?>
   </select>
