@@ -15,6 +15,11 @@ class StoreTable extends DB_Connection{
 	{
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
+
+		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
+		echo "sql>>".$sql1."<br>";
+		$res1=mysqli_query($this->connection,$sql1);
+		
 		$sql2 = "select `Option2 Value` from "."`".$shp[0]."` group by `Option2 Value`";
 		echo "sql>>".$sql2."<br>"; 	
 		$res2=mysqli_query($this->connection,$sql2);
@@ -45,12 +50,16 @@ class StoreTable extends DB_Connection{
 		<td>Handle</td>
      	<td>Title</td>
      	<td>
-     	<select>
-   			<option value="volvo">Volvo</option>
-   			<option value="saab">Saab</option>
-   			<option value="mercedes">Mercedes</option>
-   			<option value="audi">Audi</option>
- 		</select>
+     	<select name="variant1" onClick="">
+     		<option>-- Option1 --</option>
+     		<?php 
+				while ($query_data1 = mysqli_fetch_array($res1)) {
+			?>			
+			<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>			
+  			<?php
+				}
+			?>
+  		</select>
  		</td>
     	<td>
     	<select name="variant2" onClick="">
