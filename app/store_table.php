@@ -46,12 +46,16 @@ class StoreTable extends DB_Connection{
  		</select>
  		</td>
     	<td>
-    	<select>
-   			<option value="volvo">Volvo</option>
-   			<option value="saab">Saab</option>
-   			<option value="mercedes">Mercedes</option>
-   			<option value="audi">Audi</option>
- 		</select>
+    	<select name="REL" onClick="">
+     		<option>-- Option3 --</option>
+     		<?php 
+				while ($query_data = mysqli_fetch_array($res)) {
+			?>			
+			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>			
+  			<?php
+				}
+			?>
+  		</select>
  		</td>
      	<td>
      	<select name="REL" onClick="">
@@ -69,7 +73,7 @@ class StoreTable extends DB_Connection{
     	<td>Units</td>
     	<td>Price</td>
 	</tr>
-</table> 
+ </table> 
 </div>
   
    <?php 
