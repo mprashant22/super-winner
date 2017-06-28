@@ -23,11 +23,11 @@ class StoreTable extends DB_Connection{
 		$options = array();?>
 		<select name="REL" onClick=""><?php 
 		while ($query_data = mysqli_fetch_array($res)) {
-			echo "pmathur".$query_data['`Option3 Value`'];
+			echo "pmathur".$query_data['Option3 Value'];
 			
 			?>
 			
-			<option value="<?php echo $query_data["`Option3 Value`"]; ?>"><?php echo $query_data["`Option3 Value`"]; ?></option>
+			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>
 			
   <?php }	?>
   </select>
