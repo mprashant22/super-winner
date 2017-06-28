@@ -47,7 +47,7 @@ class StoreTable extends DB_Connection{
  		</td>
     	<td>
     	<select name="variant2" onClick="">
-     		<option>-- Option3 --</option>
+     		<option>-- Option2 --</option>
      		<?php 
 				while ($query_data = mysqli_fetch_array($res)) {
 			?>			
