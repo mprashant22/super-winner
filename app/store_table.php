@@ -29,7 +29,7 @@ class StoreTable extends DB_Connection{
      <th>Title</th>
      <th>Variant1</th>
      <th>Variant2</th>
-     <th>Variant3</th>
+     <th style="color: #FF0000">Variant3</th>
      <th>Variant~SKU</th>
      <th>Units</th>
      <th>Price</th>
