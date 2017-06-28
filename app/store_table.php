@@ -21,7 +21,7 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();?>
-		<select name="REL" onClick=""><?php 
+		<select name="REL" onClick=""><option>-- Option3 --</option><?php 
 		while ($query_data = mysqli_fetch_array($res)) {
 			
 		//echo "pmathur".$query_data["Option3 Value"];
