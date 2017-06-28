@@ -141,7 +141,6 @@ echo print_r($data_csv);
 				
  				fclose($handle);
  				echo "Successfully Imported";
-
 		}
 	}
 

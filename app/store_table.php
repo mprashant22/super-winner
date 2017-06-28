@@ -15,7 +15,7 @@ class StoreTable extends DB_Connection{
 	{
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
-		$sql = "select Vendor from "."`".$shp[0]."` group by Vendor";
+		$sql = "select `Option Value3` from "."`".$shp[0]."` group by `Option Value3`";
 		echo "sql>>".$sql."<br>";
 		$res=mysqli_query($this->connection,$sql);
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
