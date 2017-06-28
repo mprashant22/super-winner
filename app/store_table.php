@@ -15,9 +15,9 @@ class StoreTable extends DB_Connection{
 	{
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
-		$sql = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
-		echo "sql>>".$sql."<br>";
-		$res=mysqli_query($this->connection,$sql);
+		$sql3 = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
+		echo "sql>>".$sql3."<br>";
+		$res=mysqli_query($this->connection,$sql3);
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();?>
@@ -35,42 +35,40 @@ class StoreTable extends DB_Connection{
      <th>Price</th>
     </tr>
     <tr>
-   <td>Handle</td>
-     <td>Title</td>
-     <td><select>
-   <option value="volvo">Volvo</option>
-   <option value="saab">Saab</option>
-   <option value="mercedes">Mercedes</option>
-   <option value="audi">Audi</option>
- </select></td>
-    <td><select>
-   <option value="volvo">Volvo</option>
-   <option value="saab">Saab</option>
-   <option value="mercedes">Mercedes</option>
-   <option value="audi">Audi</option>
- </select></td>
-     <td>  	
-		
-				
-		
-		<select name="REL" onClick=""><option>-- Option3 --</option><?php 
-		while ($query_data = mysqli_fetch_array($res)) {
-			
-		//echo "pmathur".$query_data["Option3 Value"];
-		
-			
-			
+		<td>Handle</td>
+     	<td>Title</td>
+     	<td>
+     	<select>
+   			<option value="volvo">Volvo</option>
+   			<option value="saab">Saab</option>
+   			<option value="mercedes">Mercedes</option>
+   			<option value="audi">Audi</option>
+ 		</select>
+ 		</td>
+    	<td>
+    	<select>
+   			<option value="volvo">Volvo</option>
+   			<option value="saab">Saab</option>
+   			<option value="mercedes">Mercedes</option>
+   			<option value="audi">Audi</option>
+ 		</select>
+ 		</td>
+     	<td>
+     	<select name="REL" onClick="">
+     		<option>-- Option3 --</option>
+     		<?php 
+				while ($query_data = mysqli_fetch_array($res)) {
+			?>			
+			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>			
+  			<?php
+				}
 			?>
-			
-			<option value="<?php echo $query_data["Option3 Value"]; ?>"><?php echo $query_data["Option3 Value"]; ?></option>
-			
-  <?php }	?>
-  </select>
-  </td> 
- 	<td>Variant~SKU</td>
-     <td>Units</td>
-     <td>Price</td>
-</tr>
+  		</select>
+  		</td> 
+ 		<td>Variant~SKU</td>
+    	<td>Units</td>
+    	<td>Price</td>
+	</tr>
 </table> 
 </div>
   
