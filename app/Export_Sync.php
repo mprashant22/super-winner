@@ -136,6 +136,7 @@ echo print_r($data_csv);
  					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
 					
  				}
+ 				
 				
  				fclose($handle);
  				echo "Successfully Imported";
