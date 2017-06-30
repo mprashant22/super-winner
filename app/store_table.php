@@ -40,7 +40,7 @@ class StoreTable extends DB_Connection{
 			 while($result = mysqli_fetch_assoc($res4)) {
     //extract($result);
     
-			 	$sql5 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
+			 	$sql5 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
 			 	echo "sql>>".$sql5."<br>";
 			 	$res5=mysqli_query($this->connection,$sql5);
 			 	
