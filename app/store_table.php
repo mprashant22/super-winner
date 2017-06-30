@@ -47,7 +47,7 @@ class StoreTable extends DB_Connection{
 			 	
 			 	while($res_v1=mysqli_fetch_assoc($res5))
 			 	{
-			 		print_r($res_v1[`Option2 Value`]);
+			 		print_r($res_v1[(`Option2 Value`)]);
 			 	}		 	
 			 	
 			 	
