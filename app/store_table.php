@@ -19,42 +19,7 @@ class StoreTable extends DB_Connection{
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
-		
-// 		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
-// 		echo "sql>>".$sql1."<br>";
-// 		$res1=mysqli_query($this->connection,$sql1);
-		
-// 		$sql2 = "select `Option2 Value` from "."`".$shp[0]."` group by `Option2 Value`";
-// 		echo "sql>>".$sql2."<br>"; 	
-// 		$res2=mysqli_query($this->connection,$sql2);
-		
-// 		$sql3 = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
-// 		echo "sql>>".$sql3."<br>";
-// 		$res3=mysqli_query($this->connection,$sql3);
-		
-		
-		
-		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
-		
-		//$options = array();
-			 while($result = mysqli_fetch_assoc($res4)) {
-    //extract($result);
-    
-			 	$sql5 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
-			 	//echo "sql>>".$sql5."<br>";
-			 	$res5=mysqli_query($this->connection,$sql5);
-			 	
-			 	
-			 	while($res_v1=mysqli_fetch_assoc($res5))
-			 	{
-			 		print_r($res_v1['Option2 Value']);
-			 	}		 	
-			 	
-			 	
-			 	
-			 	
-			 	
-    	 print_r($result['handle']);}?>
+?>		
 <div>
  <table border=1>  
    <tr>
@@ -67,9 +32,29 @@ class StoreTable extends DB_Connection{
      <th>Units</th>
      <th>Price</th>
     </tr>
+		<?php 
+		
+		
+	
+			 while($result = mysqli_fetch_assoc($res4)) {
+ 
+			 	$sql5 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
+			 	//echo "sql>>".$sql5."<br>";
+			 	$res5=mysqli_query($this->connection,$sql5);
+			 	
+			 	
+			 	while($res_v1=mysqli_fetch_assoc($res5))
+			 	{
+			 		print_r($res_v1['Option2 Value']);
+			 	}		 	
+			 	
+	
+			 	
+    	 ?>
+
    
     <tr>
-		<td></td>
+		<td><?php print_r($result['handle']); ?></td>
      	<td>Title</td>
 <!--      	<td> -->
      	<select name="variant1" onClick="">
@@ -111,8 +96,10 @@ class StoreTable extends DB_Connection{
     	<td>Units</td>
     	<td>Price</td>
 	</tr>
+	
+	
 	<?php 
-// 	}
+ 	}
 	?>	
  </table> 
 </div>
