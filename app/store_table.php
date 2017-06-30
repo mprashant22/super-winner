@@ -36,10 +36,10 @@ class StoreTable extends DB_Connection{
 		
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
-		$options = array();?>
-			<?php while($result = mysql_fetch_array($res4)) {
+		//$options = array();
+			 while($result = mysql_fetch_array($res4)) {
     extract($result);
-    	?><?php echo $result;}?>
+    	 echo $result;}?>
 <div>
  <table border=1>  
    <tr>
