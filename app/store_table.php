@@ -50,7 +50,7 @@ class StoreTable extends DB_Connection{
      <th>Units</th>
      <th>Price</th>
     </tr>
-    <?php while($result = mysql_fetch_array($query)) {
+    <?php while($result = mysql_fetch_array($sql4)) {
     
     	?>
     <tr>
