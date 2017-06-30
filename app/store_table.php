@@ -18,7 +18,7 @@ class StoreTable extends DB_Connection{
 
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		echo "sql>>".$sql4."<br>";
-		$res1=mysqli_query($this->connection,$sql4);
+		$res4=mysqli_query($this->connection,$sql4);
 		
 // 		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
 // 		echo "sql>>".$sql1."<br>";
@@ -37,8 +37,8 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();?>
-			<?php while($result = mysql_fetch_array($sql4)) {
-    
+			<?php while($result = mysql_fetch_array($res4)) {
+    extract($result);
     	?><?php echo $result;}?>
 <div>
  <table border=1>  
