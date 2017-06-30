@@ -37,11 +37,11 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		$options = array();?>
-			
-<div>
- <table border=1>  <?php while($result = mysql_fetch_array($sql4)) {
+			<?php while($result = mysql_fetch_array($sql4)) {
     
-    	?>
+    	?><?php echo $result;}?>
+<div>
+ <table border=1>  
    <tr>
      <th>Handle</th>
      <th>Title</th>
@@ -54,7 +54,7 @@ class StoreTable extends DB_Connection{
     </tr>
    
     <tr>
-		<td><?php echo $result;?></td>
+		<td></td>
      	<td>Title</td>
 <!--      	<td> -->
      	<select name="variant1" onClick="">
@@ -96,7 +96,9 @@ class StoreTable extends DB_Connection{
     	<td>Units</td>
     	<td>Price</td>
 	</tr>
-	<?php }?>	
+	<?php 
+// 	}
+	?>	
  </table> 
 </div>
   
