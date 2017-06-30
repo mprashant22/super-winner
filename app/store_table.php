@@ -39,7 +39,9 @@ class StoreTable extends DB_Connection{
 		$options = array();?>
 			
 <div>
- <table border=1> 
+ <table border=1>  <?php while($result = mysql_fetch_array($sql4)) {
+    
+    	?>
    <tr>
      <th>Handle</th>
      <th>Title</th>
@@ -50,9 +52,7 @@ class StoreTable extends DB_Connection{
      <th>Units</th>
      <th>Price</th>
     </tr>
-    <?php while($result = mysql_fetch_array($sql4)) {
-    
-    	?>
+   
     <tr>
 		<td><?php echo $result;?></td>
      	<td>Title</td>
