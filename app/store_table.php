@@ -42,7 +42,7 @@ class StoreTable extends DB_Connection{
     
 			 	
 			 	
-    	 print_r($result);}?>
+    	 print_r($result['handle']);}?>
 <div>
  <table border=1>  
    <tr>
