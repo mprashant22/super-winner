@@ -16,17 +16,21 @@ class StoreTable extends DB_Connection{
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
 
-		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
-		echo "sql>>".$sql1."<br>";
-		$res1=mysqli_query($this->connection,$sql1);
+		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
+		echo "sql>>".$sql4."<br>";
+		$res1=mysqli_query($this->connection,$sql4);
 		
-		$sql2 = "select `Option2 Value` from "."`".$shp[0]."` group by `Option2 Value`";
-		echo "sql>>".$sql2."<br>"; 	
-		$res2=mysqli_query($this->connection,$sql2);
+// 		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
+// 		echo "sql>>".$sql1."<br>";
+// 		$res1=mysqli_query($this->connection,$sql1);
 		
-		$sql3 = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
-		echo "sql>>".$sql3."<br>";
-		$res3=mysqli_query($this->connection,$sql3);
+// 		$sql2 = "select `Option2 Value` from "."`".$shp[0]."` group by `Option2 Value`";
+// 		echo "sql>>".$sql2."<br>"; 	
+// 		$res2=mysqli_query($this->connection,$sql2);
+		
+// 		$sql3 = "select `Option3 Value` from "."`".$shp[0]."` group by `Option3 Value`";
+// 		echo "sql>>".$sql3."<br>";
+// 		$res3=mysqli_query($this->connection,$sql3);
 		
 		
 		
@@ -46,49 +50,53 @@ class StoreTable extends DB_Connection{
      <th>Units</th>
      <th>Price</th>
     </tr>
+    <?php while($result = mysql_fetch_array($query)) {
+    
+    	?>
     <tr>
-		<td>Handle</td>
+		<td><?php echo $result;?></td>
      	<td>Title</td>
-     	<td>
+<!--      	<td> -->
      	<select name="variant1" onClick="">
-     		<option>-- Option1 --</option>
+<!--      		<option>-- Option1 --</option> -->
      		<?php 
-				while ($query_data1 = mysqli_fetch_array($res1)) {
+// 				while ($query_data1 = mysqli_fetch_array($res1)) {
 			?>			
-			<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>			
+	<!-- 		<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>-->			
   			<?php
-				}
-			?>
-  		</select>
- 		</td>
-    	<td>
+// 				}
+// 			?>
+<!--   		</select> -->
+<!--  		</td> -->
+<!--     	<td> -->
     	<select name="variant2" onClick="">
-     		<option>-- Option2 --</option>
+<!--      		<option>-- Option2 --</option> -->
      		<?php 
-				while ($query_data2 = mysqli_fetch_array($res2)) {
+// 				while ($query_data2 = mysqli_fetch_array($res2)) {
 			?>			
-			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>			
+	<!-- >		<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>-->			
   			<?php
-				}
-			?>
-  		</select>
- 		</td>
-     	<td>
+// 				}
+// 			?>
+<!--   		</select> -->
+<!--  		</td> -->
+<!--      	<td> -->
      	<select name="variant3" onClick="">     	
-     		<option>-- Option3 --</option>
+<!--      		<option>-- Option3 --</option> -->
      		<?php 
-				while ($query_data3 = mysqli_fetch_array($res3)) {
+// 				while ($query_data3 = mysqli_fetch_array($res3)) {
 			?>			
-			<option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>			
+			<!-- <option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>-->			
   			<?php
-				}
-			?>
-  		</select>
-  		</td> 
+// 				}
+// 			?>
+<!--   		</select> -->
+<!--   		</td>  -->
  		<td>Variant~SKU</td>
     	<td>Units</td>
     	<td>Price</td>
 	</tr>
+	<?php }?>	
  </table> 
 </div>
   
