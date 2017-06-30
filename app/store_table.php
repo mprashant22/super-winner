@@ -39,7 +39,7 @@ class StoreTable extends DB_Connection{
 		//$options = array();
 			 while($result = mysql_fetch_array($res4)) {
     extract($result);
-    	 echo $result;}?>
+    	 print_r($result);}?>
 <div>
  <table border=1>  
    <tr>
