@@ -17,7 +17,7 @@ class StoreTable extends DB_Connection{
 		$shp=explode('.', $shop);
 
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
-		echo "sql>>".$sql4."<br>";
+		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
 		
 // 		$sql1 = "select `Option1 Value` from "."`".$shp[0]."` group by `Option1 Value`";
@@ -41,7 +41,7 @@ class StoreTable extends DB_Connection{
     //extract($result);
     
 			 	$sql5 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
-			 	echo "sql>>".$sql5."<br>";
+			 	//echo "sql>>".$sql5."<br>";
 			 	$res5=mysqli_query($this->connection,$sql5);
 			 	
 			 	
