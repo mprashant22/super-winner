@@ -37,7 +37,7 @@ class StoreTable extends DB_Connection{
 		//echo "<pre>".print_r($res)."</pre>";// or die(mysqli_error($this->connection));		
 		
 		//$options = array();
-			 while($result = mysqli_fetch_array($res4)) {
+			 while($result = mysqli_fetch_assoc($res4)) {
     //extract($result);
     
 			 	
