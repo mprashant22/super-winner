@@ -56,42 +56,42 @@ class StoreTable extends DB_Connection{
     <tr>
 		<td><?php print_r($result['handle']); ?></td>
      	<td>Title</td>
-<!--      	<td> -->
+      	<td>
      	<select name="variant1" onClick="">
       		<option>-- Option1 --</option> 
      		<?php 
-// 				while ($query_data1 = mysqli_fetch_array($res1)) {
+ 				while ($query_data1 = mysqli_fetch_array($res1)) {
 			?>			
-	<!-- 		<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>-->			
+	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>		
   			<?php
-// 				}
-// 			?>
-<!--   		</select> -->
-<!--  		</td> -->
-<!--     	<td> -->
+ 				}
+ 			?>
+   		</select>
+  		</td>
+     	<td>
     	<select name="variant2" onClick="">
-<!--      		<option>-- Option2 --</option> -->
+      		<option>-- Option2 --</option> 
      		<?php 
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
 			?>			
-			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>-->			
+			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>
   			<?php
  				}
-// 			?>
-<!--   		</select> -->
-<!--  		</td> -->
-<!--      	<td> -->
+ 			?>
+   		</select>
+  		</td>
+      	<td>
      	<select name="variant3" onClick="">     	
-<!--      		<option>-- Option3 --</option> -->
+      		<option>-- Option3 --</option>
      		<?php 
-// 				while ($query_data3 = mysqli_fetch_array($res3)) {
+ 				while ($query_data3 = mysqli_fetch_array($res3)) {
 			?>			
-			<!-- <option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>-->			
+			<option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>			
   			<?php
-// 				}
-// 			?>
-<!--   		</select> -->
-<!--   		</td>  -->
+ 				}
+ 			?>
+   		</select> 
+   		</td> 
  		<td>Variant~SKU</td>
     	<td>Units</td>
     	<td>Price</td>
