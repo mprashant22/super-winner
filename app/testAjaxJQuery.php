@@ -1,11 +1,6 @@
 <?php
 
-if (
-		isset($_POST) &&
-		count($_POST)>0 &&
-		empty($_POST['ip']) == false &&
-		empty($_POST['port']) == false
-		)
+if (isset($_POST) && count($_POST)>0 &&	empty($_POST['ip']) == false &&	empty($_POST['port']) == false)
 {
 	echo $_POST['ip'].":".$_POST['port'];
 	sleep(1);
@@ -32,7 +27,7 @@ if (
 				disen(this);
 
 				$.ajax({
-					url: "index.php",
+					url: "testAjaxJQuery.php",
 					method: "POST",
 					data: { ip : "127.0.0.1", port : "80" },
 					dataType: "html",
