@@ -31,7 +31,7 @@ if (isset($_POST) && count($_POST)>0 &&	empty($_POST['ip']) == false &&	empty($_
 					method: "POST",
 					data: { ip : "127.0.0.1", port : "80" },
 					dataType: "html",
-					success: function(data) {
+					success: function(data) {alert(data);
 						$('#info').html(data);
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
