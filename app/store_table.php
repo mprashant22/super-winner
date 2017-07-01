@@ -38,15 +38,15 @@ class StoreTable extends DB_Connection{
 	
 			 while($result = mysqli_fetch_assoc($res4)) {
  
-			 	$sql5 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
+			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
 			 	//echo "sql>>".$sql5."<br>";
-			 	$res5=mysqli_query($this->connection,$sql5);
+			 	$res2=mysqli_query($this->connection,$sql2);
 			 	
 			 	
-			 	while($res_v1=mysqli_fetch_assoc($res5))
-			 	{
-			 		print_r($res_v1['Option2 Value']);
-			 	}		 	
+// 			 	while($res_v1=mysqli_fetch_assoc($res2)
+// 			 	{
+// 			 		print_r($res_v1['Option2 Value']);
+// 			 	}		 	
 			 	
 	
 			 	
@@ -58,7 +58,7 @@ class StoreTable extends DB_Connection{
      	<td>Title</td>
 <!--      	<td> -->
      	<select name="variant1" onClick="">
-<!--      		<option>-- Option1 --</option> -->
+      		<option>-- Option1 --</option> 
      		<?php 
 // 				while ($query_data1 = mysqli_fetch_array($res1)) {
 			?>			
@@ -72,11 +72,11 @@ class StoreTable extends DB_Connection{
     	<select name="variant2" onClick="">
 <!--      		<option>-- Option2 --</option> -->
      		<?php 
-// 				while ($query_data2 = mysqli_fetch_array($res2)) {
+ 				while ($query_data2 = mysqli_fetch_assoc($res2)) {
 			?>			
-	<!-- >		<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>-->			
+			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>-->			
   			<?php
-// 				}
+ 				}
 // 			?>
 <!--   		</select> -->
 <!--  		</td> -->
