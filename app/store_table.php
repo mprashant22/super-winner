@@ -39,19 +39,14 @@ class StoreTable extends DB_Connection{
 			 while($result = mysqli_fetch_assoc($res4)) {
  
 			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
-			 	//echo "sql>>".$sql5."<br>";
 			 	$res1 = mysqli_query($this->connection,$sql1);
 			 	
 			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
-			 	//echo "sql>>".$sql5."<br>";
 			 	$res2 = mysqli_query($this->connection,$sql2);
 			 	
-// 			 	while($res_v1=mysqli_fetch_assoc($res2)
-// 			 	{
-// 			 		print_r($res_v1['Option2 Value']);
-// 			 	}		 	
+			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
+			 	$res3 = mysqli_query($this->connection,$sql3);
 			 	
-	
 			 	
     	 ?>
 
