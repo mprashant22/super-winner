@@ -113,3 +113,29 @@ class StoreTable extends DB_Connection{
 	$obj->storeDisplay();
 
 ?>
+<script type="text/javascript" src="http://ajax.googleapis.com/
+ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+$(".country").change(function()
+{
+var id=$(this).val();
+var dataString = 'id='+ id;
+
+$.ajax
+({
+type: "POST",
+url: "ajax_city.php",
+data: dataString,
+cache: false,
+success: function(html)
+{
+$(".city").html(html);
+} 
+});
+
+});
+
+});
+</script>
