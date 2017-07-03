@@ -8,7 +8,7 @@ class StoreTable extends DB_Connection{
 	function __construct(){
 		$this->connection = $this->connect();
 	}
-	
+	public $v1='',$v2='',$v3='';
 	private $table_name = "products";
 	public $connection = '';
 	public function storeDisplay()
@@ -59,6 +59,7 @@ class StoreTable extends DB_Connection{
       		<option>-- Option1 --</option> 
      		<?php 
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
+ 					$v1=$query_data1["Option1 Value"];
 			?>			
 	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>		
   			<?php
@@ -71,6 +72,7 @@ class StoreTable extends DB_Connection{
       		<option>-- Option2 --</option> 
      		<?php 
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
+ 					$v2=$query_data2["Option2 Value"];
 			?>			
 			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>
   			<?php
@@ -83,6 +85,7 @@ class StoreTable extends DB_Connection{
       		<option>-- Option3 --</option>
      		<?php 
  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
+ 					$v3=$query_data3["Option3 Value"];
 			?>			
 			<option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>			
   			<?php
@@ -92,7 +95,7 @@ class StoreTable extends DB_Connection{
    		</td> 
  		<td>
  		<?php 
- 		$sql_sku = "select `Variant SKU` from `".$shp[0]."` where handle like '".$result['handle']."' AND `Option1 Value` LIKE '".$query_data1["Option1 Value"]."' AND `Option2 Value` LIKE '".$query_data2["Option2 Value"]."AND `Option3 Value` LIKE '".$query_data3["Option3 Value"]."'";
+ 		$sql_sku = "select `Variant SKU` from `".$shp[0]."` where handle like '".$result['handle']."' AND `Option1 Value` LIKE '".$v1."' AND `Option2 Value` LIKE '".$v2."AND `Option3 Value` LIKE '".$v3."'";
 		echo $sql_sku;
  		$res_sku = mysqli_query($this->connection,$sql_sku);	
 		echo $res_sku;
