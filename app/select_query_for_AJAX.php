@@ -1,7 +1,6 @@
 <?php
-echo "<h1>";
-echo $result['handle'];
-echo "</h1>";
-
+echo $_POST["v1"]."<br>";
+echo $_POST["v1"]."<br>";
+echo $_POST["v1"]."<br>";
 
 ?>		
