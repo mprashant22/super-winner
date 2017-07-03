@@ -128,6 +128,7 @@ class StoreTable extends DB_Connection{
 
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript">
+	alert("load");
 		$(document).ready(function() {
 
 			disen = function(s){ // disable, enable
