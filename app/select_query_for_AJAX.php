@@ -25,7 +25,7 @@ class SelectQuery extends DB_Connection{
 			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
 			 	$res1 = mysqli_query($this->connection,$sql1);
 			 	while ($query_data1 = mysqli_fetch_assoc($res1)) {
-			 		echo $query_data1["Option1 Value"];
+			 		echo $query_data1["Option1 Value"]."//";
 				}
 			 }
 	}
