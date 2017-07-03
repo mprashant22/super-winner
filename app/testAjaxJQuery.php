@@ -30,8 +30,9 @@ if (isset($_POST) && count($_POST)>0 &&	empty($_POST['ip']) == false &&	empty($_
 					url: "select_query_for_AJAX.php",
 					method: "POST",
 					data: { ip : "127.0.0.1", port : "80" },
-					dataType: "html",
+					dataType: "text",
 					success: function(data) {alert(data);
+						
 						$('#info').html(data);
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
