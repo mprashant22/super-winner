@@ -144,28 +144,23 @@ class StoreTable extends DB_Connection{
 
 			$( "#btn" ).on( "click", function() {
 
-				var myform = document.getElementById("my_form");
-			    var fd = new FormData(myform );     
+    
 //         console.log('button click');
 // 				disen(this);
 
- 				$.ajax({
-					url: "select_query_for_AJAX.php",
-					method: "POST",
- 					data:fd,
-                    cache: false,
-					dataType: "text",
-					success: function(data) {alert(data);
-						
-						$('#info').html(data);
-					},
-					error: function(jqXHR, textStatus, errorThrown) {
-						$('#info').html(textStatus + ", " + errorThrown);
-					},
-					complete: function() {
-						disen("#b1");
-					},
-				});
+			    var myform = document.getElementById("my_form");
+			    var fd = new FormData(myform );
+			    $.ajax({
+			        url: "select_query_for_AJAX.php",
+			        data: fd,
+			        cache: false,
+			        processData: false,
+			        contentType: false,
+			        type: 'POST',
+			        success: function (dataofconfirm) {
+			           alert(dataofconfirm);
+			        }
+			    });
 			});
 		});
 		</script>
