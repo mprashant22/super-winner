@@ -26,7 +26,7 @@ if (isset($_POST) && count($_POST)>0 &&	empty($_POST['ip']) == false &&	empty($_
         console.log('button click');
 				disen(this);
 
-				$.ajax({
+	var ajx = $.ajax({
 					url: "select_query_for_AJAX.php",
 					method: "POST",
 					data: { ip : "127.0.0.1", port : "80" },

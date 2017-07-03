@@ -1,6 +1,6 @@
 <?php
 
-echo "select query for ajax";
+//echo "select query for ajax";
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 class SelectQuery extends DB_Connection{
@@ -17,7 +17,7 @@ class SelectQuery extends DB_Connection{
 		$shp=explode('.', $shop);
 
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
-		echo "sql>>".$sql4."<br>";
+	//	echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
 	
 			 while($result = mysqli_fetch_assoc($res4)) {
