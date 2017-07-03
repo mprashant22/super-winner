@@ -63,7 +63,7 @@ class StoreTable extends DB_Connection{
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
  					$v1=$query_data1["Option1 Value"];
 			?>			
-	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>"><?php echo $query_data1["Option1 Value"]; ?></option>		
+	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>" selected="selected"><?php echo $query_data1["Option1 Value"]; ?></option>		
   			<?php
  				}
  			?>
