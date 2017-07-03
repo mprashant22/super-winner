@@ -93,7 +93,8 @@ class StoreTable extends DB_Connection{
  		<td>
  		<?php 
  		$sql_sku = "select * from `".$shp[0]."` where handle like '".$result['handle']." AND `Option1 Value` LIKE '".$query_data1["Option1 Value"]."' AND `Option2 Value` LIKE '".$query_data2["Option2 Value"]."AND `Option3 Value` LIKE '".$query_data3["Option3 Value"]."'";
-			 	$res_sku = mysqli_query($this->connection,$sql_sku);	
+		echo $sql_sku;
+ 		$res_sku = mysqli_query($this->connection,$sql_sku);	
 		echo $res_sku;
  		?>
  		</td>
