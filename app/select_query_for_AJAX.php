@@ -30,4 +30,7 @@ class SelectQuery extends DB_Connection{
 			 }
 	}
 }
+
+$obj=new SelectQuery();
+$obj->storeDisplay();
 ?>		
