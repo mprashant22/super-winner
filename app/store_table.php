@@ -76,7 +76,7 @@ class StoreTable extends DB_Connection{
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
  					$v2=$query_data2["Option2 Value"];
 			?>			
-			<option value="<?php echo $query_data2["Option2 Value"]; ?>"><?php echo $query_data2["Option2 Value"]; ?></option>
+			<option value="<?php echo $query_data2["Option2 Value"]; ?>" selected="selected"><?php echo $query_data2["Option2 Value"]; ?></option>
   			<?php
  				}
  			?>
@@ -89,7 +89,7 @@ class StoreTable extends DB_Connection{
  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
  					$v3=$query_data3["Option3 Value"];
 			?>			
-			<option value="<?php echo $query_data3["Option3 Value"]; ?>"><?php echo $query_data3["Option3 Value"]; ?></option>			
+			<option value="<?php echo $query_data3["Option3 Value"]; ?>" selected="selected"><?php echo $query_data3["Option3 Value"]; ?></option>			
   			<?php
  				}
  			?>
