@@ -139,7 +139,7 @@ class StoreTable extends DB_Connection{
 
 			$( "#btn" ).on( "click", function() {
 				alert("ok");
-             var handle = $("#handle").val();
+             var handle = $("#handle").text();
              var v1 = $("#v1").val();
              var v2 = $("#v2").val();
              var v3 = $("#v3").val();
