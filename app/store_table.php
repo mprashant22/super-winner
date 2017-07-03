@@ -22,6 +22,7 @@ class StoreTable extends DB_Connection{
 		$res4=mysqli_query($this->connection,$sql4);
 ?>		
 <div>
+<form id="my_form">
  <table border=1>  
    <tr>
      <th>Handle</th>
@@ -112,6 +113,7 @@ class StoreTable extends DB_Connection{
 	?>	
  </table> 
  <input type="button" id="btn" value="click">
+ </form>
 </div>
 
 
@@ -142,14 +144,16 @@ class StoreTable extends DB_Connection{
 
 			$( "#btn" ).on( "click", function() {
 
-        
+				var myform = document.getElementById("my_form");
+			    var fd = new FormData(myform );     
 //         console.log('button click');
 // 				disen(this);
 
  				$.ajax({
 					url: "select_query_for_AJAX.php",
 					method: "POST",
-// 					data: { ip : "127.0.0.1", port : "80" },
+ 					data:fd,
+                    cache: false,
 					dataType: "text",
 					success: function(data) {alert(data);
 						
