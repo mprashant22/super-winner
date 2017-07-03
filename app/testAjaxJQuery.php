@@ -33,7 +33,7 @@ if (isset($_POST) && count($_POST)>0 &&	empty($_POST['ip']) == false &&	empty($_
 					dataType: "text",
 					success: function(data) {alert(data);
 						
-						$('#info').html(data);
+						//$('#info').html(data);
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 						$('#info').html(textStatus + ", " + errorThrown);

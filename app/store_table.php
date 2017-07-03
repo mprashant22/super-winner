@@ -90,7 +90,13 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td>Variant~SKU</td>
+ 		<td>
+ 		<?php 
+ 		$sql_sku = "select * from `".$shp[0]."` where handle like '".$result['handle']." AND `Option1 Value` LIKE '".$query_data1["Option1 Value"]."' AND `Option2 Value` LIKE '".$query_data2["Option2 Value"]."AND `Option3 Value` LIKE '".$query_data3["Option3 Value"]."'";
+			 	$res_sku = mysqli_query($this->connection,$sql_sku);	
+		echo $res_sku;
+ 		?>
+ 		</td>
     	<td>Units</td>
     	<td>Price</td>
 	</tr>
@@ -113,29 +119,3 @@ class StoreTable extends DB_Connection{
 	$obj->storeDisplay();
 
 ?>
-<script type="text/javascript" src="http://ajax.googleapis.com/
-ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function()
-{
-$(".country").change(function()
-{
-var id=$(this).val();
-var dataString = 'id='+ id;
-
-$.ajax
-({
-type: "POST",
-url: "ajax_city.php",
-data: dataString,
-cache: false,
-success: function(html)
-{
-$(".city").html(html);
-} 
-});
-
-});
-
-});
-</script>
