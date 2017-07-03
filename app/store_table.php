@@ -1,3 +1,4 @@
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <?php
 
 echo "store table";
@@ -126,7 +127,7 @@ class StoreTable extends DB_Connection{
 
 
 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
 	<script type="text/javascript">
 	alert("load");
 		$(document).ready(function() {
@@ -143,26 +144,27 @@ class StoreTable extends DB_Connection{
              var v2 = $("#v2").val();
              var v3 = $("#v3").val();
              alert(handle + ", " + v1);
-        console.log('button click');
-				disen(this);
+//         console.log('button click');
+// 				disen(this);
 
-				$.ajax({
-					url: "select_query_for_AJAX.php",
-					method: "POST",
-					data: { ip : "127.0.0.1", port : "80" },
-					dataType: "text",
-					success: function(data) {alert(data);
+// 				$.ajax({
+// 					url: "select_query_for_AJAX.php",
+// 					method: "POST",
+// 					data: { ip : "127.0.0.1", port : "80" },
+// 					dataType: "text",
+// 					success: function(data) {alert(data);
 						
-						//$('#info').html(data);
-					},
-					error: function(jqXHR, textStatus, errorThrown) {
-						$('#info').html(textStatus + ", " + errorThrown);
-					},
-					complete: function() {
-						disen("#b1");
-					},
-				});
+// 						$('#info').html(data);
+// 					},
+// 					error: function(jqXHR, textStatus, errorThrown) {
+// 						$('#info').html(textStatus + ", " + errorThrown);
+// 					},
+// 					complete: function() {
+// 						disen("#b1");
+// 					},
+// 				});
 			});
 		});
+		</script>
 
 
