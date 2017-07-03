@@ -52,10 +52,10 @@ class StoreTable extends DB_Connection{
 
    
     <tr>
-		<td><?php print_r($result['handle']); ?></td>
+		<td id="handle"><?php print_r($result['handle']); ?></td>
      	<td>Title</td>
       	<td>
-     	<select name="variant1" onClick="">
+     	<select id="v1" name="variant1" onClick="">
       		<option>-- Option1 --</option> 
      		<?php 
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
@@ -68,7 +68,7 @@ class StoreTable extends DB_Connection{
    		</select>
   		</td>
      	<td>
-    	<select name="variant2" onClick="">
+    	<select id="v2" name="variant2" onClick="">
       		<option>-- Option2 --</option> 
      		<?php 
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
@@ -81,7 +81,7 @@ class StoreTable extends DB_Connection{
    		</select>
   		</td>
       	<td>
-     	<select name="variant3" onClick="">     	
+     	<select id="v3" name="variant3" onClick="">     	
       		<option>-- Option3 --</option>
      		<?php 
  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
@@ -110,6 +110,7 @@ class StoreTable extends DB_Connection{
  	}
 	?>	
  </table> 
+ <input type="button" id="btn" value="click">
 </div>
   
    <?php 
@@ -121,5 +122,45 @@ class StoreTable extends DB_Connection{
 }	
 	$obj=new StoreTable();
 	$obj->storeDisplay();
-
 ?>
+
+
+
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function() {
+
+			disen = function(s){ // disable, enable
+				$(s).prop('disabled', function(i, v) { return !v; });
+				console.log('disable/enable button');
+			};
+
+			$( "#btn" ).on( "click", function() {
+             var handle = $("#handle").val();
+             var v1 = $("#v1").val();
+             var v2 = $("#v2").val();
+             var v3 = $("#v3").val();
+             alert(handle + ", " + v1);
+        console.log('button click');
+				disen(this);
+
+				$.ajax({
+					url: "select_query_for_AJAX.php",
+					method: "POST",
+					data: { ip : "127.0.0.1", port : "80" },
+					dataType: "text",
+					success: function(data) {alert(data);
+						
+						//$('#info').html(data);
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#info').html(textStatus + ", " + errorThrown);
+					},
+					complete: function() {
+						disen("#b1");
+					},
+				});
+			});
+		});
+
+
