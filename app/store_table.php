@@ -113,6 +113,9 @@ class StoreTable extends DB_Connection{
  </table> 
  <input type="button" id="btn" value="click">
 </div>
+
+
+<div id=info></div>
   
    <?php 
   
@@ -138,31 +141,27 @@ class StoreTable extends DB_Connection{
 			};
 
 			$( "#btn" ).on( "click", function() {
-				alert("ok");
-             var handle = $("#handle").text();
-             var v1 = $("#v1").val();
-             var v2 = $("#v2").val();
-             var v3 = $("#v3").val();
-             alert(handle + ", " + v1);
+
+        
 //         console.log('button click');
 // 				disen(this);
 
-// 				$.ajax({
-// 					url: "select_query_for_AJAX.php",
-// 					method: "POST",
+ 				$.ajax({
+					url: "select_query_for_AJAX.php",
+					method: "POST",
 // 					data: { ip : "127.0.0.1", port : "80" },
-// 					dataType: "text",
-// 					success: function(data) {alert(data);
+					dataType: "text",
+					success: function(data) {alert(data);
 						
-// 						$('#info').html(data);
-// 					},
-// 					error: function(jqXHR, textStatus, errorThrown) {
-// 						$('#info').html(textStatus + ", " + errorThrown);
-// 					},
-// 					complete: function() {
-// 						disen("#b1");
-// 					},
-// 				});
+						//$('#info').html(data);
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						$('#info').html(textStatus + ", " + errorThrown);
+					},
+					complete: function() {
+						disen("#b1");
+					},
+				});
 			});
 		});
 		</script>
