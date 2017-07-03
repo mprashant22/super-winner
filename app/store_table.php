@@ -153,7 +153,7 @@ class StoreTable extends DB_Connection{
 					dataType: "text",
 					success: function(data) {alert(data);
 						
-						//$('#info').html(data);
+						$('#info').html(data);
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 						$('#info').html(textStatus + ", " + errorThrown);
