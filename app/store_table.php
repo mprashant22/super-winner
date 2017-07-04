@@ -95,11 +95,11 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td class="sku">
-           sku
+ 		<td>
+           <span class="sku">sku</span>
  		</td>
-    	<td class="units">Units</td>
-    	<td class="price">Price</td>
+    	<td ><span class="units">Units</span></td>
+    	<td ><span class="price">Price</span></td>
 	</tr>
 	
 	
@@ -162,7 +162,7 @@ class StoreTable extends DB_Connection{
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
                         
-                       $(this).parent("td").nexts(".price").text("rrr");
+                       $(this).parent("td").siblings("td").find(".price").text("rrr");
                        //$(this).parent("td").siblings(".units").html(ajax_unit);
                        //$(this).parent("td").siblings(".price").html(ajax_price);
                        
