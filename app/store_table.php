@@ -112,6 +112,12 @@ class StoreTable extends DB_Connection{
 	<script type="text/javascript">
 		$(document).ready(function() {
 
+			function myQ()
+			{
+				alert("pofepopf");
+			}
+			
+
 			disen = function(s){ // disable, enable
 				$(s).prop('disabled', function(i, v) { return !v; });
 				console.log('disable/enable button');
@@ -146,7 +152,8 @@ class StoreTable extends DB_Connection{
                        $t.parents("tr").find(".sku").text(ajax_sku);
                        $t.parents("tr").find(".units").text(ajax_unit);                       
                   }
-               });                   
+               });   
+               myQ();                
 			});
 			
 		});
