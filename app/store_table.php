@@ -57,7 +57,7 @@ class StoreTable extends DB_Connection{
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td>Title</td>
       	<td>
-     	<select id="v1" name="variant1" onClick="">
+     	<select class="v1" name="variant1" onClick="">
       		<option>-- Option1 --</option> 
      		<?php 
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
@@ -70,7 +70,7 @@ class StoreTable extends DB_Connection{
    		</select>
   		</td>
      	<td>
-    	<select id="v2" name="variant2" onClick="">
+    	<select class="v2" name="variant2" onClick="">
       		<option>-- Option2 --</option> 
      		<?php 
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
@@ -83,7 +83,7 @@ class StoreTable extends DB_Connection{
    		</select>
   		</td>
       	<td>
-     	<select id="v3" name="variant3" onClick="">     	
+     	<select class="v3" name="variant3" onClick="">     	
       		<option>-- Option3 --</option>
      		<?php 
  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
@@ -144,7 +144,10 @@ class StoreTable extends DB_Connection{
 
 			$( "#my_form tr td select" ).change( function() {
                var handle = $(this).parent("td").siblings(".handle").text();
-                alert(handle);
+               var v1 = $(this).parents("tr").find(".v1").val();
+               var v2 = $(this).parents("tr").find(".v2").val();
+               var v3 = $(this).parents("tr").find(".v3").val();
+                alert(handle + ", " + v1 + ", " + v2 + ", " +v3);
 //         console.log('button click');
 // 				disen(this);
 
