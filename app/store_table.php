@@ -163,7 +163,7 @@ class StoreTable extends DB_Connection{
                        var ajax_price = $("#ajax_price").text();
 
 
-                       $this.parents("tr").find(".price").text(ajax_price);
+                       $t.parents("tr").find(".price").text(ajax_price);
                        $t.parents("tr").find(".sku").text(ajax_sku);
                        $t.parents("tr").find(".units").text(ajax_unit);
                        //$(this).parent("td").siblings("td").find(".sku").text("rr");
@@ -181,6 +181,6 @@ class StoreTable extends DB_Connection{
 			});
 		});
 		</script>
-		<div id="ajax_success"></div>
+<!-- 		<div id="ajax_success"></div> -->
 
 
