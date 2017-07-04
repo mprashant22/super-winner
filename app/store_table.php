@@ -161,11 +161,10 @@ class StoreTable extends DB_Connection{
                        var ajax_sku = $("#ajax_sku").html();
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
-                       var $tr = $('<tr/>');
-                       $tr.append($('<td/>').html(ajax_sku));
-                       $(this).parent("td").siblings(".sku").html("rrr");
-                       $(this).parent("td").siblings(".units").html(ajax_unit);
-                       $(this).parent("td").siblings(".price").html(ajax_price);
+                         $(".price").text("rrr");
+                       //$(this).parent("td").siblings(".sku").html("rrr");
+                       //$(this).parent("td").siblings(".units").html(ajax_unit);
+                       //$(this).parent("td").siblings(".price").html(ajax_price);
                        
                   }
                });   
