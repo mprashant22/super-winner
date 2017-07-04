@@ -150,7 +150,7 @@ class StoreTable extends DB_Connection{
                ourObj.v2 = v2;
                ourObj.v3 = v3;
                ourObj.arPoints = [{'x':handle, 'y': v1 , 'z':v2, 'p':v3}];
-
+               var $t = $(this);
                $.ajax({
                   url: 'select_query_for_AJAX.php',
                   type: 'post',
@@ -162,8 +162,8 @@ class StoreTable extends DB_Connection{
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
                         
-                       this.parents("tr").find(".price").text("rrr");
-                       //$(this).parent("td").siblings("td").find(".sku").text("rr");
+                       $t.parents("tr").find(".price").text("rrr");
+                       $(this).parent("td").siblings("td").find(".sku").text("rr");
                        //$(this).parent("td").siblings(".units").html(ajax_unit);
                        //$(this).parent("td").siblings(".price").html(ajax_price);
                        
