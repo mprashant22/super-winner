@@ -1,5 +1,7 @@
 <?php
 echo "hiii";
-echo $_POST[data1];
+echo json_decode($_POST["points"]);
+
+echo $points->queryData[0]->handle;
 
 ?>		
