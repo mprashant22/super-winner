@@ -3,6 +3,10 @@ require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 class SelectQuery extends DB_Connection
 {
+	function __construct(){
+		$this->connection = $this->connect();
+	}
+	
 	public function ajaxResponse()
 	{
 		// Test if our data came through
