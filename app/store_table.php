@@ -155,11 +155,25 @@ class StoreTable extends DB_Connection{
             	      url: "select_query_for_AJAX.php",
             	      data: "{'data1':'" + v1+ "', 'data2':'" + v2+ "', 'data3':'" + v3+ "'}",
             	      success: function (result) {
-            	          alert(result);
+            	           //do somthing here
             	      }
             	 });
 
-
+               $.ajax({                    
+            	   url: 'select_query_for_AJAX.php',     
+            	   type: 'post', // performing a POST request
+            	   data : {
+            		   handle : handle,
+            		   v1 : v1,
+            		   v2 : v2,
+            		   v3 : v3
+            	   },
+            	   dataType: 'json',                   
+            	   success: function(data)         
+            	   {
+            	     alert(data);
+            	   } 
+            	 });
 
 
 

@@ -1,6 +1,7 @@
 <?php
 echo "hiii";
-echo $_POST["data"];
-echo $_POST["data2"];
-echo $_POST["data3"];
+echo json_decode($_POST["handle"]);
+echo json_decode($_POST["v1"]);
+echo json_decode($_POST["v2"]);
+echo json_decode($_POST["v3"]);
 ?>		
