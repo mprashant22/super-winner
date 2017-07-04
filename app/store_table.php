@@ -116,9 +116,6 @@ class StoreTable extends DB_Connection{
   
    <?php 
   
-//  			for($i=0;$i<count($query_data);$i++) 
-//  			echo "<pre>".$query_data[$i]."</pre><br>"; 
-//  			$options[$query_data["handle"]] = $query_data["HANDLE"]; 
 	}
 }	
 	$obj=new StoreTable();
@@ -129,7 +126,6 @@ class StoreTable extends DB_Connection{
 
 
 	<script type="text/javascript">
-	alert("load");
 		$(document).ready(function() {
 
 			disen = function(s){ // disable, enable
@@ -165,11 +161,7 @@ class StoreTable extends DB_Connection{
 
                        $t.parents("tr").find(".price").text(ajax_price);
                        $t.parents("tr").find(".sku").text(ajax_sku);
-                       $t.parents("tr").find(".units").text(ajax_unit);
-                       //$(this).parent("td").siblings("td").find(".sku").text("rr");
-                       //$(this).parent("td").siblings(".units").html(ajax_unit);
-                       //$(this).parent("td").siblings(".price").html(ajax_price);
-                       
+                       $t.parents("tr").find(".units").text(ajax_unit);                       
                   }
                });   
 
@@ -181,6 +173,6 @@ class StoreTable extends DB_Connection{
 			});
 		});
 		</script>
-<!-- 		<div id="ajax_success"></div> -->
+ 		<div id="ajax_success" type="hidden"></div>
 
 
