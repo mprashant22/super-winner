@@ -1,7 +1,7 @@
 <?php
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
-class SelectQuery 
+class SelectQuery extends DB_Connection
 {
 	public function ajaxResponse()
 	{
@@ -23,7 +23,7 @@ class SelectQuery
 			$shp=explode('.', $shop);
 // 			echo $shp[0];
 		 	$sql4 = "select `Variant SKU`, `Variant Inventory Qty`,`Variant Price` from "."`".$shp[0]."` where `handle` LIKE '".$handle."' AND `Option1 Value` LIKE '".$v1."' AND  `Option2 Value` LIKE '".$v2."' AND  `Option3 Value` LIKE '".$v3."'";
- 		 	echo "sql>>".$sql4."<br>";
+ 		 	//echo "sql>>".$sql4."<br>";
 		 	$res4=mysqli_query($this->connection,$sql4);
 // 		 	echo $res4;
 		 	
