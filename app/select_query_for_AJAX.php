@@ -28,7 +28,8 @@ class SelectQuery
 		 	echo $res4;
 		 	
 		 	while($result = mysqli_fetch_assoc($res4)) {
-		 		$result['Variant SKU'];
+		 		echo $result['Variant SKU'];
+		 		 
 		 	}
 		 	
 	}
