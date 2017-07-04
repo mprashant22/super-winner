@@ -112,51 +112,56 @@ class StoreTable extends DB_Connection{
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			var myquery = function (){
-alert("myq");
-	  var handle = $(this).parent("td").siblings(".handle").text();
-      var v1 = $(this).parents("tr").find(".v1").val();
-      var v2 = $(this).parents("tr").find(".v2").val();
-      var v3 = $(this).parents("tr").find(".v3").val();
-
-      var ourObj = {};
-      ourObj.handle = handle;
-      ourObj.v1 = v1;
-      ourObj.v2 = v2;
-      ourObj.v3 = v3;
-      ourObj.arPoints = [{'x':handle, 'y': v1 , 'z':v2, 'p':v3}];
-      var $t = $(this);
-      $.ajax({
-         url: 'select_query_for_AJAX.php',
-         type: 'post',
-         data: {"points" : JSON.stringify(ourObj)},
-         success: function(data) {
-             
-              $("#ajax_success").html(data);
-              var ajax_sku = $("#ajax_sku").html();
-              var ajax_unit = $("#ajax_unit").text();
-              var ajax_price = $("#ajax_price").text();
+myQuery= function(){
+	
+}
 
 
-              $t.parents("tr").find(".price").text(ajax_price);
-              $t.parents("tr").find(".sku").text(ajax_sku);
-              $t.parents("tr").find(".units").text(ajax_unit);                       
-         }
-      });                   
-	}
+
+
+
+
+
+
+			
 
 			disen = function(s){ // disable, enable
 				$(s).prop('disabled', function(i, v) { return !v; });
 				console.log('disable/enable button');
 			};
 
-			$( "#my_form tr td select" ).change(function() {
+			$( "#my_form tr td select" ).change( function() {
+               var handle = $(this).parent("td").siblings(".handle").text();
+               var v1 = $(this).parents("tr").find(".v1").val();
+               var v2 = $(this).parents("tr").find(".v2").val();
+               var v3 = $(this).parents("tr").find(".v3").val();
 
-				alert("onchange");
-				myquery();
-				
-				
-				   
+               var ourObj = {};
+               ourObj.handle = handle;
+               ourObj.v1 = v1;
+               ourObj.v2 = v2;
+               ourObj.v3 = v3;
+               ourObj.arPoints = [{'x':handle, 'y': v1 , 'z':v2, 'p':v3}];
+               var $t = $(this);
+               $.ajax({
+                  url: 'select_query_for_AJAX.php',
+                  type: 'post',
+                  data: {"points" : JSON.stringify(ourObj)},
+                  success: function(data) {
+                      
+                       $("#ajax_success").html(data);
+                       var ajax_sku = $("#ajax_sku").html();
+                       var ajax_unit = $("#ajax_unit").text();
+                       var ajax_price = $("#ajax_price").text();
+
+
+                       $t.parents("tr").find(".price").text(ajax_price);
+                       $t.parents("tr").find(".sku").text(ajax_sku);
+                       $t.parents("tr").find(".units").text(ajax_unit);                       
+                  }
+               });                   
+			});
+			
 		});
 		</script>
  		<div id="ajax_success" style="visibility: hidden"></div>
