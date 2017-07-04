@@ -112,7 +112,7 @@ class StoreTable extends DB_Connection{
  	}
 	?>	
  </table> 
- <input type="button" id="btn" value="click">
+
  </form>
 </div>
 
@@ -142,25 +142,25 @@ class StoreTable extends DB_Connection{
 				console.log('disable/enable button');
 			};
 
-			$( "#btn" ).on( "click", function() {
+			$( "#my_form tr td select" ).change( function() {
 
-    
+                alert("ok");
 //         console.log('button click');
 // 				disen(this);
 
-			    var myform = document.getElementById("my_form");
-			    var fd = new FormData(myform );
-			    $.ajax({
-			        url: "select_query_for_AJAX.php",
-			        data: fd,
-			        cache: false,
-			        processData: false,
-			        contentType: false,
-			        type: 'POST',
-			        success: function (dataofconfirm) {
-			           alert(dataofconfirm);
-			        }
-			    });
+// 			    var myform = document.getElementById("my_form");
+// 			    var fd = new FormData(myform );
+// 			    $.ajax({
+// 			        url: "select_query_for_AJAX.php",
+// 			        data: fd,
+// 			        cache: false,
+// 			        processData: false,
+// 			        contentType: false,
+// 			        type: 'POST',
+// 			        success: function (dataofconfirm) {
+// 			           alert(dataofconfirm);
+// 			        }
+// 			    });
 			});
 		});
 		</script>
