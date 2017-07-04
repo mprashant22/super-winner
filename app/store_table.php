@@ -112,7 +112,7 @@ class StoreTable extends DB_Connection{
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			function myQuery(){
+			var myquery = function (){
 alert("myq");
 	  var handle = $(this).parent("td").siblings(".handle").text();
       var v1 = $(this).parents("tr").find(".v1").val();
@@ -153,7 +153,7 @@ alert("myq");
 			$( "#my_form tr td select" ).change(function() {
 
 				alert("onchange");
-				myQuery();
+				myquery();
 				
 				
 				   
