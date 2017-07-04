@@ -1,5 +1,5 @@
 <?php
 echo "hiii";
-echo $_POST["v1"];
+echo json_decode($_POST["data1"]);
 
 ?>		
