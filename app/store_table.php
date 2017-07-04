@@ -151,8 +151,12 @@ alert("myq");
 			};
 
 			$( "#my_form tr td select" ).change(function() {
+
 				alert("onchange");
-				$(document).myQuery();   
+				myQuery();
+				
+				
+				   
 		});
 		</script>
  		<div id="ajax_success" style="visibility: hidden"></div>
