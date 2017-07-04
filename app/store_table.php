@@ -95,16 +95,11 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td>
- 		<?php 
- 		$sql_sku = "select `Variant SKU` from `".$shp[0]."` where handle like '".$result['handle']."' AND `Option1 Value` LIKE '".$v1."' AND `Option2 Value` LIKE '".$v2."' AND `Option3 Value` LIKE '".$v3."'";
-		//echo $sql_sku;
- 		$res_sku = mysqli_query($this->connection,$sql_sku);	
- 		echo mysqli_fetch_assoc($res_sku)["Variant SKU"]; 
- 		?>
+ 		<td class="sku">
+           sku
  		</td>
-    	<td>Units</td>
-    	<td>Price</td>
+    	<td class="units">Units</td>
+    	<td class="price">Price</td>
 	</tr>
 	
 	
@@ -161,7 +156,15 @@ class StoreTable extends DB_Connection{
                   type: 'post',
                   data: {"points" : JSON.stringify(ourObj)},
                   success: function(data) {
-                       alert(data);
+                      
+                       $("#ajax_success").html(data);
+                       var ajax_sku = $("#ajax_sku").text();
+                       var ajax_unit = $("#ajax_unit").text();
+                       var ajax_price = $("#ajax_price").text();
+                       $(this).parent("td").siblings(".sku").text(ajax_sku);
+                       $(this).parent("td").siblings(".units").text(ajax_unit);
+                       $(this).parent("td").siblings(".price").text(ajax_price);
+                       
                   }
                });   
 
@@ -173,5 +176,6 @@ class StoreTable extends DB_Connection{
 			});
 		});
 		</script>
+		<div id="ajax_success"></div>
 
 

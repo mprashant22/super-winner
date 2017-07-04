@@ -32,10 +32,13 @@ class SelectQuery extends DB_Connection
 // 		 	echo $res4;
 		 	
 		 	while($result = mysqli_fetch_assoc($res4)) {
-		 		echo $result['Variant SKU'];
-		 		echo $result['Variant Inventory Qty'];
-		 		echo $result['Variant Price'];
-		 		 
+		 		?>
+		 		<ul>
+		 		<li id="ajax_sku"><?php echo $result['Variant SKU'];?></li>
+		 		<li id="ajax_unit"><?php echo $result['Variant Inventory Qty'];?></li>
+		 		<li id="ajax_price"><?php echo $result['Variant SKU'];?></li>
+		 		</ul>
+		 	<?php 	 
 		 	}
 		 	
 	}
