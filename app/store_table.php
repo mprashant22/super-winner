@@ -99,7 +99,7 @@ class StoreTable extends DB_Connection{
            <span class="sku">sku</span>
  		</td>
     	<td ><span class="units">Units</span></td>
-    	<td ><span class="price">Price</span></td>
+    	<td class="price_wrap"><span class="price">Price</span></td>
 	</tr>
 	
 	
@@ -162,7 +162,7 @@ class StoreTable extends DB_Connection{
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
                         
-                       $(this).parents("tr").find(".price").text("rrr");
+                       $(this).parents("tr").find(".price_wrap").text("rrr");
                        $(".sku").text("rr");
                        //$(this).parent("td").siblings(".units").html(ajax_unit);
                        //$(this).parent("td").siblings(".price").html(ajax_price);
