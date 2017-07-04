@@ -147,21 +147,23 @@ class StoreTable extends DB_Connection{
                var v1 = $(this).parents("tr").find(".v1").val();
                var v2 = $(this).parents("tr").find(".v2").val();
                var v3 = $(this).parents("tr").find(".v3").val();
-               var mydata = {};
-               mydata.handle = handle;
-               mydata.v1 = v1;
-               mydata.v2 = v2;
-               mydata.v3 = v3;
-               mydata.queryData = [{'handle':handle, 'v1': v1, 'v2': v2, 'v3': v3}];
+
+
+               var ourObj = {};
+               ourObj.handle = handle;
+               ourObj.v1 = v1;
+               ourObj.v2 = v2;
+               ourObj.v3 = v3;
+               ourObj.arPoints = [{'x':handle, 'y': v1 , 'z':v2, 'p':v3}];
 
                $.ajax({
-            	   url: 'select_query_for_AJAX.php',
+                  url: 'customers_mysql.php',
                   type: 'post',
-                  data: {"points" : JSON.stringify(mydata)},
+                  data: {"points" : JSON.stringify(ourObj)},
                   success: function(data) {
                        alert(data);
                   }
-               });
+               });   
 
               
 
