@@ -54,7 +54,7 @@ class StoreTable extends DB_Connection{
 
    
     <tr>
-		<td id="handle"><?php print_r($result['handle']); ?></td>
+		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td>Title</td>
       	<td>
      	<select id="v1" name="variant1" onClick="">
@@ -143,8 +143,8 @@ class StoreTable extends DB_Connection{
 			};
 
 			$( "#my_form tr td select" ).change( function() {
-
-                alert("ok");
+               var handle = $(this).parent("td").siblings(".handle").text();
+                alert(handle);
 //         console.log('button click');
 // 				disen(this);
 
