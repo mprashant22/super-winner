@@ -157,7 +157,7 @@ class StoreTable extends DB_Connection{
                ourObj.arPoints = [{'x':handle, 'y': v1 , 'z':v2, 'p':v3}];
 
                $.ajax({
-                  url: 'customers_mysql.php',
+                  url: 'select_query_for_AJAX.php',
                   type: 'post',
                   data: {"points" : JSON.stringify(ourObj)},
                   success: function(data) {
