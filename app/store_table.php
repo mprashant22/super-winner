@@ -147,23 +147,27 @@ class StoreTable extends DB_Connection{
                var v1 = $(this).parents("tr").find(".v1").val();
                var v2 = $(this).parents("tr").find(".v2").val();
                var v3 = $(this).parents("tr").find(".v3").val();
-                alert(handle + ", " + v1 + ", " + v2 + ", " +v3);
-//         console.log('button click');
-// 				disen(this);
+                
 
-// 			    var myform = document.getElementById("my_form");
-// 			    var fd = new FormData(myform );
-// 			    $.ajax({
-// 			        url: "select_query_for_AJAX.php",
-// 			        data: fd,
-// 			        cache: false,
-// 			        processData: false,
-// 			        contentType: false,
-// 			        type: 'POST',
-// 			        success: function (dataofconfirm) {
-// 			           alert(dataofconfirm);
-// 			        }
-// 			    });
+               $.ajax({                    
+            	   url: 'select_query_for_AJAX.php',     
+            	   type: 'post', // performing a POST request
+            	   data : {
+            		   handle : handle,
+            		   v1 : v1,
+            		   v2 : v2,
+            		   v3 : v3
+            	   },
+            	   dataType: 'json',                   
+            	   success: function(data)         
+            	   {
+            	     alert(data);
+            	   } 
+            	 });
+
+
+
+               
 			});
 		});
 		</script>
