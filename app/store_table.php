@@ -116,6 +116,7 @@ class StoreTable extends DB_Connection{
 			{
 				alert("pofepopf");
 				 var handle = $(this).parent("td").siblings(".handle").text();
+				 alert(handle);
 	               var v1 = $(this).parents("tr").find(".v1").val();
 	               var v2 = $(this).parents("tr").find(".v2").val();
 	               var v3 = $(this).parents("tr").find(".v3").val();
