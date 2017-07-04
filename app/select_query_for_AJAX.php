@@ -18,9 +18,9 @@ if (isset($_POST["points"])) {
 	$shop='mathurs-storezz.myshopify.com';
 	$shp=explode('.', $shop);
 	echo $shp;
-	$sql4 = "select `Variant SKU`, `Variant Inventory Qty`,`Variant Price` from "."`".$shp[0]."` where `handle` LIKE '".$handle."' AND `Option1 Value` LIKE '".$v1."' AND  `Option2 Value` LIKE '".$v2."' AND  `Option3 Value` LIKE '".$v3."'";
-	echo "sql>>".$sql4."<br>";
-	$res4=mysqli_query($this->connection,$sql4);
+// 	$sql4 = "select `Variant SKU`, `Variant Inventory Qty`,`Variant Price` from "."`".$shp[0]."` where `handle` LIKE '".$handle."' AND `Option1 Value` LIKE '".$v1."' AND  `Option2 Value` LIKE '".$v2."' AND  `Option3 Value` LIKE '".$v3."'";
+// 	echo "sql>>".$sql4."<br>";
+// 	$res4=mysqli_query($this->connection,$sql4);
 }
 
 
