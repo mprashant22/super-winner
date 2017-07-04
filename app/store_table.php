@@ -114,10 +114,11 @@ class StoreTable extends DB_Connection{
 
 			function myQ()
 			{
-				alert("pofepopf");
+				//alert("pofepopf");
 			}
 			
-
+			$("#my_form tr td select").change(); 
+			
 			disen = function(s){ // disable, enable
 				$(s).prop('disabled', function(i, v) { return !v; });
 				console.log('disable/enable button');
