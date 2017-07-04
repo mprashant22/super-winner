@@ -26,6 +26,11 @@ class SelectQuery
 		 	echo "sql>>".$sql4."<br>";
 		 	$res4=mysqli_query($this->connection,$sql4);
 		 	echo $res4;
+		 	
+		 	while($result = mysqli_fetch_assoc($res4)) {
+		 		$result['Variant SKU'];
+		 	}
+		 	
 	}
 	}
 }
