@@ -173,6 +173,6 @@ class StoreTable extends DB_Connection{
 			});
 		});
 		</script>
- 		<div id="ajax_success" type="hidden"></div>
+ 		<div id="ajax_success" style="visibility: hidden"></div>
 
 
