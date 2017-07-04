@@ -153,7 +153,7 @@ class StoreTable extends DB_Connection{
             	   url: 'select_query_for_AJAX.php',
             	   contentType: "application/json; charset=utf-8",
             	   type: 'POST', // performing a POST request
-            	   data: {data1:v1,data2:v2,data3:v3}",        	  
+            	   data: {data1:v1,data2:v2,data3:v3},        	  
             	   dataType: 'json',                   
             	   success: function(data)         
             	   {
