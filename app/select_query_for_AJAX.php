@@ -33,6 +33,8 @@ class SelectQuery extends DB_Connection
 		 	
 		 	while($result = mysqli_fetch_assoc($res4)) {
 		 		echo $result['Variant SKU'];
+		 		echo $result['Variant Inventory Qty'];
+		 		echo $result['Variant Price'];
 		 		 
 		 	}
 		 	
