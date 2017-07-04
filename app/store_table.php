@@ -158,7 +158,7 @@ class StoreTable extends DB_Connection{
                   success: function(data) {
                       
                        $("#ajax_success").html(data);
-                       var ajax_sku = $("#ajax_sku").text();
+                       var ajax_sku = $("#ajax_sku").html();
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
                        $(this).parent("td").siblings(".sku").html("rrr");
