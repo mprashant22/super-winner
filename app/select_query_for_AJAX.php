@@ -36,7 +36,7 @@ class SelectQuery extends DB_Connection
 		 		<ul>
 		 		<li id="ajax_sku"><?php echo $result['Variant SKU'];?></li>
 		 		<li id="ajax_unit"><?php echo $result['Variant Inventory Qty'];?></li>
-		 		<li id="ajax_price"><?php echo $result['Variant SKU'];?></li>
+		 		<li id="ajax_price"><?php echo $result['Variant Price'];?></li>
 		 		</ul>
 		 	<?php 	 
 		 	}
