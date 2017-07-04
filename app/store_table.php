@@ -112,7 +112,7 @@ class StoreTable extends DB_Connection{
 	<script type="text/javascript">
 		$(document).ready(function() {
 
-			function myQ()
+			function myQ("#my_form tr td select" )
 			{
 				alert("pofepopf");
 				 var handle = $(this).parent("td").siblings(".handle").text();
@@ -155,7 +155,7 @@ class StoreTable extends DB_Connection{
 
 			$( "#my_form tr td select" ).change( function() {
               
-               myQ();                
+               myQ("#my_form tr td select");                
 			});
 			
 		});
