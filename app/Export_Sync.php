@@ -16,7 +16,7 @@ class Export_Sync extends DB_Connection{
 		 		echo "in class shop >>".$shop;
 		 		$shp=explode('.', $shop);
 		 		echo "^^^^^^^^".$shp[0];
-		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, `Option1 Name` text,`Option1 Value` text, `Option2 Name` text, `Option2 Value` text, `Option3 Name` text, `Option3 Value` text, `Variant SKU` integer, `Variant Inventory Qty` integer, `Variant Price` integer)";
+		 		$sql = "create table `".$shp[0]."`(Handle text, Title text, `Option1 Name` text,`Option1 Value` text, `Option2 Name` text, `Option2 Value` text, `Option3 Name` text, `Option3 Value` text, `Variant SKU` text, `Variant Inventory Qty` text, `Variant Price` text)";
 		 		//$sql = "create table `".$shp[0]."`(Handle text, Title text, Body_HTML text,Vendor text)";
 		 		echo "sql>>".$sql;
 		 		if(!mysqli_query($this->connection,"desc `".$shp[0]."`"))
@@ -79,37 +79,20 @@ echo print_r($data_csv);
  					for ($i=0;$i<count($data_csv);$i++)
  					{
  						
- 						echo "inside LOOOOOOP";
- 						if(empty($data_csv[$i]))
- 						{ 				
- 							echo "pkpkpkpk";
- 							$data_csv[$i]="NULL";
- 							//echo "D1".$data1;
- 						}	
+ 						//echo "inside LOOOOOOP";
  						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
- 									
- 							
  						echo '[data1>>'.$data1;
- 						
- 										
- 						if($data1=="NULL")
- 						{
- 							echo "this is null";
- 							$db.="".$data1.",";
- 						}
- 						else {
- 							$db.="'".$data1."',";	
- 						}
+ 						$db.="'".$data1."',";
  					}
- 					echo "<db>";//.$db;
+ 					//echo "<db>".$db;
  					
 				
  					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
  					$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
- 					echo $sql;
  					$db="";
  					
- 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));					
+ 					mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
+					
  				}
  				
 				
