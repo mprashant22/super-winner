@@ -85,6 +85,7 @@ echo print_r($data_csv);
  						{ 				
  							echo "pkpkpkpk";
  							$data1=null;
+ 							echo "D1".$data1;
  						}				
  							
  						echo '[data1>>'.$data1;
