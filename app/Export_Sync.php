@@ -90,7 +90,9 @@ echo print_r($data_csv);
  									
  							
  						echo '[data1>>'.$data1;
- 						//$db.="'".$data1."',";
+ 						if(!empty($data1)) 						
+ 						$db.="'".$data1."',";
+ 						else  						
  						$db.="".$data1.",";
  					}
  					echo "<db>";//.$db;
