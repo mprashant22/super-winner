@@ -80,13 +80,14 @@ echo print_r($data_csv);
  					{
  						
  						echo "inside LOOOOOOP";
- 						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
- 						if(empty($data1))
+ 						if(empty($data_csv[$i]))
  						{ 				
  							echo "pkpkpkpk";
- 							$data1='null';
- 							echo "D1".$data1;
- 						}				
+ 							$data_csv[$i]='null';
+ 							//echo "D1".$data1;
+ 						}	
+ 						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
+ 									
  							
  						echo '[data1>>'.$data1;
  						$db.="'".$data1."',";
