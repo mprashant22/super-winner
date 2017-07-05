@@ -81,7 +81,7 @@ echo print_r($data_csv);
  						
  						echo "inside LOOOOOOP";
  						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
- 						if(isset($data1) === false && empty($data1) === true && is_numeric($data1))
+ 						if(empty($data1) === true && is_numeric($data1))
  						{
  							echo "ppppppp";
  							$data1=0;
