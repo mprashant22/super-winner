@@ -83,7 +83,7 @@ echo print_r($data_csv);
  						if(empty($data_csv[$i]))
  						{ 				
  							echo "pkpkpkpk";
- 							$data_csv[$i]='null';
+ 							$data_csv[$i]='NULL';
  							//echo "D1".$data1;
  						}	
  						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
