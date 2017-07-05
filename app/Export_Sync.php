@@ -97,6 +97,7 @@ echo print_r($data_csv);
  						}
  						else
  						{
+ 							echo "this is null";
  							$db.=$data1.",";
  						}
  					}
