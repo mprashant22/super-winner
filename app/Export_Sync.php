@@ -90,10 +90,15 @@ echo print_r($data_csv);
  									
  							
  						echo '[data1>>'.$data1;
- 						if(!is_null($data1)) 						
- 						$db.="'".$data1."',";
- 						else  						
- 						$db.="".$data1.",";
+ 						if(!is_null($data1))
+ 						{
+ 							echo "not null";
+ 							$db.="'".$data1."',";
+ 						}
+ 						else
+ 						{
+ 							$db.=$data1.",";
+ 						}
  					}
  					echo "<db>";//.$db;
  					
