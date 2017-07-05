@@ -84,9 +84,8 @@ echo print_r($data_csv);
  						if(empty($data1))
  						{ 				
  							echo "pkpkpkpk";
- 							$data1=NULL;
+ 							$data1=null;
  						}
- 						
  							
  						echo '[data1>>'.$data1;
  						$db.="'".$data1."',";
