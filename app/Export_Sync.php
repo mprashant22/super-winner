@@ -84,7 +84,7 @@ echo print_r($data_csv);
  						if(empty($data1))
  						{ 				
  							echo "pkpkpkpk";
- 							$data1=null;
+ 							$data1='null';
  							echo "D1".$data1;
  						}				
  							
