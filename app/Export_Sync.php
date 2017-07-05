@@ -84,7 +84,7 @@ echo print_r($data_csv);
  						echo '[data1>>'.$data1;
  						$db.="'".$data1."',";
  					}
- 					echo "<db>".$db;
+ 					echo "<db>";//.$db;
  					
 				
  					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
