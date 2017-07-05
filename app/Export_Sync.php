@@ -95,7 +95,7 @@ echo print_r($data_csv);
  						if($data1=="NULL")
  						{
  							echo "this is null";
- 							$db.=$data1.",";
+ 							$db.="".$data1.",";
  						}
  					}
  					echo "<db>";//.$db;
