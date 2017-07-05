@@ -82,7 +82,8 @@ echo print_r($data_csv);
  						echo "inside LOOOOOOP";
  						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
  						if(empty($data1))
- 						{ 							
+ 						{ 				
+ 							echo "pkpkpkpk";
  							$data1=NULL;
  						}
  							
