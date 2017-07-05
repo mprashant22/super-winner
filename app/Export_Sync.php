@@ -81,7 +81,7 @@ echo print_r($data_csv);
  						
  						//echo "inside LOOOOOOP";
  						$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
- 						//echo '[data1>>'.$data1;
+ 						echo '[data1>>'.$data1;
  						$db.="'".$data1."',";
  					}
  					echo "<db>".$db;
