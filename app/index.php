@@ -1,7 +1,6 @@
 <link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
 
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 <?php
 echo "in   app  index";
@@ -15,17 +14,17 @@ $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 echo "shop".$shop;
 echo 'neche';
-// if(isset($_POST['SYNC']))
-// {
-// 	echo 'xx'; 
-// 	$Inv = new Export_Sync();
-// 	echo '??????????????'.$shop;
-// 	$Inv->sync($shop);
+if(isset($_POST['SYNC']))
+{
+	echo 'xx'; 
+	$Inv = new Export_Sync();
+	echo '??????????????'.$shop;
+	$Inv->sync($shop);
 	  	
-// 	  	echo 'pxp'.  $shop;
+	  	echo 'pxp'.  $shop;
 	  	
-// 	  	//header("location:install/index.php");	
-// }
+	  	//header("location:install/index.php");	
+}
 
 ?>
 
@@ -44,7 +43,6 @@ function HandleBrowseClick()
 {
     var fileinput = document.getElementById("browse");
     fileinput.click();
-    
 }
 function Handlechange()
 {
@@ -52,25 +50,4 @@ function Handlechange()
     var textinput = document.getElementById("filename");
     textinput.value = fileinput.value;
 }
-$(document).ready(function() {
-
-	$("#browse").change(function()
-	{
-// 		 var $t = $(this);
-//          $.ajax({
-//             url: 'index.app',
-//             type: 'post',
-//             data: ,
-//             success: function(data) {
-				alert("<?php echo "pofepopf" ?>");
-				<?php echo 'xx'; 
-// 				$Inv = new Export_Sync();
-// 				echo '??????????????'.$shop;
-// 				$Inv->sync($shop);
-// 				echo 'pxp'.  $shop;
-// 				?>
-//         		}
-		
-	});
-});
 </script>
