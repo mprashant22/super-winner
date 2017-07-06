@@ -53,6 +53,7 @@ function Handlechange()
 }
 function autoSync()
 {
-	alert("autosync");alert(<?php echo "Prashant"?>);
+	//alert("autosync");
+	alert(<?php echo "Prashant"?>);
 }
 </script>
