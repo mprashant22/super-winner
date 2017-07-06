@@ -151,7 +151,7 @@ class StoreTable extends DB_Connection{
                        var ajax_price = $("#ajax_price").text();
 
 
-                       $t.parents("tr").find(".title").text(title);
+                       $t.parents("tr").find(".title").text(ajax_title);
                        $t.parents("tr").find(".price").text(ajax_price);
                        $t.parents("tr").find(".sku").text(ajax_sku);
                        $t.parents("tr").find(".units").text(ajax_unit);                       
