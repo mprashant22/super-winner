@@ -15,17 +15,17 @@ $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 echo "shop".$shop;
 echo 'neche';
-if(isset($_POST['SYNC']))
-{
-	echo 'xx'; 
-	$Inv = new Export_Sync();
-	echo '??????????????'.$shop;
-	$Inv->sync($shop);
+// if(isset($_POST['SYNC']))
+// {
+// 	echo 'xx'; 
+// 	$Inv = new Export_Sync();
+// 	echo '??????????????'.$shop;
+// 	$Inv->sync($shop);
 	  	
-	  	echo 'pxp'.  $shop;
+// 	  	echo 'pxp'.  $shop;
 	  	
-	  	//header("location:install/index.php");	
-}
+// 	  	//header("location:install/index.php");	
+// }
 
 ?>
 
@@ -56,13 +56,21 @@ $(document).ready(function() {
 
 	$("#browse").change(function()
 	{
-		alert("<?php echo "pofepopf" ?>");
-		<?php echo 'xx'; 
-		$Inv = new Export_Sync();
-		echo '??????????????'.$shop;
-		$Inv->sync($shop);
-		echo 'pxp'.  $shop;
-		?>
+		 var $t = $(this);
+         $.ajax({
+            url: 'index.app',
+            type: 'post',
+            data: ,
+            success: function(data) {
+				alert("<?php echo "pofepopf" ?>");
+				<?php echo 'xx'; 
+				$Inv = new Export_Sync();
+				echo '??????????????'.$shop;
+				$Inv->sync($shop);
+				echo 'pxp'.  $shop;
+				?>
+        		}
+		
 	});
 });
 </script>
