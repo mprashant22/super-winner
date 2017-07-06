@@ -50,7 +50,7 @@ class StoreTable extends DB_Connection{
   
     <tr>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
-     	<td>Title</td>
+     	<td><span class="title">Title</td>
       	<td>
      	<select class="v1" name="variant1" onClick="">
       		<option>-- Option1 --</option> 
@@ -90,9 +90,9 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td><span class="sku">sku</span></td>
-    	<td><span class="units">Units</span></td>
-    	<td><span class="price">Price</span></td>
+ 		<td><span class="sku">0</span></td>
+    	<td><span class="units">0</span></td>
+    	<td><span class="price">0</span></td>
 	</tr>	
 	<?php 
  	}
@@ -125,12 +125,14 @@ class StoreTable extends DB_Connection{
 
 			$( "#my_form tr td select" ).change( function() {
                var handle = $(this).parent("td").siblings(".handle").text();
+               var title = $(this).parents("tr").find(".title").val();
                var v1 = $(this).parents("tr").find(".v1").val();
                var v2 = $(this).parents("tr").find(".v2").val();
-               var v3 = $(this).parents("tr").find(".v3").val();
+               var v3 = $(this).parents("tr").find(".v3").val();               
 
                var ourObj = {};
                ourObj.handle = handle;
+               ourObj.title = title;
                ourObj.v1 = v1;
                ourObj.v2 = v2;
                ourObj.v3 = v3;
@@ -143,11 +145,13 @@ class StoreTable extends DB_Connection{
                   success: function(data) {
                       
                        $("#ajax_success").html(data);
+                       var ajax_title = $("#ajax_title").html();
                        var ajax_sku = $("#ajax_sku").html();
                        var ajax_unit = $("#ajax_unit").text();
                        var ajax_price = $("#ajax_price").text();
 
 
+                       $t.parents("tr").find(".title").text(title);
                        $t.parents("tr").find(".price").text(ajax_price);
                        $t.parents("tr").find(".sku").text(ajax_sku);
                        $t.parents("tr").find(".units").text(ajax_unit);                       
