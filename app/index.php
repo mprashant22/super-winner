@@ -23,10 +23,7 @@ if(isset($_POST['SYNC']))
 	  	
 	  	echo 'pxp'.  $shop;
 	  	
-	  	//header("location:install/index.php");
-	  	
-	  	
-	
+	  	//header("location:install/index.php");	
 }
 
 ?>
@@ -46,6 +43,7 @@ function HandleBrowseClick()
 {
     var fileinput = document.getElementById("browse");
     fileinput.click();
+    <?php echo "Prashant"?>
 }
 function Handlechange()
 {
