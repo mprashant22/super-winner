@@ -56,20 +56,20 @@ $(document).ready(function() {
 
 	$("#browse").change(function()
 	{
-		 var $t = $(this);
-         $.ajax({
-            url: 'index.app',
-            type: 'post',
-            data: ,
-            success: function(data) {
+// 		 var $t = $(this);
+//          $.ajax({
+//             url: 'index.app',
+//             type: 'post',
+//             data: ,
+//             success: function(data) {
 				alert("<?php echo "pofepopf" ?>");
 				<?php echo 'xx'; 
-				$Inv = new Export_Sync();
-				echo '??????????????'.$shop;
-				$Inv->sync($shop);
-				echo 'pxp'.  $shop;
-				?>
-        		}
+// 				$Inv = new Export_Sync();
+// 				echo '??????????????'.$shop;
+// 				$Inv->sync($shop);
+// 				echo 'pxp'.  $shop;
+// 				?>
+//         		}
 		
 	});
 });
