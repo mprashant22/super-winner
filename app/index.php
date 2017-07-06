@@ -33,7 +33,7 @@ if(isset($_POST['SYNC']))
 
 <form action='' method='post' enctype="multipart/form-data">
 Select csv to upload:
-<input type="file" id="browse" name="fileToUpload" style="display: none" onChange="Handlechange();autoSync();" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+<input type="file" id="browse" name="fileToUpload" style="display: none" onChange="Handlechange();" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
 <input type="text" id="filename" readonly="true"/>
 <input type="button" value="EXPORT" id="fileToUpload" onclick="HandleBrowseClick();"/>
 <input type="submit" name="SYNC" value="SYNC">
@@ -54,9 +54,9 @@ function Handlechange()
 }
 $(document).ready(function() {
 
-	function autoSync()
+	$("#browse").change(function()
 	{
 		alert("pofepopf");
-	}
+	});
 });
 </script>
