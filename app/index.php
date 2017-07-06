@@ -14,8 +14,8 @@ $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 echo "shop".$shop;
 echo 'neche';
-if(isset($_POST['SYNC']))
-{
+//if(isset($_POST['SYNC']))
+//{
 	echo 'xx'; 
 	$Inv = new Export_Sync();
 	echo '??????????????'.$shop;
@@ -24,7 +24,7 @@ if(isset($_POST['SYNC']))
 	  	echo 'pxp'.  $shop;
 	  	
 	  	//header("location:install/index.php");	
-}
+//}
 
 ?>
 
@@ -43,7 +43,6 @@ function HandleBrowseClick()
 {
     var fileinput = document.getElementById("browse");
     fileinput.click();
-    <?php echo "Prashant"?>
 }
 function Handlechange()
 {
