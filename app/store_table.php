@@ -158,6 +158,11 @@ class StoreTable extends DB_Connection{
                   }
                });                   
 			});
+
+			 myQ();
+
+
+			
 			
 		});
 		</script>
