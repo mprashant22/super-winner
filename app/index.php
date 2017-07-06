@@ -1,6 +1,7 @@
 <link href="../templates/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../templates/bootstrap.min.css"  rel="stylesheet" type="text/css">
 
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 
 <?php
 echo "in   app  index";
@@ -51,9 +52,11 @@ function Handlechange()
     var textinput = document.getElementById("filename");
     textinput.value = fileinput.value;
 }
-function autoSync()
-{
-	//alert("autosync");
-	alert(<?php echo "Prashant"?>);
-}
+$(document).ready(function() {
+
+	function autoSync()
+	{
+		alert("pofepopf");
+	}
+});
 </script>
