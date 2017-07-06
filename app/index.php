@@ -56,7 +56,7 @@ $(document).ready(function() {
 
 	$("#browse").change(function()
 	{
-		alert(<?php echo "pofepopf" ?>);
+		alert("<?php echo "pofepopf" ?>");
 	});
 });
 </script>
