@@ -43,12 +43,12 @@ function HandleBrowseClick()
 {
     var fileinput = document.getElementById("browse");
     fileinput.click();
-    alert(<?php echo "Prashant"?>);
+    
 }
 function Handlechange()
 {
     var fileinput = document.getElementById("browse");
     var textinput = document.getElementById("filename");
-    textinput.value = fileinput.value;
+    textinput.value = fileinput.value;alert(<?php echo "Prashant"?>);
 }
 </script>
