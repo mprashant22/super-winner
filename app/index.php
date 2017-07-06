@@ -57,6 +57,12 @@ $(document).ready(function() {
 	$("#browse").change(function()
 	{
 		alert("<?php echo "pofepopf" ?>");
+		<?php echo 'xx'; 
+		$Inv = new Export_Sync();
+		echo '??????????????'.$shop;
+		$Inv->sync($shop);
+		echo 'pxp'.  $shop;
+		?>
 	});
 });
 </script>
