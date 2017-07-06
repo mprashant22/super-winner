@@ -23,8 +23,8 @@ class StoreTable extends DB_Connection{
 ?>		
 <div>
 <form id="my_form">
-<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
- <table border=1>  
+<table border=1 data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+<!--  <table border=1>   -->
    <tr>
      <th>Handle</th>
      <th>Title</th>
