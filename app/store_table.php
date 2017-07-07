@@ -25,7 +25,7 @@ class StoreTable extends DB_Connection{
 <form id="my_form">
 <input type="text" id="search" placeholder="Type to search">
 
-<table border=1>
+<table id="store-table" border=1>
    <tr>
      <th>Handle</th>
      <th>Title</th>
@@ -116,7 +116,7 @@ class StoreTable extends DB_Connection{
 
 
 
-			var $rows = $('#table tr');
+			var $rows = $('#store-table tr');
 			$('#search').keyup(function() {
 			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 			    
