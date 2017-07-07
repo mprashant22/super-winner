@@ -1,6 +1,4 @@
-<!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-<!-- <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 <?php
 
 echo "store table";
@@ -25,8 +23,9 @@ class StoreTable extends DB_Connection{
 ?>		
 <div>
 <form id="my_form">
-<table border=1 data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
-<!--  <table border=1>   -->
+<input type="text" id="search" placeholder="Type to search">
+
+<table border=1>
    <tr>
      <th>Handle</th>
      <th>Title</th>
@@ -115,6 +114,19 @@ class StoreTable extends DB_Connection{
 	<script type="text/javascript">
 		$(document).ready(function() {
 
+
+
+			var $rows = $('#table tr');
+			$('#search').keyup(function() {
+			    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+			    
+			    $rows.show().filter(function() {
+			        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+			        return !~text.indexOf(val);
+			    }).hide();
+			});			
+			
+
 			function myQ()
 			{
 				$( "#my_form tr td select" ).change();
@@ -163,12 +175,8 @@ class StoreTable extends DB_Connection{
 			});
 
 			 myQ();
-
-
 			
 			
 		});
 		</script>
  		<div id="ajax_success" style="visibility: hidden"></div>
-
-
