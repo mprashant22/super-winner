@@ -52,7 +52,7 @@ class StoreTable extends DB_Connection{
   
     <tr>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
-     	<td><span class="title">Title</td>
+     	<td><span class="title">Title</span></td>
       	<td>
      	<select class="v1" name="variant1" onClick="">
       		<option>-- Option1 --</option> 
@@ -68,7 +68,7 @@ class StoreTable extends DB_Connection{
   		</td>
      	<td>
     	<select class="v2" name="variant2" onClick="">
-      		<option>-- Option2 --</option> 
+<!--       		<option>-- Option2 --</option>  -->
      		<?php 
  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
  					$v2=$query_data2["Option2 Value"];
@@ -81,7 +81,7 @@ class StoreTable extends DB_Connection{
   		</td>
       	<td>
      	<select class="v3" name="variant3" onClick="">     	
-      		<option>-- Option3 --</option>
+<!--       		<option>-- Option3 --</option> -->
      		<?php 
  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
  					$v3=$query_data3["Option3 Value"];
