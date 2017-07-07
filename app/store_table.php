@@ -55,7 +55,7 @@ class StoreTable extends DB_Connection{
      	<td><span class="title">Title</span></td>
       	<td>
      	<select class="v1" name="variant1" onClick="">
-      		<option>-- Option1 --</option> 
+<!--       		<option>-- Option1 --</option>  -->
      		<?php 
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
  					$v1=$query_data1["Option1 Value"];
