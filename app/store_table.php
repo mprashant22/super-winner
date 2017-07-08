@@ -26,9 +26,9 @@ class StoreTable extends DB_Connection{
 ?>		
 <div>
 <form id="my_form">
-<button class="delete_all"></button>
-<input type="text" id="search" placeholder="Type to search">
 
+<input type="text" id="search" placeholder="Type to search">
+<button class="btn btn-primary delete_all"></button>
 <table id="store-table" border=1>
    <tr>
    	 <th><input type="checkbox" id="master"></th>
