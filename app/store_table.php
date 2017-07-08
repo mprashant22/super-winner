@@ -30,6 +30,7 @@ class StoreTable extends DB_Connection{
 
 <table id="store-table" border=1>
    <tr>
+   	 <th><input type="checkbox" id="master"></th>
      <th>Handle</th>
      <th>Title</th>
      <th style="color: #FF0000">Variant1</th>
