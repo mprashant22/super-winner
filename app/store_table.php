@@ -140,6 +140,7 @@ class StoreTable extends DB_Connection{
 						$(".sub_chk:checked").each(function() {  
 							allVals.push($(this).attr('data-row-id'));
 						});  
+						alert(allVals);
 						//alert(allVals.length); return false;  
 						if(allVals.length <=0)  
 						{  
