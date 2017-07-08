@@ -138,9 +138,9 @@ class StoreTable extends DB_Connection{
 			jQuery('.delete_all').on('click', function(e) { 
 				var allVals = [];  
 						$(".sub_chk:checked").each(function() {  
-							allVals.push($(this).attr('data-id'));
+							allVals.push($(this).attr('data-row-id'));
 						});  
-						alert(allVals.length); return false;  
+						//alert(allVals.length); return false;  
 						if(allVals.length <=0)  
 						{  
 							alert("Please select row.");  
@@ -150,7 +150,7 @@ class StoreTable extends DB_Connection{
 							WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){
-								alert("check");  
+								alert("value>>"+check);  
 								//for server side
 								
 								var join_selected_values = allVals.join(","); 
