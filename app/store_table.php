@@ -56,7 +56,7 @@ class StoreTable extends DB_Connection{
 			 	
     	 ?>
   
-    <tr data-row-id="<?php print_r($result['handle']); ?>">
+    <tr data-row-id="<?php echo $result['handle']; ?>">
 		<td><input type="checkbox" class="sub_chk" data-id="1"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
