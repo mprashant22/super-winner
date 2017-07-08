@@ -169,7 +169,7 @@ class StoreTable extends DB_Connection{
 								});
 				              //for client side
 							  $.each(allVals, function( index, value ) {
-								  $('table tr').filter("[data-row-id='" + value + "']").remove();
+								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
 							  });
 								
 
