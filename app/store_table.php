@@ -151,7 +151,7 @@ class StoreTable extends DB_Connection{
 							WRN_PROFILE_DELETE = "Are you sure you want to delete these rows?";  
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){
-								alert("value>>"+check);  
+								alert("value>>"+check);
 								//for server side
 								
 								var join_selected_values = allVals.join(","); 
