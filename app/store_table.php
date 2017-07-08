@@ -56,6 +56,7 @@ class StoreTable extends DB_Connection{
     	 ?>
   
     <tr>
+		<td><input type="checkbox" class="sub_chk" data-id="1"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
@@ -149,7 +150,7 @@ class StoreTable extends DB_Connection{
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){  
 								//for server side
-								/*
+								
 								var join_selected_values = allVals.join(","); 
 								
 								$.ajax({   
@@ -164,7 +165,7 @@ class StoreTable extends DB_Connection{
 										$("#msgdiv").html(response);
 										//referesh table
 									}   
-								});*/
+								});
 				              //for client side
 							  $.each(allVals, function( index, value ) {
 								  $('table tr').filter("[data-row-id='" + value + "']").remove();
