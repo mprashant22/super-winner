@@ -38,7 +38,8 @@ class StoreTable extends DB_Connection{
      <th style="color: #4298f4">Variant3</th>
      <th>Variant~SKU</th>
      <th>Units</th>
-     <th>Price</th>
+     <th>Price</th>     
+     <th>Action</th>
     </tr>
 		<?php		
 			 while($result = mysqli_fetch_assoc($res4)) {
