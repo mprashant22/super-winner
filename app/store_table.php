@@ -148,7 +148,7 @@ class StoreTable extends DB_Connection{
 						}  
 						else {  
 							//$("#loading").show(); 
-							WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
+							WRN_PROFILE_DELETE = "Are you sure you want to delete these rows?";  
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){
 								alert("value>>"+check);  
