@@ -102,7 +102,7 @@ class StoreTable extends DB_Connection{
  		<td><span class="sku">0</span></td>
     	<td><span class="units">0</span></td>
     	<td><span class="price">0</span></td>
-    	<td><a href='edit.php?id=".$row['storeid']."'>Edit</a>~<a href='delete.php?id=".$row['storeid']."' class="glyphicon glyphicon-trash">x</a></td>
+    	<td><a href='edit.php?id=".$row['storeid']."' class="glyphicon glyphicon-edit">Edit</a>~<a href='delete.php?id=".$row['storeid']."' class="glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php 
  	}
