@@ -180,7 +180,7 @@ class StoreTable extends DB_Connection{
 			jQuery('.remove-row').on('click', function(e) {
 				WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 					var check = confirm(WRN_PROFILE_DELETE);  
-					if(check == true){
+					if(check == true){alert("true");
 						$('table tr').filter("[data-row-id='" + $(this).attr('data-id') + "']").remove();
 					}
 			});
