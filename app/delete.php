@@ -1,8 +1,6 @@
-<html>
-<body>
 <?php
-include('connect.php');
-if(isset($_GET['id']))
+require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+if(isset($_POST['id']))
 {
 $id=$_GET['id'];
 echo "id==".$id;
@@ -13,5 +11,3 @@ header('location:index.php');
 }
 }
 ?>
-</body>
-</html>
