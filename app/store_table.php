@@ -26,6 +26,7 @@ class StoreTable extends DB_Connection{
 ?>		
 <div>
 <form id="my_form">
+<button class="delete_all"></button>
 <input type="text" id="search" placeholder="Type to search">
 
 <table id="store-table" border=1>
