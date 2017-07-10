@@ -159,7 +159,7 @@ class StoreTable extends DB_Connection{
 								var product_row_len = $("#store-table .product_row").length;
                                 var g = 0;
 								for(g = 0; g<product_row_len;g++){
-                                     var checkval = $(".chk"+g).is(":checked");
+                                     var checkval = $(".sub_chk"+g).is(":checked");
                                      if(checkval == true){
                                        alert("true checked");
                                          }
