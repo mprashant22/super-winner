@@ -182,8 +182,8 @@ $.ajax({
                   type: 'post',
                   data: {"points" : JSON.stringify(arrhand)},
                   success: function(data) {
-                      
-                       $("#msgdiv").html(data);
+                      alert("data>>"+data);                      						
+						$("#msgdiv").html(data);
                   }
 });
 
