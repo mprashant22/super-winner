@@ -164,7 +164,7 @@ class StoreTable extends DB_Connection{
 									cache:false,  
 									data: 'ids='+join_selected_values,  
 									success: function(response)  
-									{   alert(response);
+									{   alert("respnse"+response);
 										$("#loading").hide();  
 										$("#msgdiv").html(response);
 										//referesh table
