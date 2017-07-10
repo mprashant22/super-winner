@@ -21,15 +21,15 @@ class DeleteQuery extends DB_Connection
 			
 			$arr=explode(",",$handle);
 			echo var_dump($handle);
-			//foreach($value as $arr)
-  		//	{
-  			//	echo $value."<br>";
+			foreach($value as $arr)
+  			{
+  				echo $value."<br>";
 			
-   				//$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
-   			//echo "sql>>".$sql4."<br>";
-//    			$res4=mysqli_query($this->connection,$sql4);
+   				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
+   			echo "sql>>".$sql4."<br>";
+    			$res4=mysqli_query($this->connection,$sql4);
 //  		 	echo $res4;
-  			//}
+  			}
 					 	
 		}
 	}
