@@ -166,7 +166,7 @@ class StoreTable extends DB_Connection{
 									success: function(response)  
 									{   alert("respnse"+response);
 										//$("#loading").hide();  
-										//$("#msgdiv").html(response);
+										$("#msgdiv").html(response);
 										//referesh table
 									}   
 								});
@@ -259,3 +259,4 @@ class StoreTable extends DB_Connection{
 		});
 		</script>
  		<div id="ajax_success" style="visibility: hidden"></div>
+ 		<div id="msgdiv" style=""></div>
