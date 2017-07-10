@@ -160,11 +160,9 @@ class StoreTable extends DB_Connection{
 								var n='prashant';
 								$.ajax({   
 								  
-									type: 'post',  
-									url: "delete.php",  
-									cache:false,  
-									data:"{'yy':'"+n+"'}",
-									//datatype:json,  
+									url: "delete.php",
+									type: 'post',
+									data:"{'yy':'"+n+"'}",									 
 									success: function(response)  
 									{   alert("respnse"+response);
 										//$("#loading").hide();  
