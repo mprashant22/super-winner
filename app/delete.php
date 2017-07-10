@@ -18,10 +18,10 @@ class DeleteQuery extends DB_Connection
 			
 			//$handle=[];
 			$handle=$_POST["points"];
-			echo "<br>".$handle;
+			
 			foreach($value as $handle)
   			{
-  				//echo $value."<br>";
+  				echo $value."<br>";
 			
 //   				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
 //   			echo "sql>>".$sql4."<br>";
