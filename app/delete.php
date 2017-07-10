@@ -14,11 +14,11 @@ class DeleteQuery extends DB_Connection
 		$shp=explode('.', $shop);
 		echo $shp[0];
 		// Test if our data came through
-// 		if (isset($_POST["points"])) {
-			
-// 			$handle=[];
-// 			$handle=$_POST["points"];
-			
+		if (isset($_POST["points"])) {
+		echo "isset";	
+			$handle=[];
+			$handle=$_POST["points"];
+			echo $handle;
 // 			for($i=0;$i<count($handle);$i++)
 // 			{			
 			
@@ -28,7 +28,7 @@ class DeleteQuery extends DB_Connection
 // // 			// 		 	echo $res4;
 // 			}
 					 	
-		//}
+		}
 	}
 }
 
