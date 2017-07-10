@@ -162,7 +162,7 @@ class StoreTable extends DB_Connection{
 									type: "POST",  
 									url: "delete.php",  
 									cache:false,  
-									data: ({"val":join_selected_values}),  
+									data: ({val:join_selected_values}),  
 									success: function(response)  
 									{   alert("respnse"+response);
 										//$("#loading").hide();  
