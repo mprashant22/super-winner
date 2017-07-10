@@ -12,10 +12,10 @@ class DeleteQuery extends DB_Connection
 		
 		$shop='mathurs-storezz.myshopify.com';
 		$shp=explode('.', $shop);
-		echo $shp[0];
+		
 		// Test if our data came through
 		if (isset($_POST["points"])) {
-		echo "isset";	
+			
 			$handle=[];
 			$handle=$_POST["points"];
 			print_r($handle);
