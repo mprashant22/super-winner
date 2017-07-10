@@ -135,8 +135,8 @@ class StoreTable extends DB_Connection{
 
 
 
-			jQuery('.delete_all tr').on('click', function(e) {
-
+			jQuery('.delete_all').on('click', function(e) {
+alert("har har mahadev");
 				$(this).addClass('selected').siblings().removeClass('selected');    
 				   var value=$(this).find('td:first').html();
 				   alert(value);
