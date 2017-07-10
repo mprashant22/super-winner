@@ -172,7 +172,7 @@ class StoreTable extends DB_Connection{
                                 $.post("delete.php",
                                   {
                                         name: rr
-                                        data: JSON.stringify(arrhand);
+                                        data: arrhand;
                                   },
                                    function(data){
                                      alert(data );
