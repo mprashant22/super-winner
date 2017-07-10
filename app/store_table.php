@@ -169,14 +169,28 @@ class StoreTable extends DB_Connection{
 								
 								alert(arrhand);
 								 var rr = "ranjeet"; 
-                                $.post("delete.php",
-                                  {
-                                        name: rr
-                                        data: arrhand;
-                                  },
-                                   function(data){
-                                     alert(data );
-                                 });
+//                                 $.post("delete.php",
+//                                   {
+//                                         name: rr                                       
+//                                   },
+//                                    function(data){
+//                                      alert(data );
+//                                  });
+
+$.ajax({
+                  url: 'delete.php',
+                  type: 'post',
+                  data: {"points" : JSON.stringify(arrhand)},
+                  success: function(data) {
+                      
+                       $("#msgdiv").html(data);
+                  }
+});
+
+
+
+
+
 				              //for client side
 							  $.each(allVals, function( index, value ) {
 								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
