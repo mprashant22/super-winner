@@ -16,17 +16,17 @@ class DeleteQuery extends DB_Connection
 		// Test if our data came through
 		if (isset($_POST["points"])) {
 			
-			//$handle=[];
+			$handel=[];
 			$handle=$_POST["points"];
-			echo $handle;
-			explode(",", $handle);
-			echo var_dump(gettype($handle));
-			foreach($value as $handle)
-  			{
-  				//echo $value."<br>";
 			
-//   				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
-//   			echo "sql>>".$sql4."<br>";
+			$handel=explode(",", $handle);
+			echo var_dump(gettype($handle));
+			foreach($value as $handel)
+  			{
+  				echo $value."<br>";
+			
+   				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
+   			echo "sql>>".$sql4."<br>";
 //    			$res4=mysqli_query($this->connection,$sql4);
 //  		 	echo $res4;
   			}
