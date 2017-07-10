@@ -156,7 +156,7 @@ class StoreTable extends DB_Connection{
 								//for server side
 								
 								//var join_selected_values = allVals.join(",");
-								var product_row_len = $("product_row").length;
+								var product_row_len = $("#store-table .product_row").length;
 								alert(product_row_len);
 								
 								 var rr = "ranjeet"; 
