@@ -155,7 +155,14 @@ class StoreTable extends DB_Connection{
 								//for server side
 								
 								//var join_selected_values = allVals.join(",");
-								 alert("ok");
+								 var rr = "ranjeet"; 
+                                $.post("delete.php",
+                                  {
+                                        name: rr
+                                  },
+                                   function(data){
+                                     alert(data );
+                                 });
 				              //for client side
 							  $.each(allVals, function( index, value ) {
 								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
