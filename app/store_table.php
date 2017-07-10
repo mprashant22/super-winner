@@ -180,8 +180,7 @@ class StoreTable extends DB_Connection{
 $.ajax({
                   url: 'delete.php',
                   type: 'post',
-                  //data: {"points" : JSON.stringify(arrhand)},
-                  data:arrhand,
+                  data: {"points" : JSON.stringify(arrhand)},
                   success: function(data) {
                       alert("data>>"+data);                      						
 						$("#msgdiv").html(data);
