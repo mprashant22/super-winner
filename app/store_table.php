@@ -189,9 +189,6 @@ class StoreTable extends DB_Connection{
 						$('table tr').filter("[data-row-id='" + $(this).attr('data-id') + "']").remove();
 					}
 			});
-
-			
-
 			
 
 			var $rows = $('#store-table tr');

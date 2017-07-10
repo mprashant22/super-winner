@@ -40,9 +40,8 @@ class SelectQuery extends DB_Connection
 		 		<li id="ajax_price"><?php echo $result['Variant Price'];?></li>
 		 		</ul>
 		 	<?php 	 
-		 	}
-		 	
-	}
+		 	}		 	
+		}
 	}
 }
 
