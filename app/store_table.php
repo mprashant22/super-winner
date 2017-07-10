@@ -163,7 +163,7 @@ class StoreTable extends DB_Connection{
 									type: "POST",  
 									url: "delete.php",  
 									cache:false,  
-									data: ({'val':1234}),
+									data: 1234,
 									//datatype:json,  
 									success: function(response)  
 									{   alert("respnse"+response);
