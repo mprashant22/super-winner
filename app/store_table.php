@@ -154,7 +154,8 @@ class StoreTable extends DB_Connection{
 								//alert("value>>"+check);
 								//for server side
 								
-								var join_selected_values = allVals.join(","); 
+								var join_selected_values = allVals.join(",");
+								 
 								//alert(join_selected_values);
 								
 								$.ajax({   
@@ -162,7 +163,7 @@ class StoreTable extends DB_Connection{
 									type: "POST",  
 									url: "delete.php",  
 									cache:false,  
-									data: ({val:join_selected_values}),
+									data: ({'val':join_selected_values}),
 									datatype:json,  
 									success: function(response)  
 									{   alert("respnse"+response);
