@@ -57,7 +57,7 @@ class StoreTable extends DB_Connection{
  echo $result['handle'].">";
     	 ?>
   
-    <tr id="<?php echo $result['handle']; ?>">
+    <tr class="product_row" id="<?php echo $result['handle']; ?>">
 		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-id=""></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
@@ -156,6 +156,9 @@ class StoreTable extends DB_Connection{
 								//for server side
 								
 								//var join_selected_values = allVals.join(",");
+								var product_row_len = $("product_row").lenth;
+								alert(product_row_len);
+								
 								 var rr = "ranjeet"; 
                                 $.post("delete.php",
                                   {
