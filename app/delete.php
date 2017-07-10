@@ -21,7 +21,7 @@ class DeleteQuery extends DB_Connection
 			
 			$arr=explode(",",$handle);
 			//echo var_dump($handle);
-			foreach($value as $arr)
+			foreach($arr as $value)
   			{
   				echo $value."//";
 			
