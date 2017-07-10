@@ -19,14 +19,14 @@ class DeleteQuery extends DB_Connection
 			$handle=[];
 			$handle=$_POST["points"];
 			echo $handle;
-// 			for($i=0;$i<count($handle);$i++)
-// 			{			
+ 			for($i=0;$i<count($handle);$i++)
+ 			{			
 			
-// 			$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$handle[$i]."'";
-// 			echo "sql>>".$sql4."<br>";
-// // 			$res4=mysqli_query($this->connection,$sql4);
+ 			$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$handle[$i]."'";
+ 			echo "sql>>".$sql4."<br>";
+  			$res4=mysqli_query($this->connection,$sql4);
 // // 			// 		 	echo $res4;
-// 			}
+ 			}
 					 	
 		}
 	}
