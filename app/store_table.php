@@ -42,7 +42,8 @@ class StoreTable extends DB_Connection{
      <th>Price</th>     
      <th>Action</th>
     </tr>
-		<?php		
+		<?php	
+		$ii = 0;
 			 while($result = mysqli_fetch_assoc($res4)) {
  
 			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
@@ -57,7 +58,7 @@ class StoreTable extends DB_Connection{
     	 ?>
   
     <tr id="<?php echo $result['handle']; ?>">
-		<td><input type="checkbox" class="sub_chk" data-id="1"></td>
+		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-id=""></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
@@ -104,7 +105,7 @@ class StoreTable extends DB_Connection{
     	<td><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
-	<?php 
+	<?php $ii++;
  	}
 	?>	
  </table>
@@ -135,13 +136,7 @@ class StoreTable extends DB_Connection{
 
 
 
-			jQuery('.delete_all').on('click', function(e) {
-alert("har har mahadev");
-				$(this).addClass('selected').siblings().removeClass('selected');    
-				   var value=$(this).find('td:first').html();
-				   alert(value);
-				
-				 
+			jQuery('.delete_all').on('click', function(e) { 
 				var allVals = [];  
 						$(".sub_chk:checked").each(function() {  
 							allVals.push($(this).attr('data-row-id'));
