@@ -158,15 +158,16 @@ class StoreTable extends DB_Connection{
 								//var join_selected_values = allVals.join(",");
 								var product_row_len = $("#store-table .product_row").length;
                                 var g = 0;
+                                var arrhand = [];
 								for(g = 0; g<product_row_len;g++){
                                      var checkval = $(".sub_chk"+g).is(":checked");
                                      if(checkval == true){
-                                       alert($(".sub_chk"+g).attr("data-handle"));
+                                    	 arrhand.push($(".sub_chk"+g).attr("data-handle"));                                  
                                        
                                          }
 									}
 								
-								
+								alert(arrhand);
 								 var rr = "ranjeet"; 
                                 $.post("delete.php",
                                   {
