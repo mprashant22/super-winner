@@ -140,7 +140,7 @@ class StoreTable extends DB_Connection{
 						$(".sub_chk:checked").each(function() {  
 							allVals.push($(this).attr('data-row-id'));
 						});  
-						alert(allVals);
+						//alert(allVals);
 						//alert(allVals.length); return false;  
 						if(allVals.length <=0)  
 						{  
@@ -162,11 +162,11 @@ class StoreTable extends DB_Connection{
 									type: "POST",  
 									url: "delete.php",  
 									cache:false,  
-									data: 'ids='+join_selected_values,  
+									data: ({"val":join_selected_values}),  
 									success: function(response)  
 									{   alert("respnse"+response);
-										$("#loading").hide();  
-										$("#msgdiv").html(response);
+										//$("#loading").hide();  
+										//$("#msgdiv").html(response);
 										//referesh table
 									}   
 								});
