@@ -20,7 +20,7 @@ class DeleteQuery extends DB_Connection
 			$handle=$_POST["points"];
 			
 			$arr=explode(",",$handle);
-			echo var_dump($handle);
+			//echo var_dump($handle);
 			foreach($value as $arr)
   			{
   				echo $value."//";
