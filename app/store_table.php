@@ -58,7 +58,7 @@ class StoreTable extends DB_Connection{
     	 ?>
   
     <tr class="product_row" id="<?php echo $result['handle']; ?>">
-		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>"></td>
+		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
@@ -161,7 +161,8 @@ class StoreTable extends DB_Connection{
 								for(g = 0; g<product_row_len;g++){
                                      var checkval = $(".sub_chk"+g).is(":checked");
                                      if(checkval == true){
-                                       alert("true checked");
+                                       alert($(".sub_chk"+g).attr("data-handle"));
+                                       
                                          }
 									}
 								
