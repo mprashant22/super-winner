@@ -144,18 +144,18 @@ class StoreTable extends DB_Connection{
 						//alert(allVals.length); return false;  
 						if(allVals.length <=0)  
 						{  
-							alert("Please select row.");  
+							//alert("Please select row.");  
 						}  
 						else {  
 							//$("#loading").show(); 
 							WRN_PROFILE_DELETE = "Are you sure you want to delete these rows?";  
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){
-								alert("value>>"+check);
+								//alert("value>>"+check);
 								//for server side
 								
 								var join_selected_values = allVals.join(","); 
-								alert(join_selected_values);
+								//alert(join_selected_values);
 								
 								$.ajax({   
 								  
