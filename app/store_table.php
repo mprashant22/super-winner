@@ -157,13 +157,13 @@ class StoreTable extends DB_Connection{
 								var join_selected_values = allVals.join(",");
 								 
 								//alert(join_selected_values);
-								var n='prashant'.text();
+								var n='prashant';
 								$.ajax({   
 								  
 									type: 'post',  
 									url: "delete.php",  
 									cache:false,  
-									data:{'yy':n},
+									data:"{'yy':'"+n+"'}",
 									//datatype:json,  
 									success: function(response)  
 									{   alert("respnse"+response);
