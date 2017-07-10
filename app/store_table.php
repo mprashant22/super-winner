@@ -154,22 +154,8 @@ class StoreTable extends DB_Connection{
 								//alert("value>>"+check);
 								//for server side
 								
-								var join_selected_values = allVals.join(",");
-								 
-								//alert(join_selected_values);
-								var n='prashant';
-								$.ajax({   
-								  
-									url: "delete.php",
-									type: 'post',
-									data:"{'yy':'"+n+"'}",									 
-									success: function(response)  
-									{   alert("respnse"+response);
-										//$("#loading").hide();  
-										$("#msgdiv").html(response);
-										//referesh table
-									}   
-								});
+								//var join_selected_values = allVals.join(",");
+								 alert("ok");
 				              //for client side
 							  $.each(allVals, function( index, value ) {
 								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
