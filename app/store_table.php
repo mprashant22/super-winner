@@ -56,7 +56,7 @@ class StoreTable extends DB_Connection{
  echo $result['handle'].">";
     	 ?>
   
-    <tr data-row-id="<?php echo $result['handle']; ?>">
+    <tr id="<?php echo $result['handle']; ?>">
 		<td><input type="checkbox" class="sub_chk" data-id="1"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
@@ -135,7 +135,13 @@ class StoreTable extends DB_Connection{
 
 
 
-			jQuery('.delete_all').on('click', function(e) { 
+			jQuery('.delete_all tr').on('click', function(e) {
+
+				$(this).addClass('selected').siblings().removeClass('selected');    
+				   var value=$(this).find('td:first').html();
+				   alert(value);
+				
+				 
 				var allVals = [];  
 						$(".sub_chk:checked").each(function() {  
 							allVals.push($(this).attr('data-row-id'));
