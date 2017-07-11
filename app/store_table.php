@@ -168,7 +168,7 @@ class StoreTable extends DB_Connection{
 								                  type: 'post',
 								                  data: {points : arrhand},
 								                  success: function(data) {
-								                      alert("location>>"+location);                      						
+								                      alert("data>>"+data);                      						
 														$("#msgdiv").html(data);
 														location.reload();
 								                  }
