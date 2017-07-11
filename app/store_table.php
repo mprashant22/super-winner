@@ -113,7 +113,7 @@ class StoreTable extends DB_Connection{
 </div>
   
    <?php 
-   header("location:app/store_table.php");
+   header("location:store_table.php");
 	}
 }	
 	$obj=new StoreTable();
