@@ -104,7 +104,7 @@ class StoreTable extends DB_Connection{
  		<td><span class="sku">0</span></td>
     	<td><span class="units">0</span></td>
     	<td><span class="price">0</span></td>
-    	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
+    	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a id="delete-row" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php $ii++;
  	}
@@ -187,7 +187,7 @@ class StoreTable extends DB_Connection{
 				WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 					var check = confirm(WRN_PROFILE_DELETE);  
 					if(check == true){//alert("true");
-						$('table tr').filter("[data-row-id='" + $(this).attr('data-id') + "']").remove();
+						$('table tr').filter($(this).attr('id')).remove();
 					}
 			});			
 
