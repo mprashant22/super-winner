@@ -113,7 +113,7 @@ class StoreTable extends DB_Connection{
 </div>
   
    <?php 
- //  header("location:store_table.php");
+   header('location:http://192.241.146.48/shopifyDemoLamp/app/store_table.php');
 	}
 }	
 	$obj=new StoreTable();
