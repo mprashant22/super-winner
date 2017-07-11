@@ -182,7 +182,7 @@ $.ajax({
                   type: 'post',
                   data: {points : arrhand},
                   success: function(data) {
-                      alert("data>>"+data);                      						
+                      alert("location>>"+location);                      						
 						$("#msgdiv").html(data);
 						location.reload();
                   }
