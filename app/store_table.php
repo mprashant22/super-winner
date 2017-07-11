@@ -175,7 +175,7 @@ class StoreTable extends DB_Connection{
 								                  }
 								});
 
-				             
+
 							}  
   
 					});
@@ -184,7 +184,7 @@ class StoreTable extends DB_Connection{
 				WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 					var check = confirm(WRN_PROFILE_DELETE);  
 					if(check == true){alert("true-remove row");
-						$('table tr').filter($(this).attr('data-handle')).remove();
+						$('table tr').filter($(this).attr("data-handle")).remove();
 					}
 			});			
 
