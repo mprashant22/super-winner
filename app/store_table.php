@@ -175,10 +175,7 @@ class StoreTable extends DB_Connection{
 								                  }
 								});
 
-				              //for client side
-							  $.each(allVals, function( index, value ) {
-								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
-							  });
+				             
 							}  
   
 					});
