@@ -18,7 +18,7 @@ class DeleteQuery extends DB_Connection
 			
 			$arr=[];
 			$handle=$_POST["points"];
-			
+			echo $handle;
 			//$arr=explode(",",$handle);
 			//echo var_dump($handle);
 			print_r($handle);
@@ -29,7 +29,7 @@ class DeleteQuery extends DB_Connection
    				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
    			echo "sql>>".$sql4;
     			$res4=mysqli_query($this->connection,$sql4);
-    			   
+    			
 //  		 	echo $res4;
   			}
 					 	
