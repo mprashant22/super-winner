@@ -136,26 +136,13 @@ class StoreTable extends DB_Connection{
 
 
 
-			jQuery('.delete_all').on('click', function(e) { 
-				var allVals = [];  
-						$(".sub_chk:checked").each(function() {  
-							allVals.push($(this).attr('data-row-id'));
-						});  
-						//alert(allVals);
-						//alert(allVals.length); return false;  
-						if(allVals.length <=0)  
-						{  
-							//alert("Please select row.");  
-						}  
-						else {  
-							//$("#loading").show(); 
+				jQuery('.delete_all').on('click', function(e) {						  
+							
 							WRN_PROFILE_DELETE = "Are you sure you want to delete these rows?";  
 							var check = confirm(WRN_PROFILE_DELETE);  
 							if(check == true){
-								//alert("value>>"+check);
-								//for server side
+							//for server side
 								
-								//var join_selected_values = allVals.join(",");
 								var product_row_len = $("#store-table .product_row").length;
                                 var g = 0;
                                 var arrhand = [];
@@ -165,9 +152,8 @@ class StoreTable extends DB_Connection{
                                     	 arrhand.push($(".sub_chk"+g).attr("data-handle"));                                  
                                        
                                          }
-									}
+								}
 								
-								//alert(arrhand);
 								 //var rr = "ranjeet"; 
 //                                 $.post("delete.php",
 //                                   {
@@ -176,30 +162,24 @@ class StoreTable extends DB_Connection{
 //                                    function(data){
 //                                      alert(data );
 //                                  });
-
-$.ajax({
-                  url: 'delete.php',
-                  type: 'post',
-                  data: {points : arrhand},
-                  success: function(data) {
-                      alert("location>>"+location);                      						
-						$("#msgdiv").html(data);
-						location.reload();
-                  }
-});
-
-
-
-
+	
+								$.ajax({
+								                  url: 'delete.php',
+								                  type: 'post',
+								                  data: {points : arrhand},
+								                  success: function(data) {
+								                      alert("location>>"+location);                      						
+														$("#msgdiv").html(data);
+														location.reload();
+								                  }
+								});
 
 				              //for client side
 							  $.each(allVals, function( index, value ) {
 								  $('store-table tr').filter("[data-row-id='" + value + "']").remove();
 							  });
-								
-
 							}  
-						}  
+  
 					});
 
 			jQuery('.remove-row').on('click', function(e) {
@@ -208,8 +188,7 @@ $.ajax({
 					if(check == true){//alert("true");
 						$('table tr').filter("[data-row-id='" + $(this).attr('data-id') + "']").remove();
 					}
-			});
-			
+			});			
 
 			var $rows = $('#store-table tr');
 			$('#search').keyup(function() {
@@ -267,13 +246,10 @@ $.ajax({
                        $t.parents("tr").find(".units").text(ajax_unit);
                   }
                });
-
-				
-                                  
+                                 
 			});
 
 			 myQ();
-			
 			
 		});
 		</script>
