@@ -183,7 +183,7 @@ class StoreTable extends DB_Connection{
 			jQuery('.remove-row').on('click', function(e) {
 				WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 					var check = confirm(WRN_PROFILE_DELETE);  
-					var handle=$(".remove-row").attr("data-handle");
+					var handle=$(this).attr("data-handle");
 					alert("handle=="+handle);
 					if(check == true){alert("true-remove row");
  					$.ajax({
