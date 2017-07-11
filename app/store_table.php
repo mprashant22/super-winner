@@ -194,7 +194,7 @@ class StoreTable extends DB_Connection{
  		                      alert("data>>"+data);                      						
  								$("#msgdiv").html(data);
  								location.reload();
- 		                  }
+                  //}
 		});
 // 						$('table tr').filter($(this).attr("data-handle")).remove();
 // 					}
