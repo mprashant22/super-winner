@@ -185,20 +185,20 @@ class StoreTable extends DB_Connection{
 					var check = confirm(WRN_PROFILE_DELETE);  
 					var handle=$(".remove-row").attr("data-handle");
 					alert("handle=="+handle);
-					if(check == true){alert("true-remove row");
-					$.ajax({
-		                  url: 'delete.php',
-		                  type: 'post',
-		                  //data: {points : handle},
-		                  //success: function(data) {
-		                      alert("data>>"+data);                      						
-								$("#msgdiv").html(data);
-								location.reload();
-		                  }
-		});
-						$('table tr').filter($(this).attr("data-handle")).remove();
-					}
-			});			
+					//if(check == true){alert("true-remove row");
+// 					$.ajax({
+// 		                  url: 'delete.php',
+// 		                  type: 'post',
+// 		                  //data: {points : handle},
+// 		                  //success: function(data) {
+// 		                      alert("data>>"+data);                      						
+// 								$("#msgdiv").html(data);
+// 								location.reload();
+// 		                  }
+		//});
+// 						$('table tr').filter($(this).attr("data-handle")).remove();
+// 					}
+			});
 
 			var $rows = $('#store-table tr');
 			$('#search').keyup(function() {
