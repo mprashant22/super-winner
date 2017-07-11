@@ -10,7 +10,7 @@ class DeleteQuery extends DB_Connection
 	public function ajaxResponse()
 	{
 		
-		$shop='mathurs-storezz.myshopify.com';
+		$shop='mathurs-store.myshopify.com';
 		$shp=explode('.', $shop);
 		
 		// Test if our data came through
