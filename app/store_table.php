@@ -184,6 +184,7 @@ $.ajax({
                   success: function(data) {
                       alert("data>>"+data);                      						
 						$("#msgdiv").html(data);
+						location.reload();
                   }
 });
 
