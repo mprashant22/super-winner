@@ -23,7 +23,7 @@ class SelectQuery extends DB_Connection
 		
 			$v3 = $points->arPoints[0]->p;
 			
-			$shop='mathurs-storezz.myshopify.com';
+			$shop='mathurs-store.myshopify.com';
 			$shp=explode('.', $shop);
 // 			echo $shp[0];
 		 	$sql4 = "select Title,`Variant SKU`, `Variant Inventory Qty`,`Variant Price` from "."`".$shp[0]."` where `handle` LIKE '".$handle."' AND `Option1 Value` LIKE '".$v1."' AND  `Option2 Value` LIKE '".$v2."' AND  `Option3 Value` LIKE '".$v3."'";
