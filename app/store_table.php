@@ -17,7 +17,7 @@ class StoreTable extends DB_Connection{
 	public $connection = '';
 	public function storeDisplay()
 	{
-		$shop='mathurs-storezz.myshopify.com';
+		$shop='mathurs-store.myshopify.com';
 		$shp=explode('.', $shop);
 
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
