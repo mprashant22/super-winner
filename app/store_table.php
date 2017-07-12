@@ -219,9 +219,9 @@ class StoreTable extends DB_Connection{
 // 				         cache:false,
 				          data: {points:data},
 // 				          dataType: "json",
-				          success: function(response)  
+				          success: function(data)  
 				          {   
-					          alert("response>>"+response);
+					          alert("response>>"+data);
 // 				            //$("#loading").hide();
 // 				            if(response.status) {
 // 				              $("#msg").removeClass('alert-danger');
