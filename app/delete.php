@@ -34,6 +34,16 @@ class DeleteQuery extends DB_Connection
   			}
 					 	
 		}
+		else 
+		{
+			if (isset($_POST["one_Handle"]))
+			{
+				$handle=$_POST["one_Handle"];
+				$sql4 = "delete from "."`".$shp[0]."` where `handle` LIKE '".$value."'";
+				echo "sql>>".$sql4;
+				$res4=mysqli_query($this->connection,$sql4);
+			}
+		}
 	}
 }
 
