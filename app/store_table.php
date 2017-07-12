@@ -212,16 +212,16 @@ class StoreTable extends DB_Connection{
 // 				      if($(this).attr('oldVal') === data['val'])
 // 				    return false;
 				    
-// 				    $.ajax({   
+ 				    $.ajax({   
 				          
-// 				          type: "POST",  
-// 				          url: "edit.php",
-				         // cache:false,
-				          //data: data,
+ 				          type: "POST",  
+ 				          url: "edit.php",
+// 				         cache:false,
+				          data: data,
 // 				          dataType: "json",
-// 				          success: function(response)  
-// 				          {   
-// 					          alert("response>>"+response);
+				          success: function(response)  
+				          {   
+					          alert("response>>"+response);
 // 				            //$("#loading").hide();
 // 				            if(response.status) {
 // 				              $("#msg").removeClass('alert-danger');
@@ -230,7 +230,7 @@ class StoreTable extends DB_Connection{
 // 				              $("#msg").removeClass('alert-success');
 // 				              $("#msg").addClass('alert-danger').html(response.msg);
 // 				            }
-// 				          }   
+				          }   
 // 				        });
 				  });
 			
