@@ -101,9 +101,9 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td class="editable-col" contenteditable="true" col-index='0' oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
-    	<td class="editable-col" contenteditable="true" col-index='1' oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
-    	<td class="editable-col" contenteditable="true" col-index='2' oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
+ 		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php $ii++;
