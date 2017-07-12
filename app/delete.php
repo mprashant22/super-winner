@@ -49,5 +49,4 @@ class DeleteQuery extends DB_Connection
 
 $obj = new DeleteQuery();
 $obj->ajaxResponse();
-
 ?>
