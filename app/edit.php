@@ -14,6 +14,7 @@ class UpdateQuery extends DB_Connection
 		$shp=explode('.', $shop);
 		//define index of column
 // 		$colVal = '';
+		if (isset($_POST["points"])) {
 print_r($data);
 foreach ($data as $value)
 {
@@ -28,6 +29,7 @@ foreach ($data as $value)
 // 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
 		}
 	}
+}
 	// send data as json format
 // 	echo json_encode($msg);
 	$obj = new UpdateQuery();
