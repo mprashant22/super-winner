@@ -101,9 +101,9 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td contenteditable=true><span class="sku">0</span></td>
-    	<td contenteditable=true><span class="units">0</span></td>
-    	<td contenteditable=true><span class="price">0</span></td>
+ 		<td class="editable-col" contenteditable="true" col-index='0' oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='1' oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='2' oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php $ii++;
@@ -199,6 +199,38 @@ class StoreTable extends DB_Connection{
 // 						$('table tr').filter($(this).attr("data-handle")).remove();
  					}
 			});
+
+			 $('td.editable-col').on('focusout', function() {
+				    data = {};
+				    data['val'] = $(this).text();
+				    alert("data_val>>>>>"+data['val']):
+				    data['id'] = $(this).parent('tr').attr('data-row-id');
+				    data['index'] = $(this).attr('col-index');
+				      if($(this).attr('oldVal') === data['val'])
+				    return false;
+				    
+				    $.ajax({   
+				          
+				          type: "POST",  
+				          url: "edit.php",  
+				          cache:false,  
+				          data: data,
+				          dataType: "json",
+				          success: function(response)  
+				          {   
+				            //$("#loading").hide();
+				            if(response.status) {
+				              $("#msg").removeClass('alert-danger');
+				              $("#msg").addClass('alert-success').html(response.msg);
+				            } else {
+				              $("#msg").removeClass('alert-success');
+				              $("#msg").addClass('alert-danger').html(response.msg);
+				            }
+				          }   
+				        });
+				  });
+			
+			
 
 			var $rows = $('#store-table tr');
 			$('#search').keyup(function() {
