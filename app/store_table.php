@@ -102,8 +102,8 @@ class StoreTable extends DB_Connection{
    		</select> 
    		</td> 
  		<td contenteditable=true><span class="sku">0</span></td>
-    	<td><span class="units">0</span></td>
-    	<td><span class="price">0</span></td>
+    	<td contenteditable=true><span class="units">0</span></td>
+    	<td contenteditable=true><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php $ii++;
