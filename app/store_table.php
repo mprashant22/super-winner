@@ -214,10 +214,10 @@ class StoreTable extends DB_Connection{
 				    
  				    $.ajax({   
 				          
- 				          type: "POST",  
- 				          url: "edit.php",
+ 				          type: 'post',  
+ 				          url: 'edit.php',
 // 				         cache:false,
-				          data: {points:data},
+				          data: {points : data},
 // 				          dataType: "json",
 				          success: function(data)  
 				          {   
@@ -231,7 +231,7 @@ class StoreTable extends DB_Connection{
 // 				              $("#msg").addClass('alert-danger').html(response.msg);
 // 				            }
 				          }   
-// 				        });
+ 				        });
 				  });
 			
 			
