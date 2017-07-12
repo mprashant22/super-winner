@@ -13,16 +13,23 @@ class UpdateQuery extends DB_Connection
 		$shop='mathurs-store.myshopify.com';
 		$shp=explode('.', $shop);
 		//define index of column
-		$colVal = '';
-		$colIndex = $rowId = 0;
-		
-		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE id='".$rowId."'";
-		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
+// 		$colVal = '';
+print_r($data);
+foreach ($data as $value)
+{
+// 		$newVal=
+// 		$handle=
+// 		$colIndex =
+
+// echo $value;
+}
+// 		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE id='".$rowId."'";
+// 		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+// 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
 		}
 	}
 	// send data as json format
-	echo json_encode($msg);
+// 	echo json_encode($msg);
 	$obj = new UpdateQuery();
 	$obj->ajaxResponse();
 
