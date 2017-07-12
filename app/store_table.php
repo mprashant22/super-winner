@@ -203,7 +203,7 @@ class StoreTable extends DB_Connection{
 			 $('td.editable-col').on('focusout', function() {
 				    data = {};
 				    data['val'] = $(this).text();
-// 				    alert("data_val>>>>>"+data['val']):
+ 				    alert("data_val>>>>>"+data['val']):
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
 // 				    data['index'] = $(this).attr('col-index');
 // 				      if($(this).attr('oldVal') === data['val'])
