@@ -217,7 +217,7 @@ class StoreTable extends DB_Connection{
 				          type: "POST",  
 				          url: "edit.php",
 				         // cache:false,
-				          data: data,
+				          //data: data,
 				          dataType: "json",
 				          success: function(response)  
 				          {   
