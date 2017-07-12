@@ -203,21 +203,25 @@ class StoreTable extends DB_Connection{
 			 $('td.editable-col').on('focusout', function() {
 				    data = [];
 				    data[0] = $(this).text();
- 				    alert("data_val=="+data[0]);
+				    data[1] = $(this).attr("data-handle");
+				    data[2] = $(this).attr("col-index");
+				    
+ 				    alert("data_val=="+data[2]);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
 // 				    data['index'] = $(this).attr('col-index');
 // 				      if($(this).attr('oldVal') === data['val'])
 // 				    return false;
 				    
-// 				    $.ajax({   
+				    $.ajax({   
 				          
-// 				          type: "POST",  
-// 				          url: "edit.php",  
-// 				          cache:false,  
-// 				          data: data,
-// 				          dataType: "json",
-// 				          success: function(response)  
-// 				          {   
+				          type: "POST",  
+				          url: "edit.php",
+				         // cache:false,
+				          data: data,
+				          dataType: "json",
+				          success: function(response)  
+				          {   
+					          alert("response>>"+response);
 // 				            //$("#loading").hide();
 // 				            if(response.status) {
 // 				              $("#msg").removeClass('alert-danger');
