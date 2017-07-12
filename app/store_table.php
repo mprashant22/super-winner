@@ -206,7 +206,7 @@ class StoreTable extends DB_Connection{
 				    data[1] = $(this).attr("data-handle");
 				    data[2] = $(this).attr("col-index");
 				    
- 				    alert("data_val=="+data[2]);
+ 				    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
 // 				    data['index'] = $(this).attr('col-index');
 // 				      if($(this).attr('oldVal') === data['val'])
