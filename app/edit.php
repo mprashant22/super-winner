@@ -30,8 +30,8 @@ class UpdateQuery extends DB_Connection
 //}
  		$sql = "UPDATE `".$shp[0]."` SET '".$tableheader[$colIndex]."' = '".$newVal."' WHERE handle='".$handle."'";
  		echo $sql;
-// 		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-// 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
+ 		$status = mysqli_query($this->connection, $sql) or die("database error:". mysqli_error($this->connection));
+ 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
 		}
 	}
 }
