@@ -200,7 +200,8 @@ class StoreTable extends DB_Connection{
  					}
 			});
 
-			 $('td.editable-col').on('focusout', function() {
+			 $('td.editable-col','td.v1').on('focusout', function() {
+$se=$("option:selected",this).text(); 
 				    data = [];
 				    data[0] = $(this).text();
 				    data[1] = $(this).attr("data-handle");
