@@ -36,7 +36,7 @@ class UpdateQuery extends DB_Connection
 	}
 }
 	// send data as json format
-// 	echo json_encode($msg);
+ 	echo json_encode($msg);
 	$obj = new UpdateQuery();
 	$obj->ajaxResponse();
 

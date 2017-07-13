@@ -301,3 +301,4 @@ class StoreTable extends DB_Connection{
 		</script>
  		<div id="ajax_success" style="visibility: hidden"></div>
  		<div id="msgdiv" style="">mathur</div>
+ 		<div id="msg" style="">mathur</div>
