@@ -63,7 +63,7 @@ class StoreTable extends DB_Connection{
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
-     	<select class="v1" name="variant1" onClick="">
+     	<select id="v1" class="v1" name="variant1" onClick="">
 <!--       		<option>-- Option1 --</option>  -->
      		<?php 
  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
@@ -202,6 +202,7 @@ class StoreTable extends DB_Connection{
 
 			 $('td.editable-col').on('focusout', function() {
 $se=$("option:selected",'td.v1').text(); 
+var table = document.getElementById('computer_table');
 				    data = [];
 				    data[0] = $(this).text();
 				    data[1] = $(this).attr("data-handle");
