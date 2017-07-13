@@ -209,7 +209,7 @@ $se=$("option:selected",this).text();
 				    data[3] = $(this).attr("data-variant1");
 				    data[4] = $(this).attr("data-variant2");
 				    data[5] = $(this).attr("data-variant3");
-				    alert(data[3]+data[4]+data[5]);
+				    alert($se);
 				    
  				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
