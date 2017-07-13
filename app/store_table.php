@@ -210,7 +210,7 @@ var table = document.getElementById('v1');
 				    data[3] = $(this).attr("data-variant1");
 				    data[4] = $(this).attr("data-variant2");
 				    data[5] = $(this).attr("data-variant3");
-				    alert($se);
+				    alert(table);
 				    
  				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
