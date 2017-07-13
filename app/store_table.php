@@ -221,7 +221,7 @@ class StoreTable extends DB_Connection{
 // 				          dataType: "json",
 				          success: function(data)  
 				          {   
-					          alert("response>>"+data);
+					       //   alert("response>>"+data);
 // 				            //$("#loading").hide();
 // 				            if(response.status) {
 // 				              $("#msg").removeClass('alert-danger');
