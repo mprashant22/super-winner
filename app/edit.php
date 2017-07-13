@@ -16,7 +16,7 @@ class UpdateQuery extends DB_Connection
 // 		$colVal = '';
 		if (isset($_POST["points"])) {
 			$data=$_POST["points"];
-echo "<pre>".print_r($data)."</pre>";
+echo "<pre>".$data."</pre>";
 echo "dump>>".var_dump($data);
 //foreach ($data as $value)
 //{
