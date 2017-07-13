@@ -101,9 +101,9 @@ class StoreTable extends DB_Connection{
  			?>
    		</select> 
    		</td> 
- 		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
-    	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
-    	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
+ 		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
 	</tr>
 	<?php $ii++;
@@ -205,6 +205,10 @@ class StoreTable extends DB_Connection{
 				    data[0] = $(this).text();
 				    data[1] = $(this).attr("data-handle");
 				    data[2] = $(this).attr("col-index");
+				    data[3] = $(this).attr("data-variant1");
+				    data[4] = $(this).attr("data-variant2");
+				    data[5] = $(this).attr("data-variant3");
+				    alert(data[3]+data[4]+data[5]);
 				    
  				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
