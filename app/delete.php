@@ -16,7 +16,7 @@ class DeleteQuery extends DB_Connection
 		// Test if our data came through
 		if (isset($_POST["points"])) {
 			
-			$arr=[];
+			//$arr=[];
 			$handle=$_POST["points"];
 			echo $handle;
 			//$arr=explode(",",$handle);
