@@ -169,7 +169,7 @@ class StoreTable extends DB_Connection{
 								                  type: 'post',
 								                  data: {points : arrhand},
 								                  success: function(data) {
-								                      alert("data>>"+data);                      						
+								                     // alert("data>>"+data);                      						
 														$("#msgdiv").html(data);
 														location.reload();
 								                  }
@@ -184,14 +184,14 @@ class StoreTable extends DB_Connection{
 				WRN_PROFILE_DELETE = "Are you sure you want to delete this row?";  
 					var check = confirm(WRN_PROFILE_DELETE);
 					var handle=$(this).attr("data-handle");
-					alert("handle=="+handle);
-					if(check == true){alert("true-remove row");
+				//	alert("handle=="+handle);
+					if(check == true){//alert("true-remove row");
  					$.ajax({
  		                  url: 'delete.php',
  		                  type: 'post',
  		                  data: {one_Handle : handle},
  		                  success: function(data) {
- 		                      alert("data>>"+data);                      						
+ 		                     // alert("data>>"+data);                      						
  								$("#msgdiv").html(data);
  								location.reload();
                   }
@@ -206,7 +206,7 @@ class StoreTable extends DB_Connection{
 				    data[1] = $(this).attr("data-handle");
 				    data[2] = $(this).attr("col-index");
 				    
- 				    alert("data_val=="+data);
+ 				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
 // 				    data['index'] = $(this).attr('col-index');
 // 				      if($(this).attr('oldVal') === data['val'])
