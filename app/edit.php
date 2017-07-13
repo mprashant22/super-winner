@@ -17,7 +17,7 @@ class UpdateQuery extends DB_Connection
 		if (isset($_POST["points"])) {
 			$data=$_POST["points"];
 			$tableheader = array(0=>"Variant SKU",1=>"Variant Inventory Qty",2=>"Variant Price");
-			
+			print_r($data);
 //echo "<pre>".$data."</pre>";
 //echo "dump>>".var_dump($data);
 //foreach ($data as $value)
