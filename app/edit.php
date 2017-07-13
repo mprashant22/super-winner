@@ -24,9 +24,9 @@ echo "<pre>".$data."</pre>";
  		$handle = $data[1];
  		$colIndex = $data[2];
 
- echo "newvalue".$newVal;
+ echo "newvalue".$handle;
 //}
-// 		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE id='".$rowId."'";
+ 		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE handle='".$handle."'";
 // 		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 // 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
 		}
