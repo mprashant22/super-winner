@@ -201,7 +201,7 @@ class StoreTable extends DB_Connection{
 			});
 
 			 $('td.editable-col').on('focusout', function() {
-$se=$("option:selected",'td').find('.v1').text(); 
+$se=$("option:selected",'td.v1').text(); 
 				    data = [];
 				    data[0] = $(this).text();
 				    data[1] = $(this).attr("data-handle");
