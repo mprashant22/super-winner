@@ -16,16 +16,16 @@ class UpdateQuery extends DB_Connection
 // 		$colVal = '';
 		if (isset($_POST["points"])) {
 			$data=$_POST["points"];
-print_r($data);
+echo "<pre>".print_r($data)."</pre>";
 echo "dump>>".var_dump($data);
-foreach ($data as $value)
-{
-// 		$newVal=
-// 		$handle=
-// 		$colIndex =
+//foreach ($data as $value)
+//{
+ 		$newVal = $data[0];
+ 		$handle = $data[1];
+ 		$colIndex = $data[2];
 
 // echo $value;
-}
+//}
 // 		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE id='".$rowId."'";
 // 		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 // 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
