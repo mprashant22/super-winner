@@ -16,7 +16,9 @@ class UpdateQuery extends DB_Connection
 // 		$colVal = '';
 		if (isset($_POST["points"])) {
 			$data=$_POST["points"];
-echo "<pre>".$data."</pre>";
+			$tableheader = array(0=>"Variant SKU",1=>"Variant Inventory Qty",2=>"Variant Price");
+			
+//echo "<pre>".$data."</pre>";
 //echo "dump>>".var_dump($data);
 //foreach ($data as $value)
 //{
@@ -24,9 +26,10 @@ echo "<pre>".$data."</pre>";
  		$handle = $data[1];
  		$colIndex = $data[2];
 
- echo "newvalue".$handle;
+ //echo "newvalue".$handle;
 //}
- 		$sql = "UPDATE `".shp[0]."` SET ".$columns[$colIndex]." = '".$colVal."' WHERE handle='".$handle."'";
+ 		$sql = "UPDATE `".shp[0]."` SET '".$tableheader[$colIndex]."' = '".$newVal."' WHERE handle='".$handle."'";
+ 		echo $sql;
 // 		$status = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 // 		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
 		}
