@@ -25,10 +25,13 @@ class UpdateQuery extends DB_Connection
  		$newVal = $data[0];
  		$handle = $data[1];
  		$colIndex = $data[2];
-
+ 		$v1 = $data[3];
+ 		$v2 = $data[4];
+ 		$v3 = $data[5];
+ 		
  //echo "newvalue".$handle;
 //}
- 		$sql = "UPDATE `".$shp[0]."` SET `".$tableheader[$colIndex]."` = '".$newVal."' WHERE handle='".$handle."'";
+ 		$sql = "UPDATE `".$shp[0]."` SET `".$tableheader[$colIndex]."` = '".$newVal."' WHERE handle='".$handle."' AND `Option1 Value` LIKE '".$v1."' AND `Option2 Value` LIKE '".$v2."' AND `Option3 Value` LIKE '".$v3."'";
  		echo $sql;
  		$status = mysqli_query($this->connection, $sql) or die("database error:". mysqli_error($this->connection));
  		$msg = array('status' => !$error, 'msg' => 'Success! updation in mysql');
