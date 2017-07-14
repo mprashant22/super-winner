@@ -209,7 +209,7 @@ class StoreTable extends DB_Connection{
 				    data[3] = $(this).parents("tr").find(".v1").val();
 				    data[4] = $(this).parents("tr").find(".v2").val();
 				    data[5] = $(this).parents("tr").find(".v3").val();
-				    alert("selected>>"+data[3]+data[4]+data[5]);
+				    console.log("selected>>"+data[3]+data[4]+data[5]);
 				    
  				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
