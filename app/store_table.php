@@ -202,7 +202,8 @@ class StoreTable extends DB_Connection{
 
 			 $('td.editable-col').on('focusout', function() {
 //$se=$("option:selected",'td.v1').text(); 
-var table = document.getElementById('v1').text();
+var e = document.getElementById("v1");
+var strUser = e.options[e.selectedIndex].text;
 				    data = [];
 				    data[0] = $(this).text();
 				    data[1] = $(this).attr("data-handle");
@@ -210,7 +211,7 @@ var table = document.getElementById('v1').text();
 				    data[3] = $(this).attr("data-variant1");
 				    data[4] = $(this).attr("data-variant2");
 				    data[5] = $(this).attr("data-variant3");
-				    alert(table);
+				    alert("selected>>"+strUser);
 				    
  				//    alert("data_val=="+data);
 // 				    data['id'] = $(this).parent('tr').attr('data-row-id');
@@ -289,7 +290,7 @@ var table = document.getElementById('v1').text();
                        var ajax_title = $("#ajax_title").html();
                        var ajax_sku = $("#ajax_sku").html();
                        var ajax_unit = $("#ajax_unit").text();
-                       var ajax_price = $("#ajax_price").text();
+                       var ajax_price = $("#ajax_price").text();	
 
 
                        $t.parents("tr").find(".title").text(ajax_title);
