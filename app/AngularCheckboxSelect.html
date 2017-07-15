@@ -30,7 +30,7 @@ angular.module("myApp" , [])
   <body ng-controller="myController">
     <ul>
       <li ng-repeat="person in myCollection">
-      <input type="checkbox" ng-change="toggleBold()"> 
+      <input type="checkbox" ng-click="toggleBold()"> 
         <!-- <button ng-click="toggleBold()">toggle bold</button> -->
       </li>
     </ul>
