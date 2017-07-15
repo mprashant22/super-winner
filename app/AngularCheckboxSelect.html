@@ -7,7 +7,10 @@
 angular.module("myApp" , [])
 
 .controller("myController", function($scope) {
-  $scope.isBold="true";
+  $scope.isVisible1="true";
+  $scope.isVisible2="true";
+  $scope.isVisible3="true";
+  $scope.isVisible4="true";
   $scope.myCollection = [
       { name: 'John', age: 25 },
       { name: 'Barry', age: 43 },
@@ -16,12 +19,12 @@ angular.module("myApp" , [])
       { name: 'Fritz', age: 19 }
     ];
     
-  $scope.toggleBold = function() {
-	  alert($scope.isBold);
-      if ($scope.isBold) {
-        $scope.isBold = false;
+  $scope.toggleVisible = function() {
+	  alert($scope.isVisible);
+      if ($scope.isVisible1) {
+        $scope.isVisible1 = false;
       } else {
-        $scope.isBold = true;
+        $scope.isVisible1 = true;
       }
   };
 });
@@ -36,7 +39,16 @@ angular.module("myApp" , [])
       </li>
     </ul>
     
-    <div ng-show="isBold">
+      <div style="color:RED" ng-show="isVisible1">
+      prashantmathur
+      </div>
+      <div ng-show="isVisible2">
+      prashantmathur
+      </div>
+      <div ng-show="isVisible3">
+      prashantmathur
+      </div>
+      <div ng-show="isVisible4">
       prashantmathur
       </div>
     
