@@ -150,7 +150,7 @@ class StoreTable extends DB_Connection{
 								for(g = 0; g<product_row_len;g++){
                                      var checkval = $(".sub_chk"+g).is(":checked");
                                      if(checkval == true){
-                                    	 arrhand.push($(".sub_chk"+g).attr("data-handle"));                                  
+                                    	 arrhand.push($(".sub_chk"+g).attr("data-handle"));     
                                        
                                          }
 								}
