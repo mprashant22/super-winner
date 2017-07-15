@@ -25,7 +25,7 @@ app.controller('MainCtrl', function($scope) {
 
 <body ng-controller="MainCtrl">
   <div ng-repeat="user in data1">
-    <input type="checkbox" ng-model="user.checked"/>{{user.name}}
+    <input type="checkbox" ng-model="user.checked" ng-change="checkedCount()"/>{{user.name}}
   </div>
   
   <p>total checked: {{ (data1 | filter:{checked: true }).length }}</p>
