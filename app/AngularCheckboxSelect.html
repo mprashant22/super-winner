@@ -9,10 +9,10 @@
 app.controller('MainCtrl',['$scope', function($scope) {
 	$scope.visible=true;
    $scope.data1 = [
-    {"name":"jason"},
-    {"name":"james"},
-    {"name":"josh"},
-    {"name":"joshua"}
+    {"name":"jason","checked":"false"},
+    {"name":"james","checked":"false"},
+    {"name":"josh","checked":"false"},
+    {"name":"joshua","checked":"false"}
     ];
     
     $scope.checkedCount = function(person){alert(person.checked);
