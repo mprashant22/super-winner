@@ -1,43 +1,44 @@
-<html ng-app="prashant">
-
+<html ng-app="myApp">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
-
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <script>
-    var app = angular.module('prashant', []);
-    //alert(JSON.stringify(app));
-app.controller('MainCtrl',['$scope', function($scope) {
-	$scope.visible=true;
-   $scope.data1 = [
-    {"name":"jason","checked":"false"},
-    {"name":"james","checked":"false"},
-    {"name":"josh","checked":"false"},
-    {"name":"joshua","checked":"false"}
+      
+angular.module("myApp" , [])
+
+.controller("myController", function($scope) {
+  $scope.isBold="false";
+  $scope.myCollection = [
+      { name: 'John', age: 25 },
+      { name: 'Barry', age: 43 },
+      { name: 'Kim', age: 26 },
+      { name: 'Susan', age: 51 },
+      { name: 'Fritz', age: 19 }
     ];
     
-    $scope.checkedCount = function(person){alert(person.checked);
-    
-    if(person.checked)
-    	{
-    	$scope.visible="false";
-    	}
-      //return $scope.data.filter(function(person){        
-       // return person.checked;        
-      };
-    }
+  $scope.toggleBold = function() {
+      if ($scope.isBold) {
+        $scope.isBold = false;
+      } else {
+        $scope.isBold = true;
+      }
+  };
 });
-</script>
-</head>
-
-<body ng-controller="MainCtrl">
-  <div ng-repeat="user in data1">
-    <input type="checkbox" ng-model="user.checked" ng-change="checkedCount(this)"/>{{user.name}}
-  </div>
-  
-  <div ng-show="true">
-  prashant
-  </div>
-  <!-- <p>total checked: {{ (data1 | filter:{checked: true }).length }}</p>-->  
-</body>
+      
+    </script>
+  </head>
+  <body ng-controller="myController">
+    <ul>
+      <li ng-repeat="person in myCollection">
+        <span>{{ person.name }} is aged {{ person.age }} </span>
+        <button ng-click="toggleBold()">toggle bold</button>
+      </li>
+    </ul>
+    
+    <div ng-show="isBold">
+      prashantmathur
+      </div>
+    
+  </body>
 
 </html>
