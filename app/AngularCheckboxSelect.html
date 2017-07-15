@@ -23,25 +23,27 @@ angular.module("myApp" , [])
 	  //alert($scope.isVisible1);
       if ($scope.isVisible1) {
         $scope.isVisible1 = false;
-      } else {
+      } else if (!$scope.isVisible1){
         $scope.isVisible1 = true;
       }
       
-      if ($scope.isVisible2) {
+      else if ($scope.isVisible2) {
           $scope.isVisible2 = false;
-        } else {
+        } else if (!$scope.isVisible2){
           $scope.isVisible2 = true;
         }
       
-      if ($scope.isVisible3) {
+        else if ($scope.isVisible3) {
           $scope.isVisible3 = false;
-        } else {
+        } else if ($scope.isVisible3) {
           $scope.isVisible3 = true;
         }
-      
-      if ($scope.isVisible4) {
+        else if ($scope.isVisible4) {
           $scope.isVisible4 = false;
-        } else {
+        }
+        
+        else
+        {
           $scope.isVisible4 = true;
         }
   };
