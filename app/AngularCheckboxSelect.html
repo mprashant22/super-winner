@@ -14,12 +14,9 @@ app.controller('MainCtrl', function($scope) {
     {"name":"joshua"}
     ];
     
-    $scope.checkedCount = function(){
-      return $scope.data.filter(function(person){
-    	  alert(person.checked);
-        
-        return person.checked;
-        
+    $scope.checkedCount = function(){alert(person.checked);
+      return $scope.data.filter(function(person){        
+        return person.checked;        
       }).length;
     }
 });
