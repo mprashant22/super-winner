@@ -11,6 +11,7 @@ angular.module("myApp" , [])
   $scope.isVisible2="true";
   $scope.isVisible3="true";
   $scope.isVisible4="true";
+  
   $scope.myCollection = [
       { name: 'John', age: 25 },
       { name: 'Barry', age: 43 },
@@ -33,7 +34,7 @@ angular.module("myApp" , [])
   <body ng-controller="myController">
     <ul>
       <li ng-repeat="person in myCollection">
-      <input type="checkbox" ng-click="toggleBold()"> 
+      <input type="checkbox" ng-click="toggleVisible()"> 
         <!-- <button ng-click="toggleBold()">toggle bold</button> -->
       </li>
     </ul>
