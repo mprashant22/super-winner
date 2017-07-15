@@ -6,7 +6,8 @@
     <script>
     var app = angular.module('prashant', []);
     //alert(JSON.stringify(app));
-app.controller('MainCtrl', function($scope) {
+app.controller('MainCtrl',['$scope', function($scope) {
+	$scope.visible=true;
    $scope.data1 = [
     {"name":"jason"},
     {"name":"james"},
@@ -15,9 +16,14 @@ app.controller('MainCtrl', function($scope) {
     ];
     
     $scope.checkedCount = function(){alert(person.checked);
-      return $scope.data.filter(function(person){        
-        return person.checked;        
-      }).length;
+    
+    if(person.checked)
+    	{
+    	$scope.visible="false";
+    	}
+      //return $scope.data.filter(function(person){        
+       // return person.checked;        
+      });//.length;
     }
 });
 </script>
@@ -25,11 +31,13 @@ app.controller('MainCtrl', function($scope) {
 
 <body ng-controller="MainCtrl">
   <div ng-repeat="user in data1">
-    <input type="checkbox" ng-model="user.checked" ng-change="checkedCount()"/>{{user.name}}
+    <input type="checkbox" ng-model="user.checked" ng-change="checkedCount(this)"/>{{user.name}}
   </div>
   
-  <p>total checked: {{ (data1 | filter:{checked: true }).length }}</p>
-  
+  <div ng-show="true">
+  prashant
+  </div>
+  <p>total checked: {{ (data1 | filter:{checked: true }).length }}</p>  
 </body>
 
 </html>
