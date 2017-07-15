@@ -26,6 +26,24 @@ angular.module("myApp" , [])
       } else {
         $scope.isVisible1 = true;
       }
+      
+      if ($scope.isVisible2) {
+          $scope.isVisible2 = false;
+        } else {
+          $scope.isVisible2 = true;
+        }
+      
+      if ($scope.isVisible3) {
+          $scope.isVisible3 = false;
+        } else {
+          $scope.isVisible3 = true;
+        }
+      
+      if ($scope.isVisible4) {
+          $scope.isVisible4 = false;
+        } else {
+          $scope.isVisible4 = true;
+        }
   };
 });
       
@@ -42,13 +60,13 @@ angular.module("myApp" , [])
       <div style="color:RED" ng-show="isVisible1">
       prashantmathur
       </div>
-      <div ng-show="isVisible2">
+      <div style="color:GREEN" ng-show="isVisible2">
       prashantmathur
       </div>
-      <div ng-show="isVisible3">
+      <div style="color:BLUE" ng-show="isVisible3">
       prashantmathur
       </div>
-      <div ng-show="isVisible4">
+      <div style="color:YELLOW" ng-show="isVisible4">
       prashantmathur
       </div>
     
