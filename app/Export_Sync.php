@@ -37,6 +37,7 @@ class Export_Sync extends DB_Connection{
 
 		$handle = fopen($filename, "r");
 		print_r($handle);
+		echo "<pre>".count($handle)."</pre>";
  				
 		$data_csv = fgetcsv($handle);
 		print_r($data_csv);
