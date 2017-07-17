@@ -19,33 +19,18 @@ angular.module("myApp" , [])
       { name: 'Susan', age: 51 },     
     ];
     
-  $scope.toggleVisible = function() {
-	  //alert($scope.isVisible1);
-      if ($scope.isVisible1) {
-        $scope.isVisible1 = false;
-      } else if (!$scope.isVisible1){
-        $scope.isVisible1 = true;
-      }
-      
-      else if ($scope.isVisible2) {
-          $scope.isVisible2 = false;
-        } else if (!$scope.isVisible2){
-          $scope.isVisible2 = true;
-        }
-      
-        else if ($scope.isVisible3) {
-          $scope.isVisible3 = false;
-        } else if (!$scope.isVisible3) {
-          $scope.isVisible3 = true;
-        }
-        else if ($scope.isVisible4) {
-          $scope.isVisible4 = false; 
-        }
-        
-        else
-        {
-          $scope.isVisible4 = true;
-        }
+  $scope.toggleVisible = function(person) {
+	  var idx = $scope.selection.indexOf(person);
+
+	    // is currently selected
+	    if (idx > -1) {
+	      $scope.selection.splice(idx, 1);
+	    }
+
+	    // is newly selected
+	    else {
+	      $scope.selection.push(person);
+	    }
   };
 });
       
