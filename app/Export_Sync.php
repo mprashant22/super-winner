@@ -58,11 +58,11 @@ class Export_Sync extends DB_Connection{
 				$values_csv=[];
 				$values_csv=$data_csv;
  					
-				echo print_r($data_csv);
+				//echo print_r($data_csv);
 				for ($i=0;$i<count($data_csv);$i++)
 				{
 					
- 						echo "inside LOOOOOOP";
+ 					echo "inside LOOOOOOP";
 					$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
 					echo '[data1>>'.$data1;
 					$db.="'".$data1."',";
