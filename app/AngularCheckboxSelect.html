@@ -39,7 +39,7 @@ angular.module("myApp" , [])
           $scope.isVisible3 = true;
         }
         else if ($scope.isVisible4) {
-          $scope.isVisible4 = false;
+          $scope.isVisible4 = false; 
         }
         
         else
@@ -54,10 +54,15 @@ angular.module("myApp" , [])
   <body ng-controller="myController">
     <ul>
       <li ng-repeat="person in myCollection">
-      <input type="checkbox" ng-click="toggleVisible()"> 
+      <input type="checkbox" ng-checked="selection.indexOf(person.name) > -1" ng-click="toggleVisible(person.name)"> 
         <!-- <button ng-click="toggleBold()">toggle bold</button> -->
       </li>
     </ul>
+    
+    <div ng-repeat="name in selection">
+		{{name}}
+		</div>
+    
     
       <div style="color:RED" ng-show="isVisible1">
       prashantmathur
