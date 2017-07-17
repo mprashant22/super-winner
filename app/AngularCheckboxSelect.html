@@ -40,28 +40,12 @@ angular.module("myApp" , [])
     <ul>
       <li ng-repeat="person in myCollection">
       <input type="checkbox" ng-checked="selection.indexOf(person.name) > -1" ng-click="toggleVisible(person.name)"> 
-        <!-- <button ng-click="toggleBold()">toggle bold</button> -->
       </li>
     </ul>
     
     <div ng-repeat="name in selection">
-		{{name}}
+		{{name}}:{{age}}
 		</div>
-    
-    
-      <div style="color:RED" ng-show="isVisible1">
-      prashantmathur
-      </div>
-      <div style="color:GREEN" ng-show="isVisible2">
-      prashantmathur
-      </div>
-      <div style="color:BLUE" ng-show="isVisible3">
-      prashantmathur
-      </div>
-      <div style="color:YELLOW" ng-show="isVisible4">
-      prashantmathur
-      </div>
-    
   </body>
 
 </html>
