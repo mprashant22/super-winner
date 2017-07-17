@@ -72,7 +72,7 @@ class Export_Sync extends DB_Connection{
 
 				$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
  				$db="";
- 					
+ 				echo $sql;	
  				mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
  		}
  				
