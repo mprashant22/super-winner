@@ -1,7 +1,7 @@
 <html>
 <style>
 table, td  {
-  border: 1px solid grey;
+  border: 1px solid blue;
   border-collapse: collapse;
   padding: 5px;
 }
@@ -13,11 +13,11 @@ table, td  {
 
 <table>
   <tr ng-repeat="x in names">
-    <td ng-if="$odd" style="background-color:#fff4f4">
+    <td ng-if="$odd" style="color:#FF0011">
     {{ x.Name }}</td>
     <td ng-if="$even">
     {{ x.Name }}</td>
-    <td ng-if="$odd" style="background-color:#f1f1f1">
+    <td ng-if="$odd" style="color:#FF0001">
     {{ x.Country }}</td>
     <td ng-if="$even">
     {{ x.Country }}</td>
