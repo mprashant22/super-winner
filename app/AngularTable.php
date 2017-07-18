@@ -1,7 +1,7 @@
 <html>
 <style>
 table, td  {
-  border: 1px solid blue;
+  border: 1px solid grey;
   border-collapse: collapse;
   padding: 5px;
 }
