@@ -12,7 +12,7 @@ table, td  {
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names" ng-if="$odd" ? 'style="color:#FF0011"':'style="color:#00FF11"'>
+  <tr ng-repeat="x in names" ng-if={{'$odd' ? 'style="color:#FF0011"':'style="color:#00FF11"'}}>
     <td>
     {{ x.Name }}</td>
         
