@@ -33,7 +33,6 @@ class StoreTable extends DB_Connection{
 		$res4=mysqli_query($this->connection,$sql4);
 ?>		
 <div ng-app="storeApp" ng-controller="storeCtrl">
-{{name}}
 <form id="my_form">
 
 <input type="text" id="search" placeholder="Type to search">
@@ -316,3 +315,4 @@ class StoreTable extends DB_Connection{
  		<div id="ajax_success" style="visibility: hidden"></div>
  		<div id="msgdiv" style="">mathur</div>
  		<div id="msg" style="">mathur</div>
+ 		{{name}}
