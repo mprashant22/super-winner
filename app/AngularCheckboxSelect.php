@@ -1,6 +1,6 @@
 <html ng-app="myApp">
   <head>
-    <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     
     <script>
       
