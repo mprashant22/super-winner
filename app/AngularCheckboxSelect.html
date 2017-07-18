@@ -39,7 +39,7 @@ angular.module("myApp" , [])
   <body ng-controller="myController">
     <ul>
       <li ng-repeat="person in myCollection">
-      <input type="checkbox" ng-checked="selection.indexOf(person.name) > -1" ng-click="toggleVisible(person.name)"> 
+      <input type="checkbox" ng-checked="selection.indexOf() > -1" ng-click="toggleVisible(person.name)"> 
       </li>
     </ul>
     
