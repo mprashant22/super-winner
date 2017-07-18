@@ -17,7 +17,7 @@ table, td  {
     {{ x.Name }}</td>
     <td ng-if="$even">
     {{ x.Name }}</td>
-    <td ng-if="$odd" style="color:#FF0001">
+    <td ng-if="$odd" style="color:#00FF01">
     {{ x.Country }}</td>
     <td ng-if="$even">
     {{ x.Country }}</td>

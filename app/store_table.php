@@ -1,6 +1,7 @@
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
 <?php
 
@@ -24,7 +25,7 @@ class StoreTable extends DB_Connection{
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
 ?>		
-<div>
+<div ng-app="myApp" ng-controller="storeCtrl">
 <form id="my_form">
 
 <input type="text" id="search" placeholder="Type to search">
