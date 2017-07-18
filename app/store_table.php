@@ -2,6 +2,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+<script>
+angular.module("angular-table-example").controller("basicExampleCtrl", ["$scope", function($scope) {
+	  $scope.list = $scope.$parent.personList
+	  $scope.config = {
+	    itemsPerPage: 5,
+	    fillLastPage: true
+	  }
+	}]);
+</script>
 
 <?php
 
