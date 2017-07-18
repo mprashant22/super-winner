@@ -67,7 +67,7 @@ class StoreTable extends DB_Connection{
 				//echo $result['handle'].">";
     	 ?>
   
-    <tr class="product_row" id="<?php echo $result['handle']; ?>">
+    <tr class="product_row" id="<?php echo $result['handle']; ?>" ng-if="$odd" style='color: RED'>
 		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
