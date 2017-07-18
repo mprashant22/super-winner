@@ -21,20 +21,16 @@ color: 'BLUE';
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names" ng-if="$odd" class="odd">
-    <td>
+  <tr ng-repeat="x in names" >
+    <td ng-if="$odd" class="odd">
+    {{ x.Name }}</td>
+    
+    <td ng-if="$even" class="even">
     {{ x.Name }}</td>
         
-    <td>
+    <td ng-if="$odd" class="odd">
     {{ x.Country }}</td>
-  </tr>
-    <tr ng-repeat="x in names" ng-if="$even" class="even">
-    <td>
-    {{ x.Name }}</td>
-        
-    <td>
-    {{ x.Country }}</td>
-  </tr>
+  </tr>    
 </table>
 
 </div>
