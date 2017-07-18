@@ -20,7 +20,6 @@ angular.module("myApp" , [])
     ];
   $scope.selection=[];  
   $scope.toggleVisible = function(person) {
-	  console.log($scope.selection);
 	  var idx = $scope.selection.indexOf(person);
 
 	    // is currently selected
@@ -40,10 +39,11 @@ angular.module("myApp" , [])
   <body ng-controller="myController">
     <ul>
       <li ng-repeat="person in myCollection">
-      <input type="checkbox" ng-click="toggleVisible(person.name)"> 
+     <!-- <input type="checkbox" ng-checked="selection.indexOf(person.name) > -1" ng-click="toggleVisible(person.name)">--> 
+     <input type="checkbox" ng-click="toggleVisible(person.name)">
       </li>
     </ul>
-    	{{selection}}
+    
     <div ng-repeat="name in selection">
 		{{name}}:{{age}}
 		</div>
