@@ -29,7 +29,7 @@ table, td  {
 <script>
 var app = angular.module('myApp', []);
 app.controller('customersCtrl', function($scope, $http) {
-    $http.get("customers.php")
+    $http.get("https://www.w3schools.com/angular/customers.php")
     .then(function (response) {$scope.names = response.data.records;});
 });
 </script>
