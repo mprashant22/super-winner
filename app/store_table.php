@@ -33,6 +33,7 @@ class StoreTable extends DB_Connection{
 		$res4=mysqli_query($this->connection,$sql4);
 ?>		
 <div ng-app="storeApp" ng-controller="storeCtrl">
+{{name}}
 <form id="my_form">
 
 <input type="text" id="search" placeholder="Type to search">
