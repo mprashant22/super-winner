@@ -42,7 +42,7 @@ angular.module("myApp" , [])
       <input type="checkbox" ng-click="toggleVisible(person.name)"> 
       </li>
     </ul>
-    
+    	{{selection}}
     <div ng-repeat="name in selection">
 		{{name}}:{{age}}
 		</div>
