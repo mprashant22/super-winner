@@ -7,11 +7,11 @@ table, td  {
 }
 
 .odd {
-color: RED;
+background-color: RED;
 }
 
 .even {
-color: BLUE;
+background-color: BLUE;
 }
 
 </style>
