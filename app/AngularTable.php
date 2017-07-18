@@ -7,11 +7,11 @@ table, td  {
 }
 
 .odd {
-color: 'RED';
+color: RED;
 }
 
 .even {
-color: 'BLUE';
+color: BLUE;
 }
 
 </style>
@@ -30,6 +30,11 @@ color: 'BLUE';
         
     <td ng-if="$odd" class="odd">
     {{ x.Country }}</td>
+    
+    <td ng-if="$even" class="even">
+    {{ x.Country }}</td>
+    
+    
   </tr>    
 </table>
 
