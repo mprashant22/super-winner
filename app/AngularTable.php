@@ -7,11 +7,11 @@ table, td  {
 }
 
 .odd {
-background-color: RED;
+background-color: #FFFFFF;
 }
 
 .even {
-background-color: BLUE;
+background-color: #95bf47;
 }
 
 </style>
@@ -21,7 +21,7 @@ background-color: BLUE;
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names" >
+  <tr ng-repeat="x in names">
     <td ng-if="$odd" class="odd">
     {{ x.Name }}</td>
     
@@ -35,7 +35,7 @@ background-color: BLUE;
     {{ x.Country }}</td>
     
     
-  </tr>    
+  </tr>
 </table>
 
 </div>
