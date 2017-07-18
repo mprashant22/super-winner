@@ -5,6 +5,15 @@ table, td  {
   border-collapse: collapse;
   padding: 5px;
 }
+
+.odd {
+color: 'RED';
+}
+
+.even {
+color: 'BLUE';
+}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
@@ -12,7 +21,7 @@ table, td  {
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names" ng-if={{'$odd' ? 'style="color:#FF0011"':'style="color:#00FF11"'}}>
+  <tr ng-repeat="x in names" class={{'$odd' ? 'odd':'even'}}>
     <td>
     {{ x.Name }}</td>
         
