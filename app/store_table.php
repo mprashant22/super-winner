@@ -1,16 +1,6 @@
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
-<script>
-angular.module("angular-table-example").controller("basicExampleCtrl", ["$scope", function($scope) {
-	  $scope.list = $scope.$parent.personList
-	  $scope.config = {
-	    itemsPerPage: 5,
-	    fillLastPage: true
-	  }
-	}]);
-</script>
 
 <?php
 
@@ -39,12 +29,12 @@ class StoreTable extends DB_Connection{
 
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
-<table id="store-table" border=1 class="table table-striped" at-table at-paginated at-list="list" at-config="config">
+<table id="store-table" border=1>
    <tr>
    	 <th><input type="checkbox" id="master"></th>
-     <th at-implicit at-sortable at-attribute="Handle" width="150" at-initial-sorting="asc"></th>
-     <th at-implicit at-sortable at-attribute="Title"></th>
-     <th at-implicit at-sortable at-attribute="Variant1" style="color: #FF0000"></th>
+     <th>Handle</th>
+     <th>Title</th>
+     <th style="color: #FF0000">Variant1</th>
      <th style="color: #008c33">Variant2</th>
      <th style="color: #4298f4">Variant3</th>
      <th>Variant~SKU</th>
