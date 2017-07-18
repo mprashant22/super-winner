@@ -5,7 +5,7 @@
 <script>
 var app = angular.module('storeApp', []);
 app.controller('storeCtrl', function($scope, $http) {
-	//alert("inside controller");
+	alert("inside controller");
     $http.get("https://www.w3schools.com/angular/customers.php")
     .then(function (response) {$scope.names = response.data.records;});
 });
@@ -67,7 +67,7 @@ class StoreTable extends DB_Connection{
 				//echo $result['handle'].">";
     	 ?>
   
-    <tr class="product_row" id="<?php echo $result['handle']; ?>" ng-if="$odd" style='color: RED'>
+    <tr class="product_row" id="<?php echo $result['handle']; ?>">
 		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
