@@ -33,8 +33,8 @@ class StoreTable extends DB_Connection{
 <table id="store-table" border=1 class="table table-striped" at-table at-paginated at-list="list" at-config="config">
    <tr>
    	 <th><input type="checkbox" id="master"></th>
-     <th at-implicit at-sortable at-attribute="Handle" width="150" at-initial-sorting="asc"></th>
-     <th at-implicit at-sortable at-attribute="Title"></th>
+     <td at-implicit at-sortable at-attribute="Handle" width="150" at-initial-sorting="asc"></td>
+     <td at-implicit at-sortable at-attribute="Title"></td>
      <th at-implicit at-sortable at-attribute="Variant1" style="color: #FF0000"></th>
      <th style="color: #008c33">Variant2</th>
      <th style="color: #4298f4">Variant3</th>
