@@ -316,4 +316,4 @@ class StoreTable extends DB_Connection{
  		<div id="ajax_success" style="visibility: hidden"></div>
  		<div id="msgdiv" style="">mathur</div>
  		<div id="msg" style="">mathur</div>
- 		{{names}}
+ 		<div>{{names}}</div>
