@@ -12,14 +12,11 @@ table, td  {
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names">
-    <td ng-if="$odd" style="color:#FF0011">
+  <tr ng-repeat="x in names" ng-if="$odd" ? 'style="color:#FF0011"':'style="color:#00FF11"'>
+    <td>
     {{ x.Name }}</td>
-    <td ng-if="$even">
-    {{ x.Name }}</td>
-    <td ng-if="$odd" style="color:#00FF01">
-    {{ x.Country }}</td>
-    <td ng-if="$even">
+        
+    <td>
     {{ x.Country }}</td>
   </tr>
 </table>
