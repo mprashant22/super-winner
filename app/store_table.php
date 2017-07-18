@@ -29,12 +29,12 @@ class StoreTable extends DB_Connection{
 
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
-<table id="store-table" border=1>
+<table id="store-table" border=1 class="table table-striped" at-table at-paginated at-list="list" at-config="config">
    <tr>
    	 <th><input type="checkbox" id="master"></th>
-     <th>Handle</th>
-     <th>Title</th>
-     <th style="color: #FF0000">Variant1</th>
+     <th at-implicit at-sortable at-attribute="Handle" width="150" at-initial-sorting="asc"></th>
+     <th at-implicit at-sortable at-attribute="Title"></th>
+     <th at-implicit at-sortable at-attribute="Variant1" style="color: #FF0000"></th>
      <th style="color: #008c33">Variant2</th>
      <th style="color: #4298f4">Variant3</th>
      <th>Variant~SKU</th>
