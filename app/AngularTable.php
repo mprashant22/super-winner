@@ -21,7 +21,7 @@ color: 'BLUE';
 <div ng-app="myApp" ng-controller="customersCtrl"> 
 
 <table>
-  <tr ng-repeat="x in names" class="$odd" ? 'odd':'even'>
+  <tr ng-repeat="x in names" ng-if="$odd" ng-class='even'>
     <td>
     {{ x.Name }}</td>
         
