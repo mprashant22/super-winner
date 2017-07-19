@@ -147,7 +147,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
     };
 
     // init the filtered items
-    $scope.search = function () {
+    $scope.search = function () {alert("serch");
         $scope.filteredItems = $filter('filter')($scope.items, function (item) {
             for(var attr in item) {
                 if (searchMatch(item[attr], $scope.query))
@@ -166,7 +166,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
     
   
     // calculate page in place
-    $scope.groupToPages = function () {
+    $scope.groupToPages = function () {alert("grp");
         $scope.pagedItems = [];
         
         for (var i = 0; i < $scope.filteredItems.length; i++) {
@@ -178,7 +178,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
         }
     };
     
-    $scope.range = function (size,start, end) {
+    $scope.range = function (size,start, end) {alert("rng");
         var ret = [];        
         console.log(size,start, end);
                       
@@ -193,19 +193,19 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
         return ret;
     };
     
-    $scope.prevPage = function () {
+    $scope.prevPage = function () {alert("prevpgg");
         if ($scope.currentPage > 0) {
             $scope.currentPage--;
         }
     };
     
-    $scope.nextPage = function () {
+    $scope.nextPage = function () {alert("nextpg");
         if ($scope.currentPage < $scope.pagedItems.length - 1) {
             $scope.currentPage++;
         }
     };
     
-    $scope.setPage = function () {
+    $scope.setPage = function () {alert("setpg");
         $scope.currentPage = this.n;
     };
 
