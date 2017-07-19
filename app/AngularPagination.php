@@ -148,7 +148,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
         {"id":65,"name":"name 20","description":"description 1","field3":"field3 20","field4":"field4 20","field5 ":"field5 20"}
     ];
 
-    var searchMatch = function (haystack, needle) {alert("srch");
+    var searchMatch = function (haystack, needle) {console.log(haystack+"/"+needle);
         if (!needle) {
             return true;
         }
@@ -156,7 +156,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
     };
 
     // init the filtered items
-    $scope.search = function () {//alert("serch");
+    $scope.search = function () {console.log("1");
         $scope.filteredItems = $filter('filter')($scope.items, function (item) {
             for(var attr in item) {
                 if (searchMatch(item[attr], $scope.query))
@@ -164,6 +164,8 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
             }
             return false;
         });
+
+        console.log($scope.filteredItems);
         // take care of the sorting order
         if ($scope.sort.sortingOrder !== '') {
             $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sort.sortingOrder, $scope.sort.reverse);
