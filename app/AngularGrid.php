@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
-<meta charset="utf-8">
-<title>Shopify App</title>
+
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.css" type="text/css">
@@ -12,20 +8,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 
 <script type='text/javascript'>
-        var app = angular.module("shopify-app", []);
+  var app = angular.module("shopify-app", []);
   app.controller("initApp", function($scope){
-	$scope.store = [
+  $scope.store = [
+
 		{label: "Store1"}, 
     	{label: "Store2"}, 
 		{label: "Store3"}, 
 		{label: "Store4"}
 		];
-		$scope.arr1="ljlkjlk";
-		  angular.forEach($scope.store,function(value,index){
-            
-            });
+  $scope.arr1="ljlkjlk";
+   angular.forEach($scope.store,function(value,index){            
+   });
 	
   });
+
   var generateData = function(){
   var arr = [];
   var letterWords = ["alpha",
@@ -45,20 +42,15 @@
   "larry",
   "bob",
   "zelda"]
+
   for (var i=1;i<60;i++){
     var id = letterWords[Math.floor(Math.random()*letterWords.length)];
-    arr.push({"id":id+i,
-	"name":"name "+i,
-	"description":"Description of item #"+i,
-	"field3":id,
-	"field4":"Some stuff about rec: "+i,
+    arr.push({"id":id+i,"name":"name "+i,"description":"Description of item #"+i,"field3":id,"field4":"Some stuff about rec: "+i,
 	"field5":"field"+i
 	});
   }
-  return arr;
-  
+  return arr;  
 }
-
 var sortingOrder = 'name'; //default sort
 
 function initApp($scope, $filter) {
@@ -89,14 +81,15 @@ function initApp($scope, $filter) {
           return true;
       }
       return false;
-    });
-    // take care of the sorting order
-    if ($scope.sortingOrder !== '') {
+  });
+  // take care of the sorting order
+  if ($scope.sortingOrder !== '') {
       $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse);
-    }
-    $scope.currentPage = 0;
-    // now group by pages
-    $scope.groupToPages();
+  }
+  $scope.currentPage = 0;
+  // now group by pages
+  
+  $scope.groupToPages();
   };
   
   // show items per page
@@ -124,7 +117,7 @@ function initApp($scope, $filter) {
         $scope.search();
         
         return false;
-    };
+   };
   
   $scope.range = function (start, end) {
     var ret = [];
@@ -170,22 +163,15 @@ function initApp($scope, $filter) {
 
 initApp.$inject = ['$scope', '$filter'];
 
-//$(document).ready(function() {});
-        
 </script>
-
-
 </head>
+
 <body ng-controller="initApp" ng-app="shopify-app">
    
 <form class="form-horizontal">
-<div class="margtop30">
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-12">
-<div class="store-detail martop-10">
-<center><h3>Dashboard</h3>
- <nav>
+
+<h3>Dashboard</h3>
+ 
     	<ul class="mcd-menu">
 			<li>
 				<a href="">
@@ -194,88 +180,20 @@ initApp.$inject = ['$scope', '$filter'];
 				</a>
 			</li>
 			
-		    <li>
-				<a href="" class="active">
-					<i class="fa fa-edit"></i>
-					<strong>Inventory Management</strong>
-					
-				</a>
+		    <li>				
                 <ul>
 					<li class="head-bg"><a href="#">Select the Store to be Managed</a> <i class="fa fa-check-square-o" aria-hidden="true"></i></li>
 					<li ng-repeat="x in store">
 						<a href="#">{{x.label}}</a><input type="checkbox"  ng-click="clearParent()" ng-model="checkbox.selected" ng-checked="all">
-                   <!--  <input type="checkbox" ng-checked="selection.indexOf(checkbox.name) > -1" ng-click="toggleVisible(checkbox.name)"> 
-                      {{count}}-->
-                         <!--<input type="checkbox"  ng-model="store1" ng-init="checked=true" ng-checked="all"/>
-                         <input type="checkbox"  ng-model="store2" ng-init="checked=true" ng-checked="all"/>
-                         <input type="checkbox"  ng-model="store3" ng-init="checked=true" ng-checked="all"/>-->
-
-			           </li>
+                    </li>
                     
-					<li> <a href="#">Select All</a> <input type="checkbox" ng-model="all" ></li>
-                   
+					<li> <a href="#">Select All</a> <input type="checkbox" ng-model="all" ></li>                   
 				</ul>
 			</li>
-            
-           
-			<li>
-				<a href="">
-					<i class="fa fa-sliders"></i>
-					<strong>Settings</strong>
-					
-				</a>
-                
-			</li>
-			<li>
-				<a href="">
-					<i class="fa fa-file-text-o"></i>
-					<strong>Reports</strong>
-					
-				</a>
-			</li>
-			<li>
-				<a href="">
-					<i class="fa fa-comments-o"></i>
-					<strong>Contact Us</strong>
-					
-				</a>
-				<!--<ul>
-					<li><a href="#"><i class="fa fa-globe"></i>Mission</a></li>
-					<li>
-						<a href="#"><i class="fa fa-group"></i>Our Team</a>
-						<ul>
-							<li><a href="#"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-							<li>
-								<a href="#"><i class="fa fa-male"></i>Gleb Ismailov</a>
-								<ul>
-									<li><a href="#"><i class="fa fa-leaf"></i>About</a></li>
-									<li><a href="#"><i class="fa fa-tasks"></i>Skills</a></li>
-								</ul>
-							</li>
-							<li><a href="#"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-						</ul>
-					</li>
-					<li><a href="#"><i class="fa fa-trophy"></i>Rewards</a></li>
-					<li><a href="#"><i class="fa fa-certificate"></i>Certificates</a></li>
-				</ul>-->
-			</li>
-			<li>
-				<a href="">
-					<i class="fa fa-question"></i>
-					<strong>Help/FAQ</strong>
-					
-				</a>
-			</li>
-
 		</ul>
-	</nav>
- </center>
-</div>
-</div>
-</div>
-</div>
-</div>
-  213{{arr1}}
+	
+ 
+213{{arr1}}
 <div class="container">
   <div>
     <div class="row">
@@ -295,23 +213,6 @@ initApp.$inject = ['$scope', '$filter'];
       </div>
     </div><a href="#myModal" role="button" class="btn btn-default" data-toggle="modal">Launch demo modal</a>
 
-<!--<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Modal header</h3>
-	</div>
-	<div class="modal-body">
-		<p>One fine body…</p>
-	</div>
-	<div class="modal-footer">
-		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-		<button class="btn btn-primary">Save changes</button>
-	</div>
-</div>
-</div>
-</div>-->
     
     <table class="table table-striped table-hover">
       <tbody><tr>
@@ -355,142 +256,7 @@ initApp.$inject = ['$scope', '$filter'];
     </table>
   </div>
 </div>
-  <!--<div class="margtop30 marbot-100">
-<div class="container">
-<div class="row">
-
-<div class="col-sm-12 col-md-12"  ng-if="store3">
-<center><h2>Store - 3</h2></center>
-<div class="newscrl tbl-box sticky-table sticky-headers sticky-ltr-cells">
-
-<table width="100%"  border="0" cellspacing="0" cellpadding="0" class="table table-hover table-responsive">
-   <thead>
-   <tr class="head-bg2 sticky-row">
-    <th class="sticky-cell">Handle</th>
-    <th>Title</th>
-    <th>Body (HTML)</th>
-    <th>Vendor</th>
-    <th>Type</th>
-    <th>Tags</th>
-    <th>Published</th>
-    <th>Variant Image</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  </tbody>
-</table>
-
-</div>
-</div>
-</div>
-
-
-
-</div>
-</div>-->      
-     
-
-
-
-</form>
-
-
-        
-        
+</form>   
         
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="js/jquery.stickytable.min.js" type="text/javascript"></script>
-  
-        
-    </body>
-</html>
