@@ -148,7 +148,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
         {"id":65,"name":"name 20","description":"description 1","field3":"field3 20","field4":"field4 20","field5 ":"field5 20"}
     ];
 
-    var searchMatch = function (haystack, needle) {
+    var searchMatch = function (haystack, needle) {alert("srch");
         if (!needle) {
             return true;
         }
