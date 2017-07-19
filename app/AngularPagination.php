@@ -6,6 +6,11 @@
         <div ng-app="myApp" ng-controller="ctrlRead">
            
             
+            <div class="input-append">
+                <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search">
+            <span class="add-on"><i class="icon-search"></i></span>
+            </div>
+            
             <table class="table table-striped table-condensed table-hover">
                 <thead>
 
