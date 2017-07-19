@@ -71,7 +71,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
     
     $scope.filteredItems = [];
     $scope.groupedItems = [];
-    $scope.itemsPerPage = 5;
+    $scope.itemsPerPage = 13;
     $scope.pagedItems = [];
     $scope.currentPage = 0;
     $scope.items = [
