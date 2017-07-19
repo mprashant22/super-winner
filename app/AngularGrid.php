@@ -24,6 +24,7 @@ var generateData = function(){
 var sortingOrder = 'name'; //default sort
 
 function initApp($scope, $filter) {
+	
  
   // init
   $scope.sortingOrder = sortingOrder;
@@ -204,7 +205,8 @@ app.controller("myCtrl", function($scope) {
     </div>
   </div>
 </div>
-<div class="container" ng-app="">
+
+<div class="container" ng-app="myApp">
   <div ng-controller="initApp">
     <div class="row">
       <div class="col-md-3">
