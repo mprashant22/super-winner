@@ -1,5 +1,5 @@
        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <div ng-controller="ctrlRead">
+        <div ng-app="myApp" ng-controller="ctrlRead">
            
             
             <table class="table table-striped table-condensed table-hover">
@@ -54,7 +54,7 @@
 
 
 
- var fessmodule = angular.module('myModule', []);
+ var fessmodule = angular.module('myApp', []);
 
 fessmodule.controller('ctrlRead', function ($scope, $filter) {
 
