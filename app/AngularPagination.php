@@ -82,7 +82,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
     $scope.currentPage = 0;
     $scope.items = [
         {"id":1,"name":"name 1","description":"description 1","field3":"field3 1","field4":"field4 1","field5 ":"field5 1"}, 
-        {"id":2,"name":"name 2","description":"description 1","field3":"field3 2","field4":"field4 2","field5 ":"field5 2"}, 
+        {"id":2,"name":"name 2","description":"prashant 1","field3":"field3 2","field4":"field4 2","field5 ":"field5 2"}, 
         {"id":3,"name":"name 3","description":"description 1","field3":"field3 3","field4":"field4 3","field5 ":"field5 3"}, 
         {"id":4,"name":"name 4","description":"description 1","field3":"field3 4","field4":"field4 4","field5 ":"field5 4"}, 
         {"id":5,"name":"name 5","description":"description 1","field3":"field3 5","field4":"field4 5","field5 ":"field5 5"}, 
@@ -90,7 +90,7 @@ fessmodule.controller('ctrlRead', function ($scope, $filter) {
         {"id":7,"name":"name 7","description":"description 1","field3":"field3 7","field4":"field4 7","field5 ":"field5 7"}, 
         {"id":8,"name":"name 8","description":"description 1","field3":"field3 8","field4":"field4 8","field5 ":"field5 8"}, 
         {"id":9,"name":"name 9","description":"description 1","field3":"field3 9","field4":"field4 9","field5 ":"field5 9"}, 
-        {"id":10,"name":"name 10","description":"description 1","field3":"field3 10","field4":"field4 10","field5 ":"field5 10"}, 
+        {"id":10,"name":"name 10","description":"prashant 1","field3":"field3 10","field4":"field4 10","field5 ":"field5 10"}, 
         {"id":11,"name":"name 11","description":"description 1","field3":"field3 11","field4":"field4 11","field5 ":"field5 11"}, 
         {"id":12,"name":"name 12","description":"description 1","field3":"field3 12","field4":"field4 12","field5 ":"field5 12"}, 
         {"id":13,"name":"name 13","description":"description 1","field3":"field3 13","field4":"field4 13","field5 ":"field5 13"}, 
