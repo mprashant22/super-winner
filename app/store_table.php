@@ -105,9 +105,9 @@ class StoreTable extends DB_Connection{
 <!--  Prashant -->
 
 
-
+<div>
 <input type="text" id="search" placeholder="Type to search">
-<button class="btn btn-primary delete_all">DELETE</button>
+<button class="btn btn-primary delete_all">DELETE</button></div>
 <div class="col-md-3">
         <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
