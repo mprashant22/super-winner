@@ -15,9 +15,7 @@
     <div class="row">
       <div class="col-sm-12 col-md-12">
         <div class="store-detail martop-10">
-          <center>
-          <h3>Dashboard</h3>
-          <center>
+          <h3>Dashboard</h3>          
             <nav>
               <ul class="mcd-menu">
                 <li> <a href=""> <i class="fa fa-home"></i> <strong>Add Store</strong> </a> </li>
@@ -64,7 +62,6 @@
                 <li> <a href=""> <i class="fa fa-question"></i> <strong>Help/FAQ</strong> </a> </li>
               </ul>
             </nav>
-          </center>
         </div>
       </div>
     </div>

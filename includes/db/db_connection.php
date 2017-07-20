@@ -71,4 +71,3 @@ class DB_Connection{
     }
     
 }
-
