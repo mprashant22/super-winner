@@ -11,7 +11,6 @@ var generateData = function(){
 var sortingOrder = 'name'; //default sort
 
 function initApp($scope, $filter) {
-	
  
   // init
   $scope.sortingOrder = sortingOrder;

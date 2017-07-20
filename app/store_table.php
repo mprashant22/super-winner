@@ -49,8 +49,7 @@ class StoreTable extends DB_Connection{
       </div>
       <div class="col-md-6">
         <h2 class="text-center">Store 1</h2>
-      </div>
-      
+      </div>     
       
       
       <div class="col-md-3">

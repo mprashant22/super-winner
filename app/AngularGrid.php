@@ -1,12 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Shopify App</title>
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.css" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-<script type='text/javascript' src="script/app.js">
-
-        
+<script type='text/javascript' src="script/app.js"> 
 </script>
 </head>
 <body ng-app="myApp" ng-controller="myCtrl">
@@ -15,7 +19,8 @@
     <div class="row">
       <div class="col-sm-12 col-md-12">
         <div class="store-detail martop-10">
-          <h3>Dashboard</h3>          
+          <h3>Dashboard</h3>
+          
             <nav>
               <ul class="mcd-menu">
                 <li> <a href=""> <i class="fa fa-home"></i> <strong>Add Store</strong> </a> </li>
@@ -70,10 +75,7 @@
 
 
 
-
-
-/////////////
-<div class="container" ng-app="myApp">
+<div class="container" ng-app="">
   <div ng-controller="initApp">
     <div class="row">
       <div class="col-md-3">
@@ -87,24 +89,21 @@
       <div class="col-md-6">
         <h2 class="text-center">Store 1</h2>
       </div>
-      
-      
-      
       <div class="col-md-3">
         <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
       </div>
     </div>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="id"><a ng-click="sort_by('id')">Id <i class="fa fa-sort"></i></a></th>
-          <th class="name"><a ng-click="sort_by('name')">Name <i class="fa fa-sort"></i></a></th>
-          <th class="description" title="non-sortable">Description</th>
-          <th class="field3"><a ng-click="sort_by('field3')">Link <i class="fa fa-sort"></i></a></th>
-          <th class="field4"><a ng-click="sort_by('field4')">Field 4 <i class="fa fa-sort"></i></a></th>
-          <th class="field5"><a ng-click="sort_by('field5')">Field 5 <i class="fa fa-sort"></i></a></th>
-          <th></th>
+          <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
+          <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
+          <th class="description" title="non-sortable">Variant1</th>
+          <th class="field3"><span ng-click="sort_by('field3')">Variant2 <i class="fa fa-sort"></i></span></th>
+          <th class="field4"><span ng-click="sort_by('field4')">Variant3 <i class="fa fa-sort"></i></span></th>
+          <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
+          <th align="center" style="text-align:center">Action</th>
         </tr>
       </tbody>
       <tfoot>
@@ -122,12 +121,18 @@
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
           <td>{{item.id}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.description}}</td>
-          <td><a href="#">{{item.field3}}</a></td>
+          <td contenteditable="true">{{item.name}}</td>
+          <td><select class="sect">
+<option ng-repeat="x in records">{{x}}</option>
+</select></td>
+          <td><select class="sect">
+<option ng-repeat="x in records">{{x}}</option>
+</select></td>
           <td>{{item.field4}}</td>
           <td>{{item.field5}}</td>
-          <td><a href="#" ng-click="deleteItem($index)">x</a></td>
+          <td align="center">
+          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>
@@ -135,3 +140,5 @@
 </div>
 <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
 <script type='text/javascript' src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
