@@ -12,12 +12,12 @@
 
 
 <script>
-var app = angular.module('storeApp', []);
-app.controller('storeCtrl', function($scope, $http) {
-	alert("inside controller");
-    $http.get("https://www.w3schools.com/angular/customers.php")
-    .then(function (response) {$scope.names = response.data.records;});
-});
+// var app = angular.module('storeApp', []);
+// app.controller('storeCtrl', function($scope, $http) {
+// 	alert("inside controller");
+//     $http.get("https://www.w3schools.com/angular/customers.php")
+//     .then(function (response) {$scope.names = response.data.records;});
+// });
 </script>
 
 <?php
