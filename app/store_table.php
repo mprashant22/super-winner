@@ -36,7 +36,7 @@ class StoreTable extends DB_Connection{
 	
 <div>
 <form id="my_form">
-<div class="container" ng-app="myApp">
+<div class="container" ng-app="">
   <div ng-controller="initApp">
     <div class="row">
       <div class="col-md-3">
@@ -49,24 +49,22 @@ class StoreTable extends DB_Connection{
       </div>
       <div class="col-md-6">
         <h2 class="text-center">Store 1</h2>
-      </div>     
-      
-      
+      </div>
       <div class="col-md-3">
         <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
       </div>
     </div>
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="id"><a ng-click="sort_by('id')">Id <i class="fa fa-sort"></i></a></th>
-          <th class="name"><a ng-click="sort_by('name')">Name <i class="fa fa-sort"></i></a></th>
-          <th class="description" title="non-sortable">Description</th>
-          <th class="field3"><a ng-click="sort_by('field3')">Link <i class="fa fa-sort"></i></a></th>
-          <th class="field4"><a ng-click="sort_by('field4')">Field 4 <i class="fa fa-sort"></i></a></th>
-          <th class="field5"><a ng-click="sort_by('field5')">Field 5 <i class="fa fa-sort"></i></a></th>
-          <th></th>
+          <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
+          <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
+          <th class="description" title="non-sortable">Variant1</th>
+          <th class="field3"><span ng-click="sort_by('field3')">Variant2 <i class="fa fa-sort"></i></span></th>
+          <th class="field4"><span ng-click="sort_by('field4')">Variant3 <i class="fa fa-sort"></i></span></th>
+          <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
+          <th align="center" style="text-align:center">Action</th>
         </tr>
       </tbody>
       <tfoot>
@@ -84,12 +82,18 @@ class StoreTable extends DB_Connection{
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
           <td>{{item.id}}</td>
-          <td>{{item.name}}</td>
-          <td>{{item.description}}</td>
-          <td><a href="#">{{item.field3}}</a></td>
+          <td contenteditable="true">{{item.name}}</td>
+          <td><select class="sect">
+<option ng-repeat="x in records">{{x}}</option>
+</select></td>
+          <td><select class="sect">
+<option ng-repeat="x in records">{{x}}</option>
+</select></td>
           <td>{{item.field4}}</td>
           <td>{{item.field5}}</td>
-          <td><a href="#" ng-click="deleteItem($index)">x</a></td>
+          <td align="center">
+          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
     </table>
