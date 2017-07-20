@@ -2,9 +2,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" src="script/app.js"></script>
 
 <?php
-
 echo "store table";
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
@@ -24,8 +24,9 @@ class StoreTable extends DB_Connection{
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
-?>		
-<div>
+?>	
+	
+<div  ng-app="myApp" ng-controller="myCtrl">
 <form id="my_form">
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
