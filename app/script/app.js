@@ -87,7 +87,7 @@ function initApp($scope, $filter) {
     return ret;
   };
   
-  $scope.prevPage = function () {
+  $scope.prevPage = function () {alert("prevpage");
     if ($scope.currentPage > 0) {
       $scope.currentPage--;
     }
