@@ -105,7 +105,7 @@ class StoreTable extends DB_Connection{
 <!--  Prashant -->
 
 
-<div ng-controller="initApp">
+<div ng-controller="myCtrl">
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button></div>
 <div class="col-md-3">
