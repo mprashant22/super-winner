@@ -37,7 +37,7 @@ class StoreTable extends DB_Connection{
 <div>
 <form id="my_form">
 <div class="container" ng-app="">
-  <div ng-controller="initApp">
+  <div ng-controller="initApp1">
     <div class="row">
       <div class="col-md-3">
         <div class="input-group input-group-lg add-on">
