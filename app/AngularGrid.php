@@ -68,6 +68,11 @@
   </div>
 </div>
 
+
+
+
+
+/////////////
 <div class="container" ng-app="myApp">
   <div ng-controller="initApp">
     <div class="row">
@@ -82,6 +87,9 @@
       <div class="col-md-6">
         <h2 class="text-center">Store 1</h2>
       </div>
+      
+      
+      
       <div class="col-md-3">
         <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
