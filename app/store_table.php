@@ -112,12 +112,17 @@ class StoreTable extends DB_Connection{
    <tr>
    	 <th><input type="checkbox" id="master"></th>
       <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
-      
-     <th>Title</th>
-     <th style="color: #FF0000">Variant1</th>
-     <th style="color: #008c33">Variant2</th>
-     <th style="color: #4298f4">Variant3</th>
-     <th>Variant~SKU</th>
+     <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
+          <th class="description" title="non-sortable" style="color: #FF0000">Variant1</th>
+          <th class="field3"><span ng-click="sort_by('field3')" style="color: #008c33">Variant2 <i class="fa fa-sort"></i></span></th>
+          <th class="field4"><span ng-click="sort_by('field4')" style="color: #4298f4">Variant3 <i class="fa fa-sort"></i></span></th>
+          <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
+          <th align="center" style="text-align:center">Action</th>
+<!--      <th>Title</th> -->
+<!--      <th >Variant1</th> -->
+<!--      <th >Variant2</th> -->
+<!--      <th >Variant3</th> -->
+<!--      <th>Variant~SKU</th> -->
      <th>Units</th>
      <th>Price</th>     
      <th>Action</th>
