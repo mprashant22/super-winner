@@ -872,3 +872,14 @@ li.head-bg a {
 	filter: alpha(opacity=100);
 	opacity: 1;
 }
+.delet-btn{
+	background: none;
+    color: #28a03d;
+    font-size: 16px;
+    padding: 5px;
+	}
+.sect{border: 1px solid #f1f1f1;
+    padding: 2px;
+    border-radius: 3px;
+	color: #00985a;
+	}
