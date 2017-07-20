@@ -112,6 +112,7 @@ class StoreTable extends DB_Connection{
    <tr>
    	 <th><input type="checkbox" id="master"></th>
       <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
+      
      <th>Title</th>
      <th style="color: #FF0000">Variant1</th>
      <th style="color: #008c33">Variant2</th>
