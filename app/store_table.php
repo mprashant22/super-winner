@@ -203,7 +203,7 @@ class StoreTable extends DB_Connection{
  		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
     	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
     	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
-    	<td align="center"><a href='javascript: void(0)'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+    	<td align="center"><a href='javascript: void(0)'><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> <a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)'><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
 	</tr>
 	<?php $ii++;
  	}
