@@ -883,3 +883,6 @@ li.head-bg a {
     border-radius: 3px;
 	color: #00985a;
 	}
+	
+table{ width:100%;}
+table tr td{ font-size:13px; padding:5px;}
