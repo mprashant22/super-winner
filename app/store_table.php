@@ -1,19 +1,7 @@
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
-
-
-
-<script>
-// var app = angular.module('storeApp', []);
-// app.controller('storeCtrl', function($scope, $http) {
-// 	alert("inside controller");
-//     $http.get("https://www.w3schools.com/angular/customers.php")
-//     .then(function (response) {$scope.names = response.data.records;});
-// });
-</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
 <?php
 
