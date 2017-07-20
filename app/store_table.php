@@ -215,7 +215,7 @@ class StoreTable extends DB_Connection{
 	
 	<tfoot>
         <tr>
-          <td colspan="9">{{sizes}}
+          <td colspan="11">{{sizes}}
             <div class="text-center">
               <ul class="pagination">
                 <li ng-class="{disabled: currentPage == 0}"> <a href="javascript:;" ng-click="prevPage()">« Prev</a> </li>
