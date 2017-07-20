@@ -108,7 +108,7 @@ function initApp($scope, $filter) {
  
   
   // change sorting order
-  $scope.sort_by = function(newSortingOrder) {
+  $scope.sort_by = function(newSortingOrder) {console.log(newSortingOrder);
     if ($scope.sortingOrder == newSortingOrder)
       $scope.reverse = !$scope.reverse;
     
