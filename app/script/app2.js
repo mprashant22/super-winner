@@ -116,7 +116,7 @@ function initApp($scope, $filter) {
   };
   
   
-  $scope.checkAll = function () {
+  $scope.checkAll = function () {alert("alert");
 	    if ($scope.selectedAll) {
 	        $scope.selectedAll = true;
 	    } else {
