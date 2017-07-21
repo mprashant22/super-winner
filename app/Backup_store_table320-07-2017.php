@@ -58,7 +58,10 @@ class StoreTable extends DB_Connection{
     <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="field0"><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()"></th>
+          <th class="field0"><input type="checkbox" ng-click="toggleSelect()" /> Select All <br />
+      <div ng-repeat="checkbox in checkboxes">
+         <input type="checkbox" name="{{checkbox.name}}" value="{{checkbox.value}}" ng-click="clearParent()" ng-model="checkbox.selected">{{checkbox.label}}
+      </div></th>
           <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
           <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
           <th class="description" title="non-sortable">Variant1</th>

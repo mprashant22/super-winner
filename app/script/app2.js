@@ -115,25 +115,12 @@ function initApp($scope, $filter) {
     $scope.sortingOrder = newSortingOrder;
   };
   
-  
-  $scope.checkAll = function () {alert("alert");
-	    if ($scope.selectedAll) {
-	        $scope.selectedAll = true;
-	    } else {
-	        $scope.selectedAll = false;
-	    }
-	    angular.forEach($scope.Items, function (item) {
-	        item.Selected = $scope.selectedAll;
-	    });
-
-	};
-	   $scope.Items = [{
-	        Name: "Item one"
-	    }, {
-	        Name: "Item two"
-	    }, {
-	        Name: "Item three"
-	    }];
+  $scope.toggleSelect = function(){alert("alert");
+	  angular.forEach($scope.checkboxes, function(item){
+	   item.selected = event.target.checked;
+	  });
+	 }
+	
 
 };
 
