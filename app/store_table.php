@@ -124,7 +124,7 @@ class StoreTable extends DB_Connection{
         </div>
 
 <div class="col-md-3">
-        <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="{{records}}">
+        <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
       </div>
 <table id="store-table" border=1>

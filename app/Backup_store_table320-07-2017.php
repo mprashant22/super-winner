@@ -58,18 +58,21 @@ class StoreTable extends DB_Connection{
     <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
+          <th class="field5"><span ng-click="sort_by('field5')"> <i class="fa fa-sort"></i></span></th>
           <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
           <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
           <th class="description" title="non-sortable">Variant1</th>
           <th class="field3"><span ng-click="sort_by('field3')">Variant2 <i class="fa fa-sort"></i></span></th>
           <th class="field4"><span ng-click="sort_by('field4')">Variant3 <i class="fa fa-sort"></i></span></th>
           <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
+          <th class="field6"><span ng-click="sort_by('field6')">Units <i class="fa fa-sort"></i></span></th>
+          <th class="field7"><span ng-click="sort_by('field7')">Price <i class="fa fa-sort"></i></span></th>
           <th align="center" style="text-align:center">Action</th>
         </tr>
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="9">{{sizes}}
+          <td colspan="10">{{sizes}}
             <div class="text-center">
               <ul class="pagination">
                 <li ng-class="{disabled: currentPage == 0}"> <a href="javascript:;" ng-click="prevPage()">« Prev</a> </li>
