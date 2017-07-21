@@ -69,22 +69,6 @@ class StoreTable extends DB_Connection{
           <th class="field7"><span ng-click="sort_by('field7')">Price <i class="fa fa-sort"></i></span></th>
           <th align="center" style="text-align:center">Action</th>
         </tr>
-        
-        <?php	
-		$ii = 0;
-			 while($result = mysqli_fetch_assoc($res4)) {
- 
-			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
-			 	$res1 = mysqli_query($this->connection,$sql1);
-			 	
-			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
-			 	$res2 = mysqli_query($this->connection,$sql2);
-			 	
-			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
-			 	$res3 = mysqli_query($this->connection,$sql3);
-
-				//echo $result['handle'].">";
-    	 ?>
       </tbody>
       <tfoot>
         <tr>
@@ -100,7 +84,7 @@ class StoreTable extends DB_Connection{
       </tfoot>
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-         <td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
+         <td><input type="checkbox" ng-model="item.Selected"> </td>
           <td>{{item.id}}</td>
           <td contenteditable="true">{{item.name}}</td>
           <td><select class="sect">
@@ -118,9 +102,6 @@ class StoreTable extends DB_Connection{
           <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </tr>
       </tbody>
-      <?php $ii++;
- 	}
-	?>
     </table>
   </div>
 </div>

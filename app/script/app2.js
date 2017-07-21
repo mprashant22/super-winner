@@ -127,6 +127,13 @@ function initApp($scope, $filter) {
 	    });
 
 	};
+	   $scope.Items = [{
+	        Name: "Item one"
+	    }, {
+	        Name: "Item two"
+	    }, {
+	        Name: "Item three"
+	    }];
 
 };
 
