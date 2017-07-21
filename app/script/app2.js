@@ -114,6 +114,19 @@ function initApp($scope, $filter) {
     
     $scope.sortingOrder = newSortingOrder;
   };
+  
+  
+  $scope.checkAll = function () {
+	    if ($scope.selectedAll) {
+	        $scope.selectedAll = true;
+	    } else {
+	        $scope.selectedAll = false;
+	    }
+	    angular.forEach($scope.Items, function (item) {
+	        item.Selected = $scope.selectedAll;
+	    });
+
+	};
 
 };
 
@@ -128,14 +141,3 @@ app.controller("myCtrl", function($scope) {
   ]
 });
 
-$scope.checkAll = function () {
-    if ($scope.selectedAll) {
-        $scope.selectedAll = true;
-    } else {
-        $scope.selectedAll = false;
-    }
-    angular.forEach($scope.Items, function (item) {
-        item.Selected = $scope.selectedAll;
-    });
-
-};
