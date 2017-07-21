@@ -34,7 +34,8 @@ class StoreTable extends DB_Connection{
 		$res4=mysqli_query($this->connection,$sql4);
 ?>	
 	
-<div>
+<div ng-controller="myCtrl" ng-app="myApp">
+
 <form id="my_form">
 <!-- <div class="container" ng-app=""> -->
 <!--   <div ng-controller="initApp1"> -->
@@ -105,9 +106,9 @@ class StoreTable extends DB_Connection{
 <!--  Prashant -->
 
 
-<div ng-controller="myCtrl" ng-app="myApp">
+<!-- <div> -->
 <input type="text" id="search" placeholder="Type to search">
-<button class="btn btn-primary delete_all">DELETE</button></div>
+<button class="btn btn-primary delete_all">DELETE</button>
 
 
 <div class="input-group input-group-lg add-on">
@@ -134,14 +135,7 @@ class StoreTable extends DB_Connection{
      <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
      <th class="field6"><span ng-click="sort_by('field6')">Units <i class="fa fa-sort"></i></span></th>
      <th class="field7"><span ng-click="sort_by('field7')">Price <i class="fa fa-sort"></i></span></th>
-     <th align="center" style="text-align:center">Action</th>
-   	 
-   	 
-   	 
-   	 
-   	 
-   	 
-   	 
+     <th align="center" style="text-align:center">Action</th>   	 
    	 
    	 
 <!--      <th>Handle</th> -->
@@ -237,6 +231,7 @@ class StoreTable extends DB_Connection{
 	
  </table>
  </form>
+</div>
 </div>
   
    <?php 
