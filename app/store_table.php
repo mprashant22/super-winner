@@ -72,9 +72,9 @@ class StoreTable extends DB_Connection{
 <!-- <!--           <td colspan="9">{{sizes}} --> 
 <!-- <!--             <div class="text-center"> --> 
 <!-- <!--               <ul class="pagination"> --> 
-<!-- <!--                 <li ng-class="{disabled: currentPage == 0}"> <a href="javascript:;" ng-click="prevPage()">« Prev</a> </li> --> -->
-<!-- <!--                 <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"> <a href="javascript:;" ng-bind="n + 1">1</a> </li> --> -->
-<!-- <!--                 <li ng-class="{disabled: currentPage == pagedItems.length - 1}"> <a href="javascript:;" ng-click="nextPage()">Next »</a> </li> --> -->
+<!-- <!--                 <li ng-class="{disabled: currentPage == 0}"> <a href="javascript:;" ng-click="prevPage()">« Prev</a> </li> -->
+<!-- <!--                 <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"> <a href="javascript:;" ng-bind="n + 1">1</a> </li> -->
+<!-- <!--                 <li ng-class="{disabled: currentPage == pagedItems.length - 1}"> <a href="javascript:;" ng-click="nextPage()">Next »</a> </li> -->
 <!-- <!--               </ul> -->
 <!-- <!--             </div></td> --> 
 <!-- <!--         </tr> --> 
