@@ -84,6 +84,7 @@ class StoreTable extends DB_Connection{
       </tfoot>
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
+         <td><input type="checkbox"> </td>
           <td>{{item.id}}</td>
           <td contenteditable="true">{{item.name}}</td>
           <td><select class="sect">
@@ -94,6 +95,8 @@ class StoreTable extends DB_Connection{
 </select></td>
           <td>{{item.field4}}</td>
           <td>{{item.field5}}</td>
+          <td>{{item.field6}}</td>
+          <td>{{item.field7}}</td>
           <td align="center">
           <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
           <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
