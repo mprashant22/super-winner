@@ -108,6 +108,8 @@ class StoreTable extends DB_Connection{
 <div ng-controller="myCtrl" ng-app="myApp">
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button></div>
+
+
 <div class="input-group input-group-lg add-on">
           <input type="text" class="form-control search-query" ng-model="query" ng-change="search()" placeholder="Search">
           <div class="input-group-btn">
