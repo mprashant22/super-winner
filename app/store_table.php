@@ -230,9 +230,9 @@ class StoreTable extends DB_Connection{
       </tfoot>
 	
  </table>
- </form>
+
 </div>
-  
+</form>  
    <?php 
    header('location:http://192.241.146.48/shopifyDemoLamp/app/store_table.php');
 	}
