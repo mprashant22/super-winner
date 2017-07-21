@@ -1,19 +1,14 @@
 <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
-
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.css" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-
 <script type="text/javascript" src="script/app2.js"></script>
 
 <?php
-echo "store table";
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 
 class StoreTable extends DB_Connection{
@@ -82,28 +77,124 @@ class StoreTable extends DB_Connection{
         </tr>
       </tfoot>
       <tbody>
-        <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-         <td><input type="checkbox" ng-model="item.Selected"> </td>
-          <td>{{item.id}}</td>
-          <td contenteditable="true">{{item.name}}</td>
-          <td><select class="sect">
-<option ng-repeat="x in records">{{x}}</option>
-</select></td>
-          <td><select class="sect">
-<option ng-repeat="x in records">{{x}}</option>
-</select></td>
-          <td>{{item.field4}}</td>
-          <td>{{item.field5}}</td>
-          <td>{{item.field6}}</td>
-          <td>{{item.field7}}</td>
-          <td align="center">
-          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-        </tr>
+      
+      
+      <?php	
+		$ii = 0;
+			 while($result = mysqli_fetch_assoc($res4)) {
+ 
+			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
+			 	$res1 = mysqli_query($this->connection,$sql1);
+			 	
+			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
+			 	$res2 = mysqli_query($this->connection,$sql2);
+			 	
+			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
+			 	$res3 = mysqli_query($this->connection,$sql3);
+
+				//echo $result['handle'].">";
+    	 ?>
+      
+      
+      
+      
+      
+      
+      
+        <tr class="product_row" id="<?php echo $result['handle']; ?>">
+        <tr class="product_row" id="<?php echo $result['handle']; ?>">
+		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
+		<td class="handle"><?php print_r($result['handle']); ?></td>
+     	<td><span class="title">Title</span></td>
+      	<td>
+     	<select id="v1" class="v1" name="variant1" onClick="">
+<!--       		<option>-- Option1 --</option>  -->
+     		<?php 
+ 				while ($query_data1 = mysqli_fetch_assoc($res1)) {
+ 					$v1=$query_data1["Option1 Value"];
+			?>			
+	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>" selected="selected"><?php echo $query_data1["Option1 Value"]; ?></option>		
+  			<?php
+ 				}
+ 			?>
+   		</select>
+  		</td>
+     	<td>
+    	<select class="v2" name="variant2" onClick="">
+<!--       		<option>-- Option2 --</option>  -->
+     		<?php 
+ 				while ($query_data2 = mysqli_fetch_assoc($res2)) {
+ 					$v2=$query_data2["Option2 Value"];
+			?>			
+			<option value="<?php echo $query_data2["Option2 Value"]; ?>" selected="selected"><?php echo $query_data2["Option2 Value"]; ?></option>
+  			<?php
+ 				}
+ 			?>
+   		</select>
+  		</td>
+      	<td>
+     	<select class="v3" name="variant3" onClick="">     	
+<!--       		<option>-- Option3 --</option> -->
+     		<?php 
+ 				while ($query_data3 = mysqli_fetch_assoc($res3)) {
+ 					$v3=$query_data3["Option3 Value"];
+			?>			
+			<option value="<?php echo $query_data3["Option3 Value"]; ?>" selected="selected"><?php echo $query_data3["Option3 Value"]; ?></option>			
+  			<?php
+ 				}
+ 			?>
+   		</select> 
+   		</td> 
+ 		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
+    	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
+    	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
+	</tr>
+	<?php $ii++;
+ 	}
+	?>
+        
+        
+        
+        
+        
       </tbody>
     </table>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
