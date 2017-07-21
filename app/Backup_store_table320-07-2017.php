@@ -58,7 +58,7 @@ class StoreTable extends DB_Connection{
     <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="field5"><span ng-click="sort_by('field5')"> <i class="fa fa-sort"></i></span></th>
+          <th class="field0"><input type="checkbox"></th>
           <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
           <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
           <th class="description" title="non-sortable">Variant1</th>
