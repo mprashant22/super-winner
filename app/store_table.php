@@ -238,6 +238,7 @@ class StoreTable extends DB_Connection{
 
 
 <!-- <div> -->
+<div>{{records}}</div>
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
 
