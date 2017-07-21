@@ -108,6 +108,13 @@ class StoreTable extends DB_Connection{
 <div ng-controller="myCtrl" ng-app="myApp">
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button></div>
+<div class="input-group input-group-lg add-on">
+          <input type="text" class="form-control search-query" ng-model="query" ng-change="search()" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
+        </div>
+
 <div class="col-md-3">
         <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
         </select>
