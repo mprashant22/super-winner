@@ -33,10 +33,10 @@ class StoreTable extends DB_Connection{
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
 ?>	
-	
+<form id="my_form">
 <div ng-controller="myCtrl" ng-app="myApp">
 
-<form id="my_form">
+
 <!-- <div class="container" ng-app=""> -->
 <!--   <div ng-controller="initApp1"> -->
 <!--     <div class="row"> -->
