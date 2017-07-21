@@ -84,7 +84,7 @@ class StoreTable extends DB_Connection{
       </tfoot>
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-         <td><input type="checkbox" ng-model="item.Selected"> </td>
+         <td ng-repeat="item in Items"><input type="checkbox" ng-model="item.Selected"> </td>
           <td>{{item.id}}</td>
           <td contenteditable="true">{{item.name}}</td>
           <td><select class="sect">
