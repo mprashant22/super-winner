@@ -1,3 +1,15 @@
+initApp.$inject = ['$scope', '$filter'];
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+  $scope.records = [
+    "Store 1",
+    "Store 2",
+    "Store 3",
+    "Store 4",
+  ]
+});
+
+
 var generateData = function(){
  var arr = [];
   var letterWords = ["alpha","bravo","charlie","daniel","earl","fish","grace","henry","ian","jack","karen","mike","delta","alex","larry","bob","zelda"]
@@ -123,15 +135,3 @@ function initApp($scope, $filter) {
 	
 
 };
-
-initApp.$inject = ['$scope', '$filter'];
-var app = angular.module("myApp", []);
-app.controller("myCtrl", function($scope) {
-  $scope.records = [
-    "Store 1",
-    "Store 2",
-    "Store 3",
-    "Store 4",
-  ]
-});
-
