@@ -203,89 +203,89 @@ class StoreTable extends DB_Connection{
 
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
-<table id="store-table" border=1>
-   <tr>
-   	 <th><input type="checkbox" id="master"></th>
-     <th>Handle</th>
-     <th>Title</th>
+<!-- <table id="store-table" border=1> -->
+<!--    <tr> -->
+<!--    	 <th><input type="checkbox" id="master"></th> -->
+<!--      <th>Handle</th> -->
+<!--      <th>Title</th> -->
      <th style="color: #FF0000">Variant1</th>
      <th style="color: #008c33">Variant2</th>
      <th style="color: #4298f4">Variant3</th>
-     <th>Variant~SKU</th>
-     <th>Units</th>
-     <th>Price</th>     
-     <th>Action</th>
-    </tr>
+<!--      <th>Variant~SKU</th> -->
+<!--      <th>Units</th> -->
+<!--      <th>Price</th>      -->
+<!--      <th>Action</th> -->
+<!--     </tr> -->
 		<?php	
-		$ii = 0;
-			 while($result = mysqli_fetch_assoc($res4)) {
+// 		$ii = 0;
+// 			 while($result = mysqli_fetch_assoc($res4)) {
  
-			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
-			 	$res1 = mysqli_query($this->connection,$sql1);
+// 			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
+// 			 	$res1 = mysqli_query($this->connection,$sql1);
 			 	
-			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
-			 	$res2 = mysqli_query($this->connection,$sql2);
+// 			 	$sql2 = "select distinct(`Option2 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option2 Value` ASC";
+// 			 	$res2 = mysqli_query($this->connection,$sql2);
 			 	
-			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
-			 	$res3 = mysqli_query($this->connection,$sql3);
+// 			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
+// 			 	$res3 = mysqli_query($this->connection,$sql3);
 
-				//echo $result['handle'].">";
-    	 ?>
+// 				//echo $result['handle'].">";
+//     	 ?>
   
     <tr class="product_row" id="<?php echo $result['handle']; ?>">
 		<td><input type="checkbox" class="sub_chk <?php echo 'sub_chk'.$ii;?>" data-handle="<?php echo($result['handle']); ?>"></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
-     	<td><span class="title">Title</span></td>
-      	<td>
+<!--      	<td><span class="title">Title</span></td> -->
+<!--       	<td> -->
      	<select id="v1" class="v1" name="variant1" onClick="">
-<!--       		<option>-- Option1 --</option>  -->
+<!-- <!--       		<option>-- Option1 --</option>  --> -->
      		<?php 
- 				while ($query_data1 = mysqli_fetch_assoc($res1)) {
- 					$v1=$query_data1["Option1 Value"];
+//  				while ($query_data1 = mysqli_fetch_assoc($res1)) {
+//  					$v1=$query_data1["Option1 Value"];
 			?>			
 	 		<option value="<?php echo $query_data1["Option1 Value"]; ?>" selected="selected"><?php echo $query_data1["Option1 Value"]; ?></option>		
   			<?php
- 				}
- 			?>
-   		</select>
-  		</td>
-     	<td>
+//  				}
+//  			?>
+<!--    		</select> -->
+<!--   		</td> -->
+<!--      	<td> -->
     	<select class="v2" name="variant2" onClick="">
-<!--       		<option>-- Option2 --</option>  -->
+<!-- <!--       		<option>-- Option2 --</option>  --> -->
      		<?php 
- 				while ($query_data2 = mysqli_fetch_assoc($res2)) {
- 					$v2=$query_data2["Option2 Value"];
+//  				while ($query_data2 = mysqli_fetch_assoc($res2)) {
+//  					$v2=$query_data2["Option2 Value"];
 			?>			
 			<option value="<?php echo $query_data2["Option2 Value"]; ?>" selected="selected"><?php echo $query_data2["Option2 Value"]; ?></option>
   			<?php
- 				}
- 			?>
-   		</select>
-  		</td>
-      	<td>
+//  				}
+//  			?>
+<!--    		</select> -->
+<!--   		</td> -->
+<!--       	<td> -->
      	<select class="v3" name="variant3" onClick="">     	
-<!--       		<option>-- Option3 --</option> -->
+<!-- <!--       		<option>-- Option3 --</option> --> -->
      		<?php 
- 				while ($query_data3 = mysqli_fetch_assoc($res3)) {
- 					$v3=$query_data3["Option3 Value"];
+//  				while ($query_data3 = mysqli_fetch_assoc($res3)) {
+//  					$v3=$query_data3["Option3 Value"];
 			?>			
 			<option value="<?php echo $query_data3["Option3 Value"]; ?>" selected="selected"><?php echo $query_data3["Option3 Value"]; ?></option>			
   			<?php
- 				}
- 			?>
-   		</select> 
-   		</td> 
+//  				}
+//  			?>
+<!--    		</select>  -->
+<!--    		</td>  -->
  		<td class="editable-col" contenteditable="true" col-index='0' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant SKU']); ?>"><span class="sku">0</span></td>
     	<td class="editable-col" contenteditable="true" col-index='1' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Inventory Qty']); ?>"><span class="units">0</span></td>
     	<td class="editable-col" contenteditable="true" col-index='2' data-handle="<?php echo($result['handle']); ?>" data-variant1="<?php echo($result['Option1 Value']); ?>" data-variant2="<?php echo($result['Option2 Value']); ?>" data-variant3="<?php echo($result['Option3 Value']); ?>" oldVal ="<?php echo($result['Variant Price']); ?>"><span class="price">0</span></td>
     	<td><a href='javascript: void(0)' class="glyphicon glyphicon-edit"></a>~<a data-handle="<?php echo($result['handle']); ?>" href='javascript: void(0)' class="remove-row pull-right glyphicon glyphicon-trash"></a></td>
-	</tr>
+<!-- 	</tr> -->
 	<?php $ii++;
- 	}
-	?>
- </table>
- </form>
-</div>
+//  	}
+// 	?>
+<!--  </table> -->
+<!--  </form> -->
+<!-- </div> -->
   
    <?php 
    header('location:http://192.241.146.48/shopifyDemoLamp/app/store_table.php');
