@@ -58,7 +58,7 @@ class StoreTable extends DB_Connection{
     <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="field0"><input type="checkbox"></th>
+          <th class="field0"><input type="checkbox" ng-checked="all"></th>
           <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
           <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
           <th class="description" title="non-sortable">Variant1</th>
@@ -84,7 +84,7 @@ class StoreTable extends DB_Connection{
       </tfoot>
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-         <td><input type="checkbox"> </td>
+         <td><input type="checkbox" ng-checked="all"> </td>
           <td>{{item.id}}</td>
           <td contenteditable="true">{{item.name}}</td>
           <td><select class="sect">
@@ -109,7 +109,7 @@ class StoreTable extends DB_Connection{
 
 
 
-
+<!-- ------------------------ PRASHANT  -->
 
 
 <input type="text" id="search" placeholder="Type to search">
