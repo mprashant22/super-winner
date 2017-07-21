@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 
-<script type="text/javascript" src="script/app.js"></script>
+<script type="text/javascript" src="script/app2.js"></script>
 
 <?php
 echo "store table";
@@ -58,7 +58,7 @@ class StoreTable extends DB_Connection{
     <table class="table table-striped table-bordered table-hover">
       <tbody>
         <tr>
-          <th class="field0"><input type="checkbox" ng-checked="all"></th>
+          <th class="field0"><input type="checkbox" ng-model="selectedAll" ng-click="checkAll()"></th>
           <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
           <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
           <th class="description" title="non-sortable">Variant1</th>
@@ -84,7 +84,7 @@ class StoreTable extends DB_Connection{
       </tfoot>
       <tbody>
         <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-         <td><input type="checkbox" ng-checked="all"> </td>
+         <td><input type="checkbox" ng-model="item.Selected"> </td>
           <td>{{item.id}}</td>
           <td contenteditable="true">{{item.name}}</td>
           <td><select class="sect">
