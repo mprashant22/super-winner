@@ -128,8 +128,18 @@ function initApp($scope, $filter) {
   };
   
   $scope.toggleSelect = function(){alert("alert");
-	  angular.forEach($scope.checkboxes, function(item){
-	   item.selected = event.target.checked;
+  
+  if($scope.selectedAll)
+	  {
+	  $scope.selectedAll=false;
+	  }
+  else
+	  {
+	  $scope.selectedAll=true;
+	  }
+  
+  angular.forEach($scope.Items, function(item){
+	   item.selected = $scope.selectedAll;
 	  });
 	 }
 	
