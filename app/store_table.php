@@ -35,123 +35,29 @@ class StoreTable extends DB_Connection{
 ?>	
 
 
-{{records}}
 <form id="my_form">
-<div ng-controller="myCtrl" ng-app="myApp">
-
-
-<div class="container" ng-app="">
-  <div ng-controller="initApp1">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="input-group input-group-lg add-on">
-          <input type="text" class="form-control search-query" ng-model="query" ng-change="search()" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <h2 class="text-center">Store 1</h2>
-      </div>
-      <div class="col-md-3">
-        <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
-        </select>
-      </div>
-    </div>
-    <table class="table table-striped table-bordered table-hover">
-      <tbody>
-        <tr>
-          <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
-          <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
-          <th class="description" title="non-sortable">Variant1</th>
-          <th class="field3"><span ng-click="sort_by('field3')">Variant2 <i class="fa fa-sort"></i></span></th>
-          <th class="field4"><span ng-click="sort_by('field4')">Variant3 <i class="fa fa-sort"></i></span></th>
-          <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
-          <th align="center" style="text-align:center">Action</th>
-        </tr>
-      </tbody>
-       <tfoot>
-         <tr> 
-           <td colspan="9">{{sizes}} 
-            <div class="text-center"> 
-               <ul class="pagination">  
-                 <li ng-class="{disabled: currentPage == 0}"> <a href="javascript:;" ng-click="prevPage()">« Prev</a> </li>
-                 <li ng-repeat="n in range(pagedItems.length)" ng-class="{active: n == currentPage}" ng-click="setPage()"> <a href="javascript:;" ng-bind="n + 1">1</a> </li>
-                 <li ng-class="{disabled: currentPage == pagedItems.length - 1}"> <a href="javascript:;" ng-click="nextPage()">Next »</a> </li>
-               </ul>
-             </div></td>  
-         </tr>  
-      </tfoot>
-      <tbody>
-        <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sortingOrder:reverse">
-          <td>{{item.id}}</td>
-          <td contenteditable="true">{{item.name}}</td>
-          <td><select class="sect">
-<option ng-repeat="x in records">{{x}}</option>
-</select></td>
-          <td><select class="sect">
-<option ng-repeat="x in records">{{x}}</option>
-</select></td>
-          <td>{{item.field4}}</td>
-          <td>{{item.field5}}</td>
-          <td align="center">
-          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-          <a href="#" class="delet-btn" ng-click="deleteItem($index)"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
 
 <!--  Prashant -->
 
 
-<!-- <div> -->
 
-{{records}}
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
 
 
-<div class="input-group input-group-lg add-on">
-          <input type="text" class="form-control search-query" ng-model="query" ng-change="search()" placeholder="Search">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
-        </div>
-
-<div class="col-md-3">
-        <select class="form-control input-lg pull-right" ng-model="itemsPerPage" ng-change="perPage()" ng-options="('show '+size+' per page') for size in pageSizes">
-        </select>
-      </div>
 <table id="store-table" border=1>
    <tr>
-   	 <th><input type="checkbox" id="master"></th>
+   	 <th><input type="checkbox" id="master"></th>  	 
    	 
-   	 
-   	 <th class="id"><span ng-click="sort_by('id')">Handle <i class="fa fa-sort"></i></span></th>
-     <th class="name"><span ng-click="sort_by('name')">Title <i class="fa fa-sort"></i></span></th>
-     <th class="description" title="non-sortable">Variant1</th>
-     <th class="field3"><span ng-click="sort_by('field3')">Variant2 <i class="fa fa-sort"></i></span></th>
-     <th class="field4"><span ng-click="sort_by('field4')">Variant3 <i class="fa fa-sort"></i></span></th>
-     <th class="field5"><span ng-click="sort_by('field5')">Variant~SKU <i class="fa fa-sort"></i></span></th>
-     <th class="field6"><span ng-click="sort_by('field6')">Units <i class="fa fa-sort"></i></span></th>
-     <th class="field7"><span ng-click="sort_by('field7')">Price <i class="fa fa-sort"></i></span></th>
-     <th align="center" style="text-align:center">Action</th>   	 
-   	 
-   	 
-<!--      <th>Handle</th> -->
-<!--      <th>Title</th> -->
-     <!-- <th style="color: #FF0000">Variant1</th>
+     <th>Handle</th>
+     <th>Title</th>
+     <th style="color: #FF0000">Variant1</th>
      <th style="color: #008c33">Variant2</th>
-     <th style="color: #4298f4">Variant3</th>-->
-<!--      <th>Variant~SKU</th> -->
-<!--      <th>Units</th> -->
-<!--      <th>Price</th>      -->
-<!--      <th>Action</th> -->
+     <th style="color: #4298f4">Variant3</th>
+     <th>Variant~SKU</th>
+     <th>Units</th>
+     <th>Price</th>     
+     <th>Action</th>
     </tr>
 		<?php	
 		$ii = 0;
