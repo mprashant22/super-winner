@@ -96,7 +96,7 @@ class StoreTable extends DB_Connection{
     	 ?>
   
     <tr class="product_row" id="<?php echo $result['handle']; ?>">
-		<td><ul><li ng-repeat="x in <?php echo print_r($result)?>"><input type="checkbox" ng-checked=.selectAll data-handle="<?php echo($result['handle']); ?>"></li></ul></td>
+		<td><ul><li ng-repeat="x in <?php echo print_r($result['handle'])?>"><input type="checkbox" ng-checked=.selectAll data-handle="<?php echo($result['handle']); ?>"></li></ul></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
