@@ -92,11 +92,11 @@ class StoreTable extends DB_Connection{
 			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
 			 	$res3 = mysqli_query($this->connection,$sql3);
 
-				echo "<pre>".print_r($result)."</pre>";
+				//echo "<pre>".print_r($result)."</pre>";
     	 ?>
   
     <tr class="product_row" id="<?php echo $result['handle']; ?>">
-		<td><ul><li><input type="checkbox" ng-model="<?php echo ($result['handle']).selected?>" data-handle="<?php echo($result['handle']); ?>"></li></ul></td>
+		<td><ul><li><input type="checkbox" ng-model=$result['handle'].selected data-handle="<?php echo($result['handle']); ?>"></li></ul></td>
 		<td class="handle"><?php print_r($result['handle']); ?></td>
      	<td><span class="title">Title</span></td>
       	<td>
