@@ -130,11 +130,11 @@ function initApp($scope, $filter) {
   $scope.toggleSelect = function(){alert("alert");
   
   if($scope.selectedAll)
-	  {
+	  {alert("if k andar");
 	  $scope.selectedAll=false;
 	  }
   else
-	  {
+	  {alert("else k andar");
 	  $scope.selectedAll=true;
 	  }
   
