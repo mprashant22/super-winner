@@ -138,7 +138,7 @@ function initApp($scope, $filter) {
 	  $scope.selectedAll=true;
 	  }
   
-  angular.forEach($scope.Items, function(item){
+  angular.forEach($scope.items, function(item){
 	   item.selected = $scope.selectedAll;
 	  });
 	 }
