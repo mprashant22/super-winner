@@ -92,7 +92,7 @@ class StoreTable extends DB_Connection{
 			 	$sql3 = "select distinct(`Option3 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option3 Value` ASC";
 			 	$res3 = mysqli_query($this->connection,$sql3);
 
-				echo $result;
+				echo "<pre>".print_r($result)."</pre>";
     	 ?>
   
     <tr class="product_row" id="<?php echo $result['handle']; ?>">
