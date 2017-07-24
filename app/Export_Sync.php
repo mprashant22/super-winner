@@ -56,9 +56,9 @@ class Export_Sync extends DB_Connection{
 				$data_csv = fgetcsv($handle);
 				echo "DATA_CSV";
 				echo "<pre>".print_r($data_csv)."</pre>";
-				$bulk.= ($data_csv+",");
-				echo "BULK";
-				echo "<pre>".$bulk."</pre>";
+			//	$bulk.= ($data_csv+",");
+				//echo "BULK";
+				//echo "<pre>".$bulk."</pre>";
 			
 				
 				//echo print_r($data_csv);
