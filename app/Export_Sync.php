@@ -86,7 +86,7 @@ $handle="";
  				
  		}
  		
- 		$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($bulk,",").")";
+ 		$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values".rtrim($bulk,",");
  		echo $sql; 
  		mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));		
  		fclose($handle);
