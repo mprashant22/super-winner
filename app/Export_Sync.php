@@ -48,14 +48,18 @@ $handle="";
 		while(!feof($handle))
 		{
 				echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
-				if(feof($handle)=='FALSE')
+				
+				
+				$data_csv = fgetcsv($handle);
+				
+				if(empty($data_csv))
 				{
 					echo 'break';
 					break; 
 				}
+	
 				
-				$data_csv = fgetcsv($handle);
-				//echo "DATA_CSV";
+				echo "DATA_CSV";
 				//echo "<pre>".print_r($data_csv)."</pre>";				
 		
 				for ($i=0;$i<count($data_csv);$i++)
