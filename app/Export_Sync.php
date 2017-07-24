@@ -73,9 +73,13 @@ class Export_Sync extends DB_Connection{
  					//echo "<db>".$db;
  					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
 
-				
+				$temp="(".rtrim($db,",").")";
 				echo "bulk insertions"."<br>";
-				echo "(".rtrim($db,",").")"."<br>";
+				$bulk.=$temp;
+				echo "temp";
+				
+				echo "<pre>".$bulk."</pre><br><br>";
+				
 				$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
  				$db="";
  				echo $sql;
