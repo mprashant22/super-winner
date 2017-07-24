@@ -47,7 +47,7 @@ class Export_Sync extends DB_Connection{
 		while(! feof($handle))
 		{
 				echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
-				if(feof($handle)=='TRUE')
+				if(feof($handle)=='FALSE')
 				{
 					echo 'break';
 					break; 
