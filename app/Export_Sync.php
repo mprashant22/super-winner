@@ -44,7 +44,7 @@ class Export_Sync extends DB_Connection{
 		$colNames=$data_csv;
  				
 		$t=0;
-		while(feof($handle))
+		while(!feof($handle))
 		{
 				echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
 				if(feof($handle)=='FALSE')
