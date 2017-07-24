@@ -76,6 +76,7 @@ class Export_Sync extends DB_Connection{
 				$temp="(".rtrim($db,",").")";
 				echo "bulk insertions"."<br>";
 				$bulk.=$temp;
+				$bulk.=",";
 				echo "temp";
 				
 				echo "<pre style='color:RED'>".$bulk."</pre><br><br>";
