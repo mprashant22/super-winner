@@ -54,24 +54,17 @@ class Export_Sync extends DB_Connection{
 				}
 				
 				$data_csv = fgetcsv($handle);
-				echo "DATA_CSV";
-				echo "<pre>".print_r($data_csv)."</pre>";
-			//	$bulk.= ($data_csv+",");
-				//echo "BULK";
-				//echo "<pre>".$bulk."</pre>";
-			
-				
-				//echo print_r($data_csv);
+				//echo "DATA_CSV";
+				//echo "<pre>".print_r($data_csv)."</pre>";				
+		
 				for ($i=0;$i<count($data_csv);$i++)
-				{
-					
+				{					
  					echo "inside LOOOOOOP";
 					$data1=mysqli_escape_string($this->connection, $data_csv[$i]);
 					echo '[data1>>'.$data1;
 					$db.="'".$data1."',";
 				}
- 					//echo "<db>".$db;
- 					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
+ 		
 
 				$temp="(".rtrim($db,",").")";
 				echo "bulk insertions"."<br>";
