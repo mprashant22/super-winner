@@ -54,6 +54,7 @@ class Export_Sync extends DB_Connection{
 				}
 				
 				$data_csv = fgetcsv($handle);
+				echo "DATA_CSV";
 				echo "<pre>".print_r($data_csv)."</pre>";
 				$values_csv=[];
 				$values_csv=$data_csv;
