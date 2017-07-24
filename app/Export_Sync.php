@@ -75,7 +75,7 @@ $handle="";
 				//echo "bulk insertions"."<br>";
 				$bulk.=$temp;
 				$bulk.=",";
-				//echo "temp";
+				echo "temp".$temp;
 				
 				echo "<pre style='color:RED'>".$bulk."</pre><br><br>";
 				
