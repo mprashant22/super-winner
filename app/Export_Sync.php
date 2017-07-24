@@ -37,7 +37,7 @@ class Export_Sync extends DB_Connection{
 
 		$handle = fopen($filename, "r");
 		print_r($handle);
-		echo "count?".count($handle);
+		//echo "count?".count($handle);
  				
 		$data_csv = fgetcsv($handle);
 		print_r($data_csv);
@@ -67,16 +67,16 @@ class Export_Sync extends DB_Connection{
  		
 
 				$temp="(".rtrim($db,",").")";
-				echo "bulk insertions"."<br>";
+				//echo "bulk insertions"."<br>";
 				$bulk.=$temp;
 				$bulk.=",";
-				echo "temp";
+				//echo "temp";
 				
 				echo "<pre style='color:RED'>".$bulk."</pre><br><br>";
 				
 				$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
  				$db="";
- 				echo $sql;
+ 				//echo $sql;
  				
  				mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
  		}
