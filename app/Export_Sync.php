@@ -50,7 +50,7 @@ class Export_Sync extends DB_Connection{
 				if(feof($handle)=='TRUE')
 				{
 					echo 'break';
-					break;
+					break; 
 				}
 				
 				$data_csv = fgetcsv($handle);
