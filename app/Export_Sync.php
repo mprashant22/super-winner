@@ -36,13 +36,13 @@ class Export_Sync extends DB_Connection{
  		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
 $handle="";
 		$handle = fopen($filename, "r");
-		echo "mmmm".$handle;
+		//echo "mmmm".$handle;
 		print_r($handle);
 		//echo "count?".count($handle);
  				
 		$data_csv = fgetcsv($handle);
-		print_r($data_csv);
-		$colNames=$data_csv;
+		//print_r($data_csv);
+		//$colNames=$data_csv;
  				
 		$t=0;
 		while(!feof($handle))
