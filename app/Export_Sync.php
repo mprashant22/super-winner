@@ -57,7 +57,10 @@ class Export_Sync extends DB_Connection{
  					
 				$values_csv=[];
 				$values_csv=$data_csv;
- 					
+				echo "CSV_VALUES";
+				echo "<pre>".$values_csv."</pre>";
+ 	 				
+				
 				//echo print_r($data_csv);
 				for ($i=0;$i<count($data_csv);$i++)
 				{
@@ -70,6 +73,7 @@ class Export_Sync extends DB_Connection{
  					//echo "<db>".$db;
  					//$sql = "INSERT into `".$shp[0]."`(Handle,Title,Body_HTML,Vendor) values(".rtrim($db,",").")";
 
+				
 				echo "bulk insertions";
 				echo "<pre>".rtrim($db,",")."</pre>";
 				$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
