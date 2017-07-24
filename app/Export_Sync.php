@@ -36,6 +36,7 @@ class Export_Sync extends DB_Connection{
  		$filename = "/var/www/html/shopifyDemoLamp/uploads/".basename($_FILES["fileToUpload"]["name"]);
 $handle="";
 		$handle = fopen($filename, "r");
+		echo $handle;
 		print_r($handle);
 		//echo "count?".count($handle);
  				
