@@ -59,7 +59,7 @@ class Export_Sync extends DB_Connection{
 				$values_csv=$data_csv;
 				echo "CSV_VALUES";
 				echo "<pre>".print_r($values_csv)."</pre>";
- 	 				im
+ 	 				
 				
 				//echo print_r($data_csv);
 				for ($i=0;$i<count($data_csv);$i++)
