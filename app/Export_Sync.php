@@ -47,7 +47,7 @@ $handle="";
 		$t=0;
 		while(!feof($handle))
 		{
-				echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
+				//echo "<pre style='color:BLUE'><h4>".++$t."</h4></pre>";
 				
 				
 				$data_csv = fgetcsv($handle);
@@ -59,7 +59,7 @@ $handle="";
 				}
 	
 				
-				echo "DATA_CSV";
+				//echo "DATA_CSV";
 				//echo "<pre>".print_r($data_csv)."</pre>";				
 		
 				for ($i=0;$i<count($data_csv);$i++)
@@ -75,9 +75,9 @@ $handle="";
 				//echo "bulk insertions"."<br>";
 				$bulk.=$temp;
 				$bulk.=",";
-				echo "temp".$temp;
+		//		echo "temp".$temp;
 				
-				echo "<pre style='color:RED'>".$bulk."</pre><br><br>";
+			//	echo "<pre style='color:RED'>".$bulk."</pre><br><br>";
 				
 //				$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values(".rtrim($db,",").")";
  				$db="";
@@ -87,7 +87,7 @@ $handle="";
  		}
  		
  		$sql = "INSERT into `".$shp[0]."`(Handle, Title, `Option1 Name`,`Option1 Value`, `Option2 Name`, `Option2 Value`, `Option3 Name`, `Option3 Value`, `Variant SKU`, `Variant Inventory Qty`, `Variant Price`) values".rtrim($bulk,",");
- 		//echo $sql; 
+ 		echo $sql; 
  		mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));		
  		fclose($handle);
  		echo "Successfully Imported";
