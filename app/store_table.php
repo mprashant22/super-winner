@@ -32,15 +32,13 @@ class StoreTable extends DB_Connection{
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
-		echo "<pre>".print_r(mysqli_fetch_assoc($res4))."</pre>";
+		echo print_r(mysqli_fetch_assoc($res4));
 ?>	
 
 
 <form id="my_form">
 
 <!--  Prashant -->
-
-
 
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
