@@ -32,7 +32,7 @@ class StoreTable extends DB_Connection{
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
-		echo "<pre>".print_r($res4)."</pre>";
+		//echo "<pre>".print_r($res4)."</pre>";
 ?>	
 
 
