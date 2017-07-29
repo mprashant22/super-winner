@@ -55,14 +55,14 @@ class StoreTable extends DB_Connection{
      <th style="color: #4298f4">Variant3</th>
      <th>Variant~SKU</th>
      <th>Units</th>
-     <th>Price</th>     
+     <th>Price</th>
      <th>Action</th>
     </tr>
 		<?php	
 		$ii = 0;
 		
 			 while($result = mysqli_fetch_assoc($res4)) {
-			 	echo "<pre style='color:RED'>".$ii."</pre>";
+			 	//echo "<pre style='color:RED'>".$ii."</pre>";
  
 			 	$sql1 = "select distinct(`Option1 Value`) from "."`".$shp[0]."` where handle like '".$result['handle']."' order by `Option1 Value` ASC";
 			 	$res1 = mysqli_query($this->connection,$sql1);
