@@ -1,5 +1,5 @@
 <?php
-$mycustom = $shopify('GET /admin/themes/143487233/assets.json?asset[key]=layout/theme.liquid&theme_id=145783113');
+$mycustom = $shopify('GET /admin/themes/143487233/assets.json?asset[key]=layout/theme.liquid&theme_id=143487233');
 $me = $mycustom['value'];
 
 ?>
@@ -11,5 +11,3 @@ $me = $mycustom['value'];
 	//console.log(new_theme);	
 })
 	</script>
-
-<?php //////// code /////////?>
