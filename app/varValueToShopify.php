@@ -4,7 +4,7 @@ $mycustom = $shopify('GET /admin/themes/143487233/assets.json?asset[key]=layout/
 $me = $mycustom['value'];
 
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
 <script>	
 	$(document).ready(function(){	
 	var current_theme =  "<?php echo $me; ?>"; //possibly from the get asset var. 
