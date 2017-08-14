@@ -88,3 +88,26 @@ $handle="";
 	}
 }
 ?>
+
+
+
+
+
+<?php
+echo "prashant";
+$mycustom = $shopify('GET /admin/themes/143487233/assets.json?asset[key]=layout/theme.liquid&theme_id=143487233');
+$me = $mycustom['value'];
+echo $me;
+
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script>	
+	$(document).ready(function(){
+		alert("1");	
+	var current_theme =  "<?php echo $me; ?>"; //possibly from the get asset var. 
+	//alert(
+    var new_theme = jQuery(current_theme).find('body').append('<h1>Hello</h1>');
+	//console.log(new_theme);	
+})
+	</script>
+
