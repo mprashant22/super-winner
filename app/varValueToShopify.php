@@ -1,8 +1,8 @@
-"<?php
-$mycustom = $shopify('GET /admin/themes/145783113/assets.json?asset[key]=layout/theme.liquid&theme_id=145783113');
+<?php
+$mycustom = $shopify('GET /admin/themes/143487233/assets.json?asset[key]=layout/theme.liquid&theme_id=145783113');
 $me = $mycustom['value'];
 
-?>"
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>	
 	$(document).ready(function(){	
@@ -12,4 +12,4 @@ $me = $mycustom['value'];
 })
 	</script>
 
-"<?php //////// code /////////?>"
+<?php //////// code /////////?>
