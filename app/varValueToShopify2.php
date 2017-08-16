@@ -6,9 +6,21 @@ $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = '8a3adfd53008fe06c9e70d8ce10ca43d';
 $store_url = 'newtest-18.myshopify.com';
 $theme_id = '143487233';
+
+function getAuthUrl($shop)
+{
+	//echo 'inside getAuth';
+	$scopes = ["read_products", "read_orders","write_orders","write_products"];
+	return 'https://' . $shop . '/admin/oauth/authorize?'
+			. 'scope=' . implode("%2C", $scopes)
+			. '&client_id=' . SHOPIFY_API_KEY
+			. '&redirect_uri=' . CALLBACK_URL;
+}  
+
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
+		getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
