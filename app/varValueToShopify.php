@@ -124,31 +124,3 @@ echo '<pre>';
 print_r($updated_assets);
 echo '</pre>';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// define('SHOPIFY_API_KEY', '731148aba4b8f20f0d72c25e0a884f8b');
-// define('SHOPIFY_SECRET', 'd2e065e22c0a2436c47ef27d7996a99f');
-// define('SHOPIFY_SHOP', 'newtest-18.myshopify.com');
-
-
-// $sc = new ShopifyClient(SHOPIFY_SHOP, 'XXXX', SHOPIFY_API_KEY, SHOPIFY_SECRET);
-
-// 	$put = $sc->call('PUT', '/admin/themes/143487233/assets.json',$stock);
-// 	if ($put > 0) {
-// 		echo $stockVal . ': success';
-// 	} else {
-// 		echo 'fail';
-// 	}
