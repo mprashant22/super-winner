@@ -56,7 +56,7 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=assets/last_sync.html&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=assets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		//echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
