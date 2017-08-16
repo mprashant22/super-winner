@@ -11,8 +11,9 @@ $theme_id = '143487233';
 	{	
 		$shp=explode('.', $shop);
 		$shop=$shp[0];
-		//echo 'inside getAuth';
+		echo 'inside getAuth'.$shop;
 		$scopes = ["read_products", "read_orders","write_orders","write_products"];
+		
 		return 'https://' . $shop . '/admin/oauth/authorize?'
 				. 'scope=' . implode("%2C", $scopes)
 				. '&client_id=' . SHOPIFY_API_KEY
