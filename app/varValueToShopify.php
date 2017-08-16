@@ -33,20 +33,6 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
  	$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
  	echo "after put_Data".$response;
 
-function get_file($url){
-	echo("inside get");
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, $url);
-	curl_setopt($ch, CURLOPT_VERBOSE, 1);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_AUTOREFERER, false);
-	curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-	curl_setopt($ch, CURLOPT_HEADER, 0);
-	$result = curl_exec($ch);
-	curl_close($ch);
-	return($result);
-}
-
 function write_file($text, $new_filename){
 	echo "inside write";
 	$fp = fopen($new_filename, 'w+');
@@ -58,8 +44,7 @@ $new_last_updated_at = 0;
 $updated_assets = [];
 
 foreach ($assets->assets as $key => $asset)
-{
-	
+{	
 	$updated_at = $asset->updated_at;
 	if ($updated_at > $last_sync)
 	{
