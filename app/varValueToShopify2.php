@@ -9,6 +9,7 @@ $theme_id = '143487233';
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
+		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		$url =  $url.$request;
 		$session = curl_init();
@@ -26,6 +27,7 @@ $theme_id = '143487233';
 	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	{
+		echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		$url =  $url.$request;
 		$session = curl_init();
@@ -44,12 +46,14 @@ $theme_id = '143487233';
 	// returns the timestamp of the last sync
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
+		echo "get_Last_Sync";
 		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=assets/last_sync.html&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		return $response->asset->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
+		echo "updateLAstSync";
 		$data['asset']['key'] = 'assets/last_sync.html';
 		$data['asset']['value'] = $last_sync;
 		$data = json_encode($data);
@@ -58,6 +62,7 @@ $theme_id = '143487233';
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
+    	echo "getFile";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -71,6 +76,7 @@ $theme_id = '143487233';
     }
     // using a temp file we created using get_file, write the file to the local file structure
     function write_file($text, $new_filename){
+    	echo "write_file";
         $fp = fopen($new_filename, 'w+');
         fwrite($fp, $text);
         fclose($fp);
