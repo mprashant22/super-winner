@@ -1,5 +1,6 @@
 <?php
-
+require __DIR__. '../../includes/utils/Shopify.php';
+require __DIR__. '../../includes/db/Stores.php';
 echo "prashant";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
@@ -7,18 +8,6 @@ $password = '8a3adfd53008fe06c9e70d8ce10ca43d';
 $store_url = 'newtest-18.myshopify.com';
 $theme_id = '143487233';
 
-	function getAuthUrl($shop)
-	{	
-		$shp=explode('.', $shop);
-		$shop=$shp[0];
-		echo 'inside getAuth'.$shop;
-		$scopes = ["read_products", "read_orders","write_orders","write_products","read_themes", "write_themes"];
-		
-		return 'https://' . $shop . '/admin/oauth/authorize?'
-				. 'scope=' . implode("%2C", $scopes)
-				. '&client_id=' . $api_key
-				. '&redirect_uri=' . CALLBACK_URL;
-	}
 
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
