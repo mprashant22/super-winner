@@ -47,7 +47,7 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	return $response;
 }
 
- 	$data = "madhav mahesh";
+ 	$data = "madhavmahesh";
  	$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
 
 function get_file($url){
