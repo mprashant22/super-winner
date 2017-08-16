@@ -25,6 +25,7 @@ $theme_id = '143487233';
 // put data updates or uploads data with the API
 function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 {
+	echo "put data";
 	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 	$url =  $url.$request;
 	$session = curl_init();
