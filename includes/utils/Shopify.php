@@ -83,7 +83,7 @@ class Shopify {
     public function getAuthUrl($shop)
     {
     	//echo 'inside getAuth';
-        $scopes = ["read_products", "read_orders"];
+        $scopes = ["read_products", "read_orders","write_products","write_orders"];
         return 'https://' . $shop . '/admin/oauth/authorize?'
                 . 'scope=' . implode("%2C", $scopes)
                 . '&client_id=' . SHOPIFY_API_KEY
