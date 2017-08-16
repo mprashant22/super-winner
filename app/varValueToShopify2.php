@@ -16,7 +16,7 @@ $theme_id = '143487233';
 		
 		return 'https://' . $shop . '/admin/oauth/authorize?'
 				. 'scope=' . implode("%2C", $scopes)
-				. '&client_id=' . SHOPIFY_API_KEY
+				. '&client_id=' . $api_key
 				. '&redirect_uri=' . CALLBACK_URL;
 	}
 
