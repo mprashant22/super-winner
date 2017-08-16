@@ -47,7 +47,9 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 }
 
  	$data = "madhavmahesh";
+ 	echo $data;
  	$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
+ 	echo "after put_Data".$response;
 
 function get_file($url){
 	echo("inside get");
