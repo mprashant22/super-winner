@@ -27,6 +27,7 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 {
 	echo "put data";
 	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+	echo $url;
 	$url =  $url.$request;
 	$session = curl_init();
 	curl_setopt($session, CURLOPT_URL, $url);
