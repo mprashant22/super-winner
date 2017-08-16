@@ -5,24 +5,7 @@ $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = 'd2e065e22c0a2436c47ef27d7996a99f';
 $store_url = 'newtest-18.myshopify.com';
 $theme_id = '143487233';
-// get_data retrives data with the API
-// function get_data($request, $api_key, $password, $store_url, $theme_id)
-// {
-// 	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-// 	$url =  $url.$request;
-// 	$session = curl_init();
-// 	curl_setopt($session, CURLOPT_URL, $url);
-// 	curl_setopt($session, CURLOPT_HTTPGET, 1);
-// 	curl_setopt($session, CURLOPT_HEADER, false);
-// 	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
-// 	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-// 	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
-// 	$response = curl_exec($session);
-// 	curl_close($session);
-// 	$response = json_decode($response);
-// 	return $response;
-// }
-// put data updates or uploads data with the API
+
 function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 {
 	echo "put data";
