@@ -40,22 +40,10 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	$response = json_decode($response);
 	return $response;
 }
-// returns the timestamp of the last sync
-// function get_last_sync($api_key, $password, $store_url, $theme_id)
-// {
-// 	$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=assets/last_sync.html&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-// 	return $response->asset->value;
-// }
-// writes new timestamp to the last sync file (on shopify)
-// function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
-// {
-// 	$data['asset']['key'] = 'assets/last_sync.html';
-// 	$data['asset']['value'] = $last_sync;
- 	//$data = json_encode($data);
+
  	$data = "madhav mahesh";
  	$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
-// }
-// download a file from the shopify server. this only works for images!
+
 function get_file($url){
 	echo("inside get");
 	$ch = curl_init();
@@ -69,25 +57,22 @@ function get_file($url){
 	curl_close($ch);
 	return($result);
 }
-// using a temp file we created using get_file, write the file to the local file structure
+
 function write_file($text, $new_filename){
 	echo "inside write";
 	$fp = fopen($new_filename, 'w+');
 	fwrite($fp, $text);
 	fclose($fp);
 }
-// get the timestamp of the last sync so we can compare with the files being pulled
- $last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
-//override for testing:
-//$last_sync = '2016-09-21T09:25:26-05:00';
+
+ 
 $new_last_updated_at = 0;
-// run a query to pull each asset in the theme
-//$assets = get_data('/admin/themes/'.$theme_id.'/assets.json', $api_key, $password, $store_url, $theme_id);
+
 $updated_assets = [];
-// iterate through the assets
+
 foreach ($assets->assets as $key => $asset)
 {
-	// check to see if the updated date on shopify is greater than the last sync date
+	
 	$updated_at = $asset->updated_at;
 	if ($updated_at > $last_sync)
 	{
@@ -98,27 +83,24 @@ foreach ($assets->assets as $key => $asset)
 		$file_name = $asset->key;
 		echo "filename>>>>>>>>>>>>>>>".$file_name;
 		
-		// is this an image asset or a template/snippet/config/layout file (the latter file types do not have public urls!)
+		
 		if ($asset->public_url!==null)
 		{
-			// yes, this is an image, download it and save it
-			//$temp_file_contents = get_file($asset->public_url);
+		
 			$temp_file_contents = "prashant mathur";
 			write_file($temp_file_contents,$file_name);
 		}
 		else
 		{
-			// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
+			
 			$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]='.$file_name.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 			file_put_contents($file_name, $response->asset->value);
 		}
-		// save the asset data we just retrieved to report on it below
+		
 		$updated_assets[] = $asset;
 	}
 }
-// finally, update the timestamp with the newest timestamp retrieved in the assets array
-// update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
-// deets
+
 echo '<h3>The following files were updated:</h3>';
 echo '<pre>';
 print_r($updated_assets);
