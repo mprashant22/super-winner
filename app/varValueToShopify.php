@@ -39,11 +39,10 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	curl_setopt($session, CURLOPT_POSTFIELDS,$data);
 	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
-	$response = curl_exec($session);
+	$response = json_decode(curl_exec($session));
 	echo "<<<<>>>>".$response;
 	curl_close($session);
-	$response = json_decode($response);
-	echo ">>>>>><<<<<<".$response;
+	
 	return $response;
 }
 
