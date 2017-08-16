@@ -3,7 +3,7 @@
 echo "prashant";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = 'd2e065e22c0a2436c47ef27d7996a99f';
+$password = '8a3adfd53008fe06c9e70d8ce10ca43d';
 $store_url = 'newtest-18.myshopify.com';
 $theme_id = '143487233';
 	// get_data retrives data with the API
