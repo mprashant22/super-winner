@@ -64,7 +64,7 @@ $theme_id = '143487233';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		echo "`";
-		$data['asset']['key'] = 'assets/last_sync.html';
+		$data['asset']['key'] = 'assets/last_sync.liquid';
 		$data['asset']['value'] = $last_sync;
 		$data = json_encode($data);
 		$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
