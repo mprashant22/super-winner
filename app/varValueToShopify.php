@@ -94,11 +94,14 @@ foreach ($assets->assets as $key => $asset)
 			$new_last_updated_at = $updated_at;
 		}
 		$file_name = $asset->key;
+		echo "filename>>>>>>>>>>>>>>>".$file_name;
+		
 		// is this an image asset or a template/snippet/config/layout file (the latter file types do not have public urls!)
 		if ($asset->public_url!==null)
 		{
 			// yes, this is an image, download it and save it
-			$temp_file_contents = get_file($asset->public_url);
+			//$temp_file_contents = get_file($asset->public_url);
+			$temp_file_contents = "prashant mathur";
 			write_file($temp_file_contents,$file_name);
 		}
 		else
