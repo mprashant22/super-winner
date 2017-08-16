@@ -31,6 +31,7 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	$url =  $url.$request;
 	echo $url;
 	$session = curl_init();
+	echo "session>>>>".$session;
 	curl_setopt($session, CURLOPT_URL, $url);
 	curl_setopt($session, CURLOPT_HEADER, false);
 	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
