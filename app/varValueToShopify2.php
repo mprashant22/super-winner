@@ -11,6 +11,7 @@ $theme_id = '143487233';
 	{
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+		echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
