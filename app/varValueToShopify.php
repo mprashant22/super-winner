@@ -57,6 +57,7 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 // }
 // download a file from the shopify server. this only works for images!
 function get_file($url){
+	echo("inside get");
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $url);
 	curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -70,12 +71,13 @@ function get_file($url){
 }
 // using a temp file we created using get_file, write the file to the local file structure
 function write_file($text, $new_filename){
+	echo "inside write";
 	$fp = fopen($new_filename, 'w+');
 	fwrite($fp, $text);
 	fclose($fp);
 }
 // get the timestamp of the last sync so we can compare with the files being pulled
-// $last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
+ $last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
 //override for testing:
 //$last_sync = '2016-09-21T09:25:26-05:00';
 $new_last_updated_at = 0;
