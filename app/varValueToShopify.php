@@ -24,14 +24,13 @@ function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
 	$response = json_decode(curl_exec($session));
 	echo "<<<<>>>>".$response;
-	curl_close($session);
-	
+	curl_close($session);	
 	return $response;
 }
 
  	$data = "madhavmahesh";
  	echo $data;
- 	$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
+ 	//$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
  	echo "after put_Data".$response;
 
 function get_file($url){
@@ -55,9 +54,7 @@ function write_file($text, $new_filename){
 	fclose($fp);
 }
 
- 
 $new_last_updated_at = 0;
-
 $updated_assets = [];
 
 foreach ($assets->assets as $key => $asset)
