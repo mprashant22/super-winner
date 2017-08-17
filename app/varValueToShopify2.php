@@ -10,9 +10,9 @@
 
 if(isset($_POST['submit']))
 {
-	echo $_POST['snippetText']."  ";
+	$text=$_POST['snippetText'];
 }
-//echo "prashant";
+echo $text."MATHUR";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = '8a3adfd53008fe06c9e70d8ce10ca43d';
@@ -90,7 +90,7 @@ $theme_id = '143487233';
 		//print_r($data);
 		$data = json_encode($data);
 		//print_r($data);
-		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]='.$_POST['snippetText'], $data, $api_key, $password, $store_url, $theme_id);
+		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]='.$text.'', $data, $api_key, $password, $store_url, $theme_id);
 		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
