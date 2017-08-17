@@ -73,7 +73,7 @@ $theme_id = '143487233';
 	{
 		echo "`";
 		$data['asset']['key'] = 'snippets/last_sync.liquid';
-		$data['asset']['value'] = $last_sync;
+		$data['asset']['value'] = 'something';
 		print_r($data);
 		$data = json_encode($data);
 		print_r($data);
