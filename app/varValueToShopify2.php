@@ -1,5 +1,5 @@
 <form action='' method='post' enctype="multipart/form-data">
-<input type="text" id="browse" name="fileToUpload" style="display: none" onChange="Handlechange();"/>
+<input type="text" id="browse" name="fileToUpload" onChange="Handlechange();"/>
 <input type="submit" name="submit" value="Copy Value to Shopify Store Liquid">
 </form>
 
