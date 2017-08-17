@@ -131,7 +131,7 @@ $theme_id = '143487233';
 			else
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]='.$file_name.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 				file_put_contents($file_name, $response->asset->value);		    	
 			}
 			// save the asset data we just retrieved to report on it below
