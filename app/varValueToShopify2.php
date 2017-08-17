@@ -144,8 +144,8 @@ $theme_id = '143487233';
 	// finally, update the timestamp with the newest timestamp retrieved in the assets array
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
 	// deets
-	echo '<h3>The following files were updated:</h3>';
-	echo '<pre>';
-	print_r($updated_assets);
-	echo '</pre>';
+	//echo '<h3>The following files were updated:</h3>';
+	//echo '<pre>';
+	//print_r($updated_assets);
+	//echo '</pre>';
 ?>
