@@ -1,3 +1,19 @@
+<form action='' method='post' enctype="multipart/form-data">
+<input type="text" id="browse" name="fileToUpload" style="display: none" onChange="Handlechange();"/>
+<input type="submit" name="submit" value="Copy Value to Shopify Store Liquid">
+</form>
+
+<script>
+
+function Handlechange()
+{
+	alert("Hello");
+    var fileinput = document.getElementById("browse");
+    var textinput = document.getElementById("filename");
+    textinput.value = fileinput.value;
+}
+</script>
+
 <?php
 //echo "prashant";
 // Update these variables with the correct values from a new *Private* app in Shopify
