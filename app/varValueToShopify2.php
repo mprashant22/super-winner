@@ -64,7 +64,7 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		//echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
@@ -72,12 +72,12 @@ $theme_id = '143487233';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		echo "`";
-		$data['asset']['key'] = 'snippets/new_file.liquid';
-		$data['asset']['value'] = $last_sync;
+		$data['asset']['key'] = 'snippets/new_file1.liquid';
+		$data['asset']['value'] = "something";
 		print_r($data);
 		$data = json_encode($data);
 		print_r($data);
-		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file.liquid&theme_id='.$theme_id, $data, $api_key, $password, $store_url, $theme_id);
+		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id, $data, $api_key, $password, $store_url, $theme_id);
 		//echo $response;
 	}
 	// download a file from the shopify server. this only works for images!
@@ -107,7 +107,7 @@ $theme_id = '143487233';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
