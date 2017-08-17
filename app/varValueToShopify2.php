@@ -1,5 +1,5 @@
 <?php
-echo "prashant";
+//echo "prashant";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = '8a3adfd53008fe06c9e70d8ce10ca43d';
@@ -21,9 +21,9 @@ $theme_id = '143487233';
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
 		getAuthUrl($store_url);
-		echo "getData";
+		//echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		//echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
@@ -41,11 +41,11 @@ $theme_id = '143487233';
 	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "putData";
+		//echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		//echo $url;
 		$url =  $url.$request;
-		echo $url;
+		//echo $url;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
 		curl_setopt($session, CURLOPT_HEADER, false);
