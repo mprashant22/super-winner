@@ -76,7 +76,7 @@ $theme_id = '143487233';
 		$data['asset']['value'] = $last_sync;
 		$data = json_encode($data);
 		$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
-		echo $response;
+		//echo $response;
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
