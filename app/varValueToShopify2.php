@@ -107,7 +107,7 @@ $theme_id = '143487233';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json', $api_key, $password, $store_url, $theme_id);
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/last_sync.liquid', $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
@@ -131,7 +131,7 @@ $theme_id = '143487233';
 			else
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]='.$file_name.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 				file_put_contents($file_name, $response->asset->value);		    	
 			}
 			// save the asset data we just retrieved to report on it below
