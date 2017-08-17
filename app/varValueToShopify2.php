@@ -1,6 +1,6 @@
 <form action='' method='post' enctype="multipart/form-data">
-<input type="text" id="browse" name="snippetText" onChange="onClickCopy();"/>
-<input type="submit" name="submit" value="Copy Value to Shopify Store Liquid">
+<input type="text" id="browse" name="snippetText"/>
+<input type="submit" name="submit">
 </form>
 
 
@@ -89,6 +89,7 @@ $theme_id = '143487233';
 		//print_r($data);
 		if(isset($_POST['submit']))
 		{
+			echo "response";
 			$text=$_POST['snippetText'];		
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
