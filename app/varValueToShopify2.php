@@ -90,7 +90,7 @@ $theme_id = '143487233';
 		//print_r($data);
 		$data = json_encode($data);
 		//print_r($data);
-		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]='.$text.'', $data, $api_key, $password, $store_url, $theme_id);
+		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
