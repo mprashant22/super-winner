@@ -74,6 +74,7 @@ $theme_id = '143487233';
 		echo "`";
 		$data['asset']['key'] = 'assets/last_sync.html';
 		$data['asset']['value'] = $last_sync;
+		print_r($data);
 		$data = json_encode($data);
 		$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
 		//echo $response;
