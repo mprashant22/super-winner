@@ -1,20 +1,17 @@
 <form action='' method='post' enctype="multipart/form-data">
-<input type="text" id="browse" name="fileToUpload" onChange="Handlechange();"/>
+<input type="text" id="browse" name="snippetText" onChange="onClickCopy();"/>
 <input type="submit" name="submit" value="Copy Value to Shopify Store Liquid">
 </form>
 
-<script>
 
-function Handlechange()
-{
-	alert("Hello");
-    var fileinput = document.getElementById("browse");
-    var textinput = document.getElementById("filename");
-    textinput.value = fileinput.value;
-}
-</script>
+
 
 <?php
+
+if(isset($_POST['submit']))
+{
+	echo $_POST['snippetText'];
+}
 //echo "prashant";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
