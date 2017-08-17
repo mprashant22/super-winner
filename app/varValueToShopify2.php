@@ -63,7 +63,7 @@ $theme_id = '143487233';
 	// returns the timestamp of the last sync
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
-		echo "get_Last_Sync";
+		//echo "get_Last_Sync";
 		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		//echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
@@ -71,14 +71,14 @@ $theme_id = '143487233';
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "`";
+		//echo "`";
 		$data['asset']['key'] = 'snippets/new_file1.liquid';
 		$data['asset']['value'] = "something";
 		//print_r($data);
 		$data = json_encode($data);
 		//print_r($data);
 		$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id.'&asset[value]=something', $data, $api_key, $password, $store_url, $theme_id);
-		print_r($response);
+		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
@@ -125,7 +125,7 @@ $theme_id = '143487233';
 			// is this an image asset or a template/snippet/config/layout file (the latter file types do not have public urls!)
 			if ($asset->public_url!==null)
 			{
-				echo "hello";
+				//echo "hello";
 				// yes, this is an image, download it and save it
 			    $temp_file_contents = get_file($asset->public_url);
 			    write_file($temp_file_contents,$file_name);
@@ -134,7 +134,7 @@ $theme_id = '143487233';
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
 				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid'.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-				print_r($response);
+				//print_r($response);
 				file_put_contents($file_name, $response->asset->value);		    	
 			}
 			// save the asset data we just retrieved to report on it below
