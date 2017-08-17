@@ -64,7 +64,7 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=assets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		//echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
@@ -72,11 +72,11 @@ $theme_id = '143487233';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		echo "`";
-		$data['asset']['key'] = 'assets/last_sync.liquid';
+		$data['asset']['key'] = 'snippets/last_sync.liquid';
 		$data['asset']['value'] = $last_sync;
-		print_r($data);
+		//print_r($data);
 		$data = json_encode($data);
-		print_r($data);
+		//print_r($data);
 		$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
 		//echo $response;
 	}
