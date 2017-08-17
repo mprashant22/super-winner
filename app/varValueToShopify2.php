@@ -64,20 +64,20 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/snippets.json?snippet[key]=snippets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/last_sync.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		//echo "Last SYYYYYYNC".$response;
-		return $response->snippet->value;
+		return $response->asset->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		echo "`";
-		$data['snippet']['key'] = 'snippets/last_sync.liquid';
-		$data['snippet']['value'] = $last_sync;
+		$data['asset']['key'] = 'snippets/last_sync.liquid';
+		$data['asset']['value'] = $last_sync;
 		print_r($data);
 		$data = json_encode($data);
 		print_r($data);
-		$response = put_data('/admin/themes/'.$theme_id.'/snippets.json', $data, $api_key, $password, $store_url, $theme_id);
+		$response = put_data('/admin/themes/'.$theme_id.'/assets.json', $data, $api_key, $password, $store_url, $theme_id);
 		//echo $response;
 	}
 	// download a file from the shopify server. this only works for images!
@@ -106,43 +106,43 @@ $theme_id = '143487233';
 	//override for testing:
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
-	// run a query to pull each snippet in the theme
-	$snippets = get_data('/admin/themes/'.$theme_id.'/snippets.json', $api_key, $password, $store_url, $theme_id);
-	$updated_snippets = [];
-	// iterate through the snippets
-	foreach ($snippets->snippets as $key => $snippet)
+	// run a query to pull each asset in the theme
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json', $api_key, $password, $store_url, $theme_id);
+	$updated_assets = [];
+	// iterate through the assets
+	foreach ($assets->assets as $key => $asset)
 	{
 		// check to see if the updated date on shopify is greater than the last sync date
-		$updated_at = $snippet->updated_at;
+		$updated_at = $asset->updated_at;
 		if ($updated_at > $last_sync)
 		{
 			if ($updated_at > $new_last_updated_at)
 			{
 				$new_last_updated_at = $updated_at;
 			}
-			$file_name = $snippet->key;
-			// is this an image snippet or a template/snippet/config/layout file (the latter file types do not have public urls!)
-			if ($snippet->public_url!==null)
+			$file_name = $asset->key;
+			// is this an image asset or a template/snippet/config/layout file (the latter file types do not have public urls!)
+			if ($asset->public_url!==null)
 			{
 				// yes, this is an image, download it and save it
-			    $temp_file_contents = get_file($snippet->public_url);
+			    $temp_file_contents = get_file($asset->public_url);
 			    write_file($temp_file_contents,$file_name);
 			}
 			else
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/themes/'.$theme_id.'/snippets.json?snippet[key]='.$file_name.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-				file_put_contents($file_name, $response->snippet->value);		    	
+				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]='.$file_name.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+				file_put_contents($file_name, $response->asset->value);		    	
 			}
-			// save the snippet data we just retrieved to report on it below
-		    $updated_snippets[] = $snippet;
+			// save the asset data we just retrieved to report on it below
+		    $updated_assets[] = $asset;
 		}
 	}
-	// finally, update the timestamp with the newest timestamp retrieved in the snippets array
+	// finally, update the timestamp with the newest timestamp retrieved in the assets array
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
 	// deets
 	echo '<h3>The following files were updated:</h3>';
 	echo '<pre>';
-	print_r($updated_snippets);
+	print_r($updated_assets);
 	echo '</pre>';
 ?>
