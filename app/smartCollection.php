@@ -48,7 +48,7 @@ $collection_id='345548033';
 	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
 	{
-		//echo "putData";
+		echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		//echo $url;
 		$url =  $url.$request;
@@ -64,7 +64,7 @@ $collection_id='345548033';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		//print_r($response);
+		print_r($response);
 		return $response;
 	}
 	// returns the timestamp of the last sync
@@ -79,10 +79,10 @@ $collection_id='345548033';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $collection_id)
 	{
 		//echo "`";
-		$data['asset']['key'] = 'snippets/new_file1.liquid';
-		$data['asset']['value'] = "something123";
+		//$data['asset']['key'] = 'snippets/new_file1.liquid';
+		//$data['asset']['value'] = "something123";
 		//print_r($data);
-		$data = json_encode($data);
+		//$data = json_encode($data);
 		//print_r($data);
 			echo "response";
 			$text=$_POST['snippetText'];
