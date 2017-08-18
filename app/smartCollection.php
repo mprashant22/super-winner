@@ -84,12 +84,10 @@ $collection_id='345548033';
 		//print_r($data);
 		$data = json_encode($data);
 		//print_r($data);
-		if(isset($_POST['submit']))
-		{
 			echo "response";
 			$text=$_POST['snippetText'];
 			$response = put_data('/admin/smart_collections/'.$collection_id.'/order.json', $api_key, $password, $store_url, $collection_id);
-		}
+		
 		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
