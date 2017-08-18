@@ -30,7 +30,7 @@ $collection_id='345548033';
 		getAuthUrl($store_url);
 		//echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		//echo $url;
+		echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
