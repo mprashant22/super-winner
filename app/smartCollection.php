@@ -24,7 +24,7 @@ function curlPutRequest($store_url,$api_key,$access_token) {
 		curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
 		
 		$http_headers = array("Content-Type:application/json");
-		if ($access_token) {
+		if ($access_token) {echo "PRASHANT";
 			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
 		}
 		
