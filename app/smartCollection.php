@@ -46,7 +46,7 @@ $collection_id='345548033';
 		return $response;
 	}
 	// put data updates or uploads data with the API
-	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
+	function put_data($request, $api_key, $password, $store_url, $collection_id)
 	{
 		echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
