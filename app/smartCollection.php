@@ -26,6 +26,7 @@ function curlPutRequest($store_url,$api_key,$access_token) {
 		$http_headers = array("Content-Type:application/json");
 		if ($access_token) {echo "PRASHANT";
 			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
+			echo $http_headers;
 		}
 		
 		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
