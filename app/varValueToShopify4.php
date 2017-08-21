@@ -98,31 +98,10 @@ $collection_id='345548033';
 	foreach ($collects->collects as $key => $collect)
 	{
 		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
-		// check to see if the updated date on shopify is greater than the last sync date
-		$updated_at = $collect->updated_at;
-		if ($updated_at > $last_sync)
-		{
-			if ($updated_at > $new_last_updated_at)
-			{
-				$new_last_updated_at = $updated_at;
-			}
-			$file_name = $collect->key;
-			// is this an image collect or a template/snippet/config/layout file (the latter file types do not have public urls!)
-			if ($collect->public_url!==null)
-			{				
-				// yes, this is an image, download it and save it
-			    $temp_file_contents = get_file($collect->public_url);
-			    write_file($temp_file_contents,$file_name);
-			}
-			else
-			{
-				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);				
-				file_put_contents($file_name, $response->collect->value);		    	
-			}
-			// save the collect data we just retrieved to report on it below
-		    $updated_collects[] = $collect;
-		}
+		$updated_at = $collect->position;
+		$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);				
+		file_put_contents($file_name, $response->collect->value);		    	
+	    //$updated_collects[] = $collect;		
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the collects array
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $collection_id);
