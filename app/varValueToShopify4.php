@@ -98,7 +98,7 @@ $collection_id='345548033';
 	foreach ($collects->collects as $key => $collect)
 	{
 		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
-		$updated_at = $collect->position;
+		$updated_at = $collect->id;
 		echo $updated_at;
 		$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);				
 		file_put_contents($file_name, $response->collect->value);		    	
