@@ -65,7 +65,7 @@ class Shopify {
         preg_match($pattern, $subject, $matches);
 
         return $matches[2] == '.myshopify.com';
-    }    
+    }
 
     public function validateRequestOriginIsShopify($code, $shop, $timestamp, $signature) {
         $get_params_string = 'code=' . $code . 'shop=' . $shop . 'timestamp=' . $timestamp . '';

@@ -75,7 +75,7 @@ $theme_id = '143487233';
 	{
 		//echo "get_Last_Sync";
 		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file1.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-		//echo "Last SYYYYYYNC".$response;
+		echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
