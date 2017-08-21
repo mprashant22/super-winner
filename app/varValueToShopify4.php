@@ -14,10 +14,8 @@ $collection_id='345548033';
 
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $collection_id)
-	{
-		echo "getData";
+	{		
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		//echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
@@ -29,17 +27,14 @@ $collection_id='345548033';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-	//	print_r($response);
 		return $response;
 	}
 	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
 	{
-		//echo "putData";
+
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		//echo $url;
-		$url =  $url.$request;
-		//echo $url;
+		$url =  $url.$request;		
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
 		curl_setopt($session, CURLOPT_HEADER, false);
@@ -51,36 +46,28 @@ $collection_id='345548033';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		//print_r($response);
 		return $response;
 	}
 	// returns the timestamp of the last sync
 	function get_last_sync($api_key, $password, $store_url, $collection_id)
 	{
-		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
-		echo "Last2 SYYYNC";
+		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);		
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $collection_id)
-	{
-		//echo "`";
+	{		
 		$data['collect']['key'] = 'snippets/new_file4.liquid';
 		$data['collect']['value'] = "something123";
-		//print_r($data);
 		$data = json_encode($data);
-		//print_r($data);
 		if(isset($_POST['submit']))
-		{
-			//echo "response";
+		{		
 			$text=$_POST['snippetText'];		
 			$response = put_data('/admin/themes/'.$collection_id.'/collects.json?collect[key]=snippets/new_file4.liquid&theme_id='.$collection_id.'&collect[value]='.$text, $data, $api_key, $password, $store_url, $collection_id);
 		}
-		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
-    	//echo "getFile";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -94,7 +81,6 @@ $collection_id='345548033';
     }
     // using a temp file we created using get_file, write the file to the local file structure
     function write_file($text, $new_filename){
-    	echo "write_file";
         $fp = fopen($new_filename, 'w+');
         fwrite($fp, $text);
         fclose($fp);
@@ -123,8 +109,7 @@ $collection_id='345548033';
 			$file_name = $collect->key;
 			// is this an image collect or a template/snippet/config/layout file (the latter file types do not have public urls!)
 			if ($collect->public_url!==null)
-			{
-				//echo "hello";
+			{				
 				// yes, this is an image, download it and save it
 			    $temp_file_contents = get_file($collect->public_url);
 			    write_file($temp_file_contents,$file_name);
@@ -132,8 +117,7 @@ $collection_id='345548033';
 			else
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);
-				//print_r($response);
+				$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);				
 				file_put_contents($file_name, $response->collect->value);		    	
 			}
 			// save the collect data we just retrieved to report on it below
@@ -143,8 +127,5 @@ $collection_id='345548033';
 	// finally, update the timestamp with the newest timestamp retrieved in the collects array
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $collection_id);
 	// deets
-	//echo '<h3>The following files were updated:</h3>';
-	//echo '<pre>';
-	//print_r($updated_collects);
-	//echo '</pre>';
+
 ?>
