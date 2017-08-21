@@ -93,7 +93,7 @@ $collection_id='345548033';
 	// run a query to pull each collect in the theme
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 	$updated_collects = [];
-	var_dump($collects);
+	var_dump(json_decode($collects));
 	// iterate through the collects
 	foreach ($collects->collects as $key => $collect)
 	{
