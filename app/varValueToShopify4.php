@@ -57,10 +57,8 @@ $collection_id='345548033';
 	// returns the timestamp of the last sync
 	function get_last_sync($api_key, $password, $store_url, $collection_id)
 	{
-		//echo "get_Last_Sync";
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
-		//echo "Last1 SYYYYYYNC".$response;
-		echo "Last2 SYYYNC".print_r($response)."####";
+		echo "Last2 SYYYNC";
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
@@ -103,15 +101,13 @@ $collection_id='345548033';
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
 	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
-	echo "sync1234";
-	print_r($last_sync);
 	//override for testing:
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each collect in the theme
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 	$updated_collects = [];
-	print_r($collects['position']);
+	print_r($collects);
 	// iterate through the collects
 	foreach ($collects->collects as $key => $collect)
 	{
