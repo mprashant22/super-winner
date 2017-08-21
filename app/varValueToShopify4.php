@@ -29,7 +29,7 @@ $collection_id='345548033';
 		//getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		//echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
@@ -41,7 +41,7 @@ $collection_id='345548033';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		print_r($response);
+	//	print_r($response);
 		return $response;
 	}
 	// put data updates or uploads data with the API
