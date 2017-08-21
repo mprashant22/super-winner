@@ -3,11 +3,7 @@
 <input type="submit" name="submit">
 </form>
 
-
-
-
 <?php
-
 
 echo $text."MATHUR";
 // Update these variables with the correct values from a new *Private* app in Shopify
@@ -31,9 +27,9 @@ $theme_id = '143487233';
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
 		getAuthUrl($store_url);
-		//echo "getData";
+		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		//echo $url;
+		echo $url;
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
