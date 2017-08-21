@@ -10,7 +10,7 @@ echo $text."MATHUR";
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
 $store_url = 'newtest-18.myshopify.com';
-$theme_id = '143487233';
+$collection_id='345548033';
 
 	function getAuthUrl($shop)
 	{	
@@ -24,7 +24,7 @@ $theme_id = '143487233';
 	}
 
 	// get_data retrives data with the API
-	function get_data($request, $api_key, $password, $store_url, $theme_id)
+	function get_data($request, $api_key, $password, $store_url, $collection_id)
 	{
 		getAuthUrl($store_url);
 		echo "getData";
@@ -45,7 +45,7 @@ $theme_id = '143487233';
 		return $response;
 	}
 	// put data updates or uploads data with the API
-	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
+	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
 	{
 		//echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
@@ -67,19 +67,19 @@ $theme_id = '143487233';
 		return $response;
 	}
 	// returns the timestamp of the last sync
-	function get_last_sync($api_key, $password, $store_url, $theme_id)
+	function get_last_sync($api_key, $password, $store_url, $collection_id)
 	{
 		//echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 		echo "Last SYYYYYYNC".$response;
-		return $response->asset->value;
+		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
-	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
+	function update_last_sync($last_sync, $api_key, $password, $store_url, $collection_id)
 	{
 		//echo "`";
-		$data['asset']['key'] = 'snippets/new_file4.liquid';
-		$data['asset']['value'] = "something123";
+		$data['collect']['key'] = 'snippets/new_file4.liquid';
+		$data['collect']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
 		print_r($data);
@@ -87,7 +87,7 @@ $theme_id = '143487233';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+			$response = put_data('/admin/themes/'.$collection_id.'/collects.json?collect[key]=snippets/new_file4.liquid&theme_id='.$collection_id.'&collect[value]='.$text, $data, $api_key, $password, $store_url, $collection_id);
 		}
 		print_r($response);
 	}
@@ -113,50 +113,50 @@ $theme_id = '143487233';
         fclose($fp);
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
-	$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
+	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
 	//override for testing:
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
-	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-	$updated_assets = [];
-	print_r($assets);
-	// iterate through the assets
-	foreach ($assets->assets as $key => $asset)
+	// run a query to pull each collect in the theme
+	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
+	$updated_collects = [];
+	print_r($collects);
+	// iterate through the collects
+	foreach ($collects->collects as $key => $collect)
 	{
 		// check to see if the updated date on shopify is greater than the last sync date
-		$updated_at = $asset->updated_at;
+		$updated_at = $collect->updated_at;
 		if ($updated_at > $last_sync)
 		{
 			if ($updated_at > $new_last_updated_at)
 			{
 				$new_last_updated_at = $updated_at;
 			}
-			$file_name = $asset->key;
-			// is this an image asset or a template/snippet/config/layout file (the latter file types do not have public urls!)
-			if ($asset->public_url!==null)
+			$file_name = $collect->key;
+			// is this an image collect or a template/snippet/config/layout file (the latter file types do not have public urls!)
+			if ($collect->public_url!==null)
 			{
 				//echo "hello";
 				// yes, this is an image, download it and save it
-			    $temp_file_contents = get_file($asset->public_url);
+			    $temp_file_contents = get_file($collect->public_url);
 			    write_file($temp_file_contents,$file_name);
 			}
 			else
 			{
 				// this is a text file of some sort. since it doesn't have a public url, we can't cURL it so the solution is to get the updated value of the file and overwrite the file in the local file structure
-				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid'.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+				$response = get_data('/admin/collects.json?collection_id='.$collection_i, $api_key, $password, $store_url);
 				//print_r($response);
-				file_put_contents($file_name, $response->asset->value);		    	
+				file_put_contents($file_name, $response->collect->value);		    	
 			}
-			// save the asset data we just retrieved to report on it below
-		    $updated_assets[] = $asset;
+			// save the collect data we just retrieved to report on it below
+		    $updated_collects[] = $collect;
 		}
 	}
-	// finally, update the timestamp with the newest timestamp retrieved in the assets array
-	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
+	// finally, update the timestamp with the newest timestamp retrieved in the collects array
+	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $collection_id);
 	// deets
 	//echo '<h3>The following files were updated:</h3>';
 	//echo '<pre>';
-	//print_r($updated_assets);
+	//print_r($updated_collects);
 	//echo '</pre>';
 ?>
