@@ -70,7 +70,7 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		//echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
@@ -78,7 +78,7 @@ $theme_id = '143487233';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		//echo "`";
-		$data['asset']['key'] = 'snippets/new_file2.liquid';
+		$data['asset']['key'] = 'snippets/new_file4.liquid';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
@@ -87,7 +87,7 @@ $theme_id = '143487233';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
 	}
@@ -118,7 +118,7 @@ $theme_id = '143487233';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file4.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	print_r($assets);
 	// iterate through the assets
