@@ -59,7 +59,7 @@ $collection_id='345548033';
 	{
 		//echo "get_Last_Sync";
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
-		echo "Last1 SYYYYYYNC".$response;
+		//echo "Last1 SYYYYYYNC".$response;
 		echo "Last2 SYYYNC".$response->collects->value;
 		return $response->collects->value;
 	}
