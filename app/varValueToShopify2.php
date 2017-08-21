@@ -45,7 +45,7 @@ $theme_id = '143487233';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		//print_r($response);
+		print_r($response);
 		return $response;
 	}
 	// put data updates or uploads data with the API
@@ -53,7 +53,7 @@ $theme_id = '143487233';
 	{
 		//echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		//echo $url;
+		echo $url;
 		$url =  $url.$request;
 		//echo $url;
 		$session = curl_init();
@@ -67,7 +67,7 @@ $theme_id = '143487233';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		//print_r($response);
+		print_r($response);
 		return $response;
 	}
 	// returns the timestamp of the last sync
