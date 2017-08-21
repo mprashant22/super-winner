@@ -49,7 +49,7 @@ $collection_id='345548033';
 	{
 		//echo "putData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		//echo $url;
 		$url =  $url.$request;
 		//echo $url;
 		$session = curl_init();
@@ -63,7 +63,7 @@ $collection_id='345548033';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		print_r($response);
+		//print_r($response);
 		return $response;
 	}
 	// returns the timestamp of the last sync
