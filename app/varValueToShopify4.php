@@ -113,6 +113,7 @@ $collection_id='345548033';
 	// iterate through the collects
 	foreach ($collects->collects as $key => $collect)
 	{
+		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
 		// check to see if the updated date on shopify is greater than the last sync date
 		$updated_at = $collect->updated_at;
 		if ($updated_at > $last_sync)
