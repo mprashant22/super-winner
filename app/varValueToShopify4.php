@@ -71,18 +71,18 @@ $collection_id='345548033';
 		$data['collect']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
-		print_r($data);
+		//print_r($data);
 		if(isset($_POST['submit']))
 		{
-			echo "response";
+			//echo "response";
 			$text=$_POST['snippetText'];		
 			$response = put_data('/admin/themes/'.$collection_id.'/collects.json?collect[key]=snippets/new_file4.liquid&theme_id='.$collection_id.'&collect[value]='.$text, $data, $api_key, $password, $store_url, $collection_id);
 		}
-		print_r($response);
+		//print_r($response);
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
-    	echo "getFile";
+    	//echo "getFile";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -109,7 +109,7 @@ $collection_id='345548033';
 	// run a query to pull each collect in the theme
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 	$updated_collects = [];
-	//print_r($collects);
+	print_r($collects);
 	// iterate through the collects
 	foreach ($collects->collects as $key => $collect)
 	{
