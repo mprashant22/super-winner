@@ -60,7 +60,7 @@ $collection_id='345548033';
 		//echo "get_Last_Sync";
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 		//echo "Last1 SYYYYYYNC".$response;
-		echo "Last2 SYYYNC".$response->collects->value."####";
+		echo "Last2 SYYYNC".$response."####";
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
