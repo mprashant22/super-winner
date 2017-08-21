@@ -33,7 +33,7 @@ $collection_id='345548033';
 		$url =  $url.$request;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
-		curl_setopt($session, CURLOPT_HTTPGET, 1); 
+		curl_setopt($session, CURLOPT_HTTPGET, 1);
 		curl_setopt($session, CURLOPT_HEADER, false);
 		curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
 		curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
@@ -71,7 +71,7 @@ $collection_id='345548033';
 	{
 		//echo "get_Last_Sync";
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
-		echo "Last SYYYYYYNC".$response;
+		echo "Last SYYYYYYNC".$response->collects->value;
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
