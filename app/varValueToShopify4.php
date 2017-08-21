@@ -12,21 +12,9 @@ $password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
 $store_url = 'newtest-18.myshopify.com';
 $collection_id='345548033';
 
-	function getAuthUrl($shop)
-	{	
-		$shp=explode('.', $shop);
-		$scopes = ["read_products", "read_orders","write_orders","write_products","read_themes", "write_themes"];
-		
-		return 'https://' . $shop . '/admin/oauth/authorize?'
-				. 'scope=' . implode("%2C", $scopes)
-				. '&client_id=' . $api_key
-				. '&redirect_uri=' . CALLBACK_URL;
-	}
-
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $collection_id)
 	{
-		//getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		//echo $url;
