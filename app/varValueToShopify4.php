@@ -95,11 +95,11 @@ $collection_id='345548033';
 	$updated_collects = [];
 	//echo $collects[0]['id'];
 	// iterate through the collects
-	foreach ($collects->collects as $key => $collect)
+	foreach ($collects as $collect)
 	{
 		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
 		$updated_at = $collect->position;
-		$x=$collect->key;
+		//$x=$collect->key;
 // 		if($updated_at==1){
 // 			$updated_at=2;
 // 		}
@@ -109,7 +109,7 @@ $collection_id='345548033';
 // 		else{
 // 			$updated_at=1;
 // 		}
-		echo $updated_at."//".$x;
+		echo $updated_at;
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);				
 		file_put_contents($file_name, $response->collect->value);		    	
 	    //$updated_collects[] = $collect;		
