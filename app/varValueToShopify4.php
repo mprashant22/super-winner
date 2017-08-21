@@ -26,7 +26,7 @@ $collection_id='345548033';
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $collection_id)
 	{
-		getAuthUrl($store_url);
+		//getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
