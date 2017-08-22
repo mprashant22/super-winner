@@ -30,13 +30,13 @@ $collection_id='345548033';
 		return $response;
 	}
 	// put data updates or uploads data with the API
-	function curlPutRequest($url, $password, $data = false) {
+	function curlPutRequest($store_url, $password, $data = false) {
 		$ch = curl_init(); //create a new cURL resource handle
-		curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
+		curl_setopt($ch, CURLOPT_URL, $store_url); // Set URL to download
 		
 		$http_headers = array("Content-Type:application/json");
-		if ($access_token) {
-			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
+		if ($password) {
+			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $password");
 		}
 		
 		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
@@ -60,9 +60,9 @@ $collection_id='345548033';
 		return json_decode($output);
 	}
 	
-	function updatecollect($shop, $password) {
+	function updatecollect($store_url, $password) {
 		
-		$curl_url = "https://$shop/admin/smart_collections/345548033/order.json";
+		$curl_url = "https://$store_url/admin/smart_collections/345548033/order.json";
 		echo $curl_url;
 		//$order = array()
 		//$data = json_encode($order);
