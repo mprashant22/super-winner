@@ -55,7 +55,7 @@ $collection_id='345548033';
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
-	function update_last_sync($last_sync, $api_key, $password, $store_url, $collection_id)
+	function update_last_sync($updated_at, $api_key, $password, $store_url, $collection_id)
 	{		
 		$data['collect']['key'] = 'snippets/new_file4.liquid';
 		$data['collect']['value'] = "something123";
@@ -63,7 +63,7 @@ $collection_id='345548033';
 		if(isset($_POST['submit']))
 		{		
 			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$collection_id.'/collects.json?collect[key]=snippets/new_file4.liquid&theme_id='.$collection_id.'&collect[value]='.$text, $data, $api_key, $password, $store_url, $collection_id);
+			$response = put_data('/admin/collects.json?collection_id='.$collection_id, $updated_at, $api_key, $password, $store_url);
 		}
 	}
 	// download a file from the shopify server. this only works for images!
@@ -87,35 +87,31 @@ $collection_id='345548033';
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
 	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
-	//override for testing:
-	//$last_sync = '2016-09-21T09:25:26-05:00';
-	$new_last_updated_at = 0;
-	// run a query to pull each collect in the theme
+
+
+
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
+	var_dump($collects);
 	$updated_collects = [];
-	//echo $collects[0]['id'];
 	// iterate through the collects
-	foreach ($collects as $collect)
+	foreach ($collects->collects as $key => $collect)
 	{
 		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
 		$updated_at = $collect->position;
-		//$x=$collect->key;
-// 		if($updated_at==1){
-// 			$updated_at=2;
-// 		}
-// 		else if ($updated_at==2){
-// 			$updated_at=3;
-// 		}
-// 		else{
-// 			$updated_at=1;
-// 		}
+		$x=$collect->key;
+		if($updated_at==1){
+			$updated_at=2;
+		}
+		else if ($updated_at==2){
+			$updated_at=3;
+		}
+		else{
+			$updated_at=1;
+		}
 		echo $updated_at;
 		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);				
-		file_put_contents($file_name, $response->collect->value);		    	
-	    //$updated_collects[] = $collect;		
+		
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the collects array
-	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $collection_id);
-	// deets
-
+	update_last_sync($updated_at, $api_key, $password, $store_url, $collection_id);
 ?>
