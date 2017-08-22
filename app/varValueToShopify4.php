@@ -47,10 +47,10 @@ echo "*********";
         $x=curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
         echo "x===".$x;
         $x=curl_setopt($session, CURLOPT_POSTFIELDS,$data);
-        echo "x===".$x;        
+        echo "x===".$x;
 		$x=curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 		echo "x===".$x;
-		$x=curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
+		curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
 		echo "x===".$x;
 		$response = curl_exec($session);
 		echo "@#@#@@#@";
@@ -69,12 +69,10 @@ echo "*********";
 	}
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($collects, $api_key, $password, $store_url, $collection_id)
-	{		
-		
+	{
 		$collects = json_encode($collects);
 		print_r($collects);
-		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $updated_at, $api_key, $password, $store_url);
-		
+		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $updated_at, $api_key, $password, $store_url);		
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
@@ -98,8 +96,6 @@ echo "*********";
     // get the timestamp of the last sync so we can compare with the files being pulled
 	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
 
-
-
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 	var_dump($collects);
 	$updated_collects = [];
@@ -120,8 +116,7 @@ echo "*********";
 			$collect->position=1;
 		}
 		echo  $collect->position;
-		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);				
-		
+		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);			
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the collects array
 	update_last_sync($collects, $api_key, $password, $store_url, $collection_id);
