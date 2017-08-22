@@ -121,9 +121,7 @@ $collection_id='345548033';
 		else{
 			$collect->position=1;
 		}
-		echo  $collect->position;
-		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);			
+		echo  $collect->position;			
 	}
-	// finally, update the timestamp with the newest timestamp retrieved in the collects array
 	update_last_sync($collects, $api_key, $password, $store_url, $collection_id);
 ?>
