@@ -46,8 +46,10 @@ echo "*********";
 		curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
 		$response = curl_exec($session);
+		echo $response;
 		curl_close($session);
 		$response = json_decode($response);
+		print_r($response);
 		return $response;
 	}
 	// returns the timestamp of the last sync
