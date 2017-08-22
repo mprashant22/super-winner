@@ -30,103 +30,43 @@ $collection_id='345548033';
 		return $response;
 	}
 	// put data updates or uploads data with the API
-	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
-	{
-		echo "request>>".$request;
-		print_r($data);
-		echo "*********";
-		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		$url =  $url.$request;
-		$session = curl_init();
-		$x=curl_setopt($session, CURLOPT_URL, $url);
-		echo "x===".$x;
-		$x=curl_setopt($session, CURLOPT_HEADER, false);
-		echo "x===".$x;
-		$x=curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
-		echo "x===".$x;
-        $x=curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
-        echo "x===".$x;
-        $x=curl_setopt($session, CURLOPT_POSTFIELDS,$data);
-        echo "x===".$x;
-		$x=curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-		echo "x===".$x;
-		curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
-		echo "x===".$x;
-		$response = curl_exec($session);
-		echo "@#@#@@#@";
-		echo $response;
-		if($response===false)
-		{
-			return 'Curl error'.curl_error($session);
+	function curlPutRequest($url, $password, $data = false) {
+		$ch = curl_init(); //create a new cURL resource handle
+		curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
+		
+		$http_headers = array("Content-Type:application/json");
+		if ($access_token) {
+			$http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
 		}
-		curl_close($session);
-		$response = json_decode($response);
-		echo "^^^^^^";
-		print_r($response);
-		return $response;
-	}
-	// returns the timestamp of the last sync
-	function get_last_sync($api_key, $password, $store_url, $collection_id)
-	{
-		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);		
-		return $response->collects->value;
-	}
-	// writes new timestamp to the last sync file (on shopify)
-	function update_last_sync($collects, $api_key, $password, $store_url, $collection_id)
-	{
-		$collects = json_encode($collects);
-		print_r($collects);
-		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $api_key, $password, $store_url);
-		echo "RRRRR ".$response;
+		
+		curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		
+		if ($data) {
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		}
+		
+		$output = curl_exec($ch); // Download the given URL, and return output
+		
+		if ($output === false) {
+			return 'Curl error: ' . curl_error($ch);
+		}
+		
+		curl_close($ch); // Close the cURL resource, and free system resources
+		
+		return json_decode($output);
 	}
 	
-	// download a file from the shopify server. this only works for images!
-    function get_file($url){
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_VERBOSE, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_AUTOREFERER, false);
-        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return($result);
-    }
-    
-    // using a temp file we created using get_file, write the file to the local file structure
-    function write_file($text, $new_filename){
-        $fp = fopen($new_filename, 'w+');
-        fwrite($fp, $text);
-        fclose($fp);
-    }
-    // get the timestamp of the last sync so we can compare with the files being pulled
-	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
-	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
-	var_dump($collects);
-	$updated_collects = [];
-	// iterate through the collects
-	foreach ($collects->collects as $key => $collect)
-	{
-		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
-		$updated_at = $collect->position;
-		//$updated_at = $collect->position;
-		 //$x=$collect->key;
-		if( $collect->position=='1'){
-			$collect->position='2';
-			$collect->sort_value = '0000000002';
-		}
-		else if ( $collect->position=='2'){
-			$collect->position='3';
-			$collect->sort_value = '0000000003';
-		}
-		else{
-			$collect->position='1';
-			$collect->sort_value = '0000000001';
-		}
-		echo  $collect->position;
-		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);			
+	function updatecollect($shop, $password) {
+		
+		$curl_url = "https://$shop/admin/smart_collections/345548033/order.json";
+		echo $curl_url;
+		//$order = array()
+		//$data = json_encode($order);
+		
+		return $this->curlPutRequest($curl_url, $password);
 	}
-	// finally, update the timestamp with the newest timestamp retrieved in the collects array
-	update_last_sync($collects, $api_key, $password, $store_url, $collection_id);
 ?>
