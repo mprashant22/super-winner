@@ -76,7 +76,7 @@ $collection_id='345548033';
 	{
 		$collects = json_encode($collects);
 		print_r($collects);
-		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $updated_at, $api_key, $password, $store_url);
+		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $api_key, $password, $store_url);
 		//echo "RRRRR ".$response;
 	}
 	
