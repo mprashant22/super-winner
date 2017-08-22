@@ -112,17 +112,17 @@ $collection_id='345548033';
 		$updated_at = $collect->position;
 		//$updated_at = $collect->position;
 		 //$x=$collect->key;
-		if( $collect->position==1){
-			$collect->position=2;
-			$collect->sort_value = 0000000002;
+		if( $collect->position=='1'){
+			$collect->position='2';
+			$collect->sort_value = '0000000002';
 		}
-		else if ( $collect->position==2){
-			$collect->position=3;
-			$collect->sort_value = 0000000003;
+		else if ( $collect->position=='2'){
+			$collect->position='3';
+			$collect->sort_value = '0000000003';
 		}
 		else{
-			$collect->position=1;
-			$collect->sort_value = 0000000001;
+			$collect->position='1';
+			$collect->sort_value = '0000000001';
 		}
 		echo  $collect->position;
 		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);			
