@@ -77,7 +77,7 @@ $collection_id='345548033';
 		$collects = json_encode($collects);
 		print_r($collects);
 		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $api_key, $password, $store_url);
-		//echo "RRRRR ".$response;
+		echo "RRRRR ".$response;
 	}
 	
 	// download a file from the shopify server. this only works for images!
