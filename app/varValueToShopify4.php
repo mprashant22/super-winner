@@ -62,9 +62,8 @@ $collection_id='345548033';
 	
 	function updatecollect($store_url, $password) {
 		
-		$curl_url = "https://$store_url/admin/smart_collections/345548033/order.json";
-		echo $curl_url;
-		//$order = array()
+		$curl_url = "https://$store_url/admin/smart_collections/345548033/order.json?products[]=10021827329&products[]=10021826881";
+		
 		//$data = json_encode($order);
 		
 		return $this->curlPutRequest($curl_url, $password);
