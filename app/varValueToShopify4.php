@@ -33,6 +33,8 @@ $collection_id='345548033';
 	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
 	{
 echo "request>>".$request;
+print_r($data);
+echo "*********";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		$url =  $url.$request;		
 		$session = curl_init();
