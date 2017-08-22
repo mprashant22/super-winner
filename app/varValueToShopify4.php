@@ -55,16 +55,13 @@ $collection_id='345548033';
 		return $response->collects->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
-	function update_last_sync($updated_at, $api_key, $password, $store_url, $collection_id)
+	function update_last_sync($collects, $api_key, $password, $store_url, $collection_id)
 	{		
-		$data['collect']['key'] = 'snippets/new_file4.liquid';
-		$data['collect']['value'] = "something123";
-		$data = json_encode($data);
-		if(isset($_POST['submit']))
-		{		
-			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/collects.json?collection_id='.$collection_id, $updated_at, $api_key, $password, $store_url);
-		}
+		
+		$collects = json_encode($collects);
+		print_r($collects);
+		$response = put_data('/admin/collects.json?collection_id='.$collection_id, $collects, $updated_at, $api_key, $password, $store_url);
+		
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
@@ -98,20 +95,21 @@ $collection_id='345548033';
 	{
 		echo '<pre style="color:RED">'.'PRASHANT'.'</pre>';
 		$updated_at = $collect->position;
-		$x=$collect->key;
-		if($updated_at==1){
-			$updated_at=2;
+		//$updated_at = $collect->position;
+		 //$x=$collect->key;
+		if( $collect->position==1){
+			$collect->position=2;
 		}
-		else if ($updated_at==2){
-			$updated_at=3;
+		else if ( $collect->position==2){
+			$collect->position=3;
 		}
 		else{
-			$updated_at=1;
+			$collect->position=1;
 		}
-		echo $updated_at;
-		$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);				
+		echo  $collect->position;
+		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);				
 		
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the collects array
-	update_last_sync($updated_at, $api_key, $password, $store_url, $collection_id);
+	update_last_sync($collects, $api_key, $password, $store_url, $collection_id);
 ?>
