@@ -69,4 +69,5 @@ $collection_id='345548033';
 		
 		return $this->curlPutRequest($curl_url, $password);
 	}
+	updatecollect($store_url, $password);
 ?>
