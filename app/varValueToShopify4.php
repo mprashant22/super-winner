@@ -93,6 +93,7 @@ $collection_id='345548033';
         curl_close($ch);
         return($result);
     }
+    
     // using a temp file we created using get_file, write the file to the local file structure
     function write_file($text, $new_filename){
         $fp = fopen($new_filename, 'w+');
@@ -101,7 +102,6 @@ $collection_id='345548033';
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
 	$last_sync = get_last_sync($api_key, $password, $store_url, $collection_id);
-
 	$collects = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);
 	var_dump($collects);
 	$updated_collects = [];
@@ -114,12 +114,15 @@ $collection_id='345548033';
 		 //$x=$collect->key;
 		if( $collect->position==1){
 			$collect->position=2;
+			$collect->sort_value = 0000000002;
 		}
 		else if ( $collect->position==2){
 			$collect->position=3;
+			$collect->sort_value = 0000000003;
 		}
 		else{
 			$collect->position=1;
+			$collect->sort_value = 0000000001;
 		}
 		echo  $collect->position;
 		//$response = get_data('/admin/collects.json?collection_id='.$collection_id, $api_key, $password, $store_url);			
