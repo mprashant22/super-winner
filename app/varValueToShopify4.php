@@ -32,7 +32,7 @@ $collection_id='345548033';
 	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $collection_id)
 	{
-
+echo "request>>".request;
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		$url =  $url.$request;		
 		$session = curl_init();
