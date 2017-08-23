@@ -123,9 +123,11 @@ $theme_id = '143487233';
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
 	//$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
+	echo 'PMO';
     $last_sync = get_last_sync($api_key, $password, $store_url);
     print_r($last_sync);
-	//override for testing:
+    echo 'PRASHU';
+    //override for testing:
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
