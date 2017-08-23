@@ -75,7 +75,9 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		//echo "get_Last_Sync";
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file200.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		//admin/products.json
+		$response = get_data('/admin/admin/products.json'.$api_key, $password, $store_url, $theme_id);
+		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
 	}
@@ -120,7 +122,9 @@ $theme_id = '143487233';
         fclose($fp);
     }
     // get the timestamp of the last sync so we can compare with the files being pulled
-	$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
+	//$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
+    $last_sync = get_last_sync($api_key, $password, $store_url);
+    print_r($last_sync);
 	//override for testing:
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
