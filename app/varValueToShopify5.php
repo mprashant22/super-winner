@@ -86,10 +86,12 @@ $theme_id = '143487233';
 		if(isset($_POST['submit']))
 		{
 			echo "response";
-			$text=$_POST['snippetText'];		
+			$text=$_POST['snippetText'];	
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
+		echo "<><><><>";
 		print_r($response);
+		echo "<><><><><><><><>";
 	}
 	// download a file from the shopify server. this only works for images!
     function get_file($url){
