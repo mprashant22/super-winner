@@ -2,7 +2,12 @@
 <input type="text" id="browse" name="snippetText"/>
 <input type="submit" name="submit">
 </form>
-
+<select id="products" class="products" name="products">       		
+     		<?php 
+ 				
+			?>			
+	 		<option value=""><?php echo 'Prashant';?></option>		
+  			</select>
 <?php
 
 echo $text."MATHUR";
