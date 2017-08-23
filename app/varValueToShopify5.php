@@ -76,7 +76,7 @@ $theme_id = '143487233';
 	{
 		//echo "get_Last_Sync";
 		//admin/products.json
-		$response = get_data('/admin/admin/products.json'.$api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/products.json'.$api_key, $password, $store_url, $theme_id);
 		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		echo "Last SYYYYYYNC".$response;
 		return $response->asset->value;
