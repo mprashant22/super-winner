@@ -122,7 +122,7 @@ $theme_id = '143487233';
 			}
 			else
 			{
-	
+				echo "else";
 				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid'.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	
 				file_put_contents($file_name, $response->asset->value);		    	
