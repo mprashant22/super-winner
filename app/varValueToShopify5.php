@@ -91,7 +91,7 @@ $theme_id = '143487233';
     function write_file($text, $new_filename){
     	echo "write_file";
         $fp = fopen($new_filename, 'w+');
-        fwrite($fp, $text);
+      //  fwrite($fp, $text);
         fclose($fp);
     }
     
