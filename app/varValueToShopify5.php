@@ -41,6 +41,7 @@ $theme_id = '143487233';
 		curl_setopt($session, CURLOPT_HEADER, false);
 		curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
         curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($session, CURLOPT_POSTFIELDS,$data);
 		curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
