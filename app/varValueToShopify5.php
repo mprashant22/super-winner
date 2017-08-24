@@ -32,7 +32,7 @@ $theme_id = '143487233';
 	function get_data($request, $api_key, $password, $store_url)
 	{
 		
-		getAuthUrl($store_url);
+		
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		
