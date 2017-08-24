@@ -29,7 +29,7 @@ $theme_id = '143487233';
 	}
 
 	// get_data retrives data with the API
-	function get_data($request, $api_key, $password, $store_url, $theme_id)
+	function get_data($request, $api_key, $password, $store_url)
 	{
 		echo $request."<br><br>";
 		getAuthUrl($store_url);
@@ -74,11 +74,11 @@ $theme_id = '143487233';
 		return $response;
 	}
 	// returns the timestamp of the last sync
-	function get_last_sync($api_key, $password, $store_url, $theme_id)
+	function get_last_sync($api_key, $password, $store_url)
 	{
 		//echo "get_Last_Sync";
 		//admin/products.json
-		$response = get_data('/admin/products.json'.$api_key, $password, $store_url, $theme_id);
+		$response = get_data('/admin/products.json'.$api_key, $password, $store_url);
 		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		print_r($response);
 		return $response->asset->value;
