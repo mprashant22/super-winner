@@ -60,7 +60,7 @@ $theme_id = '143487233';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		$text=$_POST['snippetText'];
-		
+		echo $text." blabla";
 		$data['asset']['key'] = 'snippets/new_file2.liquid';
 		$data['asset']['value'] = $text;
 
