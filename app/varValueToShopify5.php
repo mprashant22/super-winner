@@ -76,6 +76,7 @@ $theme_id = '143487233';
 	}
 	
     function get_file($url){
+
     	echo "getFile";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
