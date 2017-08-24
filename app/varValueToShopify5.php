@@ -50,7 +50,7 @@ $theme_id = '143487233';
 		$response = json_decode($response);
 		print_r($response);
 		return $response;
-	}
+	} 
 
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
