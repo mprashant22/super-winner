@@ -104,7 +104,7 @@ $theme_id = '143487233';
 	
 	foreach ($assets->assets as $key => $asset)
 	{
-	
+	echo "inside loop";
 		$updated_at = $asset->updated_at;
 		if ($updated_at > $last_sync)
 		{
