@@ -15,25 +15,11 @@ $password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
 $store_url = 'newtest-18.myshopify.com';
 $theme_id = '143487233';
 
-	function getAuthUrl($shop)
-	{	
-		$shp=explode('.', $shop);
-		$scopes = ["read_products", "read_orders","write_orders","write_products","read_themes", "write_themes"];
-		
-		return 'https://' . $shop . '/admin/oauth/authorize?'
-				. 'scope=' . implode("%2C", $scopes)
-				. '&client_id=' . $api_key
-				. '&redirect_uri=' . CALLBACK_URL;
-	}
-
 
 	function get_data($request, $api_key, $password, $store_url)
-	{
-		
-		
+	{	
 		echo "getData";
-		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		
+		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;		
 		$url =  $url.$request;
 		echo $url;
 		$session = curl_init();
@@ -75,8 +61,7 @@ $theme_id = '143487233';
 	{
 		$response = get_data('/admin/products.json'.$api_key, $password, $store_url);
 		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-		print_r($response);
-		return $response->asset->value;
+		return $response->products;
 	}
 	
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
