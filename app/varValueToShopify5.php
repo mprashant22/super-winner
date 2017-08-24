@@ -36,6 +36,7 @@ $theme_id = '143487233';
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
 		$url =  $url.$request;
+		echo $url;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
 		curl_setopt($session, CURLOPT_HTTPGET, 1); 
@@ -78,7 +79,7 @@ $theme_id = '143487233';
 		//admin/products.json
 		$response = get_data('/admin/products.json'.$api_key, $password, $store_url, $theme_id);
 		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-		print_r("Last SYYYYYYNXXXXXX".$response);
+		print_r($response);
 		return $response->asset->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
