@@ -70,7 +70,7 @@ $theme_id = '143487233';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id.'&asset[value]='.$_POST['snippetText'], $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
 	}
