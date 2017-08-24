@@ -31,6 +31,7 @@ $theme_id = '143487233';
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
+		echo $request."<br><br>";
 		getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
