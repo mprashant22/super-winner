@@ -10,8 +10,6 @@
   			</select>
 <?php
 
-echo $text."MATHUR";
-// Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
 $password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
 $store_url = 'newtest-18.myshopify.com';
@@ -28,7 +26,7 @@ $theme_id = '143487233';
 				. '&redirect_uri=' . CALLBACK_URL;
 	}
 
-	// get_data retrives data with the API
+
 	function get_data($request, $api_key, $password, $store_url)
 	{
 		
@@ -51,7 +49,7 @@ $theme_id = '143487233';
 		print_r($response);
 		return $response;
 	}
-	// put data updates or uploads data with the API
+	
 	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	{
 		//echo "putData";
@@ -72,23 +70,21 @@ $theme_id = '143487233';
 		print_r($response);
 		return $response;
 	}
-	// returns the timestamp of the last sync
+	
 	function get_last_sync($api_key, $password, $store_url)
 	{
-		//echo "get_Last_Sync";
-		//admin/products.json
 		$response = get_data('/admin/products.json'.$api_key, $password, $store_url);
 		//$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 		print_r($response);
 		return $response->asset->value;
 	}
-	// writes new timestamp to the last sync file (on shopify)
+	
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		//echo "`";
+	
 		$data['asset']['key'] = 'snippets/new_file20.liquid';
 		$data['asset']['value'] = "something123";
-		//print_r($data);
+	
 		$data = json_encode($data);
 		print_r($data);
 		if(isset($_POST['submit']))
@@ -101,7 +97,7 @@ $theme_id = '143487233';
 		print_r($response);
 		echo "<><><><><><><><>";
 	}
-	// download a file from the shopify server. this only works for images!
+
     function get_file($url){
     	echo "getFile";
         $ch = curl_init();
@@ -115,30 +111,28 @@ $theme_id = '143487233';
         curl_close($ch);
         return($result);
     }
-    // using a temp file we created using get_file, write the file to the local file structure
+
     function write_file($text, $new_filename){
     	echo "write_file";
         $fp = fopen($new_filename, 'w+');
         fwrite($fp, $text);
         fclose($fp);
     }
-    // get the timestamp of the last sync so we can compare with the files being pulled
 	//$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
 	echo 'PMO';
     $last_sync = get_last_sync($api_key, $password, $store_url);
     print_r($last_sync);
     echo 'PRASHU';
-    //override for testing:
-	//$last_sync = '2016-09-21T09:25:26-05:00';
+
 	$new_last_updated_at = 0;
-	// run a query to pull each asset in the theme
+
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file20.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	print_r($assets);
-	// iterate through the assets
+
 	foreach ($assets->assets as $key => $asset)
 	{
-		// check to see if the updated date on shopify is greater than the last sync date
+
 		$updated_at = $asset->updated_at;
 		if ($updated_at > $last_sync)
 		{
