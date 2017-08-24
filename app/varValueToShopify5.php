@@ -102,35 +102,7 @@ $theme_id = '143487233';
 	$updated_assets = [];
 	print_r($assets);
 	
-	foreach ($assets->assets as $key => $asset)
-	{
-	echo "inside loop";
-		$updated_at = $asset->updated_at;
-		if ($updated_at > $last_sync)
-		{
-			if ($updated_at > $new_last_updated_at)
-			{
-				$new_last_updated_at = $updated_at;
-			}
-			$file_name = $asset->key;
 	
-			if ($asset->public_url!==null)
-			{
-	
-			    $temp_file_contents = get_file($asset->public_url);
-			    write_file($temp_file_contents,$file_name);
-			}
-			else
-			{
-				echo "else";
-				$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid'.'&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-	
-				file_put_contents($file_name, $response->asset->value);		    	
-			}
-	
-		    $updated_assets[] = $asset;
-		}
-	}
 	
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
 	
