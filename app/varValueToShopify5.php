@@ -68,7 +68,7 @@ $theme_id = '143487233';
 	{
 	
 		$data['asset']['key'] = 'snippets/new_file20.liquid';
-		$data['asset']['value'] = "something123";
+		$data['asset']['value'] = "";
 	
 		$data = json_encode($data);		
 		if(isset($_POST['submit']))
@@ -105,7 +105,7 @@ $theme_id = '143487233';
 	//$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
 	echo 'PMO';
     $last_sync = get_last_sync($api_key, $password, $store_url);
-    print_r($last_sync);
+    //print_r($last_sync);
     echo 'PRASHU';
 
 	$new_last_updated_at = 0;
