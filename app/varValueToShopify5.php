@@ -70,8 +70,7 @@ $theme_id = '143487233';
 		$data['asset']['key'] = 'snippets/new_file20.liquid';
 		$data['asset']['value'] = "something123";
 	
-		$data = json_encode($data);
-		print_r($data);
+		$data = json_encode($data);		
 		if(isset($_POST['submit']))
 		{
 			echo "response";
