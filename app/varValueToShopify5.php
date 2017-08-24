@@ -35,7 +35,7 @@ $theme_id = '143487233';
 		getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		
 		$url =  $url.$request;
 		echo $url;
 		$session = curl_init();
@@ -55,10 +55,9 @@ $theme_id = '143487233';
 	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	{
 		//echo "putData";
-		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-		echo $url;
+		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;		
 		$url =  $url.$request;
-		//echo $url;
+		echo $url;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
 		curl_setopt($session, CURLOPT_HEADER, false);
