@@ -17,5 +17,9 @@ echo "Prashant";
 
 <a href="" class="btn btn-block btn-social btn-twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Sign in with Twitter</a>
 
+<a href="" class="btn btn-block btn-social btn-twitter"><i class="fa fa-twitter" aria-hidden="true"></i>Sign in with Twitter</a>
+
+<a href="" class="btn btn-block btn-social btn-tumblr"><i class="fa fa-tumblr" aria-hidden="true"></i>Sign in with Tumblr</a>
+
 
 </div>
