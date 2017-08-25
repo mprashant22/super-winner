@@ -7,8 +7,11 @@
 echo "Prashant";
 ?>
 
+<div style="width: 360px;">
 <input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
 <input autocomplete="off" class="form-control" id="password" name="password" type="password" value="">
+
+<button class="btn btn-primary">Create Account</button>
 
 <div style="width: 360px;">
 
