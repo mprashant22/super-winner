@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+<link rel="stylesheet" href="http://192.241.146.48/shopifyDemoLamp/templates/vendor/bootstrap-social/bootstrap-social.css">
 
 <script type="text/javascript" src="script/app.js"></script>
 
@@ -41,7 +42,7 @@ class StoreTable extends DB_Connection{
 <!--  Prashant -->
 
 <input type="text" id="search" placeholder="Type to search">
-<button class="btn-facebook delete_all">DELETE</button>
+<button class="btn btn-block btn-social btn-facebook delete_all">DELETE</button>
 
 
 <table id="store-table" border=1>
