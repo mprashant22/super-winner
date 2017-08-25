@@ -13,8 +13,6 @@ echo "Prashant";
 
 <button class="btn btn-primary">Create Account</button>
 
-<div style="width: 360px;">
-
 <a href="" class="btn btn-block btn-social btn-google"><i class="fa fa-google" aria-hidden="true"></i>Sign in with Google</a>
 
 <a href="" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Sign in with Facebook</a>
