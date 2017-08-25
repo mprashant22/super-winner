@@ -9,4 +9,4 @@ echo "Prashant";
 
 ?>
 
-<div style="width: 500px;"><a href="" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a></div>
+<div style="width: 100px;"><a href="" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i>Sign in with Facebook</a></div>
