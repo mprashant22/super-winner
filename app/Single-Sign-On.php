@@ -8,4 +8,4 @@ echo "Prashant";
 
 ?>
 
-<a href="" class="btn btn-block btn-social btn-facebook">facebook</a>
+<div style="width: 500px;"><a href="" class="btn btn-block btn-social btn-facebook">facebook</a></div>
