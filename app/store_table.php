@@ -42,7 +42,7 @@ class StoreTable extends DB_Connection{
 <!--  Prashant -->
 
 <input type="text" id="search" placeholder="Type to search">
-<button class="btn btn-block btn-social btn-facebook delete_all">DELETE</button>
+<button class="btn btn-block btn-social btn-facebook"></button>
 
 
 <table id="store-table" border=1>
