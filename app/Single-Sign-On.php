@@ -7,7 +7,7 @@
 echo "Prashant";
 ?>
 
-<div align="center" style="width: 360px;">
+<div style="width: 360px;align:'center'">
 <input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
 <input autocomplete="off" class="form-control" id="password" name="password" type="password" value="">
 
