@@ -5,9 +5,9 @@
 
 <?php
 echo "Prashant";
-
-
 ?>
+
+<input autofocus="" class="form-control input-lg" id="email" name="email" type="email" value="">
 
 <div style="width: 360px;">
 
