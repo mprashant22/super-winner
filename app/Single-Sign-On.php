@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../templates/vendor/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="../templates/vendor/bootstrap-social/bootstrap-social.css">
 <link rel="stylesheet" href="../templates/vendor/bootstrap-social/bootstrap-social.less">
 <link rel="stylesheet" href="../templates/vendor/bootstrap-social/bootstrap-social.scss">
@@ -8,4 +9,4 @@ echo "Prashant";
 
 ?>
 
-<div style="width: 500px;"><a href="" class="btn btn-block btn-social btn-facebook">facebook</a></div>
+<div style="width: 500px;"><a href="" class="btn btn-block btn-social btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> facebook</a></div>
