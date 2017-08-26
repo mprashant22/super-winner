@@ -25,12 +25,12 @@ echo "Prashant";
 
 
 </div>
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
+<!-- <div -->
+<!--   class="fb-like" -->
+<!--   data-share="true" -->
+<!--   data-width="450" -->
+<!--   data-show-faces="true"> -->
+<!-- </div> -->
 
 
 
@@ -73,7 +73,7 @@ echo "Prashant";
 
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '{your-app-id}',
+    appId      : '713987942143126',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
