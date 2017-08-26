@@ -42,10 +42,6 @@ class StoreTable extends DB_Connection{
 
 <input type="text" id="search" placeholder="Type to search">
 <button class="btn btn-primary delete_all">DELETE</button>
-
-<a class="btn btn-block btn-social btn-facebook" onclick=""><span class="fa fa-facebook"></span> Sign in with Facebook</a>
-          
-          
           
 <table id="store-table" border=1>
    <tr>
