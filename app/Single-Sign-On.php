@@ -22,17 +22,7 @@ echo "Prashant";
 <a href="" class="btn btn-block btn-social btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i>Sign in with Instagram</a>
 
 <a href="" class="btn btn-block btn-social btn-tumblr"><i class="fa fa-tumblr" aria-hidden="true"></i>Sign in with Tumblr</a>
-
-
 </div>
-<!-- <div -->
-<!--   class="fb-like" -->
-<!--   data-share="true" -->
-<!--   data-width="450" -->
-<!--   data-show-faces="true"> -->
-<!-- </div> -->
-
-
 
 
 <!-- LOGIN FACEBOOK -->
@@ -133,22 +123,3 @@ echo "Prashant";
 
 </body>
 </html>
-
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '713987942143126',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
