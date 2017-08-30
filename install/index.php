@@ -6,7 +6,7 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
-$shop_info = $Stores->is_shop_exists($shop);
+//$shop_info = $Stores->is_shop_exists($shop);
 //$get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
 //$theme_id = $get_theme->themes[0]->id;
 //$theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
