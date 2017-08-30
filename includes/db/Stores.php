@@ -5,7 +5,7 @@ require 'db_connection.php';
 
 class Stores extends DB_Connection{
     
-    private $table_name = "stores";
+    private $table_name = "stores1";
     
     public function __construct()
     {
