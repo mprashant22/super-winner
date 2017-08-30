@@ -29,7 +29,7 @@ if ($code) {
     //echo "TOKKKKKEN".$shop_info[3];
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
-	 //$exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
+	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
 	 
 	 
 	 //////////////////////////////////////////////////
