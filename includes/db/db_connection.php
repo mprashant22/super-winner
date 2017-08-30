@@ -66,7 +66,7 @@ class DB_Connection{
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
             
-            return mysqli_fetch_all($result);
+            return mysqli_fetch_assoc($result);
         
     }
     
