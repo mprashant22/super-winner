@@ -118,7 +118,7 @@ $theme_id = '143487233';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-// 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+ 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	print_r($assets);
 	// iterate through the assets
