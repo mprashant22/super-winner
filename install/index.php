@@ -33,7 +33,7 @@ if ($code) {
 	 
 	 $col_text = "collectioniproductcollections";
 	 
-	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login1.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANTMATHUR", SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
+	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$col_text, SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
 	 print_r($response);
 	 
 	 	 
