@@ -133,7 +133,7 @@ class Shopify {
         return $this->curlRequest($curl_url, $access_token);
     }
     
-    public function put_data($request, $api_key, $password, $store_url, $theme_id)
+    public function put_data($request, $api_key, $password, $store_url, $theme_id, $data)
     {    	
     	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;    
     	$url =  $url.$request;
