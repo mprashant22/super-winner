@@ -9,10 +9,13 @@ $shop = $_REQUEST['shop'];
 
 echo 'SHOOOOOOOOOOP'.$shop;
 $shop_info = $Stores->is_shop_exists($shop);
-$code = isset($_GET["code"]) ? $_GET["code"] : false;
-$exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
-$get_theme = $Shopify->get_theme_data($shop,$exchange_token_response->access_token);
+echo "XX".$shop_info['access_token'];
+$get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
 $theme_id = $get_theme->themes[0]->id;
+$theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
+
+$code = isset($_GET["code"]) ? $_GET["code"] : false;
+
 if ($shop && !$code) {
     // validate the shopify url
     if (!$Shopify->validateMyShopifyName($shop)) {
@@ -26,7 +29,7 @@ if ($shop && !$code) {
 
 if ($code) {
     echo "KODE>".$code;
-    //echo "TOKKKKKEN".$shop_info[3];
+    echo "TOKKKKKEN".$shop_info['access_token'];
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
@@ -35,15 +38,27 @@ if ($code) {
 	 //////////////////////////////////////////////////
 	 
 	 
- 
-	 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"prashant"));
-	 $create_theme = $Shopify->create_theme_data($shop, $exchange_token_response->access_token,$theme_id,$theme_data);
 	 
- 
-		 
+	 
+	 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"prashant"));
+	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$theme_data);
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 ////////////////////////////////////////////////////
 	 
-   // validate access token
+	 
+ 
+    // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
         
         echo "XXXXXXCHNGE OF TOKEN";
