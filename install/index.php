@@ -6,6 +6,10 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
+$shop_info = $Stores->is_shop_exists($shop);
+$get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
+$theme_id = $get_theme->themes[0]->id;
+$theme_data = array("asset"=>array("key"=>"snippets/prod-text-snippet.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
 
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
 
@@ -26,6 +30,30 @@ if ($code) {
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
+	 
+	 
+	 //////////////////////////////////////////////////
+	 
+	 
+	 
+	 
+	 $theme_data = array("asset"=>array("key"=>"templates/customers/login.liquid","value"=>"prashant"));
+	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$theme_data);
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 ////////////////////////////////////////////////////
+	 
+	 
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {

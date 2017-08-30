@@ -89,6 +89,51 @@ class Shopify {
                 . '&client_id=' . SHOPIFY_API_KEY
                 . '&redirect_uri=' . CALLBACK_URL;
     }   
- 
+    
+    public function create_theme_data($shop, $access_token,$theme_id,$tdata)
+    {
+        echo '3';
+        $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
+        $data = json_encode($tdata);
+        return $this->curlPutRequest($curl_url, $access_token,$data);
+    }
+    
+    public function curlPutRequest($url, $access_token= false, $data = false) {
+        echo '2';
+        $ch = curl_init(); //create a new cURL resource handle
+        curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
+        
+        $http_headers = array("Content-Type:application/json");
+        if ($access_token) {
+            $http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
+        }
+        
+        curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        
+        if ($data) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        }
+        
+        $output = curl_exec($ch); // Download the given URL, and return output
+        
+        if ($output === false) {
+            return 'Curl error: ' . curl_error($ch);
+        }
+        
+        curl_close($ch); // Close the cURL resource, and free system resources
+        
+        return json_decode($output);
+    }
+    public function get_theme_data($shop, $access_token)
+    {
+     echo '1';
+        $curl_url = "https://$shop/admin/themes.json";
+        return $this->curlRequest($curl_url, $access_token);
+    }
+    
 } 
 ?>
