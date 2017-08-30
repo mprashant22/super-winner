@@ -10,6 +10,7 @@ $shop = $_REQUEST['shop'];
 echo 'SHOOOOOOOOOOP'.$shop;
 $shop_info = $Stores->is_shop_exists($shop);
 print_r($shop_info);
+echo $shop_info[3];
 $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
 $theme_id = $get_theme->themes[0]->id;
 //echo "THEME ID".$theme_id;
