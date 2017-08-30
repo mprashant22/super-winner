@@ -91,15 +91,13 @@ class Shopify {
     }   
     
     public function create_theme_data($shop, $access_token,$theme_id,$tdata)
-    {
-        echo '3';
+    {        
         $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
         $data = json_encode($tdata);
         return $this->curlPutRequest($curl_url, $access_token,$data);
     }
     
-    public function curlPutRequest($url, $access_token= false, $data = false) {
-        echo '2';
+    public function curlPutRequest($url, $access_token= false, $data = false) {        
         $ch = curl_init(); //create a new cURL resource handle
         curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
         
@@ -128,19 +126,17 @@ class Shopify {
         
         return json_decode($output);
     }
+    
     public function get_theme_data($shop, $access_token)
     {
-     echo '1';
         $curl_url = "https://$shop/admin/themes.json";
         return $this->curlRequest($curl_url, $access_token);
     }
+    
     public function put_data($request, $api_key, $password, $store_url, $theme_id)
-    {
-    	echo "putData";
-    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
-    	echo "YOU".$url;
+    {    	
+    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;    
     	$url =  $url.$request;
-    	//echo $url;
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
     	curl_setopt($session, CURLOPT_HEADER, false);
@@ -155,7 +151,5 @@ class Shopify {
     	print_r($response);
     	return $response;
     }
-    
-    
 } 
 ?>

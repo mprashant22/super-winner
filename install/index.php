@@ -7,13 +7,9 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 
-echo 'SHOOOOOOOOOOP'.$shop;
 $shop_info = $Stores->is_shop_exists($shop);
-print_r($shop_info);
-echo $shop_info[3];
 $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
 $theme_id = $get_theme->themes[0]->id;
-//echo "THEME ID".$theme_id;
 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
 
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
@@ -24,43 +20,25 @@ if ($shop && !$code) {
         echo "Invalid shopify url";
     }
     $redirect_url = $Shopify->getAuthUrl($shop);
-    //echo 'redirect url : '.$redirect_url;
     header("Location: $redirect_url");
-    
 }
 
 if ($code) {
-//     echo "KODE>".$code;
-//     echo "TOKKKKKEN".$shop_info['access_token'];
+
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
-	 
-	 
+
 	 //////////////////////////////////////////////////
 	 
+	 $col_text = "{% for collection in product.collections %}";
 	 
-	 
-	 
-// 	 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"prashant"));
-// 	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$theme_data);
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login1.liquid&theme_id='.$theme_id.'&asset[value]='."PMATHUR", SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
+	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login1.liquid&theme_id='.$theme_id.'&asset[value]='.$col_text, SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
 	 print_r($response);
 	 
-	 
-	 
-	 
+	 	 
 	 
 	 ////////////////////////////////////////////////////
-	 
-	 
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
