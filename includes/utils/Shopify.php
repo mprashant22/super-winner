@@ -20,7 +20,7 @@ class Shopify {
     {
     	// encode the data
     	$data = json_encode(array("client_id" => $this->_APP_KEY, "client_secret" => $this->_APP_SECRET, "code" => $TempCode));
-    	
+    	print_r($data);
     	// the curl url
     	$curl_url = "https://$ShopifyURL/admin/oauth/access_token";
     	
