@@ -57,16 +57,15 @@ class DB_Connection{
     {
     	//echo "inside db select".$table_name; 
     	$query = "SELECT $columns FROM $table_name";
-    	echo "QUERYYYYYYYY".$query;
         
-        if (!empty($criteria)) {echo "criteria";
+        if (!empty($criteria)) {
             $query .= " WHERE $criteria";
         }
         
       
             $connection = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
-            print_r($result);
+            
             return mysqli_fetch_all($result);
         
     }
