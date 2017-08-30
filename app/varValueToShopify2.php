@@ -70,9 +70,9 @@ $theme_id = '143487233';
 	function get_last_sync($api_key, $password, $store_url, $theme_id)
 	{
 		//echo "get_Last_Sync";
-// 		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+ 		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 // 		echo "Last SYYYYYYNC".$response;
-// 		return $response->asset->value;
+ 		return $response->asset->value;
 	}
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
