@@ -98,7 +98,7 @@ class Shopify {
         echo $shop;
         echo $access_token;
         echo $theme_id;
-        echo $tdata;
+        echo $data;
         echo "finish";
         return $this->curlPutRequest($curl_url, $access_token,$data);
     }
