@@ -124,7 +124,7 @@ class Shopify {
         }
         
         $output = curl_exec($ch); // Download the given URL, and return output
-        
+        echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
         }
