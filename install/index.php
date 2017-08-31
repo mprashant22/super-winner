@@ -37,6 +37,7 @@ if ($code) {
 	 $col_text .="<div></div><br>";
 	 $col_text .="<br><input>";
 	 $col_text .="<div>PRASHANT</div>";
+	 $col_text .="<div>ACME</div>";
 	 $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
 	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
 	 //$response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
