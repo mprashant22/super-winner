@@ -32,15 +32,14 @@ if ($code) {
 	 /////////////////////////////////////////////////
 	 
 	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
-	 //$col_text = "{% for collection in product.collections %}";
-	 //$col_text .="{% endfor %}";
-	 $col_text .="<div></div><br>";
-	 $col_text .="<br><input>";
-	 $col_text .="<div>PRASHANT</div>";
-	 $col_text .="<div>ACME</div>";
-	 $col_text .="<div>PHP ACME</div>";
+	 $col_text = "{% for collection in product.collections %}";
+	 $fb_code .="{% fb %}";
+	 
 	 $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
+	 $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
+	 
 	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
+	 $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
 	 //$response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
 	 print_r($response);
 	 

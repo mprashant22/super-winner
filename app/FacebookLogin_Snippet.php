@@ -1,5 +1,4 @@
 <script>
-
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
     console.log(response);
@@ -49,9 +48,7 @@
     });
   }
 </script>
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 </fb:login-button>
-
 <div id="status">
 </div>
