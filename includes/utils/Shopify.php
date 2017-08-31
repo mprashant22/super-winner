@@ -120,8 +120,7 @@ class Shopify {
         
         if ($data) {
         	echo "inside if DATA vala";
-        	$options = array(CURLOPT_POSTFIELDS => $data); 
-            curl_setopt_array($ch, $options);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         }
         
         $output = curl_exec($ch); // Download the given URL, and return output
