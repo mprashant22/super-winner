@@ -30,7 +30,7 @@ if ($code) {
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
 
 	 //////////////////////////////////////////////////
-	 
+	 echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop;
 	 $col_text = "collectioniproductcollections";
 	 $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
 	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$col_text, SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id,$login_data);
