@@ -33,7 +33,7 @@ if ($code) {
 	 echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop;
 	 $col_text = "collectioniproductcollections";
 	 $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
-	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.json_encode($login_data), SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
+	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
 	 print_r($response);
 	 
 	 
