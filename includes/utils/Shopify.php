@@ -94,6 +94,12 @@ class Shopify {
     {        
         $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
         $data = json_encode($tdata);
+        echo "start";
+        echo $shop;
+        echo $access_token;
+        echo $theme_id;
+        echo $tdata;
+        echo "finish";
         return $this->curlPutRequest($curl_url, $access_token,$data);
     }
     
