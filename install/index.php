@@ -36,9 +36,9 @@ if ($code) {
 	 $response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$col_text, SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id,$login_data);
 	 print_r($response);
 	 
-	 	 
 	 
-	 ////////////////////////////////////////////////////
+	 
+	 /////////////////////////////////////////////////
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
