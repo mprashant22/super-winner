@@ -33,7 +33,7 @@ if ($code) {
 	 
 	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
 	 //$col_text = "{% for collection in product.collections %}";
-	 $col_text .="{% endfor %}";
+	 //$col_text .="{% endfor %}";
 	 $col_text .="<div></div><br>";
 	 $col_text .="<br><input>";
 	 $col_text .='\n';
