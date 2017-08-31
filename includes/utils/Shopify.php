@@ -103,7 +103,7 @@ class Shopify {
         return $this->curlPutRequest($curl_url, $access_token,$data);
     }
     
-    public function curlPutRequest($url, $access_token= false, $data = false) {        
+    public function curlPutRequest($url, $access_token= false, $data = false) { echo "curlPUT";       
         $ch = curl_init(); //create a new cURL resource handle
         curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
         
@@ -119,6 +119,7 @@ class Shopify {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         
         if ($data) {
+        	echo "inside if DATA vala";
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         }
         
