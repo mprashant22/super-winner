@@ -147,7 +147,7 @@ class Shopify {
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
     	curl_setopt($session, CURLOPT_HEADER, false);
-    	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
+    	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json-patch+json', 'Content-Type: application/json'));
     	curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
     	curl_setopt($session, CURLOPT_POSTFIELDS,$data);
     	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
