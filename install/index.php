@@ -34,9 +34,9 @@ if ($code) {
 	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
 	 //$col_text = "{% for collection in product.collections %}";
 	// $fb_code .="{% fb %}";
-	$a='Apple Bat Ball';	
-	$c= 'Bat';
-	 $test="{{ $a| remove: $b }}";
+	$a="Apple Bat Ball";	
+	$c= "Bat";
+	 $test="{{ $a| remove: $c }}";
 	 
 	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
 	// $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
