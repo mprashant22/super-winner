@@ -146,12 +146,12 @@ class Shopify {
     	$url =  $url.$request;
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
-    	curl_setopt($session, CURLOPT_HEADER, false);
-    	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json-patch+json', 'Content-Type: application/json'));
+    	curl_setopt($session, CURLOPT_HEADER, true); //default is false
+    	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
     	curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
     	curl_setopt($session, CURLOPT_POSTFIELDS,$data);
-    	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-    	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
+    	curl_setopt($session, CURLOPT_RETURNTRANSFER, false);  //default is true
+    	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,true);  //default is false
     	$response = curl_exec($session);
     	curl_close($session);
     	$response = json_decode($response);
