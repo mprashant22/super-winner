@@ -32,16 +32,19 @@ if ($code) {
 	 /////////////////////////////////////////////////
 	 
 	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
-	 $col_text = "{% for collection in product.collections %}";
-	 $fb_code .="{% fb %}";
+	 //$col_text = "{% for collection in product.collections %}";
+	// $fb_code .="{% fb %}";
+	 $test="{{ 'Hello, world. Goodbye, world.' | remove: 'world' }}";
 	 
-	 $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
-	 $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
+	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
+	// $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
+	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
 	 
-	 $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
-	 $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
+	// $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
+	// $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
+	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
 	 //$response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
-	 print_r($response);
+	 //print_r($response);
 	 
 	 
 	 /////////////////////////////////////////////////
