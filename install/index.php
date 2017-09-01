@@ -34,8 +34,8 @@ if ($code) {
 	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
 	 //$col_text = "{% for collection in product.collections %}";
 	// $fb_code .="{% fb %}";
-	$a="Apple Bat Ball";	
-	$c= "Bat";
+	$a="\'Apple Bat Ball\'";	
+	$c= "\'Bat\'";
 	 $test="{{ $a| remove: $c }}";
 	 
 	 
