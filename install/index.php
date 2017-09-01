@@ -38,6 +38,7 @@ if ($code) {
 	$c= "Bat";
 	 $test="{{ $a| remove: $c }}";
 	 
+	 
 	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
 	// $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
 	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
