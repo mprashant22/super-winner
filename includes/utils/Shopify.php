@@ -101,11 +101,14 @@ class Shopify {
         echo $theme_id;
         echo $data;
         echo "finish";
-        return $this->curlPutRequest($curl_url, $access_token,$data);
+        return $this->curlPutRequest($curl_url, $access_token,$data,$theme_id);
     }
     
-    public function curlPutRequest($url, $access_token= false, $data = false) { echo "curlPUT";       
-        $ch = curl_init(); //create a new cURL resource handle
+    public function curlPutRequest($url, $access_token= false, $data = false, $theme_id) { echo "curlPUT";       
+    echo "ishwar";
+    print_r($data);
+    echo "bhagwan";
+    $ch = curl_init(); //create a new cURL resource handle
         curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
         
         $http_headers = array("Content-Type:application/json");
@@ -127,7 +130,7 @@ class Shopify {
         $output = curl_exec($ch); // Download the given URL, and return output
         echo "OUUUUUUUUUUUTPUT".$output;
         echo "UUUUUURLLLLLL".$url;
-        echo file_put_contents('ftp://'.$url, $output, FILE_APPEND);
+        echo file_put_contents('ftp://'.$url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='.$text, "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
