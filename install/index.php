@@ -36,7 +36,8 @@ if ($code) {
 	// $fb_code .="{% fb %}";
 	$a="\""."Apple Bat Batting"."\"";	
 	$c= "\""."Batt"."\"";
-	 $test="{{ $a| remove: $c }}";
+	// $test="{{ $a| remove: $c }}";
+	$test = "india vs sri-lanka";
 	 
 	 
 	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
