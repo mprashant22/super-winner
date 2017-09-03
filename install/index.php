@@ -37,7 +37,7 @@ if ($code) {
 	$a="\""."Apple Bat Batting"."\"";	
 	$c= "\""."Batt"."\"";
 	// $test="{{ $a| remove: $c }}";
-	$test = "india vs austria";
+	$test = "india vs austria vs africa";
 	 
 	 
 	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
