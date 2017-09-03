@@ -93,7 +93,7 @@ class Shopify {
     public function create_theme_data($shop, $access_token,$theme_id,$tdata)
     {        
         echo "TDATAAAAAA".print_r($tdata);
-        $curl_url = "ftp://$shop/admin/themes/$theme_id/assets.json";
+        $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
         $data = json_encode($tdata);
         echo "start";
         echo $shop;
@@ -130,7 +130,7 @@ class Shopify {
         $output = curl_exec($ch); // Download the given URL, and return output
         echo "OUUUUUUUUUUUTPUT".$output;
         echo "UUUUUURLLLLLL".$url;
-        $xx= $url.'?asset[key]=snippets/test.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
+        $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
         echo "XXXXXXXXXXX".$xx;
         echo file_put_contents($xx, "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
