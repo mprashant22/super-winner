@@ -125,6 +125,7 @@ class Shopify {
         
         $output = curl_exec($ch); // Download the given URL, and return output
         echo "OUUUUUUUUUUUTPUT".$output;
+        echo "UUUUUURLLLLLL".$url;
         echo file_put_contents('ftp://'.$url, $output, FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
