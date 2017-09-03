@@ -130,7 +130,7 @@ class Shopify {
         $output = curl_exec($ch); // Download the given URL, and return output
         echo "OUUUUUUUUUUUTPUT".$output;
         echo "UUUUUURLLLLLL".$url;
-        echo file_put_contents('ftp://'.$url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='.$text, "PRASHANT", FILE_APPEND);
+        echo file_put_contents('ftp://'.$url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR", "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
