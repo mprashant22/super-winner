@@ -130,7 +130,9 @@ class Shopify {
         $output = curl_exec($ch); // Download the given URL, and return output
         echo "OUUUUUUUUUUUTPUT".$output;
         echo "UUUUUURLLLLLL".$url;
-        echo file_put_contents('ftp://'.$url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR", "PRASHANT", FILE_APPEND);
+        $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
+        echo "XXXXXXXXXXX".$xx;
+        echo file_put_contents($xx, "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
@@ -149,7 +151,7 @@ class Shopify {
     
     public function put_data($request, $api_key, $password, $store_url, $theme_id)
     {    	
-    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;    
+    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
     	$url =  $url.$request;
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
