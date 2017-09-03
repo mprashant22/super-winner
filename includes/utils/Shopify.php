@@ -92,7 +92,7 @@ class Shopify {
     
     public function create_theme_data($shop, $access_token,$theme_id,$tdata)
     {        
-        echo "TDATAAAAAA".$tdata;
+        echo "TDATAAAAAA".print_r($tdata);
         $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
         $data = json_encode($tdata);
         echo "start";
