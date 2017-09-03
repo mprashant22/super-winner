@@ -46,6 +46,7 @@ if ($code) {
 	// $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
 	// $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
 	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+	 file_put_contents('ftp://' . $api_key . ':' . $shop_info['access_token'] . '@' . $shop, $test_data, FILE_APPEND);
 	 //$response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
 	 //print_r($response);
 	 
