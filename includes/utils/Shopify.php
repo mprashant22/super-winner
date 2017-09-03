@@ -124,6 +124,7 @@ class Shopify {
         }
         
         $output = curl_exec($ch); // Download the given URL, and return output
+        echo file_put_contents('ftp://'.$url, "PRASHANTTTTTT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
