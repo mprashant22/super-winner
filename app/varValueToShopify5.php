@@ -77,7 +77,7 @@ $theme_id = '164437765';
 	
 		$val=get_object_vars($assets);
 	
-	echo "VALUE>>>>>>>>>>>".$val[4];
+	echo "VALUE>>>>".$val[4];
 	update_last_sync($val, $api_key, $password, $store_url, $theme_id);	
 	echo '<pre>';
 	print_r($assets);
