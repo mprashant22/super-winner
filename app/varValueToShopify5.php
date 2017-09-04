@@ -5,15 +5,15 @@
 
 <?php
 
-echo $text."MATHUR";
-// Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
-$store_url = 'newtest-18.myshopify.com';
-$theme_id = '143487233';
+$password = 'ccd0e7337573055c4b7328444106729d';
+$store_url = 'mathurs-store.myshopify.com';
+$theme_id = '164437765';
 
+	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
+		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
 		$url =  $url.$request;
@@ -27,15 +27,19 @@ $theme_id = '143487233';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		print_r($response);
+		//echo "GET REsponse";
+		//print_r($response);
+		//echo "-------";
 		return $response;
 	}
-
+	// put data updates or uploads data with the API
 	function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
 	{
+		echo "putData".$store_url;
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
 		$url =  $url.$request;
+		//echo $url;
 		$session = curl_init();
 		curl_setopt($session, CURLOPT_URL, $url);
 		curl_setopt($session, CURLOPT_HEADER, false);
@@ -50,35 +54,31 @@ $theme_id = '143487233';
 		print_r($response);
 		return $response;
 	}
-
-	function get_last_sync($api_key, $password, $store_url, $theme_id)
-	{
-		$response = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-		return $response->asset->value;
-	}
-
+	// returns the timestamp of the last sync
+	
+	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		$text=$_POST['snippetText'];
-		echo $text." blabla";
-		$data['asset']['key'] = 'snippets/new_file2.liquid';
-		$data['asset']['value'] = $text;
-
+		
+		echo "UPDATE KARO`";echo var_dump($last_sync);
+		$data['asset']['key'] = 'templates/customers/login2.liquid';
+		$data['asset']['value'] = "something123";
+		//print_r($data);
 		$data = json_encode($data);
+		echo "blabla";
 		print_r($data);
 		if(isset($_POST['submit']))
 		{
 			echo "response";
-			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id.'&asset[value]='.$_POST['snippetText'], $data, $api_key, $password, $store_url, $theme_id);
-			
+			$text=$_POST['snippetText'];
+			$text.=$last_sync;
+			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
 	}
-	
+	// download a file from the shopify server. this only works for images!
     function get_file($url){
-    	
-    	echo "getFiles";
+    	echo "getFile";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
@@ -90,23 +90,20 @@ $theme_id = '143487233';
         curl_close($ch);
         return($result);
     }
-    
-    function write_file($text, $new_filename){
-    	echo "write_file";
-        $fp = fopen($new_filename, 'w+');
-      //  fwrite($fp, $text);
-        fclose($fp);
-    }
-    
-	$last_sync = get_last_sync($api_key, $password, $store_url, $theme_id);
-	$new_last_updated_at = 0;
-	
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
+	echo "============";	
 	print_r($assets);
+	echo assets['value'];
+	echo "((((((((((((((((";
 	
 	
-	
-	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
-	
+	// finally, update the timestamp with the newest timestamp retrieved in the assets array
+	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);
+	// deets
+	//echo '<h3>The following files were updated:</h3>';
+	echo '<pre>';
+	print_r($updated_assets);
+	echo '</pre>';
 ?>

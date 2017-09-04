@@ -8,9 +8,9 @@
 echo $text."MATHUR";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = 'ccd0e7337573055c4b7328444106729d';
-$store_url = 'mathurs-store.myshopify.com';
-$theme_id = '164437765';
+$password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
+$store_url = 'newtest-18.myshopify.com';
+$theme_id = '143487233';
 
 	function getAuthUrl($shop)
 	{	
@@ -26,7 +26,7 @@ $theme_id = '164437765';
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
-		//getAuthUrl($store_url);
+		getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
@@ -41,9 +41,7 @@ $theme_id = '164437765';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		//echo "GET REsponse";
-		//print_r($response);
-		//echo "-------";
+		print_r($response);
 		return $response;
 	}
 	// put data updates or uploads data with the API
@@ -79,20 +77,17 @@ $theme_id = '164437765';
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		
-		echo "UPDATE KARO`";echo var_dump($last_sync);
-		$data['asset']['key'] = 'templates/customers/login2.liquid';
+		//echo "`";
+		$data['asset']['key'] = 'snippets/new_file2.liquid';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
-		echo "blabla";
 		print_r($data);
 		if(isset($_POST['submit']))
 		{
 			echo "response";
-			$text=$_POST['snippetText'];
-			$text.=$last_sync;
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+			$text=$_POST['snippetText'];		
+			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
 	}
@@ -123,12 +118,9 @@ $theme_id = '164437765';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+// 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
-	echo "============";	
 	print_r($assets);
-	echo assets['value'];
-	echo "(((((((((((((((((((((";
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
 	{
@@ -161,10 +153,10 @@ $theme_id = '164437765';
 		}
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the assets array
-	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);
+	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
 	// deets
 	//echo '<h3>The following files were updated:</h3>';
-	echo '<pre>';
-	print_r($updated_assets);
-	echo '</pre>';
+	//echo '<pre>';
+	//print_r($updated_assets);
+	//echo '</pre>';
 ?>
