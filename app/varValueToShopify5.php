@@ -79,10 +79,10 @@ $theme_id = '164437765';
 	print_r($assets);
 	echo '</pre>';
 	
-	foreach ($assets->asset as $key => $asset)
-	{
-		echo "VALUE>>>>".$assets['value'];
-	}
+	//foreach ($assets->asset as $key => $asset)
+	//{
+		echo "VALUE>>>>".$assets->value;
+	//}
 	
 	
 	echo "VALUE>>>>".$val[4];
