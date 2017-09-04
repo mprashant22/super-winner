@@ -52,35 +52,34 @@ $theme_id = '164437765';
 		return $response;
 	}
 
-	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
+	function update_last_sync($text, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "UPDATE KARO`";		
-		foreach ($last_sync->last_sync as $key => $ls)
-		{
-			$file_name = $ls->value;
-			echo "FILNAME".$file_name;
-		}
+		echo "UPDATE KARO`";
 		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
-		//print_r($data);
 		$data = json_encode($data);
-		//echo "blabla";
-	//	print_r($data);
+		echo "blabla";
+		print_r($data);
 		//if(isset($_POST['submit']))
 		//{
-			echo "response";
+		echo "response";
 			//$text=$_POST['snippetText'];
-			$tag='<div>{% include'. '/'.'fb_login_snippet.'/' %}</div>';
-			$text.=$tag;
+		$tag='<div>{% include'. '/'.'fb_login_snippet.'/' %}</div>';
+		echo "TAG>>".$tag;
+		$text.=$tag;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		//}
 		print_r($response);
 	}
 
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-	
-	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);	
+	foreach ($assets->assets as $key => $asset)
+	{
+		$val=$asset->value;
+	}
+	echo "VALUE>>>>>>>>>>>".$val;
+	update_last_sync($val, $api_key, $password, $store_url, $theme_id);	
 	echo '<pre>';
 	print_r($assets);
 	echo '</pre>';
