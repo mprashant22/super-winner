@@ -81,7 +81,7 @@ $theme_id = '164437765';
 	
 	//foreach ($assets->asset as $key => $asset)
 	//{
-		echo "VALUE>>>>".$assets[0]->value;
+		echo "VALUE>>>>".$assets->asset->value;
 	//}
 	update_last_sync($val, $api_key, $password, $store_url, $theme_id);	
 	
