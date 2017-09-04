@@ -54,7 +54,11 @@ $theme_id = '164437765';
 
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "UPDATE KARO`";echo var_dump($last_sync);
+		echo "UPDATE KARO`";
+		echo '<pre>';
+		echo var_dump($last_sync);
+		echo '</pre>';	
+		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
@@ -65,7 +69,7 @@ $theme_id = '164437765';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];
-			$text.='PRASHANT';
+			$text.='<div>{% include'. '/'.'fb_login_snippet.'/' %}</div>';
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
