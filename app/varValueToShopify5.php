@@ -81,7 +81,7 @@ $theme_id = '164437765';
 	
 	foreach ($assets->asset as $key => $asset)
 	{
-		echo "VALUE>>>>".$assets->value;
+		echo "VALUE>>>>".$assets['value'];
 	}
 	
 	
