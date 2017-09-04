@@ -54,20 +54,21 @@ $theme_id = '164437765';
 
 	function update_last_sync($text, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "UPDATE KARO`";
+		//echo "UPDATE KARO`";
 		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
 		$data = json_encode($data);
-		echo "blabla";
-		print_r($data);
+		//echo "blabla";
+		//print_r($data);
 		//if(isset($_POST['submit']))
 		//{
-		echo "response";
+		//echo "response";
 			//$text=$_POST['snippetText'];
 		$tag="<div>{% include 'fb_login_snippet'%}</div>";
-		echo "TAG>>".$tag;
+		//echo "TAG>>".$tag;
 		$text.=$tag;
+		echo "TEXT>>".$text;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		//}
 		print_r($response);
