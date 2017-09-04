@@ -67,15 +67,17 @@ $theme_id = '164437765';
 			//$text=$_POST['snippetText'];
 		$tag="<div>{% include 'fb_login_snippet'%}</div>";
 		echo "TAG>>".$tag;
-		$text.=$tag;	
+		$text.=$tag;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		//}
 		print_r($response);
 	}
 
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+	$i=0;
 	foreach ($assets->assets as $key => $asset)
 	{
+		echo $i++;
 		$val=$asset->value;
 	}
 	echo "VALUE>>>>>>>>>>>".$val;
