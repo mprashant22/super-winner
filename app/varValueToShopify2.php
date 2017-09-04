@@ -41,9 +41,9 @@ $theme_id = '164437765';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
-		echo "GET REsponse";
-		print_r($response);
-		echo "-------";
+		//echo "GET REsponse";
+		//print_r($response);
+		//echo "-------";
 		return $response;
 	}
 	// put data updates or uploads data with the API
