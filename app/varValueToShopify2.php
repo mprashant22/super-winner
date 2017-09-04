@@ -123,7 +123,8 @@ $theme_id = '164437765';
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	echo "============";	
-	print_r($assets);
+	//print_r($assets);
+	echo assets[key];
 	echo "(((((((((((((((((((((";
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
