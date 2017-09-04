@@ -79,7 +79,8 @@ $theme_id = '164437765';
 	// writes new timestamp to the last sync file (on shopify)
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		echo "UPDATE KARO`";
+		
+		echo "UPDATE KARO`";echo var_dump($last_sync);
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
