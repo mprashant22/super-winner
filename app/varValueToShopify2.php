@@ -8,7 +8,7 @@
 echo $text."MATHUR";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = 'c0496bde1bdf07ca653c0b4eaebf8c63';
+$password = 'ccd0e7337573055c4b7328444106729d';
 $store_url = 'mathurs-store.myshopify.com';
 $theme_id = '164437765';
 
