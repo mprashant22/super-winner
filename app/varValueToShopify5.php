@@ -74,12 +74,9 @@ $theme_id = '164437765';
 	}
 
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-	$i=0;
-	foreach ($assets->assets as $key => $asset)
-	{
-		echo $i++;
-		$val=$asset->value;
-	}
+	
+		$val=$assets['value'];
+	
 	echo "VALUE>>>>>>>>>>>".$val;
 	update_last_sync($val, $api_key, $password, $store_url, $theme_id);	
 	echo '<pre>';
