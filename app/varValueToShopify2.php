@@ -8,9 +8,9 @@
 echo $text."MATHUR";
 // Update these variables with the correct values from a new *Private* app in Shopify
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = '00f7d6f7ad1d8649bd7bc855d2caff6e';
-$store_url = 'newtest-18.myshopify.com';
-$theme_id = '143487233';
+$password = 'c0496bde1bdf07ca653c0b4eaebf8c63';
+$store_url = 'mathurs-store.myshopify.com';
+$theme_id = '164437765';
 
 	function getAuthUrl($shop)
 	{	
@@ -26,7 +26,7 @@ $theme_id = '143487233';
 	// get_data retrives data with the API
 	function get_data($request, $api_key, $password, $store_url, $theme_id)
 	{
-		getAuthUrl($store_url);
+		//getAuthUrl($store_url);
 		echo "getData";
 		$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
 		echo $url;
@@ -41,7 +41,9 @@ $theme_id = '143487233';
 		$response = curl_exec($session);
 		curl_close($session);
 		$response = json_decode($response);
+		echo "GET REsponse";
 		print_r($response);
+		echo "-------";
 		return $response;
 	}
 	// put data updates or uploads data with the API
@@ -118,9 +120,11 @@ $theme_id = '143487233';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-// 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/new_file2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
+	echo "============";	
 	print_r($assets);
+	echo "(((((((((((((((((((((";
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
 	{

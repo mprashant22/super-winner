@@ -133,7 +133,7 @@ class Shopify {
         echo "UUUUUURLLLLLL".$url;
         $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
         echo "XXXXXXXXXXX".$xx;
-        echo file_put_contents("https://' . SHOPIFY_API_KEY. ':' . $access_token . '@' . $shop.'/admin/themes/'.$theme_id.'?key=snippets/test.liquid", "PRASHANT", FILE_APPEND);
+        echo file_put_contents("ftp://' . SHOPIFY_API_KEY. ':' . $access_token . '@' . $shop.'/admin/themes/'.$theme_id.'?key=snippets/test.liquid", "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
