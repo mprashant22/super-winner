@@ -124,7 +124,7 @@ $theme_id = '164437765';
 	$updated_assets = [];
 	echo "============";	
 	//print_r($assets);
-	echo assets['key'];
+	echo assets['value'];
 	echo "(((((((((((((((((((((";
 	// iterate through the assets
 	foreach ($assets->assets as $key => $asset)
