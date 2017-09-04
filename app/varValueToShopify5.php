@@ -55,10 +55,11 @@ $theme_id = '164437765';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		echo "UPDATE KARO`";		
-		foreach ($last_sync->last_sync as $key => $ls)		
+		foreach ($last_sync->last_sync as $key => $ls)
+		{
 			$file_name = $ls->value;
-		
-		echo "FILNAME".$file_name;
+			echo "FILNAME".$file_name;
+		}
 		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
