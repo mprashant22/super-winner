@@ -65,7 +65,7 @@ $theme_id = '164437765';
 		//{
 		//echo "response";
 			//$text=$_POST['snippetText'];
-		$tag="<div>{"."#03x include"."'fb_login_snippet'"."#03x}</div>";
+		$tag="<div>{"."#03xinclude"."'fb_login_snippet'"."#03x}</div>";
 		//echo "TAG>>".$tag;
 		$text.=$tag;
 		echo "TEXT>>".$text;
