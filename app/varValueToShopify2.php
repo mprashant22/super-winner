@@ -80,7 +80,7 @@ $theme_id = '164437765';
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
 		//echo "`";
-		$data['asset']['key'] = 'snippets/new_file2.liquid';
+		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
@@ -89,7 +89,7 @@ $theme_id = '164437765';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];		
-			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
 	}
@@ -161,7 +161,7 @@ $theme_id = '164437765';
 	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
 	// deets
 	//echo '<h3>The following files were updated:</h3>';
-	//echo '<pre>';
-	//print_r($updated_assets);
-	//echo '</pre>';
+	echo '<pre>';
+	print_r($updated_assets);
+	echo '</pre>';
 ?>
