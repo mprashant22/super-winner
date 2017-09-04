@@ -132,7 +132,7 @@ class Shopify {
         echo "UUUUUURLLLLLL".$url;
         $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
         echo "XXXXXXXXXXX".$xx;
-        echo file_put_contents('test.liquid', "PRASHANT", FILE_APPEND);
+        echo file_put_contents('https://mathurs-store.myshopify.com/admin/themes/164437765?key=snippets/test.liquid', "PRASHANT", FILE_APPEND);
         echo 'outputtttttt#########'.$output;
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
