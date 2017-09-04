@@ -58,7 +58,7 @@ $theme_id = '164437765';
 		echo '<pre>';
 		echo var_dump($last_sync);
 		echo '</pre>';	
-		foreach ($last_sync->assets as $key => $asset)
+		foreach ($last_sync->last_sync as $key => $asset)
 		{
 			$file_name = $asset->key;
 			echo "FILNAME".$file_name;
