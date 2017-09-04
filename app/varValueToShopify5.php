@@ -26,10 +26,7 @@ $theme_id = '164437765';
 		curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
 		$response = curl_exec($session);
 		curl_close($session);
-		$response = json_decode($response);
-		//echo "GET REsponse";
-		//print_r($response);
-		//echo "-------";
+		$response = json_decode($response);		
 		return $response;
 	}
 	// put data updates or uploads data with the API
@@ -54,12 +51,9 @@ $theme_id = '164437765';
 		print_r($response);
 		return $response;
 	}
-	// returns the timestamp of the last sync
-	
-	// writes new timestamp to the last sync file (on shopify)
+
 	function update_last_sync($last_sync, $api_key, $password, $store_url, $theme_id)
 	{
-		
 		echo "UPDATE KARO`";echo var_dump($last_sync);
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
@@ -76,34 +70,10 @@ $theme_id = '164437765';
 		}
 		print_r($response);
 	}
-	// download a file from the shopify server. this only works for images!
-    function get_file($url){
-    	echo "getFile";
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_VERBOSE, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_AUTOREFERER, false);
-        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return($result);
-    }
 
 	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
-	$updated_assets = [];
-	echo "============";	
-	print_r($assets);
-	echo assets['value'];
-	echo "((((((((((((((((";
-	
-	
-	// finally, update the timestamp with the newest timestamp retrieved in the assets array
-	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);
-	// deets
-	//echo '<h3>The following files were updated:</h3>';
+	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);	
 	echo '<pre>';
-	print_r($updated_assets);
+	print_r($assets);
 	echo '</pre>';
 ?>
