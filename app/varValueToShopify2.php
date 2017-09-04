@@ -85,6 +85,7 @@ $theme_id = '164437765';
 		$data['asset']['value'] = "something123";
 		//print_r($data);
 		$data = json_encode($data);
+		echo "blabla";
 		print_r($data);
 		if(isset($_POST['submit']))
 		{
