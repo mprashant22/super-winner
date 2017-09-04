@@ -71,7 +71,7 @@ $theme_id = '164437765';
 		{
 			echo "response";
 			$text=$_POST['snippetText'];
-			$text.=$last_sync;
+			$text.='PRASHANT';
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
