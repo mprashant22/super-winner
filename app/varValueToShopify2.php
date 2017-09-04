@@ -88,7 +88,8 @@ $theme_id = '164437765';
 		if(isset($_POST['submit']))
 		{
 			echo "response";
-			$text=$_POST['snippetText'];		
+			$text=$_POST['snippetText'];
+			$text.=$last_sync;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		}
 		print_r($response);
@@ -158,7 +159,7 @@ $theme_id = '164437765';
 		}
 	}
 	// finally, update the timestamp with the newest timestamp retrieved in the assets array
-	update_last_sync($new_last_updated_at, $api_key, $password, $store_url, $theme_id);
+	update_last_sync($assets, $api_key, $password, $store_url, $theme_id);
 	// deets
 	//echo '<h3>The following files were updated:</h3>';
 	echo '<pre>';
