@@ -120,7 +120,7 @@ $theme_id = '164437765';
 	//$last_sync = '2016-09-21T09:25:26-05:00';
 	$new_last_updated_at = 0;
 	// run a query to pull each asset in the theme
-	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
 	$updated_assets = [];
 	echo "============";	
 	print_r($assets);
