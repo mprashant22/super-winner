@@ -60,9 +60,8 @@ $theme_id = '164437765';
 		echo '</pre>';	
 		foreach ($assets->assets as $key => $asset)
 		{
-			$file_name = $asset->value;
-		}
-		echo "FILENMAE".$file_name;
+			$file_name = $asset->key;
+			echo "FILNAME".$file_name;
 		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
