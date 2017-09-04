@@ -58,6 +58,11 @@ $theme_id = '164437765';
 		echo '<pre>';
 		echo var_dump($last_sync);
 		echo '</pre>';	
+		foreach ($assets->assets as $key => $asset)
+		{
+			$file_name = $asset->value;
+		}
+		echo "FILENMAE".$file_name;
 		
 		$data['asset']['key'] = 'templates/customers/login2.liquid';
 		$data['asset']['value'] = "something123";
@@ -65,10 +70,10 @@ $theme_id = '164437765';
 		$data = json_encode($data);
 		echo "blabla";
 		print_r($data);
-		if(isset($_POST['submit']))
-		{
+		//if(isset($_POST['submit']))
+		//{
 			echo "response";
-			$text=$_POST['snippetText'];
+			//$text=$_POST['snippetText'];
 			$tag='<div>{% include'. '/'.'fb_login_snippet.'/' %}</div>';
 			$text.=$tag;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
