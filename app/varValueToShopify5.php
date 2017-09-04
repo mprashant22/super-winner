@@ -67,7 +67,7 @@ $theme_id = '164437765';
 			//$text=$_POST['snippetText'];
 		$tag="<div>{% include 'fb_login_snippet'%}</div>";
 		//echo "TAG>>".$tag;
-		$text.=$tag;
+		$text.='ACME';
 		echo "TEXT>>".$text;
 			$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
 		//}
