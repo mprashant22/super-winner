@@ -40,7 +40,7 @@ if ($code) {
 	 echo $shop_info['access_token'];
 	 echo $theme_id;	
 	 echo "ENDDDDDDDD";
-	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
+	 //$Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
 	
 	 /////////////////////////////////////////////////
  
