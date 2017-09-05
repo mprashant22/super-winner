@@ -195,19 +195,19 @@ class Shopify {
     
     public function updateLiquid($text, $api_key, $access_token, $shop, $theme_id)
     {
-    	//echo "UPDATE KARO`";
+    	echo "UPDATE KARO`";
     	
     	$data['asset']['key'] = 'templates/customers/login22.liquid';
     	$data['asset']['value'] = "something123";
     	$data = json_encode($data);
-    	//echo "blabla";
+    	echo "blabla";
     	//print_r($data);
     	//if(isset($_POST['submit']))
     	//{
     	//echo "response";
     	//$text=$_POST['snippetText'];
     	$tag="<div>{% include 'fb_login_snippet' %}</div>";
-    	//echo "TAG>>".$tag;
+    	echo "TAG>>".$tag;
     	$text.=urlencode($tag);
     	echo "TEXT>>".$text;
     	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);

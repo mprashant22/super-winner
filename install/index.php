@@ -30,14 +30,12 @@ if ($code) {
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
 
 	 /////////////////////////////////////////////////
-	$test = "india vs austria vs africa";
-	 
-	 
+	 $test = "india vs austria vs africa vs england";	 
 
-	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-	 
+	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));	 
 
 	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id, $test_data);
 	 echo "###########".$shop;
 	 
 	 
