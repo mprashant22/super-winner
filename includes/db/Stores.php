@@ -1,6 +1,5 @@
 <?php
 
-echo 'in stores';
 require 'db_connection.php';
 
 class Stores extends DB_Connection{
@@ -9,21 +8,18 @@ class Stores extends DB_Connection{
     
     public function __construct()
     {
-    	//echo 'stores connect';
-        $this->connect();
+         $this->connect();
     }
 
-    public function addData($data)
-    {
-    	echo 'addDATATA';
+    public function addData($data)    {
+    	
     	print_r($data);
         return $this->add($this->table_name, $data);
     }
     
     public function updateData($data, $criteria)
     {
-    	//echo "popopopop";
-        return $this->update($this->table_name, $data, $criteria);
+    	return $this->update($this->table_name, $data, $criteria);
     }
 
 
