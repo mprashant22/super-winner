@@ -24,6 +24,7 @@ if ($shop && !$code) {
 }
 
 if ($code) {
+	echo "XCESS ::::::::::".$shop_info['access_token'];
 
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
@@ -41,9 +42,7 @@ if ($code) {
 	 echo $theme_id;	
 	 echo "ENDDDDDDDD";
 	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
-	// echo "###########".$shop;
-	 
-	 
+	
 	 /////////////////////////////////////////////////
  
     // validate access token
