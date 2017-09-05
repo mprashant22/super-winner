@@ -8,15 +8,15 @@ $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 echo "shopppp".$shop;
 $shop_info = $Stores->is_shop_exists($shop);
-print_r($shop_info);
+//print_r($shop_info);
 $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
-echo "theme==>".print_r($get_theme);
+//echo "theme==>".print_r($get_theme);
 $theme_id = $get_theme->themes[0]->id;
-echo "t Id".$theme_id;
+//echo "t Id".$theme_id;
 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
 
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
-echo "code>>".$code;
+//echo "code>>".$code;
 
 if ($shop && !$code) {
     // validate the shopify url
