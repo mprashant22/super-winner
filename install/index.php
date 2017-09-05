@@ -34,7 +34,7 @@ if ($code) {
 
 	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));	 
 
-	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+	 //$test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
 	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id, $test_data);
 	 echo "###########".$shop;
 	 
