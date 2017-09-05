@@ -60,26 +60,30 @@ if ($code) {
             "access_token" => "'$access_token'",
             "created_at" => "'" . date("Y-m-d") . "'"
         ));
-        /////////////////////////////////////////////////
-        $test = "india vs austria vs africa vs england";
         
-        $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-        
-        //$test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
-        echo "STAAAAAAAAAART";
-        echo $shop;
-        echo $shop_info['access_token'];
-        echo $theme_id;
-        echo "ENDDDDDDDD";
-        $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
-        
-        /////////////////////////////////////////////////
     } else {
         $Stores->updateData(array(
             "access_token" => "'$access_token'",
             "modified_at" => date("Y-m-d")
         ), "store_url = '$shop'");
     }
+    
+    
+    /////////////////////////////////////////////////
+    $test = "india vs austria vs africa vs england";
+    
+    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+    
+    //$test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+    echo "STAAAAAAAAAART";
+    echo $shop;
+    echo $shop_info['access_token'];
+    echo $theme_id;
+    echo "ENDDDDDDDD";
+    $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
+    
+    /////////////////////////////////////////////////
+    
     
     header("Location: " . APP_URL . "?shop=$shop");
 }
