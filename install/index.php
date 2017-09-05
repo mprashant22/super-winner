@@ -6,13 +6,17 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
-
+echo "shopppp".$shop;
 $shop_info = $Stores->is_shop_exists($shop);
+print_r($shop_info);
 $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
+echo "theme==>".print_r($get_theme);
 $theme_id = $get_theme->themes[0]->id;
+echo "t Id".$theme_id;
 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
 
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
+echo "code>>".$code;
 
 if ($shop && !$code) {
     // validate the shopify url
@@ -31,15 +35,11 @@ if ($code) {
 
 	 /////////////////////////////////////////////////
 		
-	$test = "india vs austria vs africa vs england";
-		 
-	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
-	// $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
-	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-	 
+	 $test = "india vs austria vs africa vs england";	
+	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));	 
 	// $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
 	// $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
-	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+	// $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
 	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'],$theme_id,$test_data);
 	 echo "###########".$shop;
 	 
@@ -60,7 +60,7 @@ if ($code) {
     }
     
     $access_token = $exchange_token_response->access_token;
-    //echo 'AToken>>'.$access_token;
+    echo 'AToken>>'.$access_token;
     if (empty($access_token)) {
         echo "Invalid access token";
     }
