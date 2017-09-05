@@ -83,7 +83,7 @@ if ($code) {
     //$Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
     
     /////////////////////////////////////////////////
-    
+    echo "yahan tak";
     
     header("Location: " . APP_URL . "?shop=$shop");
 }
