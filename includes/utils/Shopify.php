@@ -151,10 +151,10 @@ class Shopify {
     }
     
     // get_data retrives data with the API
-    public function get_data($request, $api_key, $password, $store_url, $theme_id)
+    public function get_data($request, $api_key, $access_token, $shop, $theme_id)
     {
     	echo "getData";
-    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;
     	echo $url;
     	$url =  $url.$request;
     	$session = curl_init();
@@ -171,10 +171,10 @@ class Shopify {
     }
     
     // put data updates or uploads data with the API
-    public function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
+    public function put_data($request, $data, $api_key, $access_token, $shop, $theme_id)
     {
-    	echo "putData".$store_url;
-    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+    	echo "putData".$shop;
+    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;
     	echo $url;
     	$url =  $url.$request;
     	//echo $url;
@@ -193,7 +193,7 @@ class Shopify {
     	return $response;
     }
     
-    public function updateLiquid($text, $api_key, $password, $store_url, $theme_id)
+    public function updateLiquid($text, $api_key, $access_token, $shop, $theme_id)
     {
     	//echo "UPDATE KARO`";
     	
@@ -210,18 +210,18 @@ class Shopify {
     	//echo "TAG>>".$tag;
     	$text.=urlencode($tag);
     	echo "TEXT>>".$text;
-    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);
     	//}
     	print_r($response);
     }
     
-    public function fetchCurrentLiquidData()
+    public function fetchCurrentLiquidData($shop, $access_token,$theme_id,$test_data)
     {
-    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $password, $store_url, $theme_id);
+    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
 		echo '<pre>';
 		print_r($assets);
 		echo '</pre>';
-		updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $password, $store_url, $theme_id);
+		updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
     }
 } 
 ?>
