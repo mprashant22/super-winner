@@ -6,10 +6,12 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
+
 $shop_info = $Stores->is_shop_exists($shop);
 $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
 $theme_id = $get_theme->themes[0]->id;
-//$theme_data = array("asset"=>array("key"=>"templates/customers/login22.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
+$theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
+
 $code = isset($_GET["code"]) ? $_GET["code"] : false;
 
 if ($shop && !$code) {
@@ -28,13 +30,23 @@ if ($code) {
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
 
 	 /////////////////////////////////////////////////
-		
-	 $test = "india vs austria vs africa vs england";	
-	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));	 
+	 
+	// echo "SHOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP".$shop_info['access_token'];
+	 //$col_text = "{% for collection in product.collections %}";
+	// $fb_code .="{% fb %}";
+	$a="\""."Apple Bat Batting"."\"";	
+	$c= "\""."Batt"."\"";
+	// $test="{{ $a| remove: $c }}";
+	$test = "india vs austria vs africa";
+	 
+	 
+	// $login_data = array("asset"=>array("key"=>"templates/customers/login2.liquid","value"=>$col_text));
+	// $fb_login_snippet = array("asset"=>array("key"=>"snippets/fb_login.liquid","value"=>$fb_code));
+	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+	 
 	// $create_theme = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$login_data);
 	// $fb_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$fb_login_snippet);
-	// $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
-	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'],$theme_id,$test_data);
+	 $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
 	 echo "###########".$shop;
 	 
 	 //$response=$Shopify->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$login_data['key'], SHOPIFY_API_KEY, $exchange_token_response->access_token, $shop, $theme_id);
@@ -54,14 +66,16 @@ if ($code) {
     }
     
     $access_token = $exchange_token_response->access_token;
-    echo 'AToken>>'.$access_token;
+    //echo 'AToken>>'.$access_token;
     if (empty($access_token)) {
         echo "Invalid access token";
     }
-    
+    echo '1211113';
+    echo "dukaan".$shop."//";
     // we check if it's a fresh installation
   //  $shop_info = $Stores->is_shop_exists($shop);
-   
+   // echo $shop_info;
+   // echo empty($shop_info);
     if (empty($shop_info)) {
     	$api_key=SHOPIFY_API_KEY;
     	echo 'fresh installation of app'; // this means that's it's a fresh installation, so we do the installation process
