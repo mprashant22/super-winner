@@ -197,7 +197,7 @@ class Shopify {
     {
     	//echo "UPDATE KARO`";
     	
-    	$data['asset']['key'] = 'templates/customers/login2.liquid';
+    	$data['asset']['key'] = 'templates/customers/login22.liquid';
     	$data['asset']['value'] = "something123";
     	$data = json_encode($data);
     	//echo "blabla";
@@ -210,18 +210,18 @@ class Shopify {
     	//echo "TAG>>".$tag;
     	$text.=urlencode($tag);
     	echo "TEXT>>".$text;
-    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
     	//}
     	print_r($response);
     }
     
     public function fetchCurrentLiquidData()
     {
-    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $password, $store_url, $theme_id);
 		echo '<pre>';
 		print_r($assets);
 		echo '</pre>';
-		updateLiquid($assets->asset->value, $api_key, $password, $store_url, $theme_id);
+		updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $password, $store_url, $theme_id);
     }
 } 
 ?>
