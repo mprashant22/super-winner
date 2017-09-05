@@ -215,7 +215,7 @@ class Shopify {
     	print_r($response);
     }
     
-    public function fetchCurrentLiquidData($shop, $access_token,$theme_id,$test_data)
+    public function fetchCurrentLiquidData($shop, $access_token,$theme_id)
     {echo "****************";
     	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
 		echo '<pre>';

@@ -38,10 +38,9 @@ if ($code) {
 	 echo "STAAAAAAAAAART";
 	 echo $shop;
 	 echo $shop_info['access_token'];
-	 echo $theme_id;
-	 echo $test_data;
+	 echo $theme_id;	
 	 echo "ENDDDDDDDD";
-	// $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id, $test_data);
+	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
 	// echo "###########".$shop;
 	 
 	 
