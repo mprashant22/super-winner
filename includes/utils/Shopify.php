@@ -1,5 +1,5 @@
 <?php
-echo " in shopify";
+
 class Shopify {
     
     public $_APP_KEY;
@@ -82,7 +82,7 @@ class Shopify {
     
     public function getAuthUrl($shop)
     {
-    	//echo 'inside getAuth';
+    	echo 'inside getAuth';
     	$scopes = ["read_products", "read_orders","write_products","write_orders","read_themes", "write_themes"];
         return 'https://' . $shop . '/admin/oauth/authorize?'
                 . 'scope=' . implode("%2C", $scopes)
@@ -91,8 +91,7 @@ class Shopify {
     }   
     
     public function create_theme_data($shop, $access_token,$theme_id,$tdata)
-    {        
-        echo "TDATAAAAAA".print_r($tdata);
+    { 
         $curl_url = "https://$shop/admin/themes/$theme_id/assets.json";
         $data = json_encode($tdata);
         echo "start";
@@ -104,10 +103,8 @@ class Shopify {
         return $this->curlPutRequest($curl_url, $access_token,$data,$theme_id, $shop);
     }
     
-    public function curlPutRequest($url, $access_token= false, $data = false, $theme_id, $shop) { echo "curlPUT";       
-    echo "ishwar";
-    print_r($data);
-    echo "bhagwan";
+    public function curlPutRequest($url, $access_token= false, $data = false, $theme_id, $shop) {
+    
     $ch = curl_init(); //create a new cURL resource handle
         curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
         
@@ -129,12 +126,12 @@ class Shopify {
         }
         
         $output = curl_exec($ch); // Download the given URL, and return output
-        echo "OUUUUUUUUUUUTPUT".$output;
-        echo "UUUUUURLLLLLL".$url;
+        
+        
         $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
-        echo "XXXXXXXXXXX".$xx;
-        echo file_put_contents("ftp://' . SHOPIFY_API_KEY. ':' . $access_token . '@' . $shop.'/admin/themes/'.$theme_id.'?key=snippets/test.liquid", "PRASHANT", FILE_APPEND);
-        echo 'outputtttttt#########'.$output;
+        
+        //echo file_put_contents("ftp://' . SHOPIFY_API_KEY. ':' . $access_token . '@' . $shop.'/admin/themes/'.$theme_id.'?key=snippets/test.liquid", "PRASHANT", FILE_APPEND);
+        
         if ($output === false) {
             return 'Curl error: ' . curl_error($ch);
         }
@@ -152,10 +149,8 @@ class Shopify {
     
     // get_data retrives data with the API
     public function get_data($request, $api_key, $access_token, $shop, $theme_id)
-    {
-    	echo "getData";
-    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;
-    	echo $url;
+    {    	
+    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;    	
     	$url =  $url.$request;
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
@@ -172,12 +167,9 @@ class Shopify {
     
     // put data updates or uploads data with the API
     public function put_data($request, $data, $api_key, $access_token, $shop, $theme_id)
-    {
-    	echo "putData".$shop;
-    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;
-    	echo $url;
-    	$url =  $url.$request;
-    	//echo $url;
+    {    	
+    	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;    
+    	$url =  $url.$request;    	
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
     	curl_setopt($session, CURLOPT_HEADER, false);
@@ -195,24 +187,15 @@ class Shopify {
     
     public function updateLiquid($text, $api_key, $access_token, $shop, $theme_id)
     {
-    	echo "UPDATE KARO`";
-    	
+    	echo "UPDATE KARO`";    	
     	$data['asset']['key'] = 'templates/customers/login22.liquid';
     	$data['asset']['value'] = "something123";
     	$data = json_encode($data);
-    	echo "blabla";
-    	//print_r($data);
-    	//if(isset($_POST['submit']))
-    	//{
-    	//echo "response";
-    	//$text=$_POST['snippetText'];
     	$tag="<div>{% include 'fb_login_snippet' %}</div>";
     	echo "TAG>>".$tag;
     	$text.=urlencode($tag);
     	echo "TEXT>>".$text;
     	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);
-    	//}
-    	print_r($response);
     }
     
     public function fetchCurrentLiquidData($shop, $access_token,$theme_id)
