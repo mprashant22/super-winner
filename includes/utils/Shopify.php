@@ -150,23 +150,78 @@ class Shopify {
         return $this->curlRequest($curl_url, $access_token);
     }
     
-    public function put_data($request, $api_key, $password, $store_url, $theme_id)
-    {    	
+    // get_data retrives data with the API
+    public function get_data($request, $api_key, $password, $store_url, $theme_id)
+    {
+    	echo "getData";
     	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+    	echo $url;
     	$url =  $url.$request;
     	$session = curl_init();
     	curl_setopt($session, CURLOPT_URL, $url);
-    	curl_setopt($session, CURLOPT_HEADER, true); //default is false
+    	curl_setopt($session, CURLOPT_HTTPGET, 1);
+    	curl_setopt($session, CURLOPT_HEADER, false);
+    	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
+    	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+    	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
+    	$response = curl_exec($session);
+    	curl_close($session);
+    	$response = json_decode($response);
+    	return $response;
+    }
+    
+    // put data updates or uploads data with the API
+    public function put_data($request, $data, $api_key, $password, $store_url, $theme_id)
+    {
+    	echo "putData".$store_url;
+    	$url = 'https://' . $api_key . ':' . $password . '@' . $store_url;
+    	echo $url;
+    	$url =  $url.$request;
+    	//echo $url;
+    	$session = curl_init();
+    	curl_setopt($session, CURLOPT_URL, $url);
+    	curl_setopt($session, CURLOPT_HEADER, false);
     	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
     	curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
     	curl_setopt($session, CURLOPT_POSTFIELDS,$data);
-    	curl_setopt($session, CURLOPT_RETURNTRANSFER, false);  //default is true
-    	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,true);  //default is false
+    	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
+    	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
     	$response = curl_exec($session);
     	curl_close($session);
     	$response = json_decode($response);
     	print_r($response);
     	return $response;
+    }
+    
+    public function updateLiquid($text, $api_key, $password, $store_url, $theme_id)
+    {
+    	//echo "UPDATE KARO`";
+    	
+    	$data['asset']['key'] = 'templates/customers/login2.liquid';
+    	$data['asset']['value'] = "something123";
+    	$data = json_encode($data);
+    	//echo "blabla";
+    	//print_r($data);
+    	//if(isset($_POST['submit']))
+    	//{
+    	//echo "response";
+    	//$text=$_POST['snippetText'];
+    	$tag="<div>{% include 'fb_login_snippet' %}</div>";
+    	//echo "TAG>>".$tag;
+    	$text.=urlencode($tag);
+    	echo "TEXT>>".$text;
+    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $password, $store_url, $theme_id);
+    	//}
+    	print_r($response);
+    }
+    
+    public function fetchCurrentLiquidData()
+    {
+    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login2.liquid&theme_id='.$theme_id, $api_key, $password, $store_url, $theme_id);
+		echo '<pre>';
+		print_r($assets);
+		echo '</pre>';
+		updateLiquid($assets->asset->value, $api_key, $password, $store_url, $theme_id);
     }
 } 
 ?>

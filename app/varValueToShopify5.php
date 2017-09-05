@@ -6,7 +6,7 @@
 <?php
 
 $api_key = '731148aba4b8f20f0d72c25e0a884f8b';
-$password = 'ccd0e7337573055c4b7328444106729d';
+$password = 'fdde8fa93431a8f1900271b8bcd6ebe4';
 $store_url = 'mathurs-store.myshopify.com';
 $theme_id = '164437765';
 
@@ -52,7 +52,7 @@ $theme_id = '164437765';
 		return $response;
 	}
 
-	function update_last_sync($text, $api_key, $password, $store_url, $theme_id)
+	function updateLiquid($text, $api_key, $password, $store_url, $theme_id)
 	{
 		//echo "UPDATE KARO`";
 		
@@ -79,6 +79,6 @@ $theme_id = '164437765';
 	echo '<pre>';
 	print_r($assets);
 	echo '</pre>';
-	update_last_sync($assets->asset->value, $api_key, $password, $store_url, $theme_id);	
+	updateLiquid($assets->asset->value, $api_key, $password, $store_url, $theme_id);	
 	
 ?>
