@@ -29,20 +29,7 @@ if ($code) {
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
 
-	 /////////////////////////////////////////////////
-	 $test = "india vs austria vs africa vs england";	 
-
-	 $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));	 
-
-	 //$test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
-	 echo "STAAAAAAAAAART";
-	 echo $shop;
-	 echo $shop_info['access_token'];
-	 echo $theme_id;	
-	 echo "ENDDDDDDDD";
-	 $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
 	
-	 /////////////////////////////////////////////////
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {
@@ -73,7 +60,20 @@ if ($code) {
             "access_token" => "'$access_token'",
             "created_at" => "'" . date("Y-m-d") . "'"
         ));
+        /////////////////////////////////////////////////
+        $test = "india vs austria vs africa vs england";
         
+        $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+        
+        //$test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+        echo "STAAAAAAAAAART";
+        echo $shop;
+        echo $shop_info['access_token'];
+        echo $theme_id;
+        echo "ENDDDDDDDD";
+        $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
+        
+        /////////////////////////////////////////////////
     } else {
         $Stores->updateData(array(
             "access_token" => "'$access_token'",
