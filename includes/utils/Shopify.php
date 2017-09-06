@@ -29,6 +29,7 @@ class Shopify {
     
     private function curlRequest($url, $access_token = NULL, $data = NULL)
     {
+    	echo "curlREq";
     	// set curl options
     	$ch = curl_init();
     	curl_setopt($ch, CURLOPT_URL, $url);
@@ -142,7 +143,7 @@ class Shopify {
     }
     
     public function get_theme_data($shop, $access_token)
-    {
+    {echo "get theme data";
         $curl_url = "https://$shop/admin/themes.json";
         return $this->curlRequest($curl_url, $access_token);
     }
