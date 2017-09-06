@@ -192,7 +192,7 @@ class Shopify {
     	$data['asset']['key'] = 'templates/customers/login22.liquid';
     	$data['asset']['value'] = "something123";
     	$data = json_encode($data);
-    	$tag="<div>{% include 'instagram_login_snippet' %}</div>";
+    	$tag="<div>{% include 'google_login_snippet' %}</div>";
     	echo "TAG>>".$tag;
     	echo "TEXT BEFORE>>".$text;
     	$text.=$tag.PHP_EOL;    	
