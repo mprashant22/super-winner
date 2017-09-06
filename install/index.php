@@ -74,13 +74,13 @@ if ($code) {
     
     $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
     
-   $test_snippet = $Shopify->create_theme_data($shop, $shop_info['access_token'],$theme_id,$test_data);
+   $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
     echo "STAAAAAAAAAART";
     echo $shop;
-    echo $shop_info['access_token'];
+    echo $access_token;
     echo $theme_id;
     echo "ENDDDDDDDD";
-    $Shopify->fetchCurrentLiquidData($shop, $shop_info['access_token'], $theme_id);
+    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
     echo "yahan tak";
