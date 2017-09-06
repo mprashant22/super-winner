@@ -58,7 +58,7 @@ if ($code) {
             "created_at" => "'" . date("Y-m-d") . "'"));
         		
         		/////////////////////////////////////////////////
-        $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
+        $get_theme = $Shopify->get_theme_data($shop, $access_token);
         $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england";
     
