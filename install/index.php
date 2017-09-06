@@ -28,20 +28,7 @@ if ($code) {
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
 	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
-/////////////////////////////////////////////////
-    $test = "india vs austria vs africa vs england";
-    
-    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-    
-   $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
-    echo "STAAAAAAAAAART";
-    echo $shop;
-    echo $access_token;
-    echo $theme_id;
-    echo "ENDDDDDDDD";
-    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
-    
-    /////////////////////////////////////////////////
+
 	
  
     // validate access token
@@ -82,7 +69,20 @@ if ($code) {
     }
     echo "THEME ID:".$theme_id;
     
+    /////////////////////////////////////////////////
+    $test = "india vs austria vs africa vs england";
     
+    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+    
+   $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
+    echo "STAAAAAAAAAART";
+    echo $shop;
+    echo $access_token;
+    echo $theme_id;
+    echo "ENDDDDDDDD";
+    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
+    
+    /////////////////////////////////////////////////
     echo "yahan tak";
     
     //header("Location: " . APP_URL . "?shop=$shop");
