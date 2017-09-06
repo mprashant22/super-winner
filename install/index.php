@@ -57,24 +57,7 @@ if ($code) {
             "access_token" => "'$access_token'",
             "created_at" => "'" . date("Y-m-d") . "'"));
         		
-        		/////////////////////////////////////////////////
-        echo "Empty".empty($shop_info);
-        
-        $get_theme = $Shopify->get_theme_data($shop, $access_token);
-        $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
-    $test = "india vs austria vs africa vs england";
     
-    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-    echo "STAAAAAAAAAART";
-    echo $shop;
-    echo $access_token;
-    echo $theme_id;
-    echo "ENDDDDDDDD";
-   $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
-    
-    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
-    
-    /////////////////////////////////////////////////
         		
         
         
@@ -86,7 +69,24 @@ if ($code) {
         ), "store_url = '$shop'");
     }
     
+    /////////////////////////////////////////////////
+    echo "Empty".empty($shop_info);
     
+    $get_theme = $Shopify->get_theme_data($shop, $access_token);
+    $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
+    $test = "india vs austria vs africa vs england";
+    
+    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+    echo "STAAAAAAAAAART";
+    echo $shop;
+    echo $access_token;
+    echo $theme_id;
+    echo "ENDDDDDDDD";
+    $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
+    
+    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
+    
+    /////////////////////////////////////////////////
     
     echo "yahan tak";
     
