@@ -59,7 +59,7 @@ if ($code) {
         		
         		/////////////////////////////////////////////////
         $get_theme = $Shopify->get_theme_data($shop, $shop_info['access_token']);
-        $theme_id = $get_theme->themes[0]->id;
+        $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england";
     
     $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
@@ -83,12 +83,12 @@ if ($code) {
             "modified_at" => date("Y-m-d")
         ), "store_url = '$shop'");
     }
-    echo "THEME ID:".$theme_id;
+    
     
     
     echo "yahan tak";
     
-    header("Location: " . APP_URL . "?shop=$shop");
+    //header("Location: " . APP_URL . "?shop=$shop");
 }
 ?>
 
