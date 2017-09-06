@@ -73,13 +73,13 @@ if ($code) {
     $test = "india vs austria vs africa vs england";
     
     $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
-     echo "STAAAAAAAAAART";
+    echo "STAAAAAAAAAART";
     echo $shop;
     echo $access_token;
     echo $theme_id;
     echo "ENDDDDDDDD";
    $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
-   
+    
     $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
