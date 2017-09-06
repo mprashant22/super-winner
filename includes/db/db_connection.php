@@ -53,6 +53,26 @@ class DB_Connection{
         		echo 'not established';
         
     }
+    
+    public function update($table, $data, $criteria)
+    {
+    	$query = "UPDATE $table SET ";
+    	
+    	$columns = [];
+    	foreach($data as $column => $value) {
+    		$columns[] = "$column = '$value'";
+    	}
+    	
+    	$query .= implode(", ", $columns);
+    	
+    	if (!empty($criteria)) {
+    		$query .= " WHERE $criteria";
+    	}
+    	//echo $query;
+    	mysqli_query($this->connection, $query);
+    	return mysqli_insert_id($result);
+    }
+    
     public function select($table_name, $columns = "*", $criteria = null)
     {
     	//echo "inside db select".$table_name; 
