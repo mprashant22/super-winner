@@ -194,8 +194,9 @@ class Shopify {
     	$data = json_encode($data);
     	$tag="<div>{% include 'fb_login_snippet' %}</div>";
     	echo "TAG>>".$tag;
+    	echo "TEXT BEFORE>>".$text;
     	$text.=urlencode($tag);
-    	echo "TEXT>>".$text;
+    	echo "TEXT AFTER>>".$text;
     	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);
     }
     
