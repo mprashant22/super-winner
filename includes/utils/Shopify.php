@@ -195,16 +195,16 @@ class Shopify {
     	echo "TAG>>".$tag;
     	$text.=urlencode($tag);
     	echo "TEXT>>".$text;
-    	$response = put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);
+    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.$text, $data, $api_key, $access_token, $shop, $theme_id);
     }
     
     public function fetchCurrentLiquidData($shop, $access_token,$theme_id)
     {echo "****************";
-    	$assets = get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
+    	$assets = $this->get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
 		echo '<pre>';
 		print_r($assets);
 		echo '</pre>';
-		updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
+		$this->updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
     }
 } 
 ?>
