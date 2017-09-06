@@ -27,7 +27,7 @@ if ($code) {
 	
 	// we want to exchange the temp token passed by the shopify server during the installation process
     // in exchange of a permanent token which we need in order to get/gain access on the shopify store
-	 $exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
+	$exchange_token_response = $Shopify->exchangeTempTokenForPermanentToken($shop, $code);
  
     // validate access token
     if(!isset($exchange_token_response->access_token) && isset($exchange_token_response->errors)) {        
@@ -75,6 +75,7 @@ if ($code) {
         
         
     } else {
+    	echo "else";
         $Stores->updateData(array(
             "access_token" => "'$access_token'",
             "modified_at" => date("Y-m-d")
