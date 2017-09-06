@@ -67,7 +67,7 @@ if ($code) {
             "modified_at" => date("Y-m-d")
         ), "store_url = '$shop'");
     }
-    
+    echo "THEME ID:".$theme_id;
     
     /////////////////////////////////////////////////
     $test = "india vs austria vs africa vs england";
