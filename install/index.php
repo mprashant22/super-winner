@@ -58,18 +58,9 @@ if ($code) {
             "store_url" => "'$shop'",
         		"access_key" => "'$api_key'",
             "access_token" => "'$access_token'",
-            "created_at" => "'" . date("Y-m-d") . "'"
-        ));
-        
-    } else {
-        $Stores->updateData(array(
-            "access_token" => "'$access_token'",
-            "modified_at" => date("Y-m-d")
-        ), "store_url = '$shop'");
-    }
-    echo "THEME ID:".$theme_id;
-    
-    /////////////////////////////////////////////////
+            "created_at" => "'" . date("Y-m-d") . "'"));
+        		
+        		/////////////////////////////////////////////////
     $test = "india vs austria vs africa vs england";
     
     $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
@@ -83,6 +74,18 @@ if ($code) {
     $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
+        		
+        
+        
+    } else {
+        $Stores->updateData(array(
+            "access_token" => "'$access_token'",
+            "modified_at" => date("Y-m-d")
+        ), "store_url = '$shop'");
+    }
+    echo "THEME ID:".$theme_id;
+    
+    
     echo "yahan tak";
     
     header("Location: " . APP_URL . "?shop=$shop");
