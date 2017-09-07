@@ -82,9 +82,9 @@ if ($code) {
     echo $access_token;
     echo $theme_id;
     echo "ENDDDDDDDD";
-    $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
+   // $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
     
-    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
+ //   $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
     
