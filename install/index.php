@@ -85,7 +85,7 @@ if ($code) {
     $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
    // $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
     
- //   $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
+    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
     
