@@ -192,12 +192,12 @@ class Shopify {
     	$data['asset']['key'] = 'templates/customers/login22.liquid';
     	$data['asset']['value'] = "something123";
     	$data = json_encode($data);
-    	$tag="<div>{% include 'google_login_snippet' %}</div>";
+    	$tag="<div>{% include 'gMail_login_snippet' %}</div>";
     	echo "TAG>>".$tag;
     	echo "TEXT BEFORE>>".$text;
-    	$text.=$tag.PHP_EOL;    	
+    	$text.=$tag.PHP_EOL.PHP_EOL;
     	echo "TEXT AFTER>>".$text;
-    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($text), $data, $api_key, $access_token, $shop, $theme_id);
+    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login22.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($text), $data=nulL, $api_key, $access_token, $shop, $theme_id);
     }
     
     public function fetchCurrentLiquidData($shop, $access_token,$theme_id)
