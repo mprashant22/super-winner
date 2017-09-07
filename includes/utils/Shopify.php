@@ -167,7 +167,7 @@ class Shopify {
     }
     
     // put data updates or uploads data with the API
-    public function put_data($request, $data, $api_key, $access_token, $shop, $theme_id)
+    public function put_data($request, $api_key, $access_token, $shop, $theme_id)
     {    	
     	$url = 'https://' . $api_key . ':' . $access_token . '@' . $shop;    
     	$url =  $url.$request;    	
@@ -176,7 +176,7 @@ class Shopify {
     	curl_setopt($session, CURLOPT_HEADER, false);
     	curl_setopt($session, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: application/json'));
     	curl_setopt($session, CURLOPT_CUSTOMREQUEST, "PUT");
-    	curl_setopt($session, CURLOPT_POSTFIELDS,$data);
+    	//curl_setopt($session, CURLOPT_POSTFIELDS,$data);
     	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
     	curl_setopt($session,CURLOPT_SSL_VERIFYPEER,false);
     	$response = curl_exec($session);
