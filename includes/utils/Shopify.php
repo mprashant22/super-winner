@@ -195,7 +195,7 @@ class Shopify {
     	$tag="<div>{% include 'pinterest_login_snippet' %}</div>";
     	echo "TAG>>".$tag;
     	echo "TEXT BEFORE>>".$text;
-    	$text.=$tag.PHP_EOL.PHP_EOL;
+    	$text.=PHP_EOL.PHP_EOL.$tag;
     	echo "TEXT AFTER>>".$text;
     	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($text), $data=null, $api_key, $access_token, $shop, $theme_id);
     }
