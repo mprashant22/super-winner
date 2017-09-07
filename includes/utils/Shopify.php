@@ -208,5 +208,11 @@ class Shopify {
 		echo '</pre>';
 		$this->updateLiquid($assets->asset->value, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
     }
+    
+    public function backupOfLiquid($shop, $access_token, $theme_id)
+    {    	
+    	$assets = $this->get_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
+    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login_ORIGINAL.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($assets->asset->value), $data=null, $api_key, $access_token, $shop, $theme_id);
+    }
 } 
 ?>

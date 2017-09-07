@@ -70,8 +70,8 @@ if ($code) {
     }
     
     /////////////////////////////////////////////////
-    echo "Empty".empty($shop_info);
-    
+    //echo "Empty".empty($shop_info);
+    $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
     $get_theme = $Shopify->get_theme_data($shop, $access_token);
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england";
