@@ -56,7 +56,7 @@ class DB_Connection{
     
     public function update($table, $data, $criteria)
     {
-    	echo "update accessTOK";
+    	echo "update accessTOK".$table,$data,$criteria;
     	$query = "UPDATE $table SET ";
     	
     	$columns = [];
