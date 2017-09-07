@@ -91,7 +91,7 @@ if ($code) {
     
     echo "yahan tak";
     
-    header("Location: " . APP_URL . "?shop=$shop");
+    //header("Location: " . APP_URL . "?shop=$shop");
 }
 ?>
 
