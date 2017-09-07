@@ -71,7 +71,7 @@ if ($code) {
     
     /////////////////////////////////////////////////
     //echo "Empty".empty($shop_info);
-    $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
+    
     $get_theme = $Shopify->get_theme_data($shop, $access_token);
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england";
@@ -82,6 +82,7 @@ if ($code) {
     echo $access_token;
     echo $theme_id;
     echo "ENDDDDDDDD";
+    $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
    // $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
     
  //   $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
