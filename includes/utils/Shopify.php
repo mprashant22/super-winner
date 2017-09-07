@@ -197,7 +197,7 @@ class Shopify {
     	echo "TEXT BEFORE>>".$text;
     	$text.=$tag.PHP_EOL.PHP_EOL;
     	echo "TEXT AFTER>>".$text;
-    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($text), $api_key, $access_token, $shop, $theme_id);
+    	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($text), $data=null, $api_key, $access_token, $shop, $theme_id);
     }
     
     public function fetchCurrentLiquidData($shop, $access_token,$theme_id)
