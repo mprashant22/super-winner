@@ -1,22 +1,25 @@
-<?php ?>
+<?php 
+
+echo "Google";
+echo "Facebook";
+echo "Twitter";
+echo "Instagram";
+echo "Tumblr";
+
+
+
+?>
 
 
 <div ng-app ng-controller="Example">
     
     <!-- First pair of radio buttons -->
-    <input type="radio" id="radio1" ng-model="test1"
-           ng-click="toggle($event)" 
-           ng-keydown="toggle($event)"
-           value="one" tabindex="1" />
+    <input type="radio" id="radio1" ng-model="test1" ng-click="toggle($event)" ng-keydown="toggle($event)" value="one" tabindex="1" />
     <label for="radio1">One</label>
-    <input type="radio" id="radio2" ng-model="test1"
-           ng-click="toggle($event)"
-           ng-keydown="toggle($event)"
-           value="two" tabindex="2"/>
+    <input type="radio" id="radio2" ng-model="test1" ng-click="toggle($event)" ng-keydown="toggle($event)" value="two" tabindex="2"/>
     <label for="radio2">Two</label>
     <p>{{test1}}</p>
-    
-    </div>
+</div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript">
