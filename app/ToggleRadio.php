@@ -18,6 +18,7 @@
     
     </div>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript">
     function Example($scope) {
         
@@ -50,5 +51,4 @@
         // Demonstrate radio button with default selection
         $scope.test2 = 'two'
     }
-
     </script>
