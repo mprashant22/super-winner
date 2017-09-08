@@ -1,13 +1,15 @@
 <?php 
 
 echo "<div ng-app ng-controller='Example'>";
+
+// First pair of radio buttons
 echo "Google<br><br>";
-echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='one' tabindex='1' />";
-echo "<label for='radio1'>One</label>";
-echo "<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='two' tabindex='2'/>";
-echo "<label for='radio2'>Two</label>";
-echo "<p>{{test1}}</p>";
-echo "</div>";
+echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='one' tabindex='1' />".
+"<label for='radio1'>One</label>".
+"<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='two' tabindex='2'/>".
+"<label for='radio2'>Two</label>".
+"<p>{{test1}}</p>".
+"</div>";
 
 echo "Facebook<br><br>";
 echo "Twitter<br><br>";
@@ -19,7 +21,7 @@ echo "Tumblr<br><br>";
 
 
     
-    <!-- First pair of radio buttons -->
+
     
     
     
