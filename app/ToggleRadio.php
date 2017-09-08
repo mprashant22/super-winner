@@ -1,13 +1,14 @@
 <?php 
 
 echo "<div ng-app ng-controller='Example'>";
+echo "Google<br><br>";
 echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='one' tabindex='1' />";
 echo "<label for='radio1'>One</label>";
 echo "<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='two' tabindex='2'/>";
 echo "<label for='radio2'>Two</label>";
 echo "<p>{{test1}}</p>";
 echo "</div>";
-echo "Google<br><br>";
+
 echo "Facebook<br><br>";
 echo "Twitter<br><br>";
 echo "Instagram<br><br>";
