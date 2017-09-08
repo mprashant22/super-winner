@@ -1,6 +1,6 @@
 <?php 
 
-echo "<div ng-app ng-controller='Example'>";
+echo "<div ng-app='myApp' ng-controller='Example'>";
 
 // First pair of radio buttons
 echo "Google ";
@@ -48,7 +48,7 @@ echo "<input type='radio' id='radio9' ng-model='test5' ng-click='toggle($event)'
  
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript">
-    angular.module("Example", []).controller("Example", ["$scope", function($scope) {
+    angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
         $scope.test2 = "one"
     }])
     </script>
