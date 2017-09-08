@@ -1,10 +1,10 @@
 <?php 
 
-echo "Google";
-echo "Facebook";
-echo "Twitter";
-echo "Instagram";
-echo "Tumblr";
+echo "Google<br><br>";
+echo "Facebook<br><br>";
+echo "Twitter<br><br>";
+echo "Instagram<br><br>";
+echo "Tumblr<br><br>";
 
 
 
