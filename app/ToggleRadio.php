@@ -3,7 +3,7 @@
 echo "<div ng-app ng-controller='Example'>";
 
 // First pair of radio buttons
-echo "Google<br><br>";
+echo "Google ";
 echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='one' tabindex='1' />".
 "<label for='radio1'>One</label>".
 "<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='two' tabindex='2'/>".
