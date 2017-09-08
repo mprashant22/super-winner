@@ -18,7 +18,7 @@
     
     </div>
     
-    <script>
+    <script type="text/javascript">
     function Example($scope) {
         
         /*
