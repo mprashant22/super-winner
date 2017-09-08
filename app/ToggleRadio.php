@@ -12,9 +12,36 @@ echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)'
 "</div>";
 
 echo "Facebook<br><br>";
+echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='on' tabindex='1' />".
+		"<label for='radio1'>on</label>".
+		"<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='off' tabindex='2'/>".
+		"<label for='radio2'>off</label>".
+		"<p>{{test1}}</p>".
+		"</div>";
+
 echo "Twitter<br><br>";
+echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='on' tabindex='1' />".
+		"<label for='radio1'>on</label>".
+		"<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='off' tabindex='2'/>".
+		"<label for='radio2'>off</label>".
+		"<p>{{test1}}</p>".
+		"</div>";
+
 echo "Instagram<br><br>";
+echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='on' tabindex='1' />".
+		"<label for='radio1'>on</label>".
+		"<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='off' tabindex='2'/>".
+		"<label for='radio2'>off</label>".
+		"<p>{{test1}}</p>".
+		"</div>";
+
 echo "Tumblr<br><br>";
+echo "<input type='radio' id='radio1' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='on' tabindex='1' />".
+		"<label for='radio1'>on</label>".
+		"<input type='radio' id='radio2' ng-model='test1' ng-click='toggle($event)' ng-keydown='toggle($event)' value='off' tabindex='2'/>".
+		"<label for='radio2'>off</label>".
+		"<p>{{test1}}</p>".
+		"</div>";
 
 ?>
 
