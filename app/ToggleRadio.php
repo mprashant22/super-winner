@@ -10,12 +10,12 @@
 <?php 
  
  echo "<div ng-app='myApp' ng-controller='Example'>";
-
+ echo "<form ng-submit='myFunc()' ng-controller='Example'>";
  // First pair of radio buttons
  echo "Google";
  echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />
  <label for='radio1'>on</label>
- <input type='radio' name='radio2' ng-model='test1' value='off' tabindex='2'/>
+ <input type='radio' id='radio2' ng-model='test1' value='off' tabindex='2'/>
  <label for='radio2'>off</label>
  <p>{{test1}}</p>";
  
@@ -49,6 +49,8 @@
  		<label for='radio10'>off</label>
  		<p>{{test5}}</p>
  		</div>";
+ 
+ //echo 
  
  ?>
  <?php
