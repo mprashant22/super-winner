@@ -48,5 +48,16 @@
  		<label for='radio10'>off</label>
  		<p>{{test5}}</p>
  		</div>";
-
+ 
+ 
+ class SocialLoginSelect extends DB_Connection
+ {
+ 	public function insertToggleValue()
+ 	{
+ 		echo "MATHUR";
+ 		$F=$POST['radio2'];
+ 		echo $F;
+ 	}
+ }
+ $this->insertToggleValue();
 ?>
