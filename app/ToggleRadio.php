@@ -50,7 +50,8 @@
  		<p>{{test5}}</p>
  		</div>";
  
- 
+ ?>
+ <?php
  class SocialLoginSelect extends DB_Connection
  {
  	public function insertToggleValue()
