@@ -14,13 +14,13 @@
 echo "<div ng-app='myApp' ng-controller='Example'>";
 
 // First pair of radio buttons
-echo "Google ";
-echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />".
-"<label for='radio1'>on</label>".
-"<input type='radio' id='radio2' ng-model='test1' value='off' tabindex='2'/>".
-"<label for='radio2'>off</label>".
-"<p>{{test1}}</p>".
-"</div>";
+// echo "Google ";
+// echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />".
+// "<label for='radio1'>on</label>".
+// "<input type='radio' id='radio2' ng-model='test1' value='off' tabindex='2'/>".
+// "<label for='radio2'>off</label>".
+// "<p>{{test1}}</p>".
+// "</div>";
 
 echo "Facebook<br><br>";
 echo "<input type='radio' id='radio3' ng-model='test2' value='on' />".
