@@ -5,10 +5,11 @@
            // alert("PRASHANT");
 
         	$scope.myFunc = function () {alert("in func");
+        	$scope.obj={1,2,3,4};
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
-        	    data: 4
+        	    data: {array,$scope.obj};
         	  }).then(function mySuccess(response) {
         	      $scope.myWelcome = response.data;
         	      console.log(response.data);
