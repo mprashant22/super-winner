@@ -2,7 +2,7 @@
     <script type="text/javascript">
     angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
         $scope.test2 = "one"
-            alert("PRASHANT");
+           // alert("PRASHANT");
     }])
 
 </script>
