@@ -55,6 +55,7 @@
  		</div>";
  
  echo "<input type='submit' id='submit' value='Submit' />";
+ echo "{{myTxt}}";
  
  ?>
  <?php
