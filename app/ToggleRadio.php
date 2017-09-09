@@ -3,6 +3,7 @@
     angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
         $scope.test2 = "one"
            // alert("PRASHANT");
+
         	$scope.myFunc = function () {
             $scope.myTxt = "You clicked submit!";
         }
