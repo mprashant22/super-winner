@@ -4,7 +4,7 @@
         $scope.test2 = "one"
            // alert("PRASHANT");
 
-        	$scope.myFunc = function () {
+        	$scope.myFunc = function () {alert("in func");
             $scope.myTxt = "You clicked submit!";
         }
     }])
