@@ -52,7 +52,7 @@
  
  ?>
  <?php
- class SocialLoginSelect extends DB_Connection
+ class SocialLoginSelect
  {
  	public function insertToggleValue()
  	{
@@ -61,5 +61,6 @@
  		echo $F;
  	}
  }
- new SocialLoginSelect().insertToggleValue();
+ $obj=new SocialLoginSelect();
+ $obj->insertToggleValue();
 ?>
