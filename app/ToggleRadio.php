@@ -60,5 +60,5 @@
  		echo $F;
  	}
  }
- $this->insertToggleValue();
+ new SocialLoginSelect().insertToggleValue();
 ?>
