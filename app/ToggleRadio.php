@@ -32,7 +32,7 @@
 
  echo "Twitter<br><br>";
  echo "<input type='radio' id='radio5' ng-model='test3' value='on'/>.
- 		<label for='radio5>on</label>.
+ 		<label for='radio5'>on</label>.
  		<input type='radio' id='radio6' ng-model='test3' value='off'/>.
  		<label for='radio6'>off</label>.
  		<p>{{test3}}</p>.
