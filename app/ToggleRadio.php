@@ -30,7 +30,7 @@
  		<p>{{test2}}</p>"; 		
 
  echo "Twitter<br><br>";
- echo "<input type='radio' id='radio5' ng-model='test3' value='on'/>.
+ echo "<input type='radio' id='radio5' ng-model='test3' value='on'/>
  		<label for='radio5'>on</label>
  		<input type='radio' id='radio6' ng-model='test3' value='off'/>
  		<label for='radio6'>off</label>
@@ -47,7 +47,7 @@
  echo "Tumblr<br><br>";
  echo "<input type='radio' id='radio9' ng-model='test5' value='on' />
  		<label for='radio9'>on</label>
- 		<input type='radio' id='radio10' ng-model='test5' value='off' />.
+ 		<input type='radio' id='radio10' ng-model='test5' value='off' />
  		<label for='radio10'>off</label>
  		<p>{{test5}}</p>
  		</div>";
