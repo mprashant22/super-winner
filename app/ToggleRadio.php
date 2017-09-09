@@ -15,7 +15,7 @@
  echo "Google";
  echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />
  <label for='radio1'>on</label>
- <input type='radio' id='radio2' ng-model='test1' value='off' tabindex='2'/>
+ <input type='radio' name='radio2' ng-model='test1' value='off' tabindex='2'/>
  <label for='radio2'>off</label>
  <p>{{test1}}</p>";
  
