@@ -6,10 +6,11 @@
 
         	$scope.myFunc = function () {alert("in func");
         	$scope.obj=[1,2,3,4];
+        	$scope.rdo=this.radio;
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
-        	    data: $scope.obj
+        	    data: $scope.rdo
         	  }).then(function mySuccess(response) {
         	      $scope.myWelcome = response.data;
         	      console.log(response.data);
