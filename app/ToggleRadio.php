@@ -55,33 +55,33 @@
 // 		"</div>";
 
 ?>
-
-<div ng-app="myApp" ng-controller="Example">
+<?php 
+echo "<div ng-app='myApp' ng-controller='Example'>";
     
-    <!-- First pair of radio buttons -->
-    <input type="radio" id="radio1" ng-model="test1" value="one" tabindex="1" />
-    <label for="radio1">One</label>
-    <input type="radio" id="radio2" ng-model="test1" value="two" tabindex="2"/>
-    <label for="radio2">Two</label>
-    <a class="undo" ng-click="test1 = null">&otimes;</a>
-    <p>{{test1}}</p>
-
-    <hr />
-
-    <!-- Second pair of radio buttons -->
-    <input type="radio" id="radio3" ng-model="test2" value="one" checked="checked" />
-    <label for="radio3">One</label>
-    <input type="radio" id="radio4" ng-model="test2" value="two" />
-    <label for="radio4">Two</label>
-    <a class="undo" ng-click="test2 = null">&otimes;</a>
-    <p>{{test2}}</p>
+    // First pair of radio buttons
+    echo "<input type='radio' id='radio1' ng-model='test1' value='one' tabindex='1' />.
+    <label for='radio1'>One</label>.
+    <input type='radio' id='radio2' ng-model='test1' value='two' tabindex='2'/>.
+    <label for='radio2'>Two</label>.
+    <a class='undo' ng-click='test1 = null'>&otimes;</a>.
+    <p>{{test1}}</p>";
     
-    <!-- Second pair of radio buttons -->
-    <input type="radio" id="radio5" ng-model="test3" value="one" checked="checked" />
-    <label for="radio5">One</label>
-    <input type="radio" id="radio6" ng-model="test3" value="two" />
-    <label for="radio6">Two</label>
-    <a class="undo" ng-click="test3 = null">&otimes;</a>
-    <p>{{test3}}</p>
+
+    // Second pair of radio buttons 
+    echo "<input type='radio' id='radio3' ng-model='test2' value='one' checked='checked' />.
+    <label for='radio3'>One</label>.
+    <input type='radio' id='radio4' ng-model='test2' value='two' />.
+    <label for='radio4'>Two</label>.
+    <a class='undo' ng-click='test2 = null'>&otimes;</a>.
+    <p>{{test2}}</p>";		
     
-    </div>
+    // Second pair of radio buttons
+    echo "<input type='radio' id='radio5' ng-model='test3' value='one' checked='checked' />.
+    <label for='radio5'>One</label>.
+    <input type='radio' id='radio6' ng-model='test3' value='two' />.
+    <label for='radio6'>Two</label>.
+    <a class='undo' ng-click='test3 = null'>&otimes;</a>.
+    <p>{{test3}}</p>";
+    
+    echo "</div>";
+?>
