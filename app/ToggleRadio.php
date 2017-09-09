@@ -1,10 +1,20 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript">
-    angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
+    angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
         $scope.test2 = "one"
            // alert("PRASHANT");
 
         	$scope.myFunc = function () {alert("in func");
+        	$http({
+        	    method : "POST",
+        	    url : "ToggleRadioDB.php",
+        	    data: 4
+        	  }).then(function mySuccess(response) {
+        	      $scope.myWelcome = response.data;
+        	      console.log(response.data);
+        	    }, function myError(response) {
+        	      $scope.myWelcome = response.data;
+        	  });
             $scope.myTxt = "You clicked submit!";
         }
     }])
@@ -55,7 +65,7 @@
  		</div>";
  
  echo "<input type='submit' id='submit' value='Submit' />";
- echo "{{myTxt}}";
+
  
  ?>
  <?php
