@@ -1,5 +1,16 @@
-<?php 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript">
+    angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
+        $scope.test2 = "one"
+    }])
+    </script>
 
+
+
+
+
+<?php 
+ 
 echo "<div ng-app='myApp' ng-controller='Example'>";
 
 // First pair of radio buttons
@@ -44,11 +55,3 @@ echo "<input type='radio' id='radio9' ng-model='test5' value='on' />".
 		"</div>";
 
 ?>
-
- 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-    <script type="text/javascript">
-    angular.module("myApp", []).controller("Example", ["$scope", function($scope) {
-        $scope.test2 = "one"
-    }])
-    </script>
