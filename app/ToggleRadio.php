@@ -5,7 +5,7 @@
            // alert("PRASHANT");
 
         	$scope.myFunc = function () {alert("in func");
-        	$scope.obj={1,2,3,4};
+        	$scope.obj=[1,2,3,4];
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
