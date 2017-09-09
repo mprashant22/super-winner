@@ -9,7 +9,7 @@
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
-        	    data: {array,$scope.obj}
+        	    data: $scope.obj
         	  }).then(function mySuccess(response) {
         	      $scope.myWelcome = response.data;
         	      console.log(response.data);
