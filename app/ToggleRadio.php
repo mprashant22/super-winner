@@ -4,7 +4,8 @@
         $scope.test2 = "one"
             alert("PRASHANT");
     }])
-    </script>
+
+</script>
 
 <?php 
  
@@ -55,7 +56,7 @@
  	public function insertToggleValue()
  	{
  		echo "MATHUR";
- 		$F=$POST['radio2'];
+ 		$F=$_POST['radio2'];
  		echo $F;
  	}
  }
