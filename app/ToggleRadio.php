@@ -12,33 +12,33 @@ echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' /
 "</div>";
 
 echo "Facebook<br><br>";
-echo "<input type='radio' id='radio3' ng-model='test2' value='on' tabindex='1' />".
+echo "<input type='radio' id='radio3' ng-model='test2' value='on' />".
 		"<label for='radio3'>on</label>".
-		"<input type='radio' id='radio4' ng-model='test2' value='off' tabindex='2'/>".
+		"<input type='radio' id='radio4' ng-model='test2' value='off'/>".
 		"<label for='radio4'>off</label>".
 		"<p>{{test2}}</p>".
 		"</div>";
 
 echo "Twitter<br><br>";
-echo "<input type='radio' id='radio5' ng-model='test3' value='on' tabindex='1' />".
+echo "<input type='radio' id='radio5' ng-model='test3' value='on'/>".
 		"<label for='radio5>on</label>".
-		"<input type='radio' id='radio6' ng-model='test3' value='off' tabindex='2'/>".
+		"<input type='radio' id='radio6' ng-model='test3' value='off'/>".
 		"<label for='radio6'>off</label>".
 		"<p>{{test3}}</p>".
 		"</div>";
 
 echo "Instagram<br><br>";
-echo "<input type='radio' id='radio7' ng-model='test4' value='on' tabindex='1' />".
+echo "<input type='radio' id='radio7' ng-model='test4' value='on' />".
 		"<label for='radio7'>on</label>".
-		"<input type='radio' id='radio8' ng-model='test4' value='off' tabindex='2'/>".
+		"<input type='radio' id='radio8' ng-model='test4' value='off'/>".
 		"<label for='radio8'>off</label>".
 		"<p>{{test4}}</p>".
 		"</div>";
 
 echo "Tumblr<br><br>";
-echo "<input type='radio' id='radio9' ng-model='test5' value='on' tabindex='1' />".
+echo "<input type='radio' id='radio9' ng-model='test5' value='on' />".
 		"<label for='radio9'>on</label>".
-		"<input type='radio' id='radio10' ng-model='test5' value='off' tabindex='2'/>".
+		"<input type='radio' id='radio10' ng-model='test5' value='off' />".
 		"<label for='radio10'>off</label>".
 		"<p>{{test5}}</p>".
 		"</div>";
