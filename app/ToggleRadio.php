@@ -50,7 +50,7 @@
  		<p>{{test5}}</p>
  		</div>";
  
- //echo 
+ echo "<input type='submit' id='submit' value='Submit' />";
  
  ?>
  <?php
