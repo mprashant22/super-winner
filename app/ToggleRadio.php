@@ -71,15 +71,5 @@
  
  ?>
  <?php
- class SocialLoginSelect
- {
- 	public function insertToggleValue()
- 	{
- 		echo "MATHUR";
- 		$F=$_POST['radio2'];
- 		echo $F;
- 	}
- }
- $obj=new SocialLoginSelect();
- $obj->insertToggleValue();
+
 ?>
