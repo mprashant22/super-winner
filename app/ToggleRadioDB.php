@@ -11,9 +11,9 @@ class SocialLoginSelect extends DB_Connection
     
     public function insertToggleValue()
     {
-        echo "MATHUR";
+//        echo "MATHUR";
         $F=$_POST['radio2'];
-        echo $F;
+  //      echo $F;
     }
 }
 $obj=new SocialLoginSelect();

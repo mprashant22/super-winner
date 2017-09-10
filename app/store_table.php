@@ -28,7 +28,6 @@ class StoreTable extends DB_Connection{
 	{
 		$shop='mathurs-store.myshopify.com';
 		$shp=explode('.', $shop);
-
 		$sql4 = "select distinct(handle) from "."`".$shp[0]."` group by handle";
 		//echo "sql>>".$sql4."<br>";
 		$res4=mysqli_query($this->connection,$sql4);
