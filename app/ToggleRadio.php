@@ -60,7 +60,7 @@ $shop = "mathurs-store.myshopify.com";
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
     <script type="text/javascript">
     angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
-        $scope.test2 = "one"
+        $scope.test2 = "on"
            // alert("PRASHANT");
 
         	$scope.myFunc = function () {alert("in func"+$scope.shop);
