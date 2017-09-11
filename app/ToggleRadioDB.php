@@ -7,6 +7,7 @@ $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
 $shop_info = $Stores->is_shop_exists($shop);
+
 class SocialLoginSelect extends DB_Connection
 {    
     private $table_name = "socialLogin";
