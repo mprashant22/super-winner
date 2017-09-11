@@ -3,7 +3,7 @@
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class SocialLoginSelect extends DB_Connection
 {    
-    private $table_name = "socialLogin";
+    public $table_name = "socialLogin";
     public $connection = '';
     function __construct(){
         $this->connection = $this->connect();
