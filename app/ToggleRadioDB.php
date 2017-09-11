@@ -18,7 +18,9 @@ class SocialLoginSelect extends DB_Connection
 		$permissions = array(true, true, false, false, true);
 		
 		$pseudo_binary = array_to_binary($permissions);
-		echo $pseudo_binary;
+		//echo $pseudo_binary;
+		$ascii = binary_to_word($pseudo_binary); 
+		echo $ascii;
 		for($i=1;$i<strlen($request);$i++)
 		{
 			if (request[i]==='on')
