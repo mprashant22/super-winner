@@ -19,14 +19,11 @@ class SocialLoginSelect extends DB_Connection
 		for($i=1;$i<strlen($request);$i++)
 		{
 			if (request[i]==='on')
-			{			
-				$arr[i]=intval(TRUE);
-				break;
-			}
-			if(request[i]==='off')				
-				$arr[i]=intval(FALSE);
+				$arr[i]=TRUE;
+			if(request[i]==='off')
+				$arr[i]=FALSE;
 		}
-    	echo $arr[0];
+    	print_r($arr);
 		//echo "booolean>>'".$bool."'";
     	//$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	//implode(", ", $arr);
