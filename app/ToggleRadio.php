@@ -1,7 +1,7 @@
 <?php 
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
-require __DIR__. '../../includes/utils/Shopify.php';
-require __DIR__. '../../includes/db/Stores.php';
+//require __DIR__. '../../includes/utils/Shopify.php';
+//require __DIR__. '../../includes/db/Stores.php';
 //$Shopify = new Shopify();
 //$Stores = new Stores();
 //echo "vapas";
