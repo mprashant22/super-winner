@@ -14,7 +14,7 @@ $shop = "mathurs-store.myshopify.com";
 
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
- echo "<input type='hidden' name='shop' ng-init="shop='prashant'" ng-value='shop'>";
+// echo "<input type='hidden' name='shop' ng-init="shop='prashant'" ng-value='shop'>";
  // First pair of radio buttons
  echo "Google";
  echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />
