@@ -6,7 +6,7 @@ include '../includes/utils/Shopify.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
-
+echo "DOKAAN".$shop;
 $shop_info = $Stores->is_shop_exists($shop);
 
 $theme_data = array("asset"=>array("key"=>"templates/customers/login1.liquid","value"=>"<p>We busy updating the store for you and will be back within the hour.<\/p>"));
