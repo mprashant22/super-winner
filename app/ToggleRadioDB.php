@@ -5,6 +5,7 @@ require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
+$shop_info = $Stores->is_shop_exists($shop);
 class SocialLoginSelect extends DB_Connection
 {    
     private $table_name = "socialLogin";
