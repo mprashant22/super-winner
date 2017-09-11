@@ -64,8 +64,8 @@ $shop = "mathurs-store.myshopify.com";
     angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
         $scope.test2 = "on"
            // alert("PRASHANT");
-var j="<?php echo $shop; ?>";
-        	$scope.myFunc = function () {alert("in func"+j);
+var shop="<?php echo $shop; ?>";
+        	$scope.myFunc = function () {alert("in func"+shop);
         	$scope.rdo=[$scope.shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
         	    method : "POST",
