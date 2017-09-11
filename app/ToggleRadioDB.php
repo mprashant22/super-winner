@@ -15,9 +15,8 @@ class SocialLoginSelect extends DB_Connection
 		$request = json_decode($postdata);
     	
     	
-    	//$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values".rtrim($bulk,",");
-    	
-    	//mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));	
+    	$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values(".$request[0].",".$request[1].",".$request[2].",".$request[3].",".$request[4].",".$request[5].")";
+mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));	
     	//$shop = $_REQUEST['shop'];
     	//echo "dukaan".$shop;
 		//echo $sql.">>".

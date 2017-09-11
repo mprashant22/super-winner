@@ -64,7 +64,7 @@ $shop = "mathurs-store.myshopify.com";
     angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
         $scope.test2 = "on"
            // alert("PRASHANT");
-var shop="<?php echo $shop; ?>";
+			var shop="<?php echo $shop; ?>";
         	$scope.myFunc = function () {alert("in func"+shop);
         	$scope.rdo=[shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
@@ -77,7 +77,7 @@ var shop="<?php echo $shop; ?>";
         	    }, function myError(response) {
         	      $scope.myWelcome = response.data;
         	  });
-            $scope.myTxt = "You clicked submit!";
+           // $scope.myTxt = "You clicked submit!";
         }
     }])
 
