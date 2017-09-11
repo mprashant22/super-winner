@@ -66,7 +66,7 @@ $shop = "mathurs-store.myshopify.com";
            // alert("PRASHANT");
 var shop="<?php echo $shop; ?>";
         	$scope.myFunc = function () {alert("in func"+shop);
-        	$scope.rdo=[$scope.shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
+        	$scope.rdo=[shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
