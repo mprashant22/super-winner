@@ -13,28 +13,16 @@ class SocialLoginSelect extends DB_Connection
     {
     	$postdata = file_get_contents("php://input");
 		$request = json_decode($postdata);
-		//print_r($request);
-		$arr=array();
-		$permissions = array(true, true, false, false, true);
 		
-		$pseudo_binary = array_to_binary($permissions);
-		//echo $pseudo_binary;
-		$ascii = binary_to_word($pseudo_binary); 
-		print_r($ascii);
-		for($i=1;$i<strlen($request);$i++)
-		{
-			if (request[i]==='on')
-				$arr[i]=TRUE;
-			if(request[i]==='off')
-				$arr[i]=FALSE;
-		}
-    	//print_r($arr);
-		//echo "booolean>>'".$bool."'";
-    	//$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
-      	//implode(", ", $arr);
+		
+		
+		
+    	
+    	$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	
-    	//$request[0]."',".$arr[1].",".$arr[2].",".$arr[3].",".$arr[4].",".$arr[5].")";
-    	//echo $sql;
+      	
+    	$request[0]."',".$arr[1].",".$arr[2].",".$arr[3].",".$arr[4].",".$arr[5].")";
+    	echo $sql;
 //mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
     	//$shop = $_REQUEST['shop'];
     	//echo "dukaan".$shop;
