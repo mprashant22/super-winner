@@ -14,7 +14,7 @@ class SocialLoginSelect extends DB_Connection
     	$postdata = file_get_contents("php://input");
 		$request = json_decode($postdata);
 		//echo var_dump($request);
-		$arr=array();
+		$arr=array(false => 'false', true => 'true');
 		
 		for($i=1;$i<strlen($request);$i++)
 		{
