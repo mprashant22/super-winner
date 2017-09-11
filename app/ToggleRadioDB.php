@@ -26,7 +26,7 @@ class SocialLoginSelect extends DB_Connection
     	$shop = $_REQUEST['shop'];
     	echo "dukaan".$shop;
 		//echo $sql.">>".
-		print_r($request);
+    	print_r($shop_info);
     }
 }
 $obj=new SocialLoginSelect();
