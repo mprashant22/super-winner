@@ -24,8 +24,14 @@
 </script>
 
 <?php 
-// $shop = $_REQUEST['shop'];
-// echo "dukaan".$shop;
+require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+require __DIR__. '../../includes/utils/Shopify.php';
+require __DIR__. '../../includes/db/Stores.php';
+$Shopify = new Shopify();
+$Stores = new Stores();
+$shop = $_REQUEST['shop'];
+$shop_info = $Stores->is_shop_exists($shop);
+print_r($shop_info);
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
  // First pair of radio buttons
