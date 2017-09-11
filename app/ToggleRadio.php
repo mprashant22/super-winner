@@ -1,28 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
-    <script type="text/javascript">
-    angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
-        $scope.test2 = "one"
-           // alert("PRASHANT");
-
-        	$scope.myFunc = function () {alert("in func");
-        	$scope.obj=[1,2,3,4];
-        	$scope.rdo=[$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
-        	$http({
-        	    method : "POST",
-        	    url : "ToggleRadioDB.php",
-        	    data: $scope.rdo
-        	  }).then(function mySuccess(response) {
-        	      $scope.myWelcome = response.data;
-        	      console.log(response.data);
-        	    }, function myError(response) {
-        	      $scope.myWelcome = response.data;
-        	  });
-            $scope.myTxt = "You clicked submit!";
-        }
-    }])
-
-</script>
-
 <?php 
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 require __DIR__. '../../includes/utils/Shopify.php';
@@ -75,8 +50,31 @@ print_r($shop_info);
  
  echo "<input type='submit' id='submit' value='Submit' />";
 
- 
- ?>
- <?php
-
 ?>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script type="text/javascript">
+    angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
+        $scope.test2 = "one"
+           // alert("PRASHANT");
+
+        	$scope.myFunc = function () {alert("in func");
+        	$scope.obj=[1,2,3,4];
+        	$scope.rdo=[$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
+        	$http({
+        	    method : "POST",
+        	    url : "ToggleRadioDB.php",
+        	    data: $scope.rdo
+        	  }).then(function mySuccess(response) {
+        	      $scope.myWelcome = response.data;
+        	      console.log(response.data);
+        	    }, function myError(response) {
+        	      $scope.myWelcome = response.data;
+        	  });
+            $scope.myTxt = "You clicked submit!";
+        }
+    }])
+
+</script>
+
