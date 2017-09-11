@@ -4,6 +4,7 @@ require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
+echo "vapas";
 $shop = $_REQUEST['shop'];
 echo "shooooop".$shop;
 $shop_info = $Stores->is_shop_exists($shop);
