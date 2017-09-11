@@ -18,9 +18,9 @@ class SocialLoginSelect extends DB_Connection
 		
 		for($i=1;$i<strlen($request);$i++)
 		{
-			if (request[i]=='on')
+			if (strcmp(request[i],'on'))
 			$arr[i]=TRUE;			
-			if(request[i]=='off')
+			if(strcmp(request[i],'off'))
 				$arr[i]=FALSE;
 			
 				
