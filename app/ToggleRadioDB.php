@@ -19,7 +19,7 @@ class SocialLoginSelect extends DB_Connection
 		print_r($request);
 		echo $request[0].$request[1].$request[2].$request[3].$request[4].$request[5];
     	
-    	$sql = "INSERT into '".$this->table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
+    	$sql = "INSERT into ".$this->table_name."(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
     $request[0]."',".$request[1].",".$request[2].",".$request[3].",".$request[4].",".$request[5].")";
     	echo $sql;
 mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
