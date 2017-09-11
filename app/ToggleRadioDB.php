@@ -15,6 +15,8 @@ class SocialLoginSelect extends DB_Connection
 		$request = json_decode($postdata);
 		//print_r($request);
 		$arr=array();
+		$permissions = array(true, true, false, false, true);
+		print_r($permissions);
 		
 		for($i=1;$i<strlen($request);$i++)
 		{
@@ -23,7 +25,7 @@ class SocialLoginSelect extends DB_Connection
 			if(request[i]==='off')
 				$arr[i]=FALSE;
 		}
-    	print_r($arr);
+    	//print_r($arr);
 		//echo "booolean>>'".$bool."'";
     	//$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	//implode(", ", $arr);
