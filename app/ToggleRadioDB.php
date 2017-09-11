@@ -3,7 +3,7 @@
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 class SocialLoginSelect extends DB_Connection
 {    
-    public $table_name = "socialLogin";
+    private $table_name = "socialLogin";
     public $connection = '';
     function __construct(){
         $this->connection = $this->connect();
@@ -26,7 +26,7 @@ class SocialLoginSelect extends DB_Connection
 		}
     	//print_r($arr);
 		//echo "booolean>>'".$bool."'";
-    	$sql = "INSERT into '".$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
+    	$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	//implode(", ", $arr);
       	
     	$request[0]."',".$arr[1].",".$arr[2].",".$arr[3].",".$arr[4].",".$arr[5].")";
