@@ -23,8 +23,8 @@ class SocialLoginSelect extends DB_Connection
     	$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values".rtrim($bulk,",");
     	
     	mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));	
-    	$shop = $_REQUEST['shop'];
-    	echo "dukaan".$shop;
+    	//$shop = $_REQUEST['shop'];
+    	//echo "dukaan".$shop;
 		//echo $sql.">>".
     	print_r($shop_info);
     }
