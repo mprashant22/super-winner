@@ -12,7 +12,7 @@ require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 $shop = "mathurs-store.myshopify.com";
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
- echo "<input type='hidden' ng-init='<?php echo $shop; ?>' ng-value='test0'>";
+ echo "<input type='hidden' name='shop' ng-init='<?php echo $shop; ?>' ng-value='shop'>";
  // First pair of radio buttons
  echo "Google";
  echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />
@@ -63,8 +63,8 @@ $shop = "mathurs-store.myshopify.com";
         $scope.test2 = "on"
            // alert("PRASHANT");
 
-        	$scope.myFunc = function () {alert("in func"+$scope.test0);
-        	$scope.rdo=[$scope.test0,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
+        	$scope.myFunc = function () {alert("in func"+$scope.shop);
+        	$scope.rdo=[$scope.shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
