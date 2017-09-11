@@ -11,14 +11,15 @@ class SocialLoginSelect extends DB_Connection
     
     public function insertToggleValue()
     {
-//        echo "MATHUR";
-        $F=$_POST['radio2'];
-  //      echo $F;
+    	$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values".rtrim($bulk,",");
+    	
+    	mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));	
+        $postdata = file_get_contents("php://input");
+		$request = json_decode($postdata);
+		echo $sql.">>".print_r($request);
     }
 }
 $obj=new SocialLoginSelect();
 $obj->insertToggleValue();
-$postdata = file_get_contents("php://input");
-$request = json_decode($postdata);
-print_r($request);
+
 ?>
