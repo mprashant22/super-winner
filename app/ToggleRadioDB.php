@@ -13,7 +13,7 @@ class SocialLoginSelect extends DB_Connection
     {
     	$postdata = file_get_contents("php://input");
 		$request = json_decode($postdata);
-		print_r($request);
+		//print_r($request);
 		$arr=array();
 		
 		for($i=1;$i<strlen($request);$i++)
@@ -23,7 +23,7 @@ class SocialLoginSelect extends DB_Connection
 			if(strcmp(request[i],'off'))
 				$arr[i]=intval(FALSE);
 		}
-    	//print_r($arr);
+    	print_r($arr);
 		//echo "booolean>>'".$bool."'";
     	//$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	//implode(", ", $arr);
