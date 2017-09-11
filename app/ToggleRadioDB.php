@@ -23,10 +23,10 @@ class SocialLoginSelect extends DB_Connection
 			if(request[i]=='off')
 				$arr[i]=FALSE;
 			
-				$bool.=$arr[i].",";
+				
 		}
-    	
-		echo "booolean>>'".$bool."'";
+    	print_r($arr);
+		//echo "booolean>>'".$bool."'";
     	//$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
       	//implode(", ", $arr);
 //    	$request[0]."','".$request[1]."','".$request[2]."','".$request[3]."','".$request[4]."','".$request[5]."')";
