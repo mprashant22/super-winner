@@ -25,8 +25,7 @@ class SocialLoginSelect extends DB_Connection
 $query=mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));
     	//$shop = $_REQUEST['shop'];
     	//echo "dukaan".$shop;
-		echo $query;
-  //  	
+		echo $query;  	
     }
 }
 $obj=new SocialLoginSelect();
