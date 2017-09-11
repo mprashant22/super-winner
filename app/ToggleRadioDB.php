@@ -16,7 +16,7 @@ class SocialLoginSelect extends DB_Connection
 		$request = json_decode($postdata);
 		
 		
-		
+		print_r($request);
 		
     	
     	$sql = "INSERT into '".$this->$table_name."'(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values('".
@@ -28,7 +28,7 @@ class SocialLoginSelect extends DB_Connection
     	//$shop = $_REQUEST['shop'];
     	//echo "dukaan".$shop;
 		//echo $sql.">>".
-  //  	print_r($request);
+  //  	
     }
 }
 $obj=new SocialLoginSelect();
