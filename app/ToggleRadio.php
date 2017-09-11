@@ -25,7 +25,7 @@
 
 <?php 
 $shop = $_REQUEST['shop'];
-echo $shop;
+echo "dukaan".$shop;
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
  // First pair of radio buttons
