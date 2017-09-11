@@ -9,6 +9,7 @@ class Stores extends DB_Connection{
     public function __construct()
     {
          $this->connect();
+         echo "store connect";
     }
 
     public function addData($data)    {

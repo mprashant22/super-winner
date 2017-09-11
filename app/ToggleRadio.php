@@ -5,6 +5,7 @@ require __DIR__. '../../includes/db/Stores.php';
 $Shopify = new Shopify();
 $Stores = new Stores();
 $shop = $_REQUEST['shop'];
+echo "shooooop".$shop;
 $shop_info = $Stores->is_shop_exists($shop);
 print_r($shop_info);
  echo "<div ng-app='myApp' ng-controller='Example'>";
