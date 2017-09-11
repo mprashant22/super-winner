@@ -1,6 +1,8 @@
 <?php
 
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
+require __DIR__. '../../includes/utils/Shopify.php';
+require __DIR__. '../../includes/db/Stores.php';
 class SocialLoginSelect extends DB_Connection
 {    
     private $table_name = "socialLogin";
@@ -18,7 +20,8 @@ class SocialLoginSelect extends DB_Connection
     	$sql = "INSERT into `".$table_name."`(storeName, optionGoogle, `optionFacebook`,`optionTwitter`, `optionInstagram`, `optionTumblr`) values".rtrim($bulk,",");
     	
     	mysqli_query($this->connection,$sql) or die(mysqli_error($this->connection));	
-        
+    	$shop = $_REQUEST['shop'];
+    	echo "dukaan".$shop;
 		//echo $sql.">>".
 		print_r($request);
     }

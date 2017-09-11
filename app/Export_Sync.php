@@ -8,7 +8,7 @@ class Export_Sync extends DB_Connection{
 		$this->connection = $this->connect();
 	}
 
-	public $connection = '';	
+	public $connection = '';
 	public function sync($shop)
 	{
 		 		//echo "in class shop >>".$shop;
