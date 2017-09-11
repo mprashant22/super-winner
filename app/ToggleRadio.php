@@ -14,7 +14,7 @@ $shop = "mathurs-store.myshopify.com";
 
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
- echo "<input type='hidden' name='shop' ng-init='shop='prashant'' ng-value='shop'>";
+ echo "<input type='hidden' name='shop' ng-init="shop='prashant'" ng-value='shop'>";
  // First pair of radio buttons
  echo "Google";
  echo "<input type='radio' id='radio1' ng-model='test1' value='on' tabindex='1' />
@@ -64,8 +64,8 @@ $shop = "mathurs-store.myshopify.com";
     angular.module("myApp", []).controller("Example", ["$scope", "$http", function($scope,$http) {
         $scope.test2 = "on"
            // alert("PRASHANT");
-
-        	$scope.myFunc = function () {alert("in func"+$scope.shop);
+var j="<?php echo $shop; ?>";
+        	$scope.myFunc = function () {alert("in func"+j);
         	$scope.rdo=[$scope.shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
         	    method : "POST",
