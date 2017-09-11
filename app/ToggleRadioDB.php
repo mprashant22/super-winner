@@ -1,13 +1,13 @@
 <?php
 
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
-require __DIR__. '../../includes/utils/Shopify.php';
-require __DIR__. '../../includes/db/Stores.php';
-$Shopify = new Shopify();
-$Stores = new Stores();
-$shop = $_REQUEST['shop'];
-$shop_info = $Stores->is_shop_exists($shop);
-print_r($shop_info);
+// require __DIR__. '../../includes/utils/Shopify.php';
+// require __DIR__. '../../includes/db/Stores.php';
+// $Shopify = new Shopify();
+// $Stores = new Stores();
+// $shop = $_REQUEST['shop'];
+// $shop_info = $Stores->is_shop_exists($shop);
+// print_r($shop_info);
 class SocialLoginSelect extends DB_Connection
 {    
     private $table_name = "socialLogin";
@@ -28,7 +28,7 @@ class SocialLoginSelect extends DB_Connection
     	//$shop = $_REQUEST['shop'];
     	//echo "dukaan".$shop;
 		//echo $sql.">>".
-    	//print_r($shop_info);
+    	print_r($request);
     }
 }
 $obj=new SocialLoginSelect();
