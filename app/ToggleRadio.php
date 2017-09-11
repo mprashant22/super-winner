@@ -9,7 +9,9 @@ require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 //echo "shooooop".$shop;
 //$shop_info = $Stores->is_shop_exists($shop);
 //print_r($shop_info);
+
 $shop = "mathurs-store.myshopify.com";
+
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
  echo "<input type='hidden' name='shop' ng-init='".$shop."' ng-value='shop'>";
