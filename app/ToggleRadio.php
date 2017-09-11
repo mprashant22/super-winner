@@ -27,14 +27,14 @@ $shop = "mathurs-store.myshopify.com";
  echo "Facebook";
  echo "<input type='radio' id='radio3' ng-model='test2' value=1 />
  		<label for='radio3'>on</label>
- 		<input type='radio' id='radio4' ng-model='test2' value=0/>
+ 		<input type='radio' id='radio4' ng-model='test2' value=0 />
  		<label for='radio4'>off</label>
  		<p>{{test2}}</p>";
 
  echo "Twitter";
- echo "<input type='radio' id='radio5' ng-model='test3' value=1/>
+ echo "<input type='radio' id='radio5' ng-model='test3' value=1 />
  		<label for='radio5'>on</label>
- 		<input type='radio' id='radio6' ng-model='test3' value=0/>
+ 		<input type='radio' id='radio6' ng-model='test3' value=0 />
  		<label for='radio6'>off</label>
  		<p>{{test3}}</p>";
  		
@@ -42,7 +42,7 @@ $shop = "mathurs-store.myshopify.com";
  echo "Instagram";
  echo "<input type='radio' id='radio7' ng-model='test4' value=1 />
  		<label for='radio7'>on</label>
- 		<input type='radio' id='radio8' ng-model='test4' value=0/>
+ 		<input type='radio' id='radio8' ng-model='test4' value=0 />
  		<label for='radio8'>off</label>
  		<p>{{test4}}</p>"; 		
 
