@@ -1,5 +1,5 @@
 <?php
-
+echo "inside store";
 require 'db_connection.php';
 
 class Stores extends DB_Connection{

@@ -1,5 +1,5 @@
 <?php
-
+echo "Shopify";
 class Shopify {
     
     public $_APP_KEY;
