@@ -2,13 +2,14 @@
 require_once '/var/www/html/shopifyDemoLamp/includes/db/db_connection.php';
 require __DIR__. '../../includes/utils/Shopify.php';
 require __DIR__. '../../includes/db/Stores.php';
-$Shopify = new Shopify();
-$Stores = new Stores();
-echo "vapas";
-$shop = $_REQUEST['shop'];
-echo "shooooop".$shop;
-$shop_info = $Stores->is_shop_exists($shop);
-print_r($shop_info);
+//$Shopify = new Shopify();
+//$Stores = new Stores();
+//echo "vapas";
+//$shop = $_REQUEST['shop'];
+//echo "shooooop".$shop;
+//$shop_info = $Stores->is_shop_exists($shop);
+//print_r($shop_info);
+$shop = "mathurs-store.myshopify.com";
  echo "<div ng-app='myApp' ng-controller='Example'>";
  echo "<form ng-submit='myFunc()' ng-controller='Example'>";
  // First pair of radio buttons
@@ -25,7 +26,7 @@ print_r($shop_info);
  		<label for='radio3'>on</label>
  		<input type='radio' id='radio4' ng-model='test2' value='off'/>
  		<label for='radio4'>off</label>
- 		<p>{{test2}}</p>"; 		
+ 		<p>{{test2}}</p>";
 
  echo "Twitter";
  echo "<input type='radio' id='radio5' ng-model='test3' value='on'/>
@@ -61,9 +62,8 @@ print_r($shop_info);
         $scope.test2 = "one"
            // alert("PRASHANT");
 
-        	$scope.myFunc = function () {alert("in func");
-        	$scope.obj=[1,2,3,4];
-        	$scope.rdo=[$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
+        	$scope.myFunc = function () {alert("in func"+$scope.shop);
+        	$scope.rdo=[$scope.shop,$scope.test1,$scope.test2,$scope.test3,$scope.test4,$scope.test5];
         	$http({
         	    method : "POST",
         	    url : "ToggleRadioDB.php",
@@ -79,4 +79,3 @@ print_r($shop_info);
     }])
 
 </script>
-
