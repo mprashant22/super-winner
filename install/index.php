@@ -76,7 +76,7 @@ if ($code) {
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england vs south-africa";
     
-    $test_data = array("customers"=>array("id"=>5682587493,"email"=>"pra231453t@acmeiqqwech.in",    
+    $test_data = array("customers"=>array("email"=>"pra231453t@acmeiqqwech.in",    
     "created_at"=>"2017-09-14T04:20:17-04:00",
     "updated_at"=>"2017-09-13T04:20:17-04:00",
     "first_name"=>"ACME",
