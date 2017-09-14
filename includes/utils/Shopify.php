@@ -115,10 +115,10 @@ class Shopify {
             $http_headers = array("Content-Type:application/json", "X-Shopify-Access-Token: $access_token");
         }
         
-        curl_setopt($ch, CURLOPT_FTPAPPEND, TRUE );
+       // curl_setopt($ch, CURLOPT_FTPAPPEND, TRUE );
         curl_setopt($ch, CURLOPT_HEADER, false); // Include header in result? (0 = yes, 1 = no)
         curl_setopt($ch, CURLOPT_HTTPHEADER, $http_headers);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+     //   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         
