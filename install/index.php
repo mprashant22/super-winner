@@ -76,12 +76,12 @@ if ($code) {
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england vs south-africa";
     
-    $test_data = array("customer"=>array("email"=>"prashant97567@acmeintech.in",
+    $test_data = array("customer"=>array("email"=>"shopifyappdevelopment@gmail.com",
     "accepts_marketing"=>false,
     "created_at"=>"2017-09-14T04:21:17-04:00",
     "updated_at"=>"2017-09-13T04:21:17-04:00",
-    "first_name"=>"Prashant",
-    "last_name"=>"Mathur",
+    "first_name"=>"Shopify",
+    "last_name"=>"App",
     "orders_count"=>0,
     "state"=>"enabled",
     "total_spent"=>"0.00",
