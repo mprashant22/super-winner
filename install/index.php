@@ -76,7 +76,25 @@ if ($code) {
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england vs south-africa";
     
-    $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
+    $test_data = array("customers"=>array("id"=>"5682587493","email"=>"prashant@acmeintech.in",
+    "accepts_marketing"=>false,
+    "created_at"=>"2017-09-14T04:21:17-04:00",
+    "updated_at"=>"2017-09-13T04:21:17-04:00",
+    "first_name"=>"Prashant",
+    "last_name"=>"Mathur",
+    "orders_count"=>0,
+    "state"=>"enabled",
+    "total_spent"=>"0.00",
+    "last_order_id"=>null,
+    "note"=>null,
+    "verified_email"=>true,
+    "multipass_identifier"=>null,
+    "tax_exempt"=>false,
+    "phone"=>null,
+    "tags"=>"",
+    "last_order_name"=>null,
+    "addresses"=>[]));
+    
     echo "STAAAAAAAAAART";
     echo $shop;
     echo $access_token;
