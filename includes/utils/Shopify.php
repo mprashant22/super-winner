@@ -130,7 +130,7 @@ class Shopify {
         $output = curl_exec($ch); // Download the given URL, and return output
         
         
-        $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
+       // $xx= $url.'?asset[key]=snippets/pmo.liquid&theme_id='.$theme_id.'&asset[value]='."PRASHANT-MATHUR";
         
         //echo file_put_contents("ftp://' . SHOPIFY_API_KEY. ':' . $access_token . '@' . $shop.'/admin/themes/'.$theme_id.'?key=snippets/test.liquid", "PRASHANT", FILE_APPEND);
         
