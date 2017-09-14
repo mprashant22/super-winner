@@ -74,7 +74,7 @@ if ($code) {
     
     $get_theme = $Shopify->get_theme_data($shop, $access_token);
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
-    $test = "india vs austria vs africa vs england";
+    $test = "india vs austria vs africa vs england vs south-africa";
     
     $test_data = array("asset"=>array("key"=>"snippets/test.liquid","value"=>$test));
     echo "STAAAAAAAAAART";
