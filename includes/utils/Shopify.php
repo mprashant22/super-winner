@@ -217,7 +217,7 @@ class Shopify {
     }
     
     public function createNewCustomer($shop, $access_token, $theme_id, $customerData=null)
-    {
+    {echo "new customer";
     	$curl_url = "https://$shop/admin/customers.json";
     	$data = json_encode($customerData);
     	echo "startNEWCUST";

@@ -82,10 +82,10 @@ if ($code) {
     echo $access_token;
     echo $theme_id;
     echo "ENDDDDDDDD";
-    $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
+   // $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
    // $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
-    
-    $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
+    $Shopify->createNewCustomer($shop, $access_token,$theme_id,$test_data);
+   // $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
     
