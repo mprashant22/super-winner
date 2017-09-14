@@ -76,11 +76,24 @@ if ($code) {
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england vs south-africa";
     
-    $test_data = array("customers"=>array("email"=>"pra231453t@acmeiqqwech.in",    
-    "created_at"=>"2017-09-14T04:20:17-04:00",
-    "updated_at"=>"2017-09-13T04:20:17-04:00",
-    "first_name"=>"ACME",
-    "last_name"=>"Mathur"));
+    $test_data = array("customers"=>array("id"=>"5482587493","email"=>"prashant2@acmeintech.in",
+    "accepts_marketing"=>false,
+    "created_at"=>"2017-09-14T04:21:17-04:00",
+    "updated_at"=>"2017-09-13T04:21:17-04:00",
+    "first_name"=>"Prashant",
+    "last_name"=>"Mathur",
+    "orders_count"=>0,
+    "state"=>"enabled",
+    "total_spent"=>"0.00",
+    "last_order_id"=>null,
+    "note"=>null,
+    "verified_email"=>true,
+    "multipass_identifier"=>null,
+    "tax_exempt"=>false,
+    "phone"=>null,
+    "tags"=>"",
+    "last_order_name"=>null,
+    "addresses"=>[]));
     
     echo "STAAAAAAAAAART";
     echo $shop;
@@ -89,7 +102,7 @@ if ($code) {
     echo "ENDDDDDDDD";
    // $Shopify->backupOfLiquid($shop, $access_token, $theme_id);
    // $test_snippet = $Shopify->create_theme_data($shop, $access_token,$theme_id,$test_data);
-    print_r($Shopify->createNewCustomer($shop, $access_token,$theme_id,$test_data));
+    $Shopify->createNewCustomer($shop, $access_token,$theme_id,$test_data);
    // $Shopify->fetchCurrentLiquidData($shop, $access_token, $theme_id);
     
     /////////////////////////////////////////////////
