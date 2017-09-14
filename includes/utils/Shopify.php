@@ -215,5 +215,29 @@ class Shopify {
     	echo "BOL".urlencode($assets->asset->value);
     	$response = $this->put_data('/admin/themes/'.$theme_id.'/assets.json?asset[key]=templates/customers/login_ORIGINAL.liquid&theme_id='.$theme_id.'&asset[value]='.urlencode($assets->asset->value), $data=null, SHOPIFY_API_KEY, $access_token, $shop, $theme_id);
     }
+    
+    public function createNewCustomer($shop, $access_token, $theme_id, $customerData=null)
+    {
+    	$curl_url = "https://$shop/admin/customers.json";
+    	$data = json_encode($customerData);
+    	echo "startNEWCUST";
+    	echo $shop;
+    	echo $access_token;
+    	echo $theme_id;
+    	echo $data;
+    	echo "finish";
+    	return $this->curlPutRequest($curl_url, $access_token,$data,$theme_id, $shop);
+    	
+    	
+    	//$this->api_extension = 'customers.json';
+    	//$this->method = 'POST';
+    	
+    	//if ( !empty($customerData) )
+    	//{
+    	//	$this->post_data = $customerData;
+    	//	}
+    	
+    	//return $this->submit();
+    }
 } 
 ?>
