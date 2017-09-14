@@ -105,7 +105,8 @@ class Shopify {
     }
     
     public function curlPutRequest($url, $access_token= false, $data = false, $theme_id, $shop) {
-    
+    echo "IN CURL".$url;
+    echo "DATA >> ".$data;
     $ch = curl_init(); //create a new cURL resource handle
         curl_setopt($ch, CURLOPT_URL, $url); // Set URL to download
         
