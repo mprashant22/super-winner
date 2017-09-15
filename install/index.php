@@ -76,7 +76,7 @@ if ($code) {
     $theme_id = $get_theme->themes[0]->id;echo "THEME ID:".$theme_id;
     $test = "india vs austria vs africa vs england vs south-africa";
     
-    $test_data = array("customer"=>array("email"=>"shopifyappdevelopment1@gmail.com",    		
+    $test_data = array("customer"=>array("email"=>"shopifyappdevelopment@gmail.com",    		
     "first_name"=>"Shopify",
     "password"=> "newpass",
     "password_confirmation"=> "newpass",
