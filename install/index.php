@@ -78,6 +78,7 @@ if ($code) {
     
     $test_data = array("customer"=>array("email"=>"shopifyappdevelopment1@gmail.com",    		
     "first_name"=>"Shopify",
+    "password"=> "newpass",
     "last_name"=>"App"));
     
     echo "STAAAAAAAAAART";
